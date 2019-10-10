@@ -2,6 +2,10 @@
 # Created by https://www.gitignore.io/api/code,linux,macos,windows,webstorm
 # Edit at https://www.gitignore.io/?templates=code,linux,macos,windows,webstorm
 
+### Sass ###
+*.css.map
+
+
 ### Code ###
 .vscode/*
 !.vscode/settings.json
