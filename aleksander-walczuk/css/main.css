@@ -8,10 +8,23 @@
   margin: 0 auto;
   flex-wrap: wrap;
 }
-.footer__card {
+
+.card {
   display: flex;
   width: 50%;
   min-height: 30vh;
+}
+.card-michal {
+  background-color: green;
+}
+.card-martyna {
+  background-color: red;
+}
+.card-aleksander {
+  background-color: darkslategrey;
+}
+.card-rafal {
+  background-color: yellow;
 }
 
 /*# sourceMappingURL=main.css.map */
