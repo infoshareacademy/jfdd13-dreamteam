@@ -1,5 +1,12 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
 }
 
 .footer {
@@ -7,24 +14,22 @@
   max-width: 1200px;
   margin: 0 auto;
   flex-wrap: wrap;
+  background-color: #1976D2;
 }
 
 .card {
   display: flex;
   width: 50%;
   min-height: 30vh;
+  background-color: #1976D2;
+  border: 1px solid black;
 }
-.card-michal {
-  background-color: green;
+.card__img-container {
+  padding: 1rem;
 }
-.card-martyna {
-  background-color: red;
-}
-.card-aleksander {
-  background-color: darkslategrey;
-}
-.card-rafal {
-  background-color: yellow;
+.card__img-item {
+  display: block;
+  border-radius: 5rem;
 }
 
 /*# sourceMappingURL=main.css.map */
