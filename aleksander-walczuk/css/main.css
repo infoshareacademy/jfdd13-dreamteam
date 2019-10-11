@@ -27,5 +27,9 @@ body {
 .card__img-container {
   padding: 1rem;
 }
+.card__img-item {
+  display: block;
+  border-radius: 5rem;
+}
 
 /*# sourceMappingURL=main.css.map */
