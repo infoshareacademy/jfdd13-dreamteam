@@ -1,23 +1,11 @@
 *
   box-sizing: border-box
+  margin: 0
+  padding: 0
 
-  @import "variables"
-.footer
-  display: flex
-  max-width: 1200px
-  margin: 0 auto
-  flex-wrap: wrap
 
-.card
-  display: flex
-  width: 50%
-  min-height: 30vh
-  &-michal
-    background-color: green
-  &-martyna
-    background-color: red
-  &-aleksander
-    background-color: darkslategrey
-  &-rafal
-    background-color: yellow
-
+@import "variables"
+@at-root body
+  font-family: $font-primary
+  font-size: 16px
+@import "footer"
