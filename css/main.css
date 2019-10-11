@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+}
+
+.footer {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  background-color: #1976D2;
+}
+
+.card {
+  display: flex;
+  width: 50%;
+  min-height: 30vh;
+  background-color: #1976D2;
+  border: 1px solid black;
+}
+.card__img-container {
+  padding: 1rem;
+}
+.card__img-item {
+  display: block;
+  border-radius: 5rem;
+}
+
+/*# sourceMappingURL=main.css.map */
