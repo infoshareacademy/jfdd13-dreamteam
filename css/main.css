@@ -20,9 +20,14 @@ body {
 .card {
   display: flex;
   width: 50%;
-  min-height: 30vh;
+  min-width: 126px;
   background-color: #1976D2;
   border: 1px solid black;
+}
+@media (max-width: 600px) {
+  .card {
+    width: 25%;
+  }
 }
 .card__img-container {
   padding: 1rem;
@@ -36,9 +41,34 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  width: 100%;
 }
 .card__info-item {
   align-self: flex-start;
+}
+.card__info-name {
+  font-size: 1.5rem;
+  align-self: flex-end;
+  padding: 1rem 1rem 0 0;
+  border-bottom: 3px solid #FFC107;
+  text-align: right;
+}
+.card__info-links {
+  align-self: flex-end;
+  padding-right: 1rem;
+}
+.card__link-icon > i {
+  font-size: 1.5rem;
+}
+.card__link-item {
+  align-self: flex-end;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+  vertical-align: text-top;
+}
+.card__link-item:visited {
+  color: #000;
 }
 
 /*# sourceMappingURL=main.css.map */
