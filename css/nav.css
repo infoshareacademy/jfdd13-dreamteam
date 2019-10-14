@@ -25,7 +25,6 @@ background: #1976D2;
     margin-left: 10px;
     flex: 0 0 auto;
     text-align: center;
-    border: solid 1px black;
     align-items: center;
     }
     
@@ -35,6 +34,10 @@ background: #1976D2;
     color: white;
     align-items: center;
     text-transform: uppercase;
+    }
+
+    .navigation__point:hover {
+    background: rgb(61, 61, 224);
     }
 
     .logo_plane{
