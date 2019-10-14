@@ -1,4 +1,14 @@
 
+nav{
+display: flex;
+justify-content: space-between;
+padding: 0;
+position: fixed;
+width: 100%;
+background: #1976D2;
+}
+
+
 
 
 
@@ -6,26 +16,31 @@
 
     display: flex;
     list-style-type: none;
-    justify-content: space-between;
-    padding: 0;
-    position: fixed;
-    width:100%;
-
     }
     
     
     .navigation__point{
-    background: black;
-    padding: 20px;
-    margin: 5px;
-    flex: 1 1 0;
+    background: #1976D2;
+    padding: 20px 20px;
+    margin-left: 10px;
+    flex: 0 0 auto;
     text-align: center;
     border: solid 1px black;
-    border-radius: 10px 10px 10px 10px;
+    align-items: center;
     }
     
     
     .navigation__link{
     text-decoration: none;
     color: white;
+    align-items: center;
+    text-transform: uppercase;
+    }
+
+    .logo_plane{
+    align-self: center;
+    text-align: center;
+        font-size: 50px;
+        color: white;
+margin: 5px;
     }
