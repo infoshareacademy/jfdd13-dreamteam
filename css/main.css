@@ -29,7 +29,16 @@ body {
 }
 .card__img-item {
   display: block;
+  max-width: 100%;
   border-radius: 5rem;
+}
+.card__info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.card__info-item {
+  align-self: flex-start;
 }
 
 /*# sourceMappingURL=main.css.map */
