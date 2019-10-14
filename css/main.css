@@ -24,7 +24,7 @@ body {
   background-color: #1976D2;
   border: 1px solid black;
 }
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   .card {
     width: 25%;
   }
@@ -51,6 +51,7 @@ body {
   align-self: flex-end;
   padding: 1rem 1rem 0 0;
   border-bottom: 3px solid #FFC107;
+  text-align: right;
 }
 .card__info-links {
   align-self: flex-end;
