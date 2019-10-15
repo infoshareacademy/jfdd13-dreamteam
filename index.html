@@ -14,28 +14,29 @@
 </head>
 
 <body>
+<div class="wrapper">
     <header class="header">
         <nav class="navigation">
             <div>
-                <i class="far fa-paper-plane logo_plane"></i></li>
+                <i class="far fa-paper-plane logo_plane"></i>
             </div>
             <ul class="navigation__list">
                 <li class="navigation__point"><a href="#main" class="navigation__link">
-                        Strona główna
-                    </a></li>
+                    Strona główna
+                </a></li>
                 <li class="navigation__point"><a href="#funkcje" class="navigation__link">
-                    Dlaczego my? 
-                    </a></li>
+                    Dlaczego my?
+                </a></li>
                 <li class="navigation__point"><a href="#form" class="navigation__link">
-                       Formularz
-                    </a></li>
+                    Formularz
+                </a></li>
                 <li class="navigation__point"><a href="#footer" class="navigation__link">
-                        Autorzy
-                    </a></li>
+                    Autorzy
+                </a></li>
             </ul>
         </nav>
     </header>
-    <main id="main">
+    <main id="main" class="main">
         <section class="hero">
             <div class="icons">
                 <figure class="fig_icon">
@@ -63,40 +64,40 @@
                 </div>
             </div>
         </section>
-    <section class="functions"></section>
-    <section class="form">
-        <div class="form__div">
-            <h3 class="form__head">Zapisz się na naszą premierę!</h3>
-            <form class="form__form" action="#" method="post">
-                <label for="form__input">Podaj swój adres
-                    <input class="form__input" type="email" name="email" id="email">
-                </label>    
-            </form>
-        </div>
-        <div>
-            <button class="form_btn" type="submit">wyślij</button>
-        </div>
-    </section>
-</main>
-<footer class="footer" id="footer">
-    <div class="card card-michal">
-        <figure class="card__img-container">
-            <img src="img/card-michal150.png" alt="michal profile picture" class="card__img-item">
-        </figure>
-        <div class="card__info-container">
-            <div class="card__info-item card__info-name">
-                Michał Kuśnierz
+        <section class="functions" id="funkcje"></section>
+        <section class="form" id="form">
+            <div class="form__div">
+                <h3 class="form__head">Zapisz się na naszą premierę!</h3>
+                <form class="form__form" action="#" method="post">
+                    <label for="form__input">Podaj swój adres
+                        <input class="form__input" type="email" name="email" id="form__input">
+                    </label>
+                </form>
             </div>
-            <div class="card__info-links">
-                <div class="card__info-item">
+            <div>
+                <button class="form_btn" type="submit">wyślij</button>
+            </div>
+        </section>
+    </main>
+    <footer class="footer" id="footer">
+        <div class="card card-michal">
+            <figure class="card__img-container">
+                <img src="img/card-michal150.png" alt="michal profile picture" class="card__img-item">
+            </figure>
+            <div class="card__info-container">
+                <div class="card__info-item card__info-name">
+                    Michał Kuśnierz
+                </div>
+                <div class="card__info-links">
+                    <div class="card__info-item">
                 <span class="card__link-icon">
                     <i class="fab fa-linkedin"></i>
                 </span>
 
-                    <a href="#https://www.linkedin.com/in/michal-kusnierz/" target="_blank" class="card__link-item">
-                        Skontaktuj się
-                    </a>
-                </div>
+                        <a href="#https://www.linkedin.com/in/michal-kusnierz/" target="_blank" class="card__link-item">
+                            Skontaktuj się
+                        </a>
+                    </div>
                     <div class="card__info-item">
                         <span class="card__link-icon">
                             <i class="fab fa-github"></i>
@@ -108,99 +109,98 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="card card-martyna">
-        <figure class="card__img-container">
-            <img src="img/card-martyna150.png"
-                 alt="martyna profile picture" class="card__img-item">
-        </figure>
-        <div class="card__info-container">
-            <div class="card__info-item card__info-name">
-                Martyna Michno
-            </div>
-            <div class="card__info-links">
-                <div class="card__info-item card__link-container">
+        <div class="card card-martyna">
+            <figure class="card__img-container">
+                <img src="img/card-martyna150.png"
+                     alt="martyna profile picture" class="card__img-item">
+            </figure>
+            <div class="card__info-container">
+                <div class="card__info-item card__info-name">
+                    Martyna Michno
+                </div>
+                <div class="card__info-links">
+                    <div class="card__info-item card__link-container">
                         <span class="card__link-icon">
                             <i class="fab fa-linkedin"></i>
                         </span>
-                    <a href="#" target="_blank" class="card__link-item">
-                        Skontaktuj się
-                    </a>
-                </div>
-                <div class="card__info-item card__link-container">
+                        <a href="#" target="_blank" class="card__link-item">
+                            Skontaktuj się
+                        </a>
+                    </div>
+                    <div class="card__info-item card__link-container">
                         <span class="card__link-icon">
                             <i class="fab fa-github"></i>
                         </span>
-                    <a href="https://github.com/martyna-michno" target="_blank" class="card__link-item">
-                        Zobacz projekty
-                    </a>
+                        <a href="https://github.com/martyna-michno" target="_blank" class="card__link-item">
+                            Zobacz projekty
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="card card-aleksander">
-        <figure class="card__img-container">
-            <img src="img/card-aleksander150.png" alt="aleksander profile picture" class="card__img-item">
-        </figure>
-        <div class="card__info-container">
-            <div class="card__info-item card__info-name">
-                Aleksander Walczuk
-            </div>
-            <div class="card__info-links">
-                <div class="card__info-item card__link-container">
+        <div class="card card-aleksander">
+            <figure class="card__img-container">
+                <img src="img/card-aleksander150.png" alt="aleksander profile picture" class="card__img-item">
+            </figure>
+            <div class="card__info-container">
+                <div class="card__info-item card__info-name">
+                    Aleksander Walczuk
+                </div>
+                <div class="card__info-links">
+                    <div class="card__info-item card__link-container">
                         <span class="card__link-icon">
                             <i class="fab fa-linkedin"></i>
                         </span>
-                    <a href="https://www.linkedin.com/in/aleksanderwalczuk547777735/" target="_blank"
-                       class="card__link-item">
-                        Skontaktuj się
-                    </a>
-                </div>
-                <div class="card__info-item card__link-container">
+                        <a href="https://www.linkedin.com/in/aleksanderwalczuk547777735/" target="_blank"
+                           class="card__link-item">
+                            Skontaktuj się
+                        </a>
+                    </div>
+                    <div class="card__info-item card__link-container">
                         <span class="card__link-icon">
                             <i class="fab fa-github"></i>
                         </span>
 
-                    <a href="https://github.com/rednaxela700" target="_blank" class="card__link-item">
-                        Zobacz projekty
-                    </a>
+                        <a href="https://github.com/rednaxela700" target="_blank" class="card__link-item">
+                            Zobacz projekty
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="card card-rafal">
-        <figure class="card__img-container">
-            <img src="img/card-rafal150.png" alt="rafal profile picture" class="card__img-item">
-        </figure>
-        <div class="card__info-container">
-            <div class="card__info-item card__info-name">
-                Rafał Wensław
-            </div>
-            <div class="card__info-links">
-                <div class="card__info-item card__link-container">
+        <div class="card card-rafal">
+            <figure class="card__img-container">
+                <img src="img/card-rafal150.png" alt="rafal profile picture" class="card__img-item">
+            </figure>
+            <div class="card__info-container">
+                <div class="card__info-item card__info-name">
+                    Rafał Wensław
+                </div>
+                <div class="card__info-links">
+                    <div class="card__info-item card__link-container">
                 <span class="card__link-icon">
 <i class="fab fa-linkedin"></i>
                 </span>
-                    <a href="https://www.linkedin.com/in/rafa%C5%82-wens%C5%82aw-646450155/" target="_blank"
-                       class="card__link-item">
-                        Skontaktuj się
-                    </a>
+                        <a href="https://www.linkedin.com/in/rafa%C5%82-wens%C5%82aw-646450155/" target="_blank"
+                           class="card__link-item">
+                            Skontaktuj się
+                        </a>
 
-                </div>
-                <div class="card__info-item card__link-container">
+                    </div>
+                    <div class="card__info-item card__link-container">
                 <span class="card__link-icon">
                     <i class="fab fa-github"></i>
                 </span>
-                    <a href="https://github.com/RafWen" target="_blank" class="card__link-item">
-                        Zobacz projekty
-                    </a>
+                        <a href="https://github.com/RafWen" target="_blank" class="card__link-item">
+                            Zobacz projekty
+                        </a>
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
-<button class="btn btn-hero">ASD</button>
+    </footer>
+</div>
 </body>
 
 </html>

@@ -22,3 +22,7 @@ git merge nazwaMojegoBrancha     - nanoszę i rozwiązuję ew. konflikty
 git push                         - udostępniam zmiany zespołowi
 git checkout nazwaMojegoBrancha  - wracam na branch na którym rozwijam projekt
 dalsza praca i kolejny commit
+
+Propozycja haseł do ikon:
+
+miejsca warunki oszczędności wrażenia
