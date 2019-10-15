@@ -1,0 +1,14 @@
+.hero-image {
+  background: #cccccc url("../img/bg-1366x768.png") no-repeat center;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  color: white;
+}
+
+/*# sourceMappingURL=hero.css.map */
