@@ -22,10 +22,10 @@
   padding: 20px 100px;
 }
 
-.form__form {
+.form__input--input {
   font-size: 12px;
   background: #FFC107;
-  padding: 20px 100px;
+  padding: 10px 40px;
 }
 
 .div__accept {
@@ -43,6 +43,7 @@
   background: #1976D2;
   color: #FFC107;
   padding: 10px 20px;
+  border: 2px solid #FFC107;
   border-radius: 15px;
 }
 /*# sourceMappingURL=form.css.map */

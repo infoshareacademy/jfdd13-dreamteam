@@ -22,11 +22,9 @@ body {
 
 .btn-hero {
   border: 3px solid #81B4E6;
-  background-color: #1976D2;
 }
 
 .btn-hero:hover {
-  border-color: #1976D2;
   background-color: #81B4E6;
 }
 
@@ -100,11 +98,7 @@ body {
   }
 }
 
-.form__div {
-  background: #1976D2;
-  color: #FFC107;
-  width: 100%;
-  height: 100%;
+.form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -112,11 +106,43 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background: #1976D2;
+  color: #FFC107;
+  min-width: 600px;
+  width: 100%;
+  min-height: 300px;
+  height: 100%;
+  padding: 20px 100px;
 }
 
 .form__head {
   font-size: 32px;
+  background: #1976D2;
+  color: #FFC107;
   padding: 20px 100px;
-  margin-bottom: 30px;
+}
+
+.form__input--input {
+  font-size: 12px;
+  background: #FFC107;
+  padding: 20px 100px;
+}
+
+.div__accept {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px 100px;
+}
+
+.form__btn {
+  background: #1976D2;
+  color: #FFC107;
+  padding: 10px 20px;
+  border-radius: 15px;
 }
 /*# sourceMappingURL=main.css.map */
