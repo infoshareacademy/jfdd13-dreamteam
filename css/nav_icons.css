@@ -27,20 +27,20 @@ nav {
 
 .navigation__link {
     text-decoration: none;
-    color: white;
+    color: #BBDEFB;
     align-items: center;
     text-transform: uppercase;
 }
 
 .navigation__point:hover {
-    background: rgba(33, 150, 243, 0.31);
+    border-bottom: 2px solid #BBDEFB;
 }
 
 .logo_plane {
     align-self: center;
     text-align: center;
     font-size: 50px;
-    color: white;
+    color: #BBDEFB;
     margin: 5px;
 }
 
