@@ -24,7 +24,7 @@ body {
 }
 .btn-hero:hover {
   border-color: #1976D2;
-  background-color: #81B4E6 g;
+  background-color: #81B4E6;
 }
 
 @media all and (min-width: 1366px) {
