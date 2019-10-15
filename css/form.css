@@ -1,8 +1,4 @@
 .form {
-  background: #1976D2;
-  color: #FFC107;
-  width: 100%;
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10,21 +6,29 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background: #1976D2;
+  color: #FFC107;
+  min-width: 600px;
+  width: 100%;
+  min-height: 300px;
+  height: 100%;
+  padding: 20px 100px;
 }
 
 .form__head {
   font-size: 32px;
+  background: #1976D2;
+  color: #FFC107;
   padding: 20px 100px;
-  margin-bottom: 30px;
 }
 
-.form__input--input {
-  padding-bottom: 20px;
+.form__form {
   font-size: 12px;
   background: #FFC107;
+  padding: 20px 100px;
 }
 
-.form__accept {
+.div__accept {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,12 +36,13 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 20px 100px;
 }
 
-.div__btn {
+.form__btn {
   background: #1976D2;
   color: #FFC107;
-  padding: 50px;
-  border-radius: 25px;
+  padding: 10px 20px;
+  border-radius: 15px;
 }
 /*# sourceMappingURL=form.css.map */

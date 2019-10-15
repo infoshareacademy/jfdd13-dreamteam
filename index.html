@@ -59,16 +59,21 @@
         </section>
     <section class="functions"></section>
     <section class="form">
-        <div class="form__div">
+        <div class="div__form">
             <h3 class="form__head">Zapisz się na naszą premierę!</h3>
             <form class="form__form" action="#" method="post">
-                <label for="form__input">Podaj swój adres
-                    <input class="form__input" type="email" name="email" id="email">
+                <label class="form__input" >Podaj adres email
+                    <input class="form__input--input" type="email" name="email" id="email" placeholder="wpisz tutaj">
                 </label>    
+                <div class="div__accept">
+                    <span class="form__accept">Informacja zostanie wysłana w jednorazowym mailu</span>
+                    <span class="form__accept">Zgoda na przetwarzanie danych osobowych</span>
+                    <input class="form__accept" type="checkbox" name="check" id="check"Zgoda na przetwarzanie danych>
+                </div>
             </form>
         </div>
-        <div>
-            <button class="form_btn" type="submit">wyślij</button>
+        <div class="div__btn" >
+            <button class="form__btn" type="submit">wyślij</button>
         </div>
     </section>
 </main>
