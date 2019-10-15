@@ -22,9 +22,9 @@ body {
   border: 3px solid #81B4E6;
   background-color: #1976D2;
 }
-.btn-hero-:hover {
+.btn-hero:hover {
   border-color: #1976D2;
-  background-color: #81B4E6;
+  background-color: #81B4E6 g;
 }
 
 @media all and (min-width: 1366px) {
