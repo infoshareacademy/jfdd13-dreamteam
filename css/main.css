@@ -37,6 +37,10 @@ body {
     background-image: url("../img/bg-1024x576.png");
   }
 }
+.wrapper {
+  overflow: hidden;
+}
+
 .hero {
   height: 100vh;
   width: 100vw;
