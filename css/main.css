@@ -1,0 +1,87 @@
+@import "nav.css";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+}
+
+.btn {
+  max-width: 240px;
+  height: 60px;
+  padding: 1rem 2rem;
+  margin: 1rem 2rem;
+  color: #fff;
+  border-radius: 1rem;
+}
+.btn-hero {
+  border: 3px solid #81B4E6;
+  background-color: #1976D2;
+}
+.btn-hero:hover {
+  border-color: #1976D2;
+  background-color: #81B4E6;
+}
+
+@media all and (min-width: 1366px) {
+  .footer {
+    display: flex;
+    max-width: 1366px;
+    margin: 0 auto;
+    background-color: #1976D2;
+  }
+
+  .card {
+    display: flex;
+    min-width: 126px;
+    background-color: #1976D2;
+    border: 1px solid black;
+  }
+  .card__img-container {
+    padding: 1rem;
+  }
+  .card__img-item {
+    display: block;
+    max-width: 100%;
+    border-radius: 5rem;
+  }
+  .card__info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .card__info-item {
+    align-self: flex-start;
+  }
+  .card__info-name {
+    font-size: 1.5rem;
+    align-self: flex-end;
+    padding: 1rem 1rem 0 0;
+    border-bottom: 3px solid #FFC107;
+    text-align: right;
+  }
+  .card__info-links {
+    align-self: flex-end;
+    padding-right: 1rem;
+  }
+  .card__link-icon > i {
+    font-size: 1.5rem;
+  }
+  .card__link-item {
+    align-self: flex-end;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+    vertical-align: text-top;
+  }
+  .card__link-item:visited {
+    color: #000;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

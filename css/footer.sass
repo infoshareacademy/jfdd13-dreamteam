@@ -1,0 +1,57 @@
+@media all and (min-width: 1366px)
+  .footer
+    display: flex
+    max-width: 1366px
+    margin: 0 auto
+    background-color: $color-primary
+
+  .card
+    display: flex
+    min-width: 126px
+    background-color: $color-primary
+    border: 1px solid black
+    &__img
+      &-container
+        padding: 1rem
+      &-item
+        display: block
+        max-width: 100%
+        border-radius: 5rem
+    &__info
+      &-container
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+        width: 100%
+      &-item
+        align-self: flex-start
+      //  this align self is being overwritten by following class
+      &-name
+        font-size: 1.5rem
+        align-self: flex-end
+        padding: 1rem 1rem 0 0
+        border-bottom: 3px solid $color-secondary
+        text-align: right
+
+      //  following - links is a container for &__link-icon and -item
+      &-links
+        align-self: flex-end
+        padding-right: 1rem
+    &__link
+      &-icon > i
+        font-size: 1.5rem
+      &-item
+        align-self: flex-end
+        text-decoration: none
+        color: #000
+        cursor: pointer
+        vertical-align: text-top
+        &:visited
+          color: #000
+    //&-michal
+    //&-martyna
+    //&-rafal
+
+//card width may be changed to display 4 next to each othe
+
+  //min-height: 30vh
