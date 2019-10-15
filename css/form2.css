@@ -9,9 +9,17 @@
 .secondary-text-color  { color: #757575; }
 .divider-color         { border-color: #BDBDBD; } */
 
-.form{
+.form__div{
     background: #1976D2;
     color: #8BC34A;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    min-height: 100rem;
+}
+.form__head{
+    color: #8BC34A;
+    padding:0 20rem;
+    font-size: 10rem;
+    justify-content: center;
 }
