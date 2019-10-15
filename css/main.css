@@ -104,9 +104,6 @@ body {
     max-width: 1366px;
   }
 
-  .card {
-    min-width: 126px;
-  }
   .card__img-container {
     padding: 1rem;
   }
