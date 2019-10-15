@@ -11,6 +11,11 @@
     background-color: $primary-color-dark
     border-right: 1px solid $divider-color
     color: $primary-color-text
+    filter: grayscale(70%)
+    will-change: transition
+    &:hover
+      transition: filter .5s ease-in-out
+      filter: grayscale(0%)
     &__img
       &-container
         padding: 1rem
@@ -18,10 +23,6 @@
         display: block
         max-width: 100%
         border-radius: 5rem
-        filter: grayscale(50%)
-    &:hover &__img-item
-      transition: filter .5s ease-in-out
-      filter: grayscale(0%)
     &__info
       &-container
         display: flex

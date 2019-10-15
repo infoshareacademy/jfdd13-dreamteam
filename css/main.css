@@ -70,6 +70,12 @@ body {
     background-color: #1976D2;
     border-right: 1px solid #BDBDBD;
     color: #FFFFFF;
+    filter: grayscale(70%);
+    will-change: transition;
+  }
+  .card:hover {
+    transition: filter 0.5s ease-in-out;
+    filter: grayscale(0%);
   }
   .card__img-container {
     padding: 1rem;
@@ -78,11 +84,6 @@ body {
     display: block;
     max-width: 100%;
     border-radius: 5rem;
-    filter: grayscale(50%);
-  }
-  .card:hover .card__img-item {
-    transition: filter 0.5s ease-in-out;
-    filter: grayscale(0%);
   }
   .card__info-container {
     display: flex;
