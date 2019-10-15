@@ -65,7 +65,7 @@ nav {
 }
 
 .caption {
-
+    font-size: 20px;
     text-align: center;
 }
 
@@ -74,7 +74,3 @@ main {
 
 }
 
-.caption {
-
-    font-size: 20px;
-}
