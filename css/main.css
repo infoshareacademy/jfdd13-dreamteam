@@ -1,3 +1,4 @@
+@import "nav.css";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,6 +8,23 @@
 body {
   font-family: Roboto, sans-serif;
   font-size: 16px;
+}
+
+.btn {
+  max-width: 240px;
+  height: 60px;
+  padding: 1rem 2rem;
+  margin: 1rem 2rem;
+  color: #fff;
+  border-radius: 1rem;
+}
+.btn-hero {
+  border: 3px solid #81B4E6;
+  background-color: #1976D2;
+}
+.btn-hero-:hover {
+  border-color: #1976D2;
+  background-color: #81B4E6;
 }
 
 @media all and (min-width: 1366px) {
