@@ -1,6 +1,7 @@
-@import "nav.css";
+@import url(/home/michalq/Desktop/Frond-end_infoShare/dreamTeam/projekt/css/nav_icons.css);
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -18,10 +19,12 @@ body {
   color: #fff;
   border-radius: 1rem;
 }
+
 .btn-hero {
   border: 3px solid #81B4E6;
   background-color: #1976D2;
 }
+
 .btn-hero:hover {
   border-color: #1976D2;
   background-color: #81B4E6;
@@ -29,13 +32,16 @@ body {
 
 @media all and (min-width: 1366px) {
   .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     max-width: 1366px;
     margin: 0 auto;
     background-color: #1976D2;
   }
-
   .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     min-width: 126px;
     background-color: #1976D2;
@@ -50,30 +56,40 @@ body {
     border-radius: 5rem;
   }
   .card__info-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     width: 100%;
   }
   .card__info-item {
-    align-self: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
   .card__info-name {
     font-size: 1.5rem;
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
     padding: 1rem 1rem 0 0;
     border-bottom: 3px solid #FFC107;
     text-align: right;
   }
   .card__info-links {
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
     padding-right: 1rem;
   }
   .card__link-icon > i {
     font-size: 1.5rem;
   }
   .card__link-item {
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
     text-decoration: none;
     color: #000;
     cursor: pointer;
@@ -84,4 +100,23 @@ body {
   }
 }
 
+.form__div {
+  background: #1976D2;
+  color: #FFC107;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form__head {
+  font-size: 32px;
+  padding: 20px 100px;
+  margin-bottom: 30px;
+}
 /*# sourceMappingURL=main.css.map */
