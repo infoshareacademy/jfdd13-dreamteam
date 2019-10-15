@@ -5,6 +5,7 @@ nav {
     position: fixed;
     width: 100%;
     background: #1976D2;
+    z-index: 2
 }
 
 
