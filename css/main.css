@@ -1,4 +1,4 @@
-@import "nav.css";
+@import "nav_icons.css";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -25,6 +25,34 @@ body {
 .btn-hero:hover {
   border-color: #1976D2;
   background-color: #81B4E6;
+}
+
+@media all and (min-width: 1366px) {
+  .hero-image {
+    background-image: url("../img/bg-1366x768.png");
+  }
+}
+@media all and (min-width: 500px) and (max-width: 1365px) {
+  .hero-image {
+    background-image: url("../img/bg-1024x576.png");
+  }
+}
+.hero {
+  height: 100vh;
+  width: 100vw;
+}
+
+.hero-image {
+  background: #cccccc url("../img/bg-1366x768.png") no-repeat center;
+  width: inherit;
+  height: inherit;
+  position: relative;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media all and (min-width: 1366px) {

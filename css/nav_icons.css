@@ -16,7 +16,7 @@ nav {
 
 
 .navigation__point {
-    background: #1976D2;
+    background: rgba(1, 1, 1, 0);
     padding: 20px 20px;
     margin-left: 10px;
     flex: 0 0 auto;
