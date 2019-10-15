@@ -9,16 +9,30 @@
 .secondary-text-color  { color: #757575; }
 .divider-color         { border-color: #BDBDBD; } */
 
-.form__div{
+.form, .form__div{
     background: #1976D2;
     color: #8BC34A;
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 12rem;
+    height: 100%;
+    margin: 0 auto;
 }
 .form__head{
-    color: #8BC34A;
     padding:2rem 5rem;
     font-size: 2.5rem;
-    }
+    
+}
+.form__form, 
+.form__check{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 5rem;
+}
+.check__span{
+    padding-bottom: 0.5rem;
+}
+.form__btn{
+    margin-left: 10rem;
+    margin-bottom: 2rem;
+}
