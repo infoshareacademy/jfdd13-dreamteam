@@ -21,7 +21,6 @@
 .form__head{
     padding:2rem 5rem;
     font-size: 2.5rem;
-    
 }
 .form__form, 
 .form__check{
@@ -35,4 +34,9 @@
 .form__btn{
     margin-left: 10rem;
     margin-bottom: 2rem;
+}
+.form__input{
+    background: #8BC34A;
+    color: #757575;
+    border: 0.2rem solid #8BC34A;
 }
