@@ -3,13 +3,14 @@
     display: flex
     max-width: 1366px
     margin: 0 auto
-    background-color: $color-primary
+    background-color: $primary-color
 
   .card
     display: flex
     min-width: 126px
-    background-color: $color-primary
-    border: 1px solid black
+    background-color: $primary-color-dark
+    border-right: 1px solid $divider-color
+    color: $primary-color-text
     &__img
       &-container
         padding: 1rem
@@ -17,6 +18,10 @@
         display: block
         max-width: 100%
         border-radius: 5rem
+        filter: grayscale(50%)
+    &:hover &__img-item
+      transition: filter .5s ease-in-out
+      filter: grayscale(0%)
     &__info
       &-container
         display: flex
@@ -30,7 +35,7 @@
         font-size: 1.5rem
         align-self: flex-end
         padding: 1rem 1rem 0 0
-        border-bottom: 3px solid $color-secondary
+        border-bottom: 3px solid $primary-color-light
         text-align: right
 
       //  following - links is a container for &__link-icon and -item
@@ -43,11 +48,11 @@
       &-item
         align-self: flex-end
         text-decoration: none
-        color: #000
+        color: $primary-color-text
         cursor: pointer
         vertical-align: text-top
         &:visited
-          color: #000
+          color: #fff
     //&-michal
     //&-martyna
     //&-rafal
