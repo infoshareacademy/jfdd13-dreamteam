@@ -1,14 +1,3 @@
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-    position: fixed;
-    width: 100%;
-    background: rgba(25, 118, 210, 0.02);
-    z-index: 2
-}
-
-
 .navigation__list {
 
     display: flex;
@@ -19,30 +8,18 @@ nav {
 .navigation__point {
     background: rgba(1, 1, 1, 0);
     padding: 20px 20px;
-    margin-left: 10px;
     flex: 0 0 auto;
     text-align: center;
 }
 
 
-.navigation__link {
-    text-decoration: none;
-    color: #BBDEFB;
+.navigation__link,
+.show_menu {
     align-items: center;
     text-transform: uppercase;
+    text-decoration: none;
 }
 
-.navigation__point:hover {
-    border-bottom: 2px solid #BBDEFB;
-}
-
-.logo_plane {
-    align-self: center;
-    text-align: center;
-    font-size: 50px;
-    color: #BBDEFB;
-    margin: 5px;
-}
 
 .icons {
     display: flex;
@@ -74,4 +51,104 @@ nav {
 .caption {
 
     font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+@media all and (max-width: 700px) {
+
+    nav {
+
+        background: #BBDEFB;
+        padding: 0;
+        position: fixed;
+        color:black;
+    }
+
+    .show_menu {
+        display: block;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .logo_plane {
+
+        display: none;
+    }
+
+
+    .navigation__list {
+
+        display: none;
+    }
+
+    nav:hover .navigation__list {
+
+        display: flex;
+        flex-flow: column;
+
+    }
+
+    .navigation__point:hover {
+        background: #BDBDBD;
+    }
+
+
+    .navigation__link,
+    .show_menu {
+    color: black;}
+
+}
+
+
+@media all and (min-width: 701px) {
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        background: rgba(25, 118, 210, 0.02);
+        z-index: 2
+    }
+
+    .navigation__menu {
+
+        justify-content: flex-start;
+    }
+
+    .navigation__point:hover {
+        border-bottom: 2px solid #BBDEFB;
+    }
+
+    .show_menu {
+
+        display: none;
+
+    }
+
+    .logo_plane {
+        align-self: center;
+        text-align: center;
+        font-size: 50px;
+        color: #BBDEFB;
+        margin: 5px;
+    }
+
+
+.navigation__link,
+.show_menu {
+    color: #BBDEFB;
+    margin-left: 10px;
+}
+
+
 }
