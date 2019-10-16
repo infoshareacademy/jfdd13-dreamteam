@@ -25,4 +25,4 @@ dalsza praca i kolejny commit
 
 Propozycja haseł do ikon:
 
-miejsca warunki oszczędności wspomnienia
+miejsca warunki oszczędności wrażenia
