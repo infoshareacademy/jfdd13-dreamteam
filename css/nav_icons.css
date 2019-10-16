@@ -60,13 +60,11 @@
 
 
 
-
-
 @media all and (max-width: 700px) {
 
     nav {
 
-        background: #BBDEFB;
+        background: #FFFFFF;
         padding: 0;
         position: fixed;
         color:black;
@@ -97,7 +95,7 @@
     }
 
     .navigation__point:hover {
-        background: #BDBDBD;
+        background: #BBDEFB;
     }
 
 
@@ -126,7 +124,7 @@
     }
 
     .navigation__point:hover {
-        border-bottom: 2px solid #BBDEFB;
+        border-bottom: 2px solid #FFFFFF;
     }
 
     .show_menu {
@@ -139,14 +137,14 @@
         align-self: center;
         text-align: center;
         font-size: 50px;
-        color: #BBDEFB;
+        color: #FFFFFF;
         margin: 5px;
     }
 
 
 .navigation__link,
 .show_menu {
-    color: #BBDEFB;
+    color: #FFFFFF;
     margin-left: 10px;
 }
 
