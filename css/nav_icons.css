@@ -23,12 +23,13 @@
 
 .icons {
     display: flex;
-    /*height: 100%;*/
-    padding: 6rem 0 0;
+    height: 100%;
+    /*padding: 6rem 0 0;*/
     font-size: 50px;
     color: #fff;
     justify-content: center;
     text-transform: uppercase;
+    align-items: center;
 }
 
 .fig_icon {
