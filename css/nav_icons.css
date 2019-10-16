@@ -58,20 +58,20 @@
 
     nav {
 
-        background: #FFFFFF;
+        background: none;
         padding: 0;
         position: fixed;
-        color:black;
+        color: white;
     }
 
     .show_menu {
         display: block;
-        padding: 20px;
+        padding: 20px 20px 20px 24px;
         text-align: center;
     }
 
     .logo_plane {
-
+        margin: 5px;
         display: none;
     }
 
@@ -81,21 +81,27 @@
         display: none;
     }
 
+ nav:hover .navigation__link{
+
+color: black;
+ }
+
+
     nav:hover .navigation__list {
 
         display: flex;
         flex-flow: column;
-
+        background: #fff;
     }
 
     .navigation__point:hover {
-        background: #BBDEFB;
+        background: #BDBDBD;
     }
 
 
-    .navigation__link,
-    .show_menu {
-    color: black;}
+    .show_menu, .navigation__link {
+        color: white;
+    }
 
 }
 
@@ -136,11 +142,11 @@
     }
 
 
-.navigation__link,
-.show_menu {
-    color: #FFFFFF;
-    margin-left: 10px;
-}
+    .navigation__link,
+    .show_menu {
+        color: #FFFFFF;
+        margin-left: 10px;
+    }
 
 
 }
