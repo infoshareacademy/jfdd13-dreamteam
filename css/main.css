@@ -13,15 +13,24 @@ body {
 
 .btn {
   max-width: 240px;
-  width: 180px;
-  height: 60px;
-  padding: 1rem 2rem;
-  margin: 1rem 2rem;
+  width: 140px;
+  height: 50px;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
   color: #fff;
-  border-radius: 1rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+.btn__container {
+  display: flex;
+  justify-content: center;
+}
+.btn__container-hero {
+  order: -1;
+  margin: 2rem;
 }
 .btn-hero {
-  border: 3px solid #BDBDBD;
+  border: 1px solid #BDBDBD;
   background-color: #1976D2;
 }
 .btn-hero:hover {
@@ -44,16 +53,32 @@ body {
 }
 
 .hero {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   height: 100vh;
   width: 100vw;
   background: #cccccc url("../img/bg-1366x768.png") no-repeat center;
   background-size: cover;
 }
 
+.hero-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 60vh;
+}
+
 .hero-text {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #fff;
+  padding: 0 0 3.8rem;
+}
+.hero-text > h1 {
+  margin-bottom: 2rem;
+  padding: 0 0.5rem 0 0;
 }
 
 .footer {

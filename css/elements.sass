@@ -1,14 +1,23 @@
 //button
 .btn
   max-width: 240px
-  width: 180px
-  height: 60px
-  padding: 1rem 2rem
-  margin: 1rem 2rem
+  width: 140px
+  height: 50px
+  padding: .5rem 1rem
+  margin: 1rem 0
   color: #fff
-  border-radius: 1rem
+  //border-radius: 1rem
+  font-size: 1.2rem
+  text-transform: uppercase
+  &__container
+    display: flex
+    justify-content: center
+    &-hero
+      order: -1
+      margin: 2rem
+      //padding: 2rem 0 0 0
   &-hero
-    border: 3px solid $divider-color
+    border: 1px solid $divider-color
     background-color: $primary-color-dark
     &:hover
       border-color: $divider-color
