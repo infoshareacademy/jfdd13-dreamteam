@@ -13,12 +13,13 @@ body {
 
 .btn {
   max-width: 240px;
-  width: 180px;
-  height: 60px;
-  padding: 1rem 2rem;
+  width: 140px;
+  height: 50px;
+  padding: 0.5rem 1rem;
   margin: 1rem 0;
   color: #fff;
-  border-radius: 1rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
 }
 .btn__container {
   display: flex;
@@ -29,7 +30,7 @@ body {
   margin: 2rem;
 }
 .btn-hero {
-  border: 3px solid #BDBDBD;
+  border: 1px solid #BDBDBD;
   background-color: #1976D2;
 }
 .btn-hero:hover {
