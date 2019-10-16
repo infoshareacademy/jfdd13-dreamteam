@@ -131,10 +131,6 @@ body {
   font-size: 1.5rem;
 }
 @media all and (min-width: 1366px) {
-  .footer {
-    max-width: 1366px;
-  }
-
   .card__img-container {
     padding: 1rem;
   }
