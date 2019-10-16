@@ -17,6 +17,7 @@
     width: 100%;
     height: 100%;
     margin: 0 auto;
+    align-items: center;
 }
 .form__head{
     padding:1rem 5rem;
@@ -32,15 +33,12 @@
     padding-bottom: 0.5rem;
     font-size: 0.8rem;
 }
-.form__btn{
-    margin-left: 10rem;
-    margin-bottom: 1rem;
+
 }
 .btn{
     text-transform: capitalize;
 }
 .form__input{
-    /* background: #8BC34A; */
     color: #757575;
     border: 0.2rem solid #BDBDBD;
 }
@@ -48,4 +46,4 @@
 
 /* @media all and (min-width: 1366px) */
 
-@media all and (min-width: 500px) and (max-width: 1365px)
+/* @media all and (min-width: 500px) and (max-width: 1365px) */
