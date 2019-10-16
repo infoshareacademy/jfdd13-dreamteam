@@ -34,7 +34,7 @@
 }
 .form__btn{
     margin-left: 10rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 .btn{
     text-transform: capitalize;
@@ -44,3 +44,8 @@
     color: #757575;
     border: 0.2rem solid #BDBDBD;
 }
+
+
+/* @media all and (min-width: 1366px) */
+
+@media all and (min-width: 500px) and (max-width: 1365px)
