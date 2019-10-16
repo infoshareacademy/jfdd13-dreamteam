@@ -71,7 +71,7 @@ body {
   will-change: transition;
 }
 .card:hover {
-  transition: filter 0.5s ease-in-out;
+  transition: filter 0.2s ease-in-out;
   filter: grayscale(0%);
 }
 .card__img-item {
