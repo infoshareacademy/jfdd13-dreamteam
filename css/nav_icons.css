@@ -67,6 +67,7 @@
         display: block;
         padding: 20px 20px 20px 24px;
         text-align: center;
+        min-width: 173px;
     }
 
     .logo_plane {
