@@ -51,6 +51,11 @@
     text-align: center;
 }
 
+.logo{
+
+    margin: 10px;
+}
+
 
 
 
@@ -72,7 +77,6 @@
     }
 
     .logo_plane {
-        margin: 5px;
         display: none;
     }
 
@@ -131,7 +135,6 @@ color: black;
     .show_menu {
 
         display: none;
-
     }
 
     .logo_plane {
