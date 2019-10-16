@@ -27,13 +27,11 @@
 .form__check{
     display: flex;
     flex-direction: column;
-    padding: 0.5rem 5rem;
+    padding: 0.4rem 5rem;
 }
 .check__span{
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.4rem;
     font-size: 0.8rem;
-}
-
 }
 .btn{
     text-transform: capitalize;
@@ -41,9 +39,14 @@
 .form__input{
     color: #757575;
     border: 0.2rem solid #BDBDBD;
+    padding: 0.5rem 0 0.2rem 0.5rem;
+    font-size: 0.8rem;
 }
-
 
 /* @media all and (min-width: 1366px) */
 
-/* @media all and (min-width: 500px) and (max-width: 1365px) */
+@media all and (min-width: 500px) and (max-width: 1365px){
+    .form__input{
+        margin: 0.5rem 0;
+    }
+}
