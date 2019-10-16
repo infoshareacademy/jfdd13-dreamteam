@@ -23,12 +23,13 @@
 
 .icons {
     display: flex;
-    /*height: 100%;*/
-    padding: 6rem 0 0;
+    height: 100%;
+    /*padding: 6rem 0 0;*/
     font-size: 50px;
     color: #fff;
     justify-content: center;
     text-transform: uppercase;
+    align-items: center;
 }
 
 .fig_icon {
@@ -50,6 +51,11 @@
     text-align: center;
 }
 
+.logo{
+
+    margin: 10px;
+}
+
 
 
 
@@ -57,20 +63,20 @@
 
     nav {
 
-        background: #FFFFFF;
+        background: none;
         padding: 0;
         position: fixed;
-        color:black;
+        color: white;
     }
 
     .show_menu {
         display: block;
-        padding: 20px;
+        padding: 20px 20px 20px 24px;
         text-align: center;
+        min-width: 173px;
     }
 
     .logo_plane {
-
         display: none;
     }
 
@@ -80,21 +86,27 @@
         display: none;
     }
 
+ nav:hover .navigation__link{
+
+color: black;
+ }
+
+
     nav:hover .navigation__list {
 
         display: flex;
         flex-flow: column;
-
+        background: #fff;
     }
 
     .navigation__point:hover {
-        background: #BBDEFB;
+        background: #BDBDBD;
     }
 
 
-    .navigation__link,
-    .show_menu {
-    color: black;}
+    .show_menu, .navigation__link {
+        color: white;
+    }
 
 }
 
@@ -123,7 +135,6 @@
     .show_menu {
 
         display: none;
-
     }
 
     .logo_plane {
@@ -135,11 +146,11 @@
     }
 
 
-.navigation__link,
-.show_menu {
-    color: #FFFFFF;
-    margin-left: 10px;
-}
+    .navigation__link,
+    .show_menu {
+        color: #FFFFFF;
+        margin-left: 10px;
+    }
 
 
 }
