@@ -7,14 +7,14 @@
   background-color: $primary-color-dark
   border-right: 1px solid $divider-color
   color: $primary-color-text
-  filter: grayscale(70%)
-  will-change: transition
-  &:hover
+  &:hover .card__img-item
     transition: filter .2s ease-in-out
     filter: grayscale(0%)
   &__img-item
     display: block
     border-radius: 5rem
+    filter: grayscale(80%)
+    will-change: transition
   &__info
     &-container
       display: flex

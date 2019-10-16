@@ -92,16 +92,16 @@ body {
   background-color: #1976D2;
   border-right: 1px solid #BDBDBD;
   color: #FFFFFF;
-  filter: grayscale(70%);
-  will-change: transition;
 }
-.card:hover {
+.card:hover .card__img-item {
   transition: filter 0.2s ease-in-out;
   filter: grayscale(0%);
 }
 .card__img-item {
   display: block;
   border-radius: 5rem;
+  filter: grayscale(80%);
+  will-change: transition;
 }
 .card__info-container {
   display: flex;
