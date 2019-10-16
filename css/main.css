@@ -13,6 +13,7 @@ body {
 
 .btn {
   max-width: 240px;
+  width: 180px;
   height: 60px;
   padding: 1rem 2rem;
   margin: 1rem 2rem;
@@ -20,12 +21,12 @@ body {
   border-radius: 1rem;
 }
 .btn-hero {
-  border: 3px solid #8BC34A;
-  background-color: #2196F3;
+  border: 3px solid #BDBDBD;
+  background-color: #1976D2;
 }
 .btn-hero:hover {
   border-color: #BDBDBD;
-  background-color: #8BC34A;
+  background-color: #2196F3;
 }
 
 @media all and (min-width: 1366px) {
@@ -87,6 +88,13 @@ body {
 }
 .card__info-item {
   padding: 0 0 0.5rem;
+  align-self: flex-end;
+  text-decoration: none;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.card__info:visited {
+  color: #fff;
 }
 .card__info-name {
   align-self: flex-end;
@@ -99,7 +107,6 @@ body {
 .card__info__link-icon > i {
   font-size: 1.5rem;
 }
-
 @media all and (min-width: 1366px) {
   .footer {
     max-width: 1366px;
