@@ -92,6 +92,7 @@ body {
   background-color: #1976D2;
   border-right: 1px solid #BDBDBD;
   color: #FFFFFF;
+  width: 100%;
 }
 .card:hover .card__img-item {
   transition: filter 0.2s ease-in-out;
@@ -102,6 +103,7 @@ body {
   border-radius: 5rem;
   filter: grayscale(80%);
   will-change: transition;
+  max-width: 100px;
 }
 .card__info-container {
   display: flex;
