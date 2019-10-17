@@ -92,11 +92,15 @@ body {
   background-color: #1976D2;
   border-right: 1px solid #BDBDBD;
   color: #FFFFFF;
+  justify-content: space-around;
   width: 100%;
 }
 .card:hover .card__img-item {
   transition: filter 0.2s ease-in-out;
   filter: grayscale(0%);
+}
+.card__img-container {
+  padding: 0.5rem;
 }
 .card__img-item {
   display: block;
@@ -104,12 +108,13 @@ body {
   filter: grayscale(80%);
   will-change: transition;
   max-width: 100px;
+  border: 3px solid white;
 }
 .card__info-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-around;
-  width: 100%;
 }
 .card__info-item {
   padding: 0 0 0.5rem;
@@ -132,6 +137,15 @@ body {
 .card__info__link-icon > i {
   font-size: 1.5rem;
 }
+.card__link-item {
+  text-decoration: none;
+  color: #fff;
+}
+.card__link-item:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
 @media all and (min-width: 1366px) {
   .card__img-container {
     padding: 1rem;
@@ -157,6 +171,21 @@ body {
   }
   .card__link-item:visited {
     color: #fff;
+  }
+}
+@media all and (max-width: 1000px) {
+  .footer {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 50%;
+  }
+  .card-aleksander {
+    border-top: 1px solid #BDBDBD;
+  }
+  .card-rafal {
+    border-top: 1px solid #BDBDBD;
   }
 }
 
