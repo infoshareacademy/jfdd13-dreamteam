@@ -6,6 +6,7 @@
   display: flex
   background-color: $primary-color-dark
   border-right: 1px solid $divider-color
+  border-top: 1px solid #fff
   color: $primary-color-text
   justify-content: space-around
   width: 100%
@@ -56,9 +57,6 @@
 
 
 @media all and (min-width: 1366px)
-  .footer
-
-
   .card
     //min-width: 126px
     &__img
@@ -95,6 +93,15 @@
       border-top: 1px solid $divider-color
     &-rafal
       border-top: 1px solid $divider-color
+@media all and (max-width: 550px)
+  .card
+    width: 100%
+    justify-content: center
+    &-martyna
+      border-top: 1px solid $divider-color
+    &__img-container
+      padding: 1rem
+
 
 //&-michal
 //&-martyna

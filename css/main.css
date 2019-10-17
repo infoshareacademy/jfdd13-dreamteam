@@ -91,6 +91,7 @@ body {
   display: flex;
   background-color: #1976D2;
   border-right: 1px solid #BDBDBD;
+  border-top: 1px solid #fff;
   color: #FFFFFF;
   justify-content: space-around;
   width: 100%;
@@ -186,6 +187,18 @@ body {
   }
   .card-rafal {
     border-top: 1px solid #BDBDBD;
+  }
+}
+@media all and (max-width: 550px) {
+  .card {
+    width: 100%;
+    justify-content: center;
+  }
+  .card-martyna {
+    border-top: 1px solid #BDBDBD;
+  }
+  .card__img-container {
+    padding: 1rem;
   }
 }
 
