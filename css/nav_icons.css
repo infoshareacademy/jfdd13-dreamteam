@@ -42,7 +42,6 @@
 }
 
 .icon {
-    font-size: 80px;
     text-align: center;
 }
 
@@ -52,7 +51,7 @@
     text-align: center;
 }
 
-.logo{
+.logo {
 
     margin: 10px;
 }
@@ -87,10 +86,10 @@
         display: none;
     }
 
- nav:hover .navigation__link{
+    nav:hover .navigation__link {
 
-color: black;
- }
+        color: black;
+    }
 
 
     nav:hover .navigation__list {
@@ -105,9 +104,12 @@ color: black;
     }
 
 
-    .show_menu, .navigation__link {
+    .show_menu,
+    .navigation__link {
         color: white;
     }
+    .icon {
+        font-size: 60px;}
 
 }
 
@@ -129,7 +131,7 @@ color: black;
         justify-content: flex-start;
     }
 
-    .navigation__point{
+    .navigation__point {
         margin-left: 10px;
     }
 
@@ -153,8 +155,12 @@ color: black;
 
     .navigation__link,
     .show_menu {
-        color: #FFFFFF;;
+        color: #FFFFFF;
+        ;
     }
 
 
+    .icon {
+        font-size: 80px;
+    }
 }
