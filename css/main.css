@@ -76,7 +76,11 @@ body {
   color: #fff;
   padding: 0 0 3.8rem;
 }
-.hero-text > h1 {
+
+.hero__heading {
+  font-family: Be Vietnam, sans-serif;
+}
+.hero__heading-h1 {
   margin-bottom: 2rem;
   padding: 0 0.5rem 0 0;
 }
