@@ -1,8 +1,11 @@
-const inputMail = document.querySelector("#input__form")
+const
+    inputMail = document.querySelector("#input__form"),
+    submitMail = document.querySelector("#form__submit");
 
 function addMail(){
     localStorage.setItem("email", inputMail.value);
-    // console.log(localStorage.getItem('email'));
+    event.preventDefault();
 }
 
-inputMail.addEventListener("input", addMail);
+submitMail.addEventListener("click", addMail);
+
