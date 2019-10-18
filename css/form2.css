@@ -21,18 +21,19 @@
     align-items: center;
 }
 .form__head{
-    padding:1rem ;
+    padding:1rem 0;
     font-size: 1.5rem;
 }
 .form__form, 
 .form__check{
     display: flex;
     flex-direction: column;
-    padding: 0.4rem;
+    padding: 0.4rem 0;
+    align-items: center;
 }
 .check__span{
     font-size: 0.9rem;
-    padding: 0.2rem;
+    padding: 0.2rem 0;
 }
 .check__input{
     width:2rem;
@@ -42,7 +43,7 @@
 }
 .form__input{
     border: 0.1rem solid #BDBDBD;
-    padding: 0.5rem;
+    padding: 0.5rem 0;
     font-size: 0.8rem;
     margin: 0.5rem 0;
 }
