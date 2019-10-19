@@ -43,7 +43,7 @@
 
 .fig_icon {
 
-    margin: 10px;
+    /*margin: 10px;*/
     display: flex;
     flex-flow: column;
     margin: 5px 20px;
