@@ -11,6 +11,15 @@ body {
   font-size: 16px;
 }
 
+.heading {
+  font-family: Be Vietnam, sans-serif;
+  text-transform: capitalize;
+  text-align: center;
+}
+.heading__h2 {
+  margin: 1rem 0;
+}
+
 .btn {
   max-width: 240px;
   width: 140px;
@@ -83,6 +92,27 @@ body {
 .hero__heading-h1 {
   margin-bottom: 2rem;
   padding: 0 0.5rem 0 0;
+}
+
+.functions {
+  padding: 1rem 2rem;
+}
+.functions__container {
+  display: flex;
+  margin: 0 auto;
+  background: #2196F3;
+}
+.functions__container-row {
+  display: flex;
+  flex-direction: row;
+}
+.functions__icon {
+  padding: 1rem;
+  background: #2196F3;
+}
+
+.heading__paragraph-container {
+  color: #fff;
 }
 
 .footer {
