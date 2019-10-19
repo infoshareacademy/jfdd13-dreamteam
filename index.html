@@ -73,20 +73,20 @@
                 <h2 class="form__head">Zapisz się na naszą premierę!</h2>
                 <form class="form__form" action="#" method="post">
                     <label for="form__input">Podaj swój adres
-                        <input class="form__input" type="email" name="email" id="form__input"
-                               placeholder="wpisz tutaj...">
+                        <input id="input__form" class="form__input" type="email" name="email" id="form__input" placeholder="wpisz tutaj...">
                     </label>
-
                     <div class="form__check">
-                    <span class="check__span">Uwaga: Wiadomość zostanie przesłana jednorazowo</span>
-                    <label class="check__span" for="check__input">Zgoda na przetwarzanie danych osobowych
-                        <input class="check__input" type="checkbox" id=check__input>
-                    </label>
-                     </div>
-            <div class="form__btn">
-                <button class="btn btn-hero" type="submit">wyślij</button>
+                        <label class="check__span" for="check__input">Zgoda na przetwarzanie danych osobowych
+                            <input class="check__input" type="checkbox" id=check__input>
+                        </label>        
+                    </div>
+                    <div class="form__btn">
+                        <span id="thankYou" class="check__span">Uwaga: Wiadomość zostanie przesłana jednorazowo</span>
+                        <button id="form__submit" class="btn btn-hero" type="submit">wyślij</button>
+                    </div>
+                </form>
             </div>
-            </form>
+                
         </section>
     </main>
     <footer class="footer" id="footer">
@@ -211,6 +211,7 @@
         </div>
     </footer>
 </div>
+<script src="scripts/mail_storage.js"></script>
 </body>
 
 </html>
