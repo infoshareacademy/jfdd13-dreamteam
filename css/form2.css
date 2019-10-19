@@ -11,7 +11,7 @@
 
 .form, .form__div, .form__btn{
     background: #fff;
-    color: #000;
+    color: #212121;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -43,11 +43,13 @@
 }
 .form__input{
     border: 0.1rem solid #BDBDBD;
-    padding: 0.5rem 0;
-    font-size: 0.8rem;
+    padding: 0.5rem 0 0.5rem 0.2rem;
+    font-size: 0.9rem;
     margin: 0.5rem 0;
 }
-
+.form__input:focus{
+    outline: none;
+}
 /* @media all and (min-width: 1366px) */
 
 /* @media all and (min-width: 500px) and (max-width: 1365px){
