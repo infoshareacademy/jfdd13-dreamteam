@@ -16,8 +16,15 @@ body {
   text-transform: capitalize;
   text-align: center;
 }
+.heading__h1 {
+  font-size: 2.5rem;
+  text-transform: none;
+}
 .heading__h2 {
   margin: 1rem 0;
+}
+.heading__h3 {
+  margin: 0 0 1rem;
 }
 
 .btn {
@@ -100,7 +107,8 @@ body {
 .functions__container {
   display: flex;
   margin: 0 auto;
-  background: #2196F3;
+  justify-content: space-around;
+  -webkit-justify-content: space-evenly;
 }
 .functions__container-row {
   display: flex;
@@ -112,7 +120,8 @@ body {
 }
 
 .heading__paragraph-container {
-  color: #fff;
+  color: #000;
+  padding: 0 1rem;
 }
 
 .footer {
