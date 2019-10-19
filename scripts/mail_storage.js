@@ -1,5 +1,5 @@
 const
-    inputMail = document.querySelector("#input__form"),
+    inputMail = document.querySelector("#form__input"),
     submitMail = document.querySelector("#form__submit"),
     thankYou = document.querySelector("#thankYou");
     
