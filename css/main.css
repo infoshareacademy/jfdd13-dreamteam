@@ -11,6 +11,22 @@ body {
   font-size: 16px;
 }
 
+.heading {
+  font-family: Be Vietnam, sans-serif;
+  text-transform: capitalize;
+  text-align: center;
+}
+.heading__h1 {
+  font-size: 2.5rem;
+  text-transform: none;
+}
+.heading__h2 {
+  margin: 1rem 0;
+}
+.heading__h3 {
+  margin: 0 0 1rem;
+}
+
 .btn {
   max-width: 240px;
   width: 140px;
