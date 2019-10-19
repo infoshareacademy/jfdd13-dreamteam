@@ -8,20 +8,20 @@
   border-right: 1px solid $divider-color
   border-top: 1px solid #fff
   color: $primary-color-text
-  justify-content: space-around
+  justify-content: center
   width: 100%
   &:hover .card__img-item
     transition: filter .2s ease-in-out
     filter: grayscale(0%)
   &__img
     &-container
-      padding: .5rem
+      padding: 1rem
     &-item
       display: block
       border-radius: 5rem
       filter: grayscale(80%)
       will-change: transition
-      max-width: 100px
+      max-width: 75px
       border: 3px solid white
   &__info
     &-container
@@ -43,6 +43,7 @@
       align-self: flex-end
       border-bottom: 3px solid $primary-color-light
       text-align: right
+      width: 100%
     &-links
       align-self: flex-end
     &__link
@@ -63,17 +64,18 @@
       &-container
         padding: 1rem
       &-item
-        max-width: 100%
+        //max-width: 100%
+      //line deleted smaller imgs in footer are better
     &__info
       &-item
         align-self: flex-start
       //  this align self is being overwritten by following class
       &-name
         font-size: 1.5rem
-        padding: 1rem 1rem 0 0
+        padding: 1rem 0
       //  following - links is a container for &__link-icon and -item
       &-links
-        padding-right: 1rem
+        padding: 1rem 0
     &__link
       &-item
         align-self: flex-end
