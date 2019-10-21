@@ -7,14 +7,18 @@ const
     isCheck = document.querySelector("#check__input");
     
 function addMail(){
-    localStorage.setItem("email", inputMail.value);
-    thankYou.innerText = 'Dziękujemy! Zapewniamy o bezpieczeństwie Państwa danych.';
-      
+    if(inputMail.value.length !== 0){
+        localStorage.setItem("email", inputMail.value);
+        thankYou.classList.add('form__red--no');
+        thankYou.innerText = 'Dziękujemy! Zapewniamy o bezpieczeństwie Państwa danych.';
+    } else{
+        thankYou.classList.add('form__red');
+        thankYou.innerText = 'Prosimy o podanie adres e-mail.';
+    }     
 }
-function validMail(){
+function givePerm(){
     event.preventDefault();
     if (isCheck.checked == true){
-        thankYou.classList.add('form__red--no');
         addMail();
     }else{
         thankYou.classList.add('form__red');
@@ -22,7 +26,7 @@ function validMail(){
     }
 }
 
-submitMail.addEventListener("click", validMail);
+submitMail.addEventListener("click", givePerm);
 
 //nav animation onscroll
 
