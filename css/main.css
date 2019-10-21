@@ -21,7 +21,7 @@ body {
   text-transform: none;
 }
 .heading__h2 {
-  margin: 1rem 0;
+  margin: 1rem 0 1.5rem;
 }
 .heading__h3 {
   font-family: Roboto, sans-serif;
