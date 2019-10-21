@@ -4,7 +4,6 @@
     list-style-type: none;
 }
 
-
 .navigation__point {
     background: rgba(1, 1, 1, 0);
     /*padding: 20px 20px;*/
@@ -19,6 +18,7 @@
     text-transform: uppercase;
     text-decoration: none;
 }
+
 .navigation__link {
     font-family: Be Vietnam, sans-serif;
     display: block;
@@ -60,9 +60,6 @@
     margin: 10px;
 }
 
-
-
-
 @media all and (max-width: 700px) {
 
     .navigation {
@@ -89,7 +86,6 @@
         display: none;
     }
 
-
     .navigation__list {
 
         display: none;
@@ -99,7 +95,6 @@
 
         color: black;
     }
-
 
     .navigation:hover .navigation__list {
 
@@ -112,16 +107,16 @@
         background: #BDBDBD;
     }
 
-
     .show_menu,
     .navigation__link {
         color: white;
     }
+
     .icon {
-        font-size: 60px;}
+        font-size: 60px;
+    }
 
 }
-
 
 @media all and (min-width: 701px) {
 
@@ -161,15 +156,22 @@
         margin: 5px;
     }
 
-
     .navigation__link,
     .show_menu {
-        color: #FFFFFF;
-        ;
+        color: #FFFFFF;;
     }
-
 
     .icon {
         font-size: 80px;
+    }
+
+    .scrolled {
+        background: white;
+        transition: background 0.3s ease-out;
+    }
+
+    .scrolled a, .scrolled .logo_plane {
+        color: black;
+        transition: color 0.3s ease-out;
     }
 }

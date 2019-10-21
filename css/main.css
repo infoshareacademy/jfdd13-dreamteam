@@ -155,7 +155,7 @@ body {
     max-width: inherit;
   }
 }
-.footer {
+.footer__wrapper {
   display: flex;
   margin: 0 auto;
   background: #2196F3;
@@ -242,7 +242,7 @@ body {
   }
 }
 @media all and (max-width: 1000px) {
-  .footer {
+  .footer__wrapper {
     flex-wrap: wrap;
   }
 

@@ -11,3 +11,13 @@ function addMail(){
 
 submitMail.addEventListener("click", addMail);
 
+//nav animation onscroll
+
+window.addEventListener('scroll', function(e) {
+    console.log(window.scrollY);
+    if (window.scrollY > 140) {
+        document.querySelector('nav').classList.add('scrolled');
+    } else{
+        document.querySelector('nav').classList.remove('scrolled');
+    }
+});
