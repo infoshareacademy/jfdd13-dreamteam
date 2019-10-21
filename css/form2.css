@@ -50,6 +50,12 @@
 .form__input:focus{
     outline: none;
 }
+.form__red{
+    color:red;
+}
+.form__red--no{
+    color: #212121;
+}
 /* @media all and (min-width: 1366px) */
 
 /* @media all and (min-width: 500px) and (max-width: 1365px){
