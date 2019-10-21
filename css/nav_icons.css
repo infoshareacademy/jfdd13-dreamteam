@@ -13,10 +13,6 @@
     max-height: 60px;
 }
 
-.navigation__point:last-child {
-    margin: 0 1rem 0 0;
-}
-
 .navigation__link,
 .show_menu {
     align-items: center;
@@ -75,6 +71,11 @@
         padding: 0;
         position: fixed;
         color: white;
+    }
+
+    .navigation__point:last-child {
+
+        margin: 0;
     }
 
     .show_menu {
