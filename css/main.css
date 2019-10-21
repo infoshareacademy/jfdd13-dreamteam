@@ -24,6 +24,7 @@ body {
   margin: 1rem 0;
 }
 .heading__h3 {
+  font-family: Roboto, sans-serif;
   text-align: left;
   margin: 0 0 1rem;
 }
