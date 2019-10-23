@@ -34,6 +34,7 @@
 .check__span{
     font-size: 0.9rem;
     padding: 0.2rem 0;
+    text-align: center;
 }
 .check__input{
     width:2rem;
