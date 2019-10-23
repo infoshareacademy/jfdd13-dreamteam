@@ -196,9 +196,9 @@ body {
 }
 .card__info-name {
   align-self: flex-end;
+  width: 150px;
   border-bottom: 3px solid #BBDEFB;
   text-align: right;
-  width: 100%;
   padding: 0 0.5rem 0.5rem;
   text-decoration: none;
   color: #FFFFFF;
