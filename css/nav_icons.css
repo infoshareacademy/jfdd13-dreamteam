@@ -55,10 +55,6 @@
     text-align: center;
 }
 
-.logo {
-
-    margin: 10px;
-}
 
 @media all and (max-width: 700px) {
 
@@ -67,7 +63,8 @@
         background: none;
         padding: 0;
         position: fixed;
-        color: white;
+        width: 100vw;
+        background-color: white;
     }
 
     .navigation__point:last-child {
@@ -77,12 +74,12 @@
 
     .show_menu {
         display: block;
-        padding: 20px 20px 20px 24px;
+        padding: 20px;
         text-align: center;
-        min-width: 173px;
     }
 
-    .logo_plane {
+
+    .logo_container {
         display: none;
     }
 
@@ -109,11 +106,28 @@
 
     .show_menu,
     .navigation__link {
-        color: white;
+        color: black;
     }
 
     .icon {
         font-size: 60px;
+    }
+
+
+    .scrolled {
+        /*background: white;*/
+        transition: background 0.3s ease-out;
+    }
+
+    .scrolled a,
+    .scrolled .logo_plane {
+        color: black;
+        transition: color 0.3s ease-out;
+    }
+
+    .show_menu {
+
+        text-transform: uppercase;
     }
 
 }
@@ -137,10 +151,12 @@
 
     .navigation__point {
         margin-left: 10px;
+        border-bottom: 2px solid transparent;
+
     }
 
     .navigation__point:hover {
-        border-bottom: 2px solid #FFFFFF;
+        border-bottom: 2px solid white;
     }
 
     .show_menu {
@@ -148,30 +164,61 @@
         display: none;
     }
 
-    .logo_plane {
-        align-self: center;
+    .logo_text {
+
+        text-transform: uppercase;
+    }
+
+    .logo_container {
+        display: flex;
+        align-items: center;
         text-align: center;
-        font-size: 50px;
         color: #FFFFFF;
-        margin: 5px;
+        margin-left: 5px;
+        height: 58px;
+    }
+
+    .logo_text {
+
+        font-size: 20px;
+        padding: 7px 0;
+        margin-left: 10px;
+    }
+
+    .logo_img {
+
+        font-size: 35px;
     }
 
     .navigation__link,
     .show_menu {
-        color: #FFFFFF;;
+        color: #FFFFFF;
+        ;
     }
 
     .icon {
         font-size: 80px;
     }
 
-    .scrolled {
-        background: white;
-        transition: background 0.3s ease-out;
-    }
+}
 
-    .scrolled a, .scrolled .logo_plane {
-        color: black;
-        transition: color 0.3s ease-out;
-    }
+.scrolled {
+    background: white;
+    transition: background 0.6s ease-out;
+    border-bottom: 1px solid #BDBDBD;
+}
+
+.scrolled a,
+.scrolled .logo_container{
+    color: black;
+    transition: color 0.6s ease-out;
+}
+
+nav {
+    transition: background 0.6s ease-out;
+}
+nav a, nav .logo_container{
+
+    transition: background 0.6s ease-out;
+
 }
