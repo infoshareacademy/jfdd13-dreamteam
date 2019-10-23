@@ -213,3 +213,12 @@
     color: black;
     transition: color 0.6s ease-out;
 }
+
+nav {
+    transition: background 0.6s ease-out;
+}
+nav a, nav .logo_container{
+
+    transition: background 0.6s ease-out;
+
+}
