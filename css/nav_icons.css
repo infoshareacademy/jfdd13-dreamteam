@@ -6,7 +6,6 @@
 
 .navigation__point {
     background: rgba(1, 1, 1, 0);
-    /*padding: 20px 20px;*/
     flex: 0 0 auto;
     text-align: center;
     max-height: 60px;
@@ -29,7 +28,6 @@
 .icons {
     display: flex;
     height: 100%;
-    /*padding: 6rem 0 0;*/
     font-size: 50px;
     color: #fff;
     justify-content: center;
@@ -39,7 +37,7 @@
 
 .fig_icon {
 
-    /*margin: 10px;*/
+
     display: flex;
     flex-flow: column;
     margin: 5px 20px;
@@ -115,7 +113,6 @@
 
 
     .scrolled {
-        /*background: white;*/
         transition: background 0.3s ease-out;
     }
 
@@ -129,6 +126,15 @@
 
         text-transform: uppercase;
     }
+
+
+    .icons {
+
+        margin-top: 60px;
+
+
+    }
+
 
 }
 
@@ -200,6 +206,11 @@
         font-size: 80px;
     }
 
+    .icons_firstline,
+    .icons_nextline {
+
+        display: flex;
+    }
 }
 
 .scrolled {
@@ -209,7 +220,7 @@
 }
 
 .scrolled a,
-.scrolled .logo_container{
+.scrolled .logo_container {
     color: black;
     transition: color 0.6s ease-out;
 }
@@ -217,7 +228,9 @@
 nav {
     transition: background 0.6s ease-out;
 }
-nav a, nav .logo_container{
+
+nav a,
+nav .logo_container {
 
     transition: background 0.6s ease-out;
 
