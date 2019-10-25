@@ -163,7 +163,7 @@
         margin: 0;
     }
 
-    .nav:hover .list__container {
+    .list__container--hover {
         display: flex;
         flex-flow: column;
         background: #fff;
@@ -172,16 +172,6 @@
     .nav__mobile,
     .nav__link {
         color: black;
-    }
-
-    .scrolled {
-        transition: background 0.3s ease-out;
-    }
-
-    .scrolled a,
-    .scrolled .logo_plane {
-        color: black;
-        transition: color 0.3s ease-out;
     }
 
     /*styling icons now*/

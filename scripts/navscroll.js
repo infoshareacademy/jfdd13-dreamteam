@@ -1,12 +1,24 @@
+const nav = document.querySelector('.nav');
+const navMobile = document.querySelector('.nav__mobile');
+const navList__container = document.querySelector('.list__container');
+const navLinkArr = document.querySelectorAll('.nav__link');
 //nav animation onscroll
 
 window.addEventListener('scroll', function(e) {
-    // console.log(window.scrollY);
     if (window.scrollY > 80) {
-        document.querySelector('nav').classList.add('scrolled');
-        // document.querySelector('.show_menu').classList.add('scrolled');
+        nav.classList.add('scrolled');
     } else{
-        document.querySelector('nav').classList.remove('scrolled');
+        nav.classList.remove('scrolled');
     }
 });
 
+//add hover class to rwd menu
+navMobile.addEventListener('mouseover', () => {
+
+    navList__container.classList.add('list__container--hover');
+    navLinkArr.forEach((element) => {
+        element.addEventListener('click', () => {
+            navList__container.classList.remove('list__container--hover');
+        })
+    })
+});
