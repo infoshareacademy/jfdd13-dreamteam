@@ -235,3 +235,11 @@ nav .logo_container {
     transition: background 0.6s ease-out;
 
 }
+
+
+.active{
+
+background: yellow;
+
+
+}
