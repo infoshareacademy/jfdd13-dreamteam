@@ -22,3 +22,27 @@ navMobile.addEventListener('mouseover', () => {
         })
     })
 });
+
+const hero = document.querySelector('.hero');
+const functions = document.querySelector('.functions');
+const form = document.querySelector('.form');
+const footer = document.querySelector('.footer');
+
+window.addEventListener('scroll', () => {
+    let scrollY = window.scrollY + window.innerHeight;
+    const isActive = 'active';
+    if (scrollY < hero.offsetTop) {
+        navLinkArr[0].classList.toggle(isActive);
+    }
+    if (scrollY > hero.offsetTop && scrollY < functions.offsetTop){
+        navLinkArr[1].classList.toggle(isActive);
+    }
+    if (scrollY > functions.offsetTop && scrollY < form.offsetTop){
+        // navLinkArr[2].classList.remove(isActive);
+        navLinkArr[2].classList.toggle(isActive);
+        // navLinkArr[2].classList.add(isActive);
+    }
+    if (scrollY > form.offsetTop && scrollY < footer.offsetTop){
+        navLinkArr[3].classList.toggle(isActive);
+    }
+});
