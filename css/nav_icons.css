@@ -1,10 +1,9 @@
-.nav {
-
+.list__container {
     display: flex;
     list-style-type: none;
 }
 
-.list__container {
+.list__item {
     background: rgba(1, 1, 1, 0);
     flex: 0 0 auto;
     text-align: center;
@@ -132,12 +131,8 @@
 
 }
 
-
-.active{
-
-background: yellow;
-
-
+.active {
+    background-color: yellow;
 }
 
 @media all and (max-width: 700px) {
