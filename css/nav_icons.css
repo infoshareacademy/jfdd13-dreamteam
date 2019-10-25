@@ -1,10 +1,10 @@
-.navigation__list {
+.nav {
 
     display: flex;
     list-style-type: none;
 }
 
-.navigation__point {
+.list__container {
     background: rgba(1, 1, 1, 0);
     flex: 0 0 auto;
     text-align: center;
@@ -171,7 +171,7 @@ background: yellow;
         margin: 0;
     }
 
-    .nav:hover .list__container {
+    .list__container--hover {
         display: flex;
         flex-flow: column;
         background: #fff;
@@ -180,16 +180,6 @@ background: yellow;
     .nav__mobile,
     .nav__link {
         color: black;
-    }
-
-    .scrolled {
-        transition: background 0.3s ease-out;
-    }
-
-    .scrolled a,
-    .scrolled .logo_plane {
-        color: black;
-        transition: color 0.3s ease-out;
     }
 
     /*styling icons now*/
