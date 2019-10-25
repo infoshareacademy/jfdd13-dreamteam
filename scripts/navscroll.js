@@ -30,21 +30,3 @@ const hero = document.querySelector('.hero');
 const functions = document.querySelector('.functions');
 const form = document.querySelector('.form');
 const footer = document.querySelector('.footer');
-
-window.addEventListener('scroll', () => {
-    // let scrollY = window.scrollY + window.innerHeight;
-    let scrollY = window.scrollY;
-    const isActive = 'active';
-    if (scrollY < hero.offsetTop) {
-        navLinkArr[0].classList.toggle(isActive);
-    }
-    else if (scrollY > hero.offsetTop && scrollY < functions.offsetTop) {
-        navLinkArr[1].classList.toggle(isActive);
-    }
-    else if (scrollY > functions.offsetTop && scrollY < form.offsetTop){
-        navLinkArr[2].classList.toggle(isActive);
-    }
-    else if (scrollY >= (wrapper.offsetHeight - footer.offsetHeight)){
-        navLinkArr[3].classList.toggle(isActive);
-    }
-});
