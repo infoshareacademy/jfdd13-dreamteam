@@ -1,11 +1,11 @@
-.list__container {
+.navigation__list {
+
     display: flex;
     list-style-type: none;
 }
 
-.list__item {
+.navigation__point {
     background: rgba(1, 1, 1, 0);
-    /*padding: 20px 20px;*/
     flex: 0 0 auto;
     text-align: center;
     max-height: 60px;
@@ -129,6 +129,14 @@
 
 .nav .nav__link, .nav .logo_container {
     transition: background 0.6s ease-out;
+
+}
+
+
+.active{
+
+background: yellow;
+
 
 }
 
