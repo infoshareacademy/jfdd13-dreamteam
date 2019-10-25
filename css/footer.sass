@@ -1,17 +1,15 @@
 .footer__wrapper
   display: flex
-  margin: 0 auto
+  justify-content: center
   background: $primary-color
 .card
   display: flex
-  background-color: $primary-color-dark
-  border-right: 1px solid $divider-color
-  border-top: 1px solid #fff
-  color: $primary-color-text
   justify-content: center
   width: 258px
-  &:nth-child(3)
-    border: 4px solid red
+  border-right: 1px solid $divider-color
+  border-top: 1px solid #fff
+  background-color: $primary-color-dark
+  color: $primary-color-text
   &:hover .card__img-item
     transition: filter .2s ease-in-out
     filter: grayscale(0%)
@@ -93,7 +91,7 @@
   .footer__wrapper
     flex-wrap: wrap
   .card
-    //width: 50%
+    width: 50%
     &-aleksander
       border-top: 1px solid $divider-color
     &-rafal

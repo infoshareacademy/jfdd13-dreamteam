@@ -1,24 +1,24 @@
-.navigation__list {
-
+.list__container {
     display: flex;
     list-style-type: none;
 }
 
-.navigation__point {
+.list__item {
     background: rgba(1, 1, 1, 0);
+    /*padding: 20px 20px;*/
     flex: 0 0 auto;
     text-align: center;
     max-height: 60px;
 }
 
-.navigation__link,
-.show_menu {
+.nav__link,
+.nav__mobile {
     align-items: center;
     text-transform: uppercase;
     text-decoration: none;
 }
 
-.navigation__link {
+.nav__link {
     font-family: Be Vietnam, sans-serif;
     display: block;
     padding: 20px;
@@ -36,8 +36,6 @@
 }
 
 .fig_icon {
-
-
     display: flex;
     flex-flow: column;
     margin: 5px 20px;
@@ -48,99 +46,13 @@
 }
 
 .caption {
-
     font-size: 15px;
     text-align: center;
 }
 
-
-@media all and (max-width: 700px) {
-
-    .navigation {
-
-        background: none;
-        padding: 0;
-        position: fixed;
-        width: 100vw;
-        background-color: white;
-    }
-
-    .navigation__point:last-child {
-
-        margin: 0;
-    }
-
-    .show_menu {
-        display: block;
-        padding: 20px;
-        text-align: center;
-    }
-
-
-    .logo_container {
-        display: none;
-    }
-
-    .navigation__list {
-
-        display: none;
-    }
-
-    .navigation:hover .navigation__link {
-
-        color: black;
-    }
-
-    .navigation:hover .navigation__list {
-
-        display: flex;
-        flex-flow: column;
-        background: #fff;
-    }
-
-    .navigation__point:hover {
-        background: #BDBDBD;
-    }
-
-    .show_menu,
-    .navigation__link {
-        color: black;
-    }
-
-    .icon {
-        font-size: 60px;
-    }
-
-
-    .scrolled {
-        transition: background 0.3s ease-out;
-    }
-
-    .scrolled a,
-    .scrolled .logo_plane {
-        color: black;
-        transition: color 0.3s ease-out;
-    }
-
-    .show_menu {
-
-        text-transform: uppercase;
-    }
-
-
-    .icons {
-
-        margin-top: 60px;
-
-
-    }
-
-
-}
-
 @media all and (min-width: 701px) {
 
-    .navigation {
+    .nav {
         display: flex;
         justify-content: space-between;
         position: fixed;
@@ -150,29 +62,8 @@
         z-index: 2
     }
 
-    .navigation__menu {
-
-        justify-content: flex-start;
-    }
-
-    .navigation__point {
-        margin-left: 10px;
-        border-bottom: 2px solid transparent;
-
-    }
-
-    .navigation__point:hover {
-        border-bottom: 2px solid white;
-    }
-
-    .show_menu {
-
+    .nav__mobile {
         display: none;
-    }
-
-    .logo_text {
-
-        text-transform: uppercase;
     }
 
     .logo_container {
@@ -185,21 +76,28 @@
     }
 
     .logo_text {
-
         font-size: 20px;
         padding: 7px 0;
         margin-left: 10px;
+        text-transform: uppercase;
     }
 
     .logo_img {
-
         font-size: 35px;
     }
 
-    .navigation__link,
-    .show_menu {
-        color: #FFFFFF;
-        ;
+    .list__item {
+        margin-left: 10px;
+        border-bottom: 2px solid transparent;
+    }
+
+    .list__item:hover {
+        border-bottom: 2px solid white;
+    }
+
+    .nav__link,
+    .nav__mobile {
+        color: #FFFFFF;;
     }
 
     .icon {
@@ -219,19 +117,75 @@
     border-bottom: 1px solid #BDBDBD;
 }
 
-.scrolled a,
+.scrolled .nav__link,
 .scrolled .logo_container {
     color: black;
     transition: color 0.6s ease-out;
 }
 
-nav {
+.nav {
     transition: background 0.6s ease-out;
 }
 
-nav a,
-nav .logo_container {
-
+.nav .nav__link, .nav .logo_container {
     transition: background 0.6s ease-out;
 
+}
+
+@media all and (max-width: 700px) {
+
+    .nav {
+        position: fixed;
+        width: 100vw;
+        padding: 0;
+        background-color: white;
+    }
+
+    .nav__mobile {
+        display: block;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .logo_container {
+        display: none;
+    }
+
+    .list__container {
+        display: none;
+    }
+
+    .list__item:hover {
+        background: #BDBDBD;
+    }
+
+    .list__item:last-child {
+        margin: 0;
+    }
+
+    .nav:hover .list__container {
+        display: flex;
+        flex-flow: column;
+        background: #fff;
+    }
+
+    .nav__mobile,
+    .nav__link {
+        color: black;
+    }
+
+    .scrolled {
+        transition: background 0.3s ease-out;
+    }
+
+    .scrolled a,
+    .scrolled .logo_plane {
+        color: black;
+        transition: color 0.3s ease-out;
+    }
+
+    /*styling icons now*/
+    .icon {
+        font-size: 60px;
+    }
 }
