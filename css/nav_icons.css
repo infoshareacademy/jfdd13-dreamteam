@@ -1,12 +1,10 @@
 .list__container {
-
     display: flex;
     list-style-type: none;
 }
 
 .list__item {
     background: rgba(1, 1, 1, 0);
-    /*padding: 20px 20px;*/
     flex: 0 0 auto;
     text-align: center;
     max-height: 60px;
@@ -29,7 +27,6 @@
 .icons {
     display: flex;
     height: 100%;
-    /*padding: 6rem 0 0;*/
     font-size: 50px;
     color: #fff;
     justify-content: center;
@@ -38,8 +35,6 @@
 }
 
 .fig_icon {
-
-    /*margin: 10px;*/
     display: flex;
     flex-flow: column;
     margin: 5px 20px;
@@ -50,7 +45,6 @@
 }
 
 .caption {
-
     font-size: 15px;
     text-align: center;
 }
@@ -66,9 +60,11 @@
         background: rgba(25, 118, 210, 0.02);
         z-index: 2
     }
+
     .nav__mobile {
         display: none;
     }
+
     .logo_container {
         display: flex;
         align-items: center;
@@ -79,7 +75,6 @@
     }
 
     .logo_text {
-
         font-size: 20px;
         padding: 7px 0;
         margin-left: 10px;
@@ -87,10 +82,8 @@
     }
 
     .logo_img {
-
         font-size: 35px;
     }
-
 
     .list__item {
         margin-left: 10px;
@@ -103,8 +96,7 @@
 
     .nav__link,
     .nav__mobile {
-        color: #FFFFFF;
-        ;
+        color: #FFFFFF;;
     }
 
     .icon {
@@ -120,7 +112,7 @@
 }
 
 .scrolled .nav__link,
-.scrolled .logo_container{
+.scrolled .logo_container {
     color: black;
     transition: color 0.6s ease-out;
 }
@@ -128,8 +120,8 @@
 .nav {
     transition: background 0.6s ease-out;
 }
-.nav .nav__link, .nav .logo_container{
 
+.nav .nav__link, .nav .logo_container {
     transition: background 0.6s ease-out;
 
 }
@@ -154,7 +146,6 @@
     }
 
     .list__container {
-
         display: none;
     }
 
@@ -163,17 +154,14 @@
     }
 
     .list__item:last-child {
-
         margin: 0;
     }
 
     .nav:hover .list__container {
-
         display: flex;
         flex-flow: column;
         background: #fff;
     }
-
 
     .nav__mobile,
     .nav__link {
@@ -181,7 +169,6 @@
     }
 
     .scrolled {
-        /*background: white;*/
         transition: background 0.3s ease-out;
     }
 
@@ -191,13 +178,8 @@
         transition: color 0.3s ease-out;
     }
 
-
-
     /*styling icons now*/
     .icon {
         font-size: 60px;
     }
-
-
-
 }
