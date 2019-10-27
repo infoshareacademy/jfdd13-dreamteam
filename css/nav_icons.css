@@ -103,8 +103,7 @@
         font-size: 80px;
     }
 
-    .icons_firstline,
-    .icons_nextline {
+    .icons__col {
 
         display: flex;
     }
