@@ -34,17 +34,17 @@
     align-items: center;
 }
 
-.fig_icon {
+.icons__container {
     display: flex;
     flex-flow: column;
     margin: 5px 20px;
 }
 
-.icon {
+.icons__item {
     text-align: center;
 }
 
-.caption {
+.icons__caption {
     font-size: 15px;
     text-align: center;
 }
@@ -99,7 +99,7 @@
         color: #FFFFFF;;
     }
 
-    .icon {
+    .icons__item {
         font-size: 80px;
     }
 
@@ -177,7 +177,7 @@
     }
 
     /*styling icons now*/
-    .icon {
+    .icons__item {
         font-size: 60px;
     }
 }
