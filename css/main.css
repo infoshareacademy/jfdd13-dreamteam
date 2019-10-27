@@ -157,7 +157,8 @@ body {
 .footer__wrapper {
   display: flex;
   justify-content: center;
-  background: #2196F3;
+  background: #1976D2;
+  border-top: 1px solid #fff;
 }
 
 .card {
@@ -165,13 +166,15 @@ body {
   justify-content: center;
   width: 258px;
   border-right: 1px solid #BDBDBD;
-  border-top: 1px solid #fff;
   background-color: #1976D2;
   color: #FFFFFF;
 }
 .card:hover .card__img-item {
   transition: filter 0.2s ease-in-out;
   filter: grayscale(0%);
+}
+.card:first-child {
+  border-left: 1px solid #fff;
 }
 .card__img-container {
   padding: 1rem;
@@ -259,6 +262,9 @@ body {
   .card {
     width: 100%;
     justify-content: center;
+  }
+  .card:first-child {
+    border-left: none;
   }
   .card-martyna {
     border-top: 1px solid #BDBDBD;
