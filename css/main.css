@@ -174,7 +174,7 @@ body {
   filter: grayscale(0%);
 }
 .card:first-child {
-  border-left: 1px solid #fff;
+  border-left: 1px solid #BDBDBD;
 }
 .card__img-container {
   padding: 1rem;
@@ -251,6 +251,9 @@ body {
   .card {
     width: 50%;
   }
+  .card:first-child {
+    border-left: none;
+  }
   .card-aleksander {
     border-top: 1px solid #BDBDBD;
   }
@@ -262,9 +265,6 @@ body {
   .card {
     width: 100%;
     justify-content: center;
-  }
-  .card:first-child {
-    border-left: none;
   }
   .card-martyna {
     border-top: 1px solid #BDBDBD;
