@@ -224,6 +224,9 @@ body {
 }
 
 @media all and (min-width: 1366px) {
+  .card {
+    width: 270px;
+  }
   .card__img-container {
     padding: 1rem;
   }
