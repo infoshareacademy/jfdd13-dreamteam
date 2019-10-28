@@ -198,4 +198,26 @@ body {
   align-self: flex-end;
 }
 
+@media all and (max-width: 1200px) {
+  .grid__container--inner {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    justify-content: center;
+  }
+
+  .heading__h4--authors {
+    margin: 0 0 1rem 0;
+  }
+
+  .card__info {
+    width: auto;
+  }
+
+  .card__icons {
+    margin: 1rem 0;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
