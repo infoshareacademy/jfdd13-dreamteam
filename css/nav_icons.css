@@ -130,7 +130,11 @@
 }
 
 .active {
-    background-color: yellow;
+
+    background-color: #2196F3;
+    border-bottom: 3px solid #2196F3;
+    color: white !important;
+
 }
 
 @media all and (max-width: 700px) {

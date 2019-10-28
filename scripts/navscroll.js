@@ -6,7 +6,7 @@ const navLinkArr = document.querySelectorAll('.nav__link');
 function navAnimation() {
 
     window.addEventListener('scroll', function (e) {
-        if (window.scrollY > 80) {
+        if (window.scrollY > 20) {
             nav.classList.add('scrolled');
         } else {
             nav.classList.remove('scrolled');
@@ -39,13 +39,13 @@ function navFocus() { //underline nav item on focus
     window.addEventListener('scroll', () => {
 
         let scrollY = window.scrollY;
-        const isActive = 'active';
+        const isActive = 'active'
 
         navLinkArr.forEach((element) => {
 
             element.classList.remove(isActive);
 
-            if (scrollY >= 0 && scrollY < hero.offsetHeight / 2) {
+            if (scrollY >= 20 && scrollY < hero.offsetHeight / 2) {
                 navLinkArr[0].classList.add(isActive);
             } else if (scrollY > hero.offsetHeight / 2 && scrollY < hero.offsetHeight + functions.offsetHeight / 2) {
                 navLinkArr[1].classList.add(isActive);
