@@ -1,123 +1,30 @@
-.section__container
-  display: flex
-.authors
-  &__wrapper
-    display: flex
-    justify-content: center
-    flex-wrap: wrap
-    background: $primary-color-dark
-    border-top: 1px solid #fff
-    width: 50%
-    height: 100%
-    min-height: 300px
-  &__output
-    display: block
-    width: 50%
-    background-color: red
+.grid
+  &__container
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 2rem
+    padding: 1rem
+    &--inner
+      grid-template-rows: 1fr 1fr
+      grid-gap: 0
 .card
   display: flex
-  justify-content: center
-  width: 258px
-  max-width: 50%
-  border-right: 1px solid $divider-color
-  background-color: $primary-color-dark
-  color: $primary-color-text
-  &:hover .card__img-item
-    transition: filter .2s ease-in-out
-    filter: grayscale(0%)
-  &:first-child
-    border-left: 1px solid $divider-color
+  height: 150px
   &__img
-    &-container
-      padding: 1rem
-    &-item
-      display: block
-      border-radius: 5rem
-      filter: grayscale(80%)
-      will-change: transition
-      max-width: 75px
-      border: 3px solid white
+    display: block
+    height: 75px
+    border-radius: 50%
+    border: 3px solid $accent-color
+    margin: .5rem
   &__info
-    &-container
-      display: flex
-      flex-direction: column
-      align-items: center
-      justify-content: center
-    &:visited
-      color: #fff
-    &-name
-      align-self: flex-end
-      width: 150px
-      border-bottom: 3px solid $primary-color-light
-      text-align: right
-      //padding: 0 .5rem .5rem
-      text-decoration: none
-      color: $primary-color-text
-    &-links
-      align-self: flex-end
-    &__link
-      &-icon > i
-        font-size: 1.5rem
-  &__link
-    &-container
-      &:last-child
-        padding: .5rem .5rem 0 0
-    &-item
-      text-decoration: none
-      color: #fff
-      &:visited
-        text-decoration: none
-        color: #fff
-
-@media all and (min-width: 1366px)
-  .authors__wrapper
-
-  .card
-    width: 330px
-    max-height: 140px
-    justify-content: space-around
-    &-aleksander
-      &  .heading__h4
-        font-size: 1rem
-
-    &__img
-      &-container
-        padding: 1rem
-    &__info
-      &-name
-        font-size: 1.2rem
-        padding: 0 0 .5rem 0
-        width: 100%
-      //  following - links is a container for &__link-icon and -item
-      &-links
-        padding: 1rem 0
-    &__link
-      &-item
-        align-self: flex-end
-        text-decoration: none
-        color: $primary-color-text
-        &:visited
-          color: #fff
-@media all and  (max-width: 1000px)
-  //and (max-width: 1365px)
-  .authors__wrapper
-    flex-wrap: wrap
-  .card
-    width: 50%
-    &:first-child
-      border-left: none
-    &-rafal
-      border-top: 1px solid $divider-color
-@media all and (max-width: 550px)
-  .card
+    display: flex
+    flex-flow: column
+    padding: .5rem
     width: 100%
-    justify-content: center
-    &-martyna
-      border-top: 1px solid $divider-color
-    &__img-container
-      padding: 1rem
-
-
-//&-michal
-//&-martyna
-//&-rafal
+.heading__h4--authors
+  width: 100%
+  align-self: center
+.card__icons
+  display: flex
+  flex-flow: column
+  align-self: flex-end
