@@ -54,9 +54,7 @@ function navFocus() { //underline nav item on focus
             } else if (scrollY > hero.offsetHeight + functions.offsetHeight + form.offsetHeight / 2) {
                 navLinkArr[3].classList.add(isActive);
             }
-
         })
-
     });
 
 }
