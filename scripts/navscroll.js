@@ -5,15 +5,15 @@ const navLinkArr = document.querySelectorAll('.nav__link');
 //nav animation onscroll
 function navAnimation() {
 
-    window.addEventListener('scroll', function(e) {
+    window.addEventListener('scroll', function (e) {
         if (window.scrollY > 80) {
             nav.classList.add('scrolled');
-        } else{
+        } else {
             nav.classList.remove('scrolled');
         }
     });
 
-//add hover class to rwd menu
+    //add hover class to rwd menu
     navMobile.addEventListener('mouseover', () => {
 
         navList__container.classList.add('list__container--hover');
@@ -37,21 +37,26 @@ const footer = document.querySelector('.footer');
 function navFocus() { //underline nav item on focus
 
     window.addEventListener('scroll', () => {
-        // let scrollY = window.scrollY + window.innerHeight;
+
         let scrollY = window.scrollY;
         const isActive = 'active';
-        if (scrollY < hero.offsetTop) {
-            navLinkArr[0].classList.toggle(isActive);
-        }
-        else if (scrollY > hero.offsetTop && scrollY < functions.offsetTop) {
-            navLinkArr[1].classList.toggle(isActive);
-        }
-        else if (scrollY > functions.offsetTop && scrollY < form.offsetTop){
-            navLinkArr[2].classList.toggle(isActive);
-        }
-        else if (scrollY >= (wrapper.offsetHeight - footer.offsetHeight)){
-            navLinkArr[3].classList.toggle(isActive);
-        }
+
+        navLinkArr.forEach((element) => {
+
+            element.classList.remove(isActive);
+
+            if (scrollY >= 0 && scrollY < hero.offsetHeight / 2) {
+                navLinkArr[0].classList.add(isActive);
+            } else if (scrollY > hero.offsetHeight / 2 && scrollY < hero.offsetHeight + functions.offsetHeight / 2) {
+                navLinkArr[1].classList.add(isActive);
+             } else if (scrollY > hero.offsetHeight + functions.offsetHeight / 2 && scrollY < hero.offsetHeight + functions.offsetHeight + form.offsetHeight / 2) {
+                navLinkArr[2].classList.add(isActive);
+            } else if (scrollY > hero.offsetHeight + functions.offsetHeight + form.offsetHeight / 2) {
+                navLinkArr[3].classList.add(isActive);
+            }
+
+        })
+
     });
 
 }
