@@ -34,17 +34,17 @@
     align-items: center;
 }
 
-.fig_icon {
+.icons__container {
     display: flex;
     flex-flow: column;
     margin: 5px 20px;
 }
 
-.icon {
+.icons__item {
     text-align: center;
 }
 
-.caption {
+.icons__caption {
     font-size: 15px;
     text-align: center;
 }
@@ -58,7 +58,6 @@
         width: 100%;
         top: 0;
         background: rgba(25, 118, 210, 0.02);
-        z-index: 2
     }
 
     .nav__mobile {
@@ -99,12 +98,11 @@
         color: #FFFFFF;;
     }
 
-    .icon {
+    .icons__item {
         font-size: 80px;
     }
 
-    .icons_firstline,
-    .icons_nextline {
+    .icons__col {
 
         display: flex;
     }
@@ -142,6 +140,7 @@
         width: 100vw;
         padding: 0;
         background-color: white;
+        z-index: 2
     }
 
     .nav__mobile {
@@ -178,7 +177,7 @@
     }
 
     /*styling icons now*/
-    .icon {
+    .icons__item {
         font-size: 60px;
     }
 }
