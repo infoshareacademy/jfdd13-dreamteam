@@ -154,17 +154,31 @@ body {
     max-width: inherit;
   }
 }
-.footer__wrapper {
+.section__container {
+  display: flex;
+}
+
+.authors__wrapper {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   background: #1976D2;
   border-top: 1px solid #fff;
+  width: 50%;
+  height: 100%;
+  padding: 1rem;
+}
+.authors__output {
+  width: 50%;
+  height: 100%;
+  background-color: red;
 }
 
 .card {
   display: flex;
   justify-content: center;
   width: 258px;
+  max-width: 50%;
   border-right: 1px solid #BDBDBD;
   background-color: #1976D2;
   color: #FFFFFF;
@@ -247,7 +261,7 @@ body {
   }
 }
 @media all and (max-width: 1000px) {
-  .footer__wrapper {
+  .authors__wrapper {
     flex-wrap: wrap;
   }
 
