@@ -9,10 +9,10 @@
     border-top: 1px solid #fff
     width: 50%
     height: 100%
-    padding: 1rem
+    min-height: 300px
   &__output
+    display: block
     width: 50%
-    height: 100%
     background-color: red
 .card
   display: flex
@@ -42,7 +42,7 @@
       display: flex
       flex-direction: column
       align-items: center
-      justify-content: space-around
+      justify-content: center
     &:visited
       color: #fff
     &-name
@@ -50,7 +50,7 @@
       width: 150px
       border-bottom: 3px solid $primary-color-light
       text-align: right
-      padding: 0 .5rem .5rem
+      //padding: 0 .5rem .5rem
       text-decoration: none
       color: $primary-color-text
     &-links
@@ -70,15 +70,24 @@
         color: #fff
 
 @media all and (min-width: 1366px)
+  .authors__wrapper
+
   .card
-    width: 270px
+    width: 330px
+    max-height: 140px
+    justify-content: space-around
+    &-aleksander
+      &  .heading__h4
+        font-size: 1rem
+
     &__img
       &-container
         padding: 1rem
     &__info
       &-name
-        font-size: 1.5rem
-        padding: 1rem 0
+        font-size: 1.2rem
+        padding: 0 0 .5rem 0
+        width: 100%
       //  following - links is a container for &__link-icon and -item
       &-links
         padding: 1rem 0
@@ -97,8 +106,6 @@
     width: 50%
     &:first-child
       border-left: none
-    &-aleksander
-      border-top: 1px solid $divider-color
     &-rafal
       border-top: 1px solid $divider-color
 @media all and (max-width: 550px)

@@ -166,11 +166,11 @@ body {
   border-top: 1px solid #fff;
   width: 50%;
   height: 100%;
-  padding: 1rem;
+  min-height: 300px;
 }
 .authors__output {
+  display: block;
   width: 50%;
-  height: 100%;
   background-color: red;
 }
 
@@ -205,7 +205,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 .card__info:visited {
   color: #fff;
@@ -215,7 +215,6 @@ body {
   width: 150px;
   border-bottom: 3px solid #BBDEFB;
   text-align: right;
-  padding: 0 0.5rem 0.5rem;
   text-decoration: none;
   color: #FFFFFF;
 }
@@ -239,14 +238,20 @@ body {
 
 @media all and (min-width: 1366px) {
   .card {
-    width: 270px;
+    width: 330px;
+    max-height: 140px;
+    justify-content: space-around;
+  }
+  .card-aleksander .heading__h4 {
+    font-size: 1rem;
   }
   .card__img-container {
     padding: 1rem;
   }
   .card__info-name {
-    font-size: 1.5rem;
-    padding: 1rem 0;
+    font-size: 1.2rem;
+    padding: 0 0 0.5rem 0;
+    width: 100%;
   }
   .card__info-links {
     padding: 1rem 0;
@@ -270,9 +275,6 @@ body {
   }
   .card:first-child {
     border-left: none;
-  }
-  .card-aleksander {
-    border-top: 1px solid #BDBDBD;
   }
   .card-rafal {
     border-top: 1px solid #BDBDBD;
