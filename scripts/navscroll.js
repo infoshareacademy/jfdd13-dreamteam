@@ -49,7 +49,7 @@ function navFocus() { //underline nav item on focus
                 navLinkArr[0].classList.add(isActive);
             } else if (scrollY > hero.offsetHeight / 2 && scrollY < hero.offsetHeight + functions.offsetHeight / 2) {
                 navLinkArr[1].classList.add(isActive);
-             } else if (scrollY > hero.offsetHeight + functions.offsetHeight / 2 && scrollY < hero.offsetHeight + functions.offsetHeight + form.offsetHeight / 2) {
+            } else if (scrollY > hero.offsetHeight + functions.offsetHeight / 2 && scrollY < hero.offsetHeight + functions.offsetHeight + form.offsetHeight / 2) {
                 navLinkArr[2].classList.add(isActive);
             } else if (scrollY > hero.offsetHeight + functions.offsetHeight + form.offsetHeight / 2) {
                 navLinkArr[3].classList.add(isActive);
@@ -61,5 +61,27 @@ function navFocus() { //underline nav item on focus
 
 }
 
+
+function calculator () {
+    var slider = document.getElementById("myRange");
+    var slider1 = document.getElementById("myRange1");
+    var output = document.getElementById("demo");
+    var output1 = document.getElementById("demo1");
+    output.innerHTML = slider.value;
+    output1.innerHTML = slider1.value;
+
+    slider.oninput = function () {
+        output.innerHTML = this.value;
+    }
+
+
+    slider1.oninput = function () {
+
+        output1.innerHTML = this.value;
+
+    }
+}
+
 navAnimation();
 navFocus();
+calculator();
