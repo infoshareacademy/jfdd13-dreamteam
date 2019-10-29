@@ -114,12 +114,16 @@ body {
   flex-direction: row;
   justify-content: space-around;
   -webkit-justify-content: space-evenly;
+  border-bottom: 1px solid #BDBDBD;
 }
 .functions__container-row {
   display: flex;
   flex-direction: row;
   max-width: calc(50vw - 2*16px);
   margin-bottom: 1rem;
+}
+.functions__container-row:last-child {
+  border-bottom: none;
 }
 .functions__icon {
   padding: 1rem;

@@ -8,11 +8,15 @@
     //background: $primary-color-dark
     justify-content: space-around
     -webkit-justify-content: space-evenly
+    border-bottom: 1px solid $divider-color
     &-row
       display: flex
       flex-direction: row
       max-width: calc(50vw - 2*16px)
       margin-bottom: 1rem
+      &:last-child
+        border-bottom: none
+
 
   &__icon
     padding: 1rem
