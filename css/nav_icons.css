@@ -1,3 +1,19 @@
+/*nav styles*/
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(25, 118, 210, 0.02);
+    transition: background 0.6s ease-out;
+}
+
+.nav .nav__link, .nav .logo_container {
+    transition: background 0.6s ease-out;
+
+}
 .list__container {
     display: flex;
     list-style-type: none;
@@ -23,6 +39,18 @@
     padding: 20px;
     margin: 0;
 }
+
+.scrolled {
+    background: white;
+    transition: background 0.6s ease-out;
+}
+.scrolled .nav__link,
+.scrolled .logo_container {
+    color: black;
+    transition: color 0.6s ease-out;
+}
+
+/*hero icons styles*/
 
 .icons {
     display: flex;
@@ -50,16 +78,6 @@
 }
 
 @media all and (min-width: 701px) {
-
-    .nav {
-        display: flex;
-        justify-content: space-between;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        background: rgba(25, 118, 210, 0.02);
-    }
-
     .nav__mobile {
         display: none;
     }
@@ -105,42 +123,20 @@
 
         display: flex;
     }
-}
 
-.scrolled {
-    background: white;
-    transition: background 0.6s ease-out;
-    border-bottom: 1px solid #BDBDBD;
-}
+    .active {
 
-.scrolled .nav__link,
-.scrolled .logo_container {
-    color: black;
-    transition: color 0.6s ease-out;
-}
+        background-color: #2196F3;
+        border-bottom: 3px solid #2196F3;
+        color: white !important;
 
-.nav {
-    transition: background 0.6s ease-out;
-}
-
-.nav .nav__link, .nav .logo_container {
-    transition: background 0.6s ease-out;
-
-}
-
-.active {
-
-    background-color: #2196F3;
-    border-bottom: 3px solid #2196F3;
-    color: white !important;
-
+    }
 }
 
 @media all and (max-width: 700px) {
 
     .nav {
-        position: fixed;
-        width: 100vw;
+        display: block;
         padding: 0;
         background-color: white;
         z-index: 2
@@ -160,7 +156,7 @@
         display: none;
     }
 
-    .list__item:hover {
+    .list__item:hover, .active:hover {
         background: #BDBDBD;
     }
 
