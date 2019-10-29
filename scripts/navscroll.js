@@ -62,26 +62,56 @@ function navFocus() { //underline nav item on focus
 }
 
 
-function calculator () {
-    var slider = document.getElementById("myRange");
-    var slider1 = document.getElementById("myRange1");
-    var output = document.getElementById("demo");
-    var output1 = document.getElementById("demo1");
-    output.innerHTML = slider.value;
-    output1.innerHTML = slider1.value;
+function sliderWorking() {
+    let sliderPeople = document.getElementById("myRange");
+    let sliderDays = document.getElementById("myRange1");
+    let outputPeople = document.getElementById("demo");
+    let outputDays = document.getElementById("demo1");
+    outputPeople.innerHTML = sliderPeople.value;
+    outputDays.innerHTML = sliderDays.value;
 
-    slider.oninput = function () {
-        output.innerHTML = this.value;
+    sliderPeople.oninput = function () {
+        outputPeople.innerHTML = this.value;
     }
 
 
-    slider1.oninput = function () {
+    sliderDays.oninput = function () {
 
-        output1.innerHTML = this.value;
+        outputDays.innerHTML = this.value;
 
     }
+
+} 
+
+let buttonPrice = document.getElementById("button_calculator");
+
+function checkPrice(){
+    let price = 5000;
+    let discount = 0;
+    let checkbox = document.getElementById("checkbox_dog");
+    
+
+    if (sliderPeople.value >2  && sliderPeople.value < 7) {
+        discount = 5
+    } else if (sliderPeople.value >= 7 ) {
+        discount = 10
+    }
+
+    if (sliderDays.value > 7) {
+        discount += 5;
+    }
+
+    price = price * 1 - (discount/100);
+
+    if (checkbox.checked) {
+        price = price + 5;
+    }  
+    
 }
+
+buttonPrice.addEventListener('click', checkPrice());
+
 
 navAnimation();
 navFocus();
-calculator();
+sliderWorking();
