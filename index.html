@@ -19,7 +19,7 @@
     <header class="header">
         <nav class="nav">
             <div class="logo_container">
-                <div class="logo_img"><i class="far fa-paper-plane"></i></div>
+                <div class="logo_img"> <i class="far fa-paper-plane"></i></div>
                 <span class="logo_text">way.to</span>
             </div>
             <a class="nav__mobile"><i class="far fa-paper-plane"></i>way.to</a>
@@ -83,8 +83,7 @@
                         </div>
                         <div class="heading__paragraph-container">
                             <h3 class="heading heading__h3">O portalu</h3>
-                            <p class="heading__paragraph-item">W tym miejscu znajdziesz oferty, które dopasujesz zgodnie
-                                ze swoimi preferencjami.
+                            <p class="heading__paragraph-item">Dzięki wyszukiwarce z różnymi filtrami, które uwzględniają m.in. prognozę pogody, wydatki oraz kierunek podróży, spośród wielu ofert dostępnych na naszym portalu, znajdziesz idealną dla siebie.
                             </p>
                         </div>
                     </div>
@@ -93,9 +92,8 @@
                             <i class="fas fa-hotel"></i>
                         </div>
                         <div class="heading__paragraph-container">
-                            <h3 class="heading heading__h3">Jak rezerwować</h3>
-                            <p class="heading__paragraph-item">Znajdź miejsce, które Cię interesuje, wybierz liczbę
-                                osób, długość pobytu i rezerwuj.</p>
+                            <h3 class="heading heading__h3">Jak       rezerwować</h3>
+                            <p class="heading__paragraph-item">Znajdź miejsce, które Cię interesuje. Użyj prostego w obsłudze suwaka, żeby wybrać liczbę osób, długość pobytu i sprawdź, ile będzie Cię kosztowała wycieczka. Potwierdź, żeby dokonać rezerwacji. </p>
                         </div>
 
                     </div>
@@ -106,8 +104,7 @@
                         <div class="heading__paragraph-container">
                             <h3 class="heading heading__h3">Oferta dnia</h3>
                             <p class="heading__paragraph-item">
-                                Na naszym portalu codziennie pojawia się oferta dnia, która uwzględnia największe
-                                zniżki, związane najczęściej z bliskim terminem wyjazdu.
+                                Na naszym portalu codziennie pojawia się oferta dnia, która uwzględnia największe zniżki, związane najczęściej z bliskim terminem wyjazdu.
                             </p>
                         </div>
 
@@ -158,19 +155,18 @@
                         <div class="heading__paragraph-container">
                             <h3 class="heading heading__h3">Zarys kosztów</h3>
                             <p class="heading__paragraph-item">
-                                Sprawdź, ile może wynieść Cię pobyt, transport do i na miejscu oraz życie codzienne.
-                            </p>
+                                Sprawdź, ile może wynieść Cię pobyt, transport do i na miejscu oraz życie codzienne. Dzięki tym informacjom ceny nie będą dla Ciebie zaskoczeniem i wycieczka nie zrujnuje domowego budeżetu.
+                        </p>
                         </div>
                     </div>
                     <div class="functions__container-row">
                         <div class="functions__icon">
-                            <i class="far fa-handshake"></i>
+                                <i class="far fa-handshake"></i>
                         </div>
                         <div class="heading__paragraph-container">
                             <h3 class="heading heading__h3">Współpraca</h3>
                             <p class="heading__paragraph-item">
-                                Współpracujemy z wieloma podmiotami - od dużych hoteli po kameralne kwatery. Jeśli
-                                jesteś właścicielem hotelu, pensjonatu czy apartamentu, skontaktuj się z nami!
+                                Współpracujemy z wieloma podmiotami - od dużych hoteli po kameralne kwatery. Jeśli jesteś właścicielem hotelu, pensjonatu czy apartamentu, skontaktuj się z nami!
                             </p>
                         </div>
                     </div>
@@ -196,12 +192,25 @@
                     </div>
                 </form>
             </div>
-
+            <div class="calculator">
+                    <div class="slidecontainer">
+                        <p class="title_range">Ustaw liczbę uczestników za pomocą suwaka ponizej:</p>
+                        <input type="range" min="1" max="10" class="slider" id="myRange">
+                        <p>Wybrana liczba uczestników: <span id="demo"></span></p>
+                    </div>
+                    <div class="slidecontainer">
+                        <p class="title_range">Ustaw liczbę dni planowanego wyjazdu za pomocą suwaka ponizej:</p>
+                        <input type="range" min="1" max="14" class="slider" id="myRange1">
+                        <p>Wybrana liczba dni: <span id="demo1"></span></p>
+                    </div>
+                    <div><span>Czy zabierasz na wycieczkę psa? Zaznacz pole, jeśli tak: </span><input type="checkbox" id="checkbox_dog"></div>
+                    <button id="button_calculator">Sprawdź cenę!</button>
+                </div>
         </section>
         <section class="authors" id="footer">
             <div class="footer__info">
                 <h2 class="heading heading__h2">Informacje o autorach</h2>
-                <span style="text-align: center; margin: 1rem">Wybierz wizytówkę i skontaktuj się z nami!</span>
+                <p style="text-align: center; margin: 1rem">Wybierz wizytówkę i skontaktuj się z nami!</p>
             </div>
             <div class="section__container">
 
