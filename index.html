@@ -19,7 +19,7 @@
     <header class="header">
         <nav class="nav">
             <div class="logo_container">
-                <div class="logo_img"><i class="far fa-paper-plane"></i></div>
+                <div class="logo_img"> <i class="far fa-paper-plane"></i></div>
                 <span class="logo_text">way.to</span>
             </div>
             <a class="nav__mobile"><i class="far fa-paper-plane"></i>way.to</a>
@@ -83,8 +83,7 @@
                         </div>
                         <div class="heading__paragraph-container">
                             <h3 class="heading heading__h3">O portalu</h3>
-                            <p class="heading__paragraph-item">W tym miejscu znajdziesz oferty, które dopasujesz zgodnie
-                                ze swoimi preferencjami.
+                            <p class="heading__paragraph-item">Dzięki wyszukiwarce z różnymi filtrami, które uwzględniają m.in. prognozę pogody, wydatki oraz kierunek podróży, spośród wielu ofert dostępnych na naszym portalu, znajdziesz idealną dla siebie.
                             </p>
                         </div>
                     </div>
@@ -106,8 +105,7 @@
                         <div class="heading__paragraph-container">
                             <h3 class="heading heading__h3">Oferta dnia</h3>
                             <p class="heading__paragraph-item">
-                                Na naszym portalu codziennie pojawia się oferta dnia, która uwzględnia największe
-                                zniżki, związane najczęściej z bliskim terminem wyjazdu.
+                                Na naszym portalu codziennie pojawia się oferta dnia, która uwzględnia największe zniżki, związane najczęściej z bliskim terminem wyjazdu.
                             </p>
                         </div>
 
@@ -118,8 +116,7 @@
                         </div>
                         <div class="heading__paragraph-container">
                             <h3 class="heading heading__h3">Polityka prywatności</h3>
-                            <p class="heading__paragraph-item">Polityka prywatności służy jako pomoc w zrozumieniu,
-                                jakie dane zbieramy
+                            <p class="heading__paragraph-item">Polityka prywatności służy jako pomoc w zrozumieniu, jakie dane zbieramy
                                 i w jakim celu oraz do czego je wykorzystujemy.</p>
                         </div>
                     </div>
@@ -131,14 +128,13 @@
                         </div>
                         <div class="heading__paragraph-container">
                             <h3 class="heading heading__h3">Opinie</h3>
-                            <p class="heading__paragraph-item">Przy każdej wycieczce możesz sprawdzić opinie klientów,
-                                którzy z niej skorzystali, co z pewnością pomoże uniknąć nieprzyjemnej niespodzianki.
+                            <p class="heading__paragraph-item">Przy każdej wycieczce możesz sprawdzić opinie klientów, którzy z niej skorzystali, co z pewnością pomoże uniknąć nieprzyjemnej niespodzianki.
                             </p>
                         </div>
                     </div>
                     <div class="functions__container-row">
                         <div class="functions__icon">
-                            <i class="fas fa-phone"></i>
+                        <i class="fas fa-phone"></i>
                         </div>
                         <div class="heading__paragraph-container">
                             <h3 class="heading heading__h3">Kontakt</h3>
@@ -158,8 +154,8 @@
                         <div class="heading__paragraph-container">
                             <h3 class="heading heading__h3">Zarys kosztów</h3>
                             <p class="heading__paragraph-item">
-                                Sprawdź, ile może wynieść Cię pobyt, transport do i na miejscu oraz życie codzienne.
-                            </p>
+                                Sprawdź, ile może wynieść Cię pobyt, transport do i na miejscu oraz życie codzienne. Dzięki tym informacjom ceny nie będą dla Ciebie zaskoczeniem i wycieczka nie zrujnuje domowego budeżetu.
+                        </p>
                         </div>
                     </div>
                     <div class="functions__container-row">
@@ -169,8 +165,7 @@
                         <div class="heading__paragraph-container">
                             <h3 class="heading heading__h3">Współpraca</h3>
                             <p class="heading__paragraph-item">
-                                Współpracujemy z wieloma podmiotami - od dużych hoteli po kameralne kwatery. Jeśli
-                                jesteś właścicielem hotelu, pensjonatu czy apartamentu, skontaktuj się z nami!
+                                Współpracujemy z wieloma podmiotami - od dużych hoteli po kameralne kwatery. Jeśli jesteś właścicielem hotelu, pensjonatu czy apartamentu, skontaktuj się z nami!
                             </p>
                         </div>
                     </div>
@@ -196,7 +191,20 @@
                     </div>
                 </form>
             </div>
-
+            <div class="calculator">
+                    <div class="slidecontainer">
+                        <p class="title_range">Ustaw liczbę uczestników za pomocą suwaka ponizej:</p>
+                        <input type="range" min="1" max="10" class="slider" id="myRange">
+                        <p>Wybrana liczba uczestników: <span id="demo"></span></p>
+                    </div>
+                    <div class="slidecontainer">
+                        <p class="title_range">Ustaw liczbę dni planowanego wyjazdu za pomocą suwaka ponizej:</p>
+                        <input type="range" min="1" max="14" class="slider" id="myRange1">
+                        <p>Wybrana liczba dni: <span id="demo1"></span></p>
+                    </div>
+                    <div><span>Czy zabierasz na wycieczkę psa? Zaznacz pole, jeśli tak: </span><input type="checkbox" id="checkbox_dog"></div>
+                    <button id="button_calculator">Sprawdź cenę!</button>
+                </div>
         </section>
         <section class="authors" id="footer">
             <div class="footer__info">
@@ -311,6 +319,6 @@
 <script src="scripts/navscroll.js"></script>
 <script src="scripts/cookies.js"></script>
 <script src="scripts/mail_storage.js"></script>
-<script src="scripts/authors.js"></script>
+<script src="scripts/calculator.js"></script>
 </body>
 </html>
