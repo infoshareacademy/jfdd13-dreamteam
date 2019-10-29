@@ -1,10 +1,13 @@
+const sliderPeople = document.getElementById("myRange");
+const sliderDays = document.getElementById("myRange1");
+const outputPeople = document.getElementById("demo");
+const outputDays = document.getElementById("demo1");
+outputPeople.innerHTML = sliderPeople.value;
+outputDays.innerHTML = sliderDays.value;
+
+
 function sliderWorking() {
-    let sliderPeople = document.getElementById("myRange");
-    let sliderDays = document.getElementById("myRange1");
-    let outputPeople = document.getElementById("demo");
-    let outputDays = document.getElementById("demo1");
-    outputPeople.innerHTML = sliderPeople.value;
-    outputDays.innerHTML = sliderDays.value;
+
 
     sliderPeople.oninput = function () {
         outputPeople.innerHTML = this.value;
