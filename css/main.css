@@ -210,7 +210,7 @@ body {
 .card__icons {
   display: flex;
   flex-flow: column;
-  align-self: flex-end;
+  align-self: center;
 }
 
 @media all and (max-width: 1200px) {
