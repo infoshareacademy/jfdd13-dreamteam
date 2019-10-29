@@ -3,7 +3,7 @@ const navMobile = document.querySelector('.nav__mobile');
 const navList__container = document.querySelector('.list__container');
 const navLinkArr = document.querySelectorAll('.nav__link');
 //nav animation onscroll
-function navAnimation() {
+const navAnimation = () => {
 
     window.addEventListener('scroll', function (e) {
         if (window.scrollY > 20) {
@@ -14,7 +14,7 @@ function navAnimation() {
     });
 
     //add hover class to rwd menu
-    navMobile.addEventListener('mouseover', () => {
+    navMobile.addEventListener('click', () => {
 
         navList__container.classList.add('list__container--hover');
         navLinkArr.forEach((element) => {
@@ -34,7 +34,7 @@ const form = document.querySelector('.form');
 const footer = document.querySelector('.footer');
 
 
-function navFocus() { //underline nav item on focus
+const navFocus = () => { //underline nav item on focus
 
     window.addEventListener('scroll', () => {
 
@@ -60,8 +60,20 @@ function navFocus() { //underline nav item on focus
 }
 
 
+const calculator = () => {
+    const slider = document.getElementById("myRange");
+    const slider1 = document.getElementById("myRange1");
+    const output = document.getElementById("demo");
+    const output1 = document.getElementById("demo1");
+    output.innerHTML = slider.value;
+    output1.innerHTML = slider1.value;
+
+    slider.oninput =  () => {output.innerHTML = this.value;};
 
 
+    slider1.oninput = () => { output1.innerHTML = this.value;}
+};
 
 navAnimation();
 navFocus();
+calculator();
