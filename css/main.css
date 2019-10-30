@@ -190,31 +190,52 @@ body {
 
 .card {
   display: flex;
+  justify-content: center;
+  align-items: center;
   height: 150px;
 }
 .card__img {
   display: block;
   height: 75px;
   border-radius: 50%;
-  border: 3px solid #8BC34A;
-  margin: 0.5rem;
+  border: 3px solid #BDBDBD;
+  margin: 0.5rem 0.5rem 1rem 0.5rem;
 }
 .card__info {
   display: flex;
   flex-flow: column;
   padding: 0.5rem;
-  width: 100%;
 }
 
 .heading__h4--authors {
-  width: 100%;
+  width: 172px;
   align-self: center;
+  font-weight: 500;
 }
 
 .card__icons {
   display: flex;
   flex-flow: column;
   align-self: center;
+}
+
+.icon__container:first-child {
+  margin: 1rem 0 0 0;
+  padding: 0 0.2rem 0.2rem 0;
+}
+
+.icon {
+  font-size: 1.2rem;
+}
+.icon__link {
+  color: #000;
+  text-decoration: none;
+}
+.icon__link:visited {
+  color: #000;
+}
+.icon__link:hover {
+  text-decoration: underline;
 }
 
 @media all and (max-width: 1200px) {
@@ -236,6 +257,27 @@ body {
 
   .card__icons {
     margin: 1rem 0;
+  }
+}
+@media all and (max-width: 700px) {
+  .grid__container {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    margin: 0 2rem;
+  }
+  .grid__container--inner {
+    grid-gap: 1rem;
+  }
+
+  .card {
+    align-items: flex-start;
+    height: 130px;
+  }
+}
+@media all and (max-width: 470px) {
+  .grid__container {
+    margin: 0.5rem;
+    padding: 0;
   }
 }
 

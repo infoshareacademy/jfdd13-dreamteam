@@ -26,25 +26,41 @@
 
 .card
   display: flex
+  justify-content: center
+  align-items: center
   height: 150px
   &__img
     display: block
     height: 75px
     border-radius: 50%
-    border: 3px solid $accent-color
-    margin: .5rem
+    border: 3px solid $divider-color
+    margin: .5rem .5rem 1rem .5rem
   &__info
     display: flex
     flex-flow: column
     padding: .5rem
-    width: 100%
+    //width: 100%
 .heading__h4--authors
-  width: 100%
+  width: 172px
   align-self: center
+  font-weight: 500
 .card__icons
   display: flex
   flex-flow: column
   align-self: center
+.icon__container:first-child
+  margin: 1rem 0 0 0
+  padding: 0 .2rem .2rem 0
+.icon
+  font-size: 1.2rem
+  &__link
+    color: #000
+    text-decoration: none
+    &:visited
+      color: #000
+    &:hover
+      text-decoration: underline
+
 
 @media all and (max-width: 1200px)
   .grid__container
@@ -58,3 +74,17 @@
     width: 190px
   .card__icons
     margin: 1rem 0
+@media all and (max-width: 700px)
+  .grid__container
+    grid-template-rows: 1fr 1fr
+    grid-template-columns: 1fr
+    margin: 0 2rem
+    &--inner
+      grid-gap: 1rem
+  .card
+    align-items: flex-start
+    height: 130px
+@media all and (max-width: 470px)
+  .grid__container
+    margin: .5rem
+    padding: 0
