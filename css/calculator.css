@@ -1,36 +1,60 @@
-
 .calculator_divs {
 
-display: flex;
-justify-content: space-evenly;
-margin: 40px 0
+    display: flex;
+    justify-content: space-evenly;
+    margin: 40px 0
 }
-
 
 
 .calculator_board {
 
-border: 1px solid black;
-padding: 20px;
-
-
+    /* border: 1px solid black; */
+    padding: 20px;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
 }
 
 
+.holidays_img {
 
+    display: flex;
+    justify-content: center;
 
+}
 
+.holidays_img img {
+    display: block;
+    height: auto;
+    max-width: 60%;
+}
 
+.calculator_board_title {
 
+    margin-bottom: 20px;
 
+}
 
+.calculator_board_price {
 
+    margin-top: 20px;
 
+}
 
+.calculator_title {
 
+    margin-bottom: 30px;
+    text-align: center;
 
+}
 
+.price {
 
+    font-weight: bold;
+    color: red;
+}
 
 /* suwak */
 
@@ -45,6 +69,8 @@ padding: 20px;
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    margin: 0 70px;
+    max-width: 50%;
 
 }
 
@@ -87,7 +113,7 @@ padding: 20px;
 }
 
 #button_calculator {
-    margin-top: 20px;
+    margin-top: 40px;
     padding: 10px;
     border-radius: 6px;
     background-color: #1976D2;
