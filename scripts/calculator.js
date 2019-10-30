@@ -48,5 +48,7 @@ function checkPrice(){
     
 }
 
+
+
 buttonPrice.addEventListener('click', checkPrice());
 sliderWorking();
