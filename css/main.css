@@ -110,12 +110,16 @@ body {
   flex-direction: row;
   justify-content: space-around;
   -webkit-justify-content: space-evenly;
+  border-bottom: 1px solid #BDBDBD;
 }
 .functions__container-row {
   display: flex;
   flex-direction: row;
   max-width: calc(50vw - 2*16px);
   margin-bottom: 1rem;
+}
+.functions__container-row:last-child {
+  border-bottom: none;
 }
 .functions__icon {
   padding: 1rem;
@@ -154,17 +158,31 @@ body {
     max-width: inherit;
   }
 }
-.footer__wrapper {
+.section__container {
+  display: flex;
+}
+
+.authors__wrapper {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   background: #1976D2;
   border-top: 1px solid #fff;
+  width: 50%;
+  height: 100%;
+  min-height: 300px;
+}
+.authors__output {
+  display: block;
+  width: 50%;
+  background-color: red;
 }
 
 .card {
   display: flex;
   justify-content: center;
   width: 258px;
+  max-width: 50%;
   border-right: 1px solid #BDBDBD;
   background-color: #1976D2;
   color: #FFFFFF;
@@ -191,7 +209,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 .card__info:visited {
   color: #fff;
@@ -201,7 +219,6 @@ body {
   width: 150px;
   border-bottom: 3px solid #BBDEFB;
   text-align: right;
-  padding: 0 0.5rem 0.5rem;
   text-decoration: none;
   color: #FFFFFF;
 }
@@ -224,12 +241,21 @@ body {
 }
 
 @media all and (min-width: 1366px) {
+  .card {
+    width: 330px;
+    max-height: 140px;
+    justify-content: space-around;
+  }
+  .card-aleksander .heading__h4 {
+    font-size: 1rem;
+  }
   .card__img-container {
     padding: 1rem;
   }
   .card__info-name {
-    font-size: 1.5rem;
-    padding: 1rem 0;
+    font-size: 1.2rem;
+    padding: 0 0 0.5rem 0;
+    width: 100%;
   }
   .card__info-links {
     padding: 1rem 0;
@@ -244,7 +270,7 @@ body {
   }
 }
 @media all and (max-width: 1000px) {
-  .footer__wrapper {
+  .authors__wrapper {
     flex-wrap: wrap;
   }
 
@@ -253,9 +279,6 @@ body {
   }
   .card:first-child {
     border-left: none;
-  }
-  .card-aleksander {
-    border-top: 1px solid #BDBDBD;
   }
   .card-rafal {
     border-top: 1px solid #BDBDBD;
