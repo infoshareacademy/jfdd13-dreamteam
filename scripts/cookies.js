@@ -28,28 +28,22 @@ function getCookie(cname) {
         }
     }
     return "";
-    }
+}
 
 const popUp = () => {
     cookieInfo.style.display = 'block';
-    console.log('i want popUp!');
     cookieBtn.addEventListener('click', popHide);
 }
 
 const popHide = () => {
     cookieInfo.style.display = 'none';
-    // setCookie();
     setMyCookie();
 }
 
 const cookieQuest = () => {
     if (getCookie('name') === ''){
-        console.log('hej')
         setTimeout(() => popUp(), 1000);
-    } else {
-        console.log('is there any cookies?'); 
     }
 }
 
 cookieQuest();
-
