@@ -32,6 +32,9 @@
     text-transform: uppercase;
     text-decoration: none;
 }
+.nav__mobile {
+    border-bottom: 1px solid #BDBDBD;
+}
 
 .nav__link {
     font-family: Be Vietnam, sans-serif;
