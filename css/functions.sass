@@ -5,8 +5,11 @@
     grid-template-rows: auto
     margin: 1rem 2rem
     grid-gap: 1rem
+    border-bottom: 1px solid $divider-color
   &__container
     display: flex
+    &:last-child, &:nth-child(7)
+      margin-bottom: 1rem
 .icon__container
   &--functions
     display: flex
@@ -23,3 +26,12 @@
     &__grid
       grid-template-columns: 1fr
       grid-gap: 2rem
+    &__container
+      &:nth-child(7)
+        margin: 0
+@media all and (max-width: 400px)
+  .functions__grid
+    margin: 1rem
+  .icon__container
+    &--functions
+      margin: 0 1rem 0 0
