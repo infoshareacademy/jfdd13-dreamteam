@@ -1,13 +1,15 @@
-const sliderPeople = document.getElementById("myRange");
-const sliderDays = document.getElementById("myRange1");
-const outputPeople = document.getElementById("demo");
-const outputDays = document.getElementById("demo1");
-outputPeople.innerHTML = sliderPeople.value;
-outputDays.innerHTML = sliderDays.value;
+
+    const sliderPeople = document.getElementById("myRange");
+    const sliderDays = document.getElementById("myRange1");
+    const outputPeople = document.getElementById("demo");
+    const outputDays = document.getElementById("demo1");
 
 
 function sliderWorking() {
 
+
+    outputPeople.innerHTML = sliderPeople.value;
+    outputDays.innerHTML = sliderDays.value;
 
     sliderPeople.oninput = function () {
         outputPeople.innerHTML = this.value;
@@ -20,46 +22,47 @@ function sliderWorking() {
 
     }
 
-} 
+}
 
-const buttonPrice = document.getElementById("button_calculator");
-const price = 300;
+sliderWorking();
+
+
+let price = 300;
 
 function checkPrice() {
-    let price = 300;
+
     let discount = 0;
     let checkbox = document.getElementById("checkbox_dog");
-    
-    if (sliderPeople.value >2  && sliderPeople.value < 7) {
+
+    if (sliderPeople.value > 2 && sliderPeople.value < 7 && checkbox.checked === false) {
         discount = 5
-    } else if (sliderPeople.value >= 7 ) {
+    } else if (sliderPeople.value >= 7 && checkbox.checked === false) {
         discount = 10
     }
 
-    if (sliderDays.value > 7) {
+    if (sliderDays.value > 7 && checkbox.checked === false) {
         discount += 5;
     }
 
-    price = price * (1 - discount/100);
+    price = price * (1 - discount / 100);
 
     if (checkbox.checked) {
         price = price + 5;
-    }  
+    }
 
     return price;
 
 }
 
-
-
-function displayPrice(){
-
-showPrice = document.querySelector('.price');
-showPrice.innerText = ` ${price} zł`
+function displayPrice() {
+    
+    price = 300;
+    discount = 0;
+    showPrice = document.querySelector('.price');
+    showPrice.innerText = ` ${checkPrice()} zł`;
 
 }
 
 
-buttonPrice.addEventListener('click', displayPrice());
-
-sliderWorking();
+const buttonPrice = document.getElementById("button_calculator");
+buttonPrice.addEventListener('click', displayPrice);
