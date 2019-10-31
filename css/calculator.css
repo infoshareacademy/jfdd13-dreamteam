@@ -8,11 +8,9 @@
 
 .calculator_board {
 
-    /* border: 1px solid black; */
-    padding: 20px;
+    
     max-width: 50%;
     display: flex;
-    justify-content: center;
     flex-flow: column;
     align-items: center;
 }

@@ -22,14 +22,14 @@ function sliderWorking() {
 
 } 
 
-let buttonPrice = document.getElementById("button_calculator");
+const buttonPrice = document.getElementById("button_calculator");
+const price = 300;
 
-function checkPrice(){
-    let price = 5000;
+function checkPrice() {
+    let price = 300;
     let discount = 0;
     let checkbox = document.getElementById("checkbox_dog");
     
-
     if (sliderPeople.value >2  && sliderPeople.value < 7) {
         discount = 5
     } else if (sliderPeople.value >= 7 ) {
@@ -40,15 +40,26 @@ function checkPrice(){
         discount += 5;
     }
 
-    price = price * 1 - (discount/100);
+    price = price * (1 - discount/100);
 
     if (checkbox.checked) {
         price = price + 5;
     }  
-    
+
+    return price;
+
 }
 
 
 
-buttonPrice.addEventListener('click', checkPrice());
+function displayPrice(){
+
+showPrice = document.querySelector('.price');
+showPrice.innerText = ` ${price} zł`
+
+}
+
+
+buttonPrice.addEventListener('click', displayPrice());
+
 sliderWorking();
