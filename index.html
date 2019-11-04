@@ -196,89 +196,102 @@
                     </div>
                 </form>
             </div>
-            <div class="calculator">
-                <div class="slidecontainer">
-                    <p class="title_range">Ustaw liczbę uczestników za pomocą suwaka ponizej:</p>
-                    <input type="range" min="1" max="10" class="slider" id="myRange">
-                    <p>Wybrana liczba uczestników: <span id="demo"></span></p>
+            <section class="calculator_divs">
+                <div class="calculator_board">
+                    <h2 class="calculator_board_title">Wycieczka tygodnia - wyjazd na Majorkę!</h2>
+                    <div class="holidays_img">
+                        <img src="img/majorka.png" alt="Plaza na Majorce">
+                    </div>
+                    <h3 class="calculator_board_price">Cena startowa: 300zł/ dobę za osobę</h3>
                 </div>
-                <div class="slidecontainer">
-                    <p class="title_range">Ustaw liczbę dni planowanego wyjazdu za pomocą suwaka ponizej:</p>
-                    <input type="range" min="1" max="14" class="slider" id="myRange1">
-                    <p>Wybrana liczba dni: <span id="demo1"></span></p>
+                <div class="calculator">
+                    <div class="slidecontainer">
+                        <h2 class='calculator_title'>Kalkulator ceny dla Ciebie:</h2>
+                        <p class="title_range">Ustaw liczbę uczestników:</p>
+                        <div class="range_div">
+                            <input type="range" min="1" max="10" class="slider" id="myRange">
+                        </div>
+                        <p>Wybrana liczba uczestników: <span id="demo"></span></p>
+                    </div>
+                    <div class="slidecontainer">
+                        <p class="title_range">Ustaw liczbę dni:</p>
+                        <div class="range_div">
+                            <input type="range" min="1" max="14" class="slider" id="myRange1">
+                        </div>
+                        <p>Wybrana liczba dni: <span id="demo1"></span></p>
+                    </div>
+                    <div><span>Czy zabierasz na wycieczkę psa? Zaznacz pole, jeśli tak: </span><input
+                            type="checkbox" id="checkbox_dog"></div>
+                    <button id="button_calculator">Sprawdź cenę!</button>
+                    <p class="price_comment"></p>
                 </div>
-                <div><span>Czy zabierasz na wycieczkę psa? Zaznacz pole, jeśli tak: </span><input type="checkbox"
-                                                                                                  id="checkbox_dog">
+            </section>
+            <section class="authors" id="footer">
+                <div class="footer__info">
+                    <h2 class="heading heading__h2">Informacje o autorach</h2>
+                    <!--<span style="text-align: center; margin: 1rem">Wybierz wizytówkę i skontaktuj się z nami!</span>-->
                 </div>
-                <button id="button_calculator">Sprawdź cenę!</button>
-            </div>
-        </section>
-        <section class="authors" id="footer">
-            <div class="footer__info">
-                <h2 class="heading heading__h2">Informacje o autorach</h2>
-                <!--<span style="text-align: center; margin: 1rem">Wybierz wizytówkę i skontaktuj się z nami!</span>-->
-            </div>
-            <div class="grid__container">
-                <div class="grid__left info__wrapper" id="authors__left">
-                    <h3 class="heading heading__h3 info__heading">Zespół o jakim Ci się nie śniło!</h3>
-                    <div class="info__container">
-                        <div class="info__item">
-                            <p class="paragraph">
-                                Stworzyli SPA w 2 tygodnie, polacy ich nienawidzą.
-                            </p>
-                            <p class="paragraph">Zobacz jak to zrobili!</p>
+                <div class="grid__container">
+                    <div class="grid__left info__wrapper" id="authors__left">
+                        <h3 class="heading heading__h3 info__heading">Zespół o jakim Ci się nie śniło!</h3>
+                        <div class="info__container">
+                            <div class="info__item">
+                                <p class="paragraph">
+                                    Stworzyli SPA w 2 tygodnie, polacy ich nienawidzą.
+                                </p>
+                                <p class="paragraph">Zobacz jak to zrobili!</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="grid__right grid__container grid__container--inner">
-                    <div class="card card--michal">
-                        <img src="img/card-michal100.png" alt="" class="card__img">
-                        <div class="card__info">
-                            <h4 class="heading heading__h4 heading__h4--authors">Michał Kuśnierz</h4>
-                            <div class="card__icons">
+                    <div class="grid__right grid__container grid__container--inner">
+                        <div class="card card--michal">
+                            <img src="img/card-michal100.png" alt="" class="card__img">
+                            <div class="card__info">
+                                <h4 class="heading heading__h4 heading__h4--authors">Michał Kuśnierz</h4>
+                                <div class="card__icons">
                                 <div class="icon__container icon__container--authors"><i
                                         class="fab fa-linkedin icon"></i>
-                                    <span class="icon__text">
+                                        <span class="icon__text">
                                      <a href="https://www.linkedin.com/in/michal-kusnierz/" target="_blank"
                                         rel="noreferrer noopener"
                                         class="icon__link">
                                          Skontaktuj się</a>
                                 </span></div>
                                 <div class="icon__container icon__container--authors"><i class="fab fa-github icon"></i><span
-                                        class="icon__text">
+                                            class="icon__text">
                                     <a href="https://github.com/michal-kusnierz" target="_blank"
                                        rel="noreferrer noopener"
                                        class="icon__link">Zobacz projekty</a>
                                 </span></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card card--martyna">
-                        <img src="img/card-martyna100.png" alt="" class="card__img">
-                        <div class="card__info">
-                            <h4 class="heading heading__h4 heading__h4--authors">Martyna Michno</h4>
-                            <div class="card__icons">
+                        <div class="card card--martyna">
+                            <img src="img/card-martyna100.png" alt="" class="card__img">
+                            <div class="card__info">
+                                <h4 class="heading heading__h4 heading__h4--authors">Martyna Michno</h4>
+                                <div class="card__icons">
                                 <div class="icon__container icon__container--authors"><i
                                         class="fab fa-linkedin  icon"></i><span
-                                        class="icon__text">Skontaktuj się</span></div>
+                                            class="icon__text">Skontaktuj się</span></div>
                                 <div class="icon__container icon__container--authors"><i class="fab fa-github icon"></i><span
-                                        class="icon__text">
+                                            class="icon__text">
                                     <a href="https://github.com/martyna-michno" target="_blank"
                                        rel="noreferrer noopener" class="icon__link">
                                         Zobacz projekty
                                     </a>
                                 </span></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card card--aleksander">
-                        <img src="img/card-aleksander100.png" alt="" class="card__img">
-                        <div class="card__info">
-                            <h4 class="heading heading__h4 heading__h4--authors">Aleksander Walczuk</h4>
-                            <div class="card__icons">
+                        <div class="card card--aleksander">
+                            <img src="img/card-aleksander100.png" alt="" class="card__img">
+                            <div class="card__info">
+                                <h4 class="heading heading__h4 heading__h4--authors">Aleksander Walczuk</h4>
+                                <div class="card__icons">
                                 <div class="icon__container icon__container--authors"><i
                                         class="fab fa-linkedin icon"></i><span
-                                        class="icon__text">
+                                            class="icon__text">
                                     <a href="https://www.linkedin.com/in/aleksanderwalczuk547777735/" target="_blank"
                                        rel="noreferrer noopener"
                                        class="icon__link">
@@ -286,23 +299,23 @@
                                     </a>
                                 </span></div>
                                 <div class="icon__container icon__container--authors"><i class="fab fa-github icon"></i><span
-                                        class="icon__text">
+                                            class="icon__text">
                                     <a href="https://github.com/rednaxela700" target="_blank" rel="noreferrer noopener"
                                        class="icon__link">
                                         Zobacz projekty
                                     </a>
                                 </span></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card card--rafal">
-                        <img src="img/card-rafal100.png" alt="" class="card__img">
-                        <div class="card__info">
-                            <h4 class="heading heading__h4 heading__h4--authors">Rafał Wensław</h4>
-                            <div class="card__icons">
+                        <div class="card card--rafal">
+                            <img src="img/card-rafal100.png" alt="" class="card__img">
+                            <div class="card__info">
+                                <h4 class="heading heading__h4 heading__h4--authors">Rafał Wensław</h4>
+                                <div class="card__icons">
                                 <div class="icon__container icon__container--authors"><i
                                         class="fab fa-linkedin icon"></i><span
-                                        class="icon__text">
+                                            class="icon__text">
                                      <a href="https://www.linkedin.com/in/rafa%C5%82-wens%C5%82aw-646450155/"
                                         target="_blank" rel="noreferrer noopener"
                                         class="icon__link">
@@ -310,19 +323,19 @@
                                     </a>
                                 </span></div>
                                 <div class="icon__container icon__container--authors"><i class="fab fa-github icon"></i><span
-                                        class="icon__text">
+                                            class="icon__text">
                                     <a href="https://github.com/RafWen" target="_blank" rel="noreferrer noopener"
                                        class="icon__link">
                                         Zobacz projekty
                                     </a>
                                 </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
     </main>
     <footer>
         <div id="cookies">
