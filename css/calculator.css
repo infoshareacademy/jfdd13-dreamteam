@@ -1,0 +1,121 @@
+.calculator_divs {
+
+    display: flex;
+    justify-content: space-evenly;
+    margin: 40px 0
+}
+
+
+.calculator_board {
+
+    
+    max-width: 50%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+
+.holidays_img {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.holidays_img img {
+    display: block;
+    height: auto;
+    max-width: 60%;
+}
+
+.calculator_board_title {
+
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+
+.calculator_board_price {
+
+    margin-top: 20px;
+
+}
+
+.calculator_title {
+
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+
+.price {
+
+    font-weight: bold;
+    color: red;
+}
+
+/* suwak */
+
+.slidecontainer {
+    width: 100%;
+    padding-bottom: 40px;
+
+}
+
+.calculator {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 70px;
+    max-width: 50%;
+
+}
+
+.slider {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 15px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+    border-radius: 4px;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #8BC34A;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #8BC34A;
+    cursor: pointer;
+}
+
+.title_range {
+
+    padding-bottom: 20px;
+}
+
+#button_calculator {
+    margin-top: 40px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #1976D2;
+    color: white;
+
+}

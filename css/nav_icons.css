@@ -11,10 +11,12 @@
     transition: background 0.6s ease-out;
 }
 
-.nav .nav__link, .nav .logo_container {
+.nav .nav__link,
+.nav .logo_container {
     transition: background 0.6s ease-out;
 
 }
+
 .list__container {
     display: flex;
     list-style-type: none;
@@ -117,7 +119,8 @@
 
     .nav__link,
     .nav__mobile {
-        color: #FFFFFF;;
+        color: #FFFFFF;
+        ;
     }
 
     .icons__item {
@@ -161,7 +164,8 @@
         display: none;
     }
 
-    .list__item:hover, .active:hover {
+    .list__item:hover,
+    .active:hover {
         background: #BDBDBD;
     }
 
@@ -187,66 +191,3 @@
 }
 
 
-/* suwak */
-
-.slidecontainer {
-    width: 100%;
-    padding-bottom: 40px;
-
-}
-
-.calculator {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    margin: 30px auto;
-
-}
-
-.slider {
-    width: 100%;
-    -webkit-appearance: none;
-    height: 15px;
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: 0.2s;
-    transition: opacity 0.2s;
-    border-radius: 4px;
-}
-
-.slider:hover {
-    opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: #8BC34A;
-    cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    background: #8BC34A;
-    cursor: pointer;
-}
-
-.title_range{
-
-    padding-bottom: 20px;
-}
-
-#button_calculator{
-margin-top: 20px;
-    padding: 10px;
-border-radius: 6px;
-    background-color: #1976D2;
-    color: white;
-
-}
