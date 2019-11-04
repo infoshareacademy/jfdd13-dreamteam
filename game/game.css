@@ -3,38 +3,66 @@
     margin: 0;
     padding: 0;
 }
-.wrapper{
-    position: absolute;
+.container{
+    position: relative;
     display: flex;
-    justify-content: start;;
-    background: darkkhaki;
-    min-width: 80vw;
+    width: 100vw;
     height: 100vh;
+    background: darkkhaki;
+}
+.frame{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: darkkhaki;
+    z-index: 2;
+}
+.frame__up{
+    top: 0;
+    height: 20px;
+}
+.frame__left{
+    left: 0;
+    width: 20px;
+}
+.frame__bottom{
+    top: 620px;
+}
+.frame__records{
+    display: flex;
+    position: fixed;
+    left: 1020px;
+    background: lightcyan;
 }
 .board{
+    display: flex;
     position: relative;
-    margin: 10px;
-    width: 100%;
+    width: 1000px;
     height: 600px;
     background: skyblue;
-    border: 1px solid brown;
 }
 #player{
     position: absolute;
+    top:200px;
+    left:100px;
     font-size: 120px;
     color: crimson;
     z-index: 1;
 }
 #start__btn{
-    position: relative;
-    z-index: 3;
-    top: 300px;
-    left: 400px;
-    width:200px;
-    font-size: 40px;
-    font-weight: 900;
-    border-radius: 10px;
-    }
+    position: absolute;
+    z-index: 1;
+    top: 45%;
+    left: 35%;
+    width:120px;
+    height: 50px;
+    font-size: 30px;
+    font-weight: 700;
+    border-radius: 19px;
+    border-width: thick;
+    z-index: 2;
+}
 .mount{
     position: absolute; 
     font-size: 290px;
@@ -45,6 +73,7 @@
 }
 .tree{
     position: absolute;
+    display: inline-flex;
     top:460px;
     font-size: 130px;
     color: green;

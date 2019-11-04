@@ -6,35 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>The GAME</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="./game.css" type="text/css">
+    <link rel="stylesheet" href="./index.css" type="text/css">
 </head>
 <body>
-    <div class="wrapper">
+    <div class="container">
+        <div class="frame frame__up"></div>
+        <div class="frame frame__left"></div>
         <div class="board">
-            <div class="sky">          
-                <div class="moveObst img"><img src="./ptasiek_left.png" alt="bird"></div>
-                <div class="moveObst bird bird1"><i class="fas fa-dove fa-flip-horizontal"></i></div>
-                <div class="moveObst bird bird2"><i class="fas fa-dove fa-flip-horizontal"></i></div>
-                <div class="moveObst cloud cloud1"><i class="fas fa-cloud"></i></div>
-                <div class="moveObst cloud cloud2"><i class="fas fa-cloud"></i></div>
-                <div class="moveObst cloud cloud3"><i class="fas fa-cloud fa-flip-horizontal"></i></div>
-            </div>
-            <div class="player">
-                <div id="player" class="player__plane"><i class="fas fa-fighter-jet"></i></div>
-                <button id="start__btn">Start</button>
-            </div>    
-            <div class="obstacles">
-                <div class="moveObst mount"><i class="fas fa-mountain"></i></div>
-                <div class="moveObst tree tree1"><i class="fas fa-tree"></i></div>
-                <div class="moveObst tree tree2"><i class="fas fa-tree"></i></div>
-                <div class="moveObst tree tree3"><i class="fas fa-tree"></i></div>
-                <div class="moveObst tree tree4"><i class="fas fa-tree"></i></div>
-                <div class="moveObst city city1"><i class="fas fa-city"></i></div>
-                <div class="moveObst city city2"><i class="fas fa-monument"></i></div>
-                <div class="moveObst city city3"><i class="far fa-building"></i></div>
-            </div>
+            <div id="player" class="player"><i class="fas fa-fighter-jet"></i></div>
+            <div class="obstacles"></div>
         </div>
+        <div class="frame frame__bottom"></div>
+        <div class="frame frame__records"></div>
+        <button id="start__btn">Start</button>
+
     </div>
-<script src="./game.js"></script>
+    <script src="./index.js"></script>
 </body>
 </html>
