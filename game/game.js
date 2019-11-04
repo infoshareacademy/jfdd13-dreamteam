@@ -144,7 +144,7 @@ class CreateObstacles {
   static CreateObst() {
     const placeToAdd = document.querySelector('.board');
     placeToAdd.innerHTML = '';
-    ObstacleArray.forEach((name,x,y) => {
+    ObstacleArray.forEach((name,x) => {
       const newObst = document.createElement('div');
       newObst.innerHTML = '';
 
