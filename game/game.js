@@ -81,7 +81,7 @@ const
   startGame = () => {
     startBtn.style.display = 'none';
     event.preventDefault();
-    CreateObstacles.CreateObst();
+    // CreateObstacles.CreateObst();
 
     setInterval(() => RenderObstacles.RenderObst(ObstacleArray, '.board'),100);
     document.addEventListener("keydown", event => Move.KeySupport(PlaneJS, event));
@@ -139,20 +139,20 @@ const ObstacleArray = [
   new Obstacle('city1', 370, 390),
   new Obstacle('city2', 640, 390),
   new Obstacle('city3', 760, 390)
-]
-class CreateObstacles {
-  static CreateObst() {
-    const placeToAdd = document.querySelector('.board');
-    placeToAdd.innerHTML = '';
-    ObstacleArray.forEach((name,x) => {
-      const newObst = document.createElement('div');
-      newObst.innerHTML = '';
+];
+// class CreateObstacles {
+//   static CreateObst() {
+//     const placeToAdd = document.querySelector('.board');
+//     placeToAdd.innerHTML = '';
+//     ObstacleArray.forEach((name,x) => {
+//       const newObst = document.createElement('div');
+//       newObst.innerHTML = '';
 
       
-      placeToAdd.appendChild(newObst);
-    })
-    }
-  }
+//       placeToAdd.appendChild(newObst);
+//     })
+//     }
+//   }
 
 class RenderObstacles {
   static RenderObst() {
