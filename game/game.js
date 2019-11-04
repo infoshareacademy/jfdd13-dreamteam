@@ -2,6 +2,7 @@ class Player {
   constructor(x, y) {
     this._x = x;
     this._y = y;
+    // AS UWAGI: przydałaby sie wysokosc i szerokosc (kolizje)
   }
   get x() {
     return this._x;
@@ -11,25 +12,25 @@ class Player {
   }
 
   left() {
-    this._x -= 1;
+    this._x -= 1; // AS UWAGI: wyciagnąłbym do jakiejs konfiguracji
   }
   right() {
-    this._x += 2;
+    this._x += 2; // AS UWAGI: wyciagnąłbym do jakiejs konfiguracji
   }
   up() {
-    this._y -= 5;
+    this._y -= 5; // AS UWAGI: wyciagnąłbym do jakiejs konfiguracji
   }
   down() {
-    this._y += 5;
+    this._y += 5; // AS UWAGI: wyciagnąłbym do jakiejs konfiguracji
   }
 }
-const PlaneJS = new Player(100, 200);
+const PlaneJS = new Player(100, 200); // AS UWAGI: to plane czy player?
 
 class Move {
   static RenderPlane(PlaneJS) {
-    const PlaneDom = document.getElementById('player');
+    const PlaneDom = document.getElementById('player'); // AS UWAGI: plane czy player?
     PlaneDom.style.left = PlaneJS.x + "px";
-    PlaneDom.style.right = PlaneJS.x + "px";
+    PlaneDom.style.right = PlaneJS.x + "px"; // AS UWAGI: co ma na celu ustawianie right?
     PlaneDom.style.top = PlaneJS.y + "px";
   }
 
@@ -37,7 +38,7 @@ class Move {
     switch (event.code) {
       case "ArrowLeft":
         PlaneJS.left();
-        Move.RenderPlane(PlaneJS);
+        Move.RenderPlane(PlaneJS); // AS UWAGI: kod sie potwarza, wiec moze warto wyciagnac poza switcha?
         break;
       case "ArrowRight":
         PlaneJS.right();
@@ -57,9 +58,9 @@ class Move {
   }
 
   static Collision(PlaneJS) {
-    if (
+    if ( // AS UWAGI: sugeruje wyciagnac wartosci brzegowe do zmiennych konfiguracyjnych gdzies na poczatku pliku albo jeszcze lepiej, odczytywac je dynamicznie z kontenera w ktorym jest samolot
       PlaneJS.x === 0 ||
-      PlaneJS.x === 880 ||
+      PlaneJS.x === 880 || // AS UWAGI: swoją drogą te warunki mogą zostać nie osiągnięte przy niektórych prędkościach samolotu. sprawdzajdzie >= <=
       PlaneJS.y === 0 ||
       PlaneJS.y === 450
     ) {
@@ -112,7 +113,7 @@ class Obstacle {
     this._y = newY;
   }
   leftBird() {
-    this._x -= 10;
+    this._x -= 10; // AS UWAGI: zmienne konfiguracyjne
   }
   downBird() {
     this._y -= -1;
@@ -161,3 +162,9 @@ class RenderObstacles {
 }
 
 startBtn.addEventListener('click', startGame);
+
+
+// AS UWAGI: moim zdaniem powinien byc jeden głowny renderer do wszystkich elementow na stronie, albo przynajmniej jeden głowny który by delegował prace do innych mniejszysz rendererow odpowiedzialnych za inne elementy
+// AS UWAGI: dodatkowo chyba powinien on dzialac na jakims intervale i aktualizowac pozycje wszystkiego i weryfikowac kolizje
+// AS UWAGI: poza tym całą gre moglibyscie zamknac w jednej klasie i wywołac tylko "new Game() ktora inicjowała by wszystko :D"
+// AS UWAGI: aa i jeszcze jedno... wykonania głowne kodu raczej piszcie na samym dole, a najlepiej w klasach/funkcjach, a nie luzno w kodzie bo teraz trzeba szukac co gdzie jest.
