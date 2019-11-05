@@ -1,13 +1,12 @@
 function cookieQuest() {
     const
         cookieInfo = document.getElementById('cookies'),
-        cookieBtn = document.getElementById('cookies__submit');
+        cookieBtn = document.getElementById('cookies__accept');
     let cookieItem = document.cookie;
 
     const setMyCookie = () => {
         cookieItem ="name=user;expires=Fri, 31 Dec 9999 23:59:59 GMT;path=/;SameSite=Lax";
     };
-
 
     function getCookie(cname) {
         const name = cname + "=";
@@ -26,7 +25,7 @@ function cookieQuest() {
     }
 
     const popUp = () => {
-        cookieInfo.style.display = 'block';
+        cookieInfo.style.display = 'flex';
         cookieBtn.addEventListener('click', popHide);
     };
 
