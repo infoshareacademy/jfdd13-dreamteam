@@ -61,7 +61,7 @@ function displayPrice() {
     // showPrice = document.querySelector('.price');
     // showPrice.innerText = ` ${checkPrice()} zł`;
     showParagraph = document.querySelector('.price_comment');
-    showParagraph.innerHTML = `Cena startowa wynosi 300 zł, a cena dla Ciebie to <span class="price">${checkPrice()} zł</span>.`
+    showParagraph.innerHTML = `Cena bazowa wynosi 300 zł, a cena dla Ciebie to <span class="price">${checkPrice()} zł</span>.`
 
 }
 

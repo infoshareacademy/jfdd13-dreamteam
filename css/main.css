@@ -40,32 +40,36 @@ body {
   padding: .5rem 1rem;
   margin: 1rem 0;
   color: #fff;
+  border-radius: 0.5rem;
   font-size: 1.2rem;
   text-transform: uppercase; }
   /* line 27, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
   .btn:focus {
     outline: none; }
   /* line 29, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
+  .btn:hover {
+    background: #2196F3; }
+  /* line 31, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
   .btn__container {
     display: flex;
     justify-content: center; }
-    /* line 32, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
+    /* line 34, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
     .btn__container-hero {
       order: -1;
       margin: 2rem; }
-  /* line 36, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
+  /* line 38, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
   .btn-hero {
     border: 1px solid #BDBDBD;
     background-color: #1976D2; }
-    /* line 39, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
+    /* line 41, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
     .btn-hero:hover {
       border-color: #BDBDBD;
       background-color: #2196F3; }
 
-/* line 42, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
+/* line 44, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
 .icon__container {
   font-size: 1.1rem; }
-  /* line 44, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
+  /* line 46, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
   .icon__container > i {
     display: inline-block;
     text-align: center; }
