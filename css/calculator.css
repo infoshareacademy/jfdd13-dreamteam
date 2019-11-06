@@ -122,14 +122,13 @@
     padding-bottom: 20px;
 }
 
-#button_calculator {
+.btn_calculator {
     margin: 20px 0;
     padding: 15px;
     border-radius: 6px;
     background-color: #1976D2;
     color: white;
     border: none;
-    text-transform: uppercase;
 }
 
 @media all and (max-width: 870px){

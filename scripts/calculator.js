@@ -66,5 +66,5 @@ function displayPrice() {
 }
 
 
-const buttonPrice = document.getElementById("button_calculator");
+const buttonPrice = document.getElementsByClassName("btn_calculator")[0];
 buttonPrice.addEventListener('click', displayPrice);
