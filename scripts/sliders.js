@@ -12,7 +12,7 @@ const slideList = [
     text: "Dlaczego nie ruszyłeś?"
   }];
 
-const image = document.querySelector('img.slider');
+const image = document.querySelector('img.sliderHero');
 const h1 = document.querySelector('h1.heading__h1');
 const dots = [...document.querySelectorAll('.dots span')];
 
