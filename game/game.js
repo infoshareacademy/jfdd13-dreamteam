@@ -30,7 +30,6 @@ class Move {
   static RenderPlane(PlaneJS) {
     const PlaneDom = document.getElementById('player'); // AS UWAGI: plane czy player?
     PlaneDom.style.left = PlaneJS.x + "px";
-    PlaneDom.style.right = PlaneJS.x + "px"; // AS UWAGI: co ma na celu ustawianie right?
     PlaneDom.style.top = PlaneJS.y + "px";
   }
 
@@ -53,22 +52,20 @@ class Move {
         Move.RenderPlane(PlaneJS);
         break;
       default:
-        Move.RenderPlane(PlaneJS);
+        return;
     }
   }
 
   static Collision(PlaneJS) {
     if ( // AS UWAGI: sugeruje wyciagnac wartosci brzegowe do zmiennych konfiguracyjnych gdzies na poczatku pliku albo jeszcze lepiej, odczytywac je dynamicznie z kontenera w ktorym jest samolot
-      PlaneJS.x === 0 ||
-      PlaneJS.x === 880 || // AS UWAGI: swoją drogą te warunki mogą zostać nie osiągnięte przy niektórych prędkościach samolotu. sprawdzajdzie >= <=
-      PlaneJS.y === 0 ||
-      PlaneJS.y === 450
+      PlaneJS.x === 20 || PlaneJS.x < 20 || PlaneJS.x === 880 || PlaneJS.x > 880 || 
+      PlaneJS.y === 10 || PlaneJS.y < 10 || PlaneJS.y === 500 || PlaneJS.y > 500
     ) {
       document.querySelector(".board").style.background = "crimson";
       setTimeout(eyeBlink, 150);
       function eyeBlink() {
-        alert("GAME OVER! Sorry, this is the end of your trip.");
         location.reload();
+        alert("GAME OVER! Sorry, this is the end of your trip.");
       }
     }
   }
