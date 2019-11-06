@@ -13,11 +13,14 @@ footer{
     width: 100%;
     min-height: 8vh;
     z-index: 1;
+    align-items: center;
     justify-content: space-around;
+    text-align: center;
     flex-flow: wrap;
 }
 .cookies__span{
     display: flex;
+    padding: .5rem 1rem;
 }
 #cookies__accept{    
     background-color: #1976D2;
