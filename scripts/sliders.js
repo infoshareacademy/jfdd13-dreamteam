@@ -1,22 +1,22 @@
 const slideList = [
   {
-    img: "img/londek.jpg",
+    img: "../img/bg-1366x768.png",
     text: "Ruszaj w drogę"
   },
   {
-    img: "img/zima.jpg",
-    text: "Ruszaj na co czekasz"
+    img: "../img/bg1.jpg",
+    text: "Ruszaj, na co czekasz"
   },
   {
-    img: "img/bahama.jpg",
-    text: "Dlaczego nie ruszyłeś?"
+    img: "../img/bg2.jpg",
+    text: "Teksty z pupy"
   }];
 
-const image = document.querySelector('img.sliderHero');
+const image = document.querySelector('.hero');
 const h1 = document.querySelector('h1.heading__h1');
 const dots = [...document.querySelectorAll('.dots span')];
 
-const time = 3000;
+const time = 4000;
 let active = 0;
 const changeDots = () => {
   const activeDot = dots.findIndex(dot => dot.classList.contains('active'));
@@ -31,10 +31,13 @@ const changeSlide = () => {
   if(active === slideList.length){
     active = 0;
   } 
-  image.src = slideList[active].img;
+  const nextImg = slideList[active].img;
+  image.style.background = `url("${nextImg}") no-repeat center`
+  image.style.backgroundSize = "cover";
   h1.textContent = slideList[active].text;
+  
   changeDots()
-}
+  }
 
 setInterval(changeSlide, time);
 // setInterval(changeDots, time);
