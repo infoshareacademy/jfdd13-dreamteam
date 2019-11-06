@@ -1,0 +1,31 @@
+.slider {
+  border-style: solid;
+  border-bottom: 5px green;
+  border-radius: 20px;
+  padding: 20px;;
+  background: black;
+  width: 600px;
+  height: 200px;
+}
+
+
+.dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+.dots span {
+  display: inline-block;
+  background-color: #000;
+  margin: 0 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px white;
+}
+
+.dots span.active {
+  box-shadow: 0 0 0 2px, 0 0 3px 5px greenyellow;
+}
