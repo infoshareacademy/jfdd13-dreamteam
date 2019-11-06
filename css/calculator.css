@@ -26,27 +26,15 @@
     display: block;
     height: auto;
     width: 400px;
+    border-radius: 5px;
 }
 
-.calculator_board_title {
 
-    margin-bottom: 30px;
+.heading__h2--calculator {
+
     text-align: center;
+} 
 
-}
-
-.calculator_board_price {
-
-    margin-top: 20px;
-
-}
-
-.calculator_title {
-
-    margin-bottom: 30px;
-    text-align: center;
-
-}
 
 .price {
 
@@ -122,14 +110,6 @@
     padding-bottom: 20px;
 }
 
-#button_calculator {
-    margin: 20px 0;
-    padding: 10px;
-    border-radius: 6px;
-    background-color: #1976D2;
-    color: white;
-
-}
 
 @media all and (max-width: 870px){
 

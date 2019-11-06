@@ -34,7 +34,10 @@
                 <li class="list__item"><a href="#form" class="nav__link link3">
                     Formularz
                 </a></li>
-                <li class="list__item"><a href="#footer" class="nav__link link4">
+                <li class="list__item"><a href="#calculator" class="nav__link link4">
+                    kalkulator
+                    </a></li>
+                <li class="list__item"><a href="#footer" class="nav__link link5">
                     Autorzy
                 </a></li>
             </ul>
@@ -80,7 +83,8 @@
             </div>
         </section>
         <section class="functions" id="functions">
-            <h2 class="heading heading__h2">Bądź zawsze na bieżąco</h2>
+            <h2 class="heading heading__h2">
+              Poznaj way.to</h2>
             <div class="functions__grid">
                 <div class="functions__container">
                     <div class="icon__container icon__container--functions">
@@ -203,17 +207,17 @@
                 </form>
             </div>
         </section>
-        <section class="calculator_divs">
+        <section class="calculator_divs" id="calculator">
             <div class="calculator_board">
-                <h2 class="calculator_board_title">Wycieczka tygodnia - wyjazd na Majorkę!</h2>
+                <h2 class="heading heading__h2 heading__h2--calculator">Wycieczka tygodnia - wyjazd na Majorkę!</h2>
                 <div class="holidays_img">
                     <img src="img/majorka.png" alt="Plaza na Majorce">
                 </div>
-                <h3 class="calculator_board_price">Cena startowa: 300zł/ dobę za osobę</h3>
+                <h3 class="heading heading__h3 heading__h3--calculator">Cena: 300zł/ dobę za osobę</h3>
             </div>
             <div class="calculator">
                 <div class="slidecontainer">
-                    <h2 class='calculator_title'>Kalkulator ceny dla Ciebie:</h2>
+                    <h2 class='heading heading__h2 heading__h2--calculator'>Kalkulator ceny dla Ciebie</h2>
                     <label for="myRange" class="title_range">Ustaw liczbę uczestników:</label>
                     <div class="range_div">
                         <input type="range" min="1" max="10" class="slider" id="myRange">
@@ -229,7 +233,7 @@
                 </div>
                 <div><span>Czy zabierasz na wycieczkę psa? Zaznacz pole, jeśli tak: </span><input
                         type="checkbox" id="checkbox_dog"></div>
-                <button id="button_calculator">Sprawdź cenę!</button>
+                <button class="btn btn_calculator">Sprawdź</button>
                 <p class="price_comment"></p>
             </div>
         </section>
@@ -345,9 +349,9 @@
         </section>
     </main>
     <footer>
-        <div id="cookies">
-            <span class="cookies__span">Informacja o używaniu ciasteczek.</span>
-            <button id="cookies__submit" type="submit">Zamknij</button>
+        <div class="cookies" id="cookies">
+            <span class="cookies__span">Ta strona korzysta z ciasteczek, by świadczyć usługi na najwyższym poziomie.</span>
+            <span class="cookies__span btn btn--acept" id="cookies__accept">Rozumiem</span>
         </div>
         <span style="text-align: center; display: block">&copy; Dreamteam 2019</span>
     </footer>

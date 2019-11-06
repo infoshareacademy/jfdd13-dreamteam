@@ -32,7 +32,7 @@ const hero = document.querySelector('.hero');
 const functions = document.querySelector('.functions');
 const form = document.querySelector('.form');
 const footer = document.querySelector('.footer');
-
+const calculator_divs = document.querySelector('#calculator');
 
 const navFocus = () => { //underline nav item on focus
 
@@ -51,8 +51,10 @@ const navFocus = () => { //underline nav item on focus
                 navLinkArr[1].classList.add(isActive);
             } else if (scrollY > hero.offsetHeight + functions.offsetHeight / 2 && scrollY < hero.offsetHeight + functions.offsetHeight + form.offsetHeight / 2) {
                 navLinkArr[2].classList.add(isActive);
-            } else if (scrollY > hero.offsetHeight + functions.offsetHeight + form.offsetHeight / 2) {
+            } else if (scrollY > hero.offsetHeight + functions.offsetHeight + form.offsetHeight / 2 && scrollY < hero.offsetHeight + functions.offsetHeight + form.offsetHeight + calculator_divs.offsetHeight / 2) {
                 navLinkArr[3].classList.add(isActive);
+            } else if (scrollY > hero.offsetHeight + functions.offsetHeight + form.offsetHeight + calculator_divs.offsetHeight / 2) {
+                navLinkArr[4].classList.add(isActive);
             }
         })
     });

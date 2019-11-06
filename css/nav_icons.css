@@ -167,7 +167,7 @@
 
     .list__item:hover,
     .active:hover {
-        background: #BDBDBD;
+        background-color: #2196F3;
     }
 
     .list__item:last-child {
