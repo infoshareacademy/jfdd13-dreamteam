@@ -28,11 +28,14 @@ body {
     font-family: Roboto, sans-serif;
     text-align: left;
     margin: .5rem 0; }
-  /* line 14, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
+    /* line 14, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
+    .heading__h3--calculator {
+      margin-top: 20px; }
+  /* line 16, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
   .heading__h4 {
     font-size: 1.1rem; }
 
-/* line 17, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
+/* line 19, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
 .btn {
   max-width: 240px;
   width: 140px;
@@ -45,31 +48,31 @@ body {
   text-transform: uppercase;
   background: #1976D2;
   border: none; }
-  /* line 29, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
+  /* line 31, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
   .btn:focus {
     outline: none; }
-  /* line 31, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
+  /* line 33, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
   .btn:hover {
     background: #2196F3; }
-  /* line 33, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
+  /* line 35, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
   .btn__container {
     display: flex;
     justify-content: center; }
-    /* line 36, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
+    /* line 38, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
     .btn__container-hero {
       order: -1;
       margin: 2rem; }
-  /* line 40, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
+  /* line 42, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
   .btn-hero {
     background-color: #1976D2; }
-    /* line 42, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
+    /* line 44, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
     .btn-hero:hover {
       background-color: #2196F3; }
 
-/* line 44, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
+/* line 46, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
 .icon__container {
   font-size: 1.1rem; }
-  /* line 46, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
+  /* line 48, ../../../../../Users/martynamichno/Desktop/projekt/jfdd13-dreamteam/css/sass/elements.sass */
   .icon__container > i {
     display: inline-block;
     text-align: center; }
