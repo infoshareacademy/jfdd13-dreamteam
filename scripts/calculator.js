@@ -34,13 +34,13 @@ function checkPrice() {
     let discount = 0;
     let checkbox = document.getElementById("checkbox_dog");
 
-    if (sliderPeople.value > 2 && sliderPeople.value < 7 && checkbox.checked === false) {
+    if (sliderPeople.value > 2 && sliderPeople.value < 7) {
         discount = 5
-    } else if (sliderPeople.value >= 7 && checkbox.checked === false) {
+    } else if (sliderPeople.value >= 7) {
         discount = 10
     }
 
-    if (sliderDays.value > 7 && checkbox.checked === false) {
+    if (sliderDays.value > 7) {
         discount += 5;
     }
 
