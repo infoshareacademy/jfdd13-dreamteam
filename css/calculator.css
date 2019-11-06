@@ -124,10 +124,12 @@
 
 #button_calculator {
     margin: 20px 0;
-    padding: 10px;
+    padding: 15px;
     border-radius: 6px;
     background-color: #1976D2;
     color: white;
+    border: none;
+    text-transform: uppercase;
 
 }
 
