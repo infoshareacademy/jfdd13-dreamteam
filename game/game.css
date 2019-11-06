@@ -27,12 +27,12 @@
     width: 20px;
 }
 .frame__bottom{
-    top: 620px;
+    top: 600px;
 }
 .frame__records{
     display: flex;
     position: fixed;
-    left: 1020px;
+    left: 1000px;
     background: lightcyan;
 }
 .board{
@@ -46,7 +46,7 @@
     position: absolute;
     top:200px;
     left:100px;
-    font-size: 120px;
+    font-size: 100px;
     color: crimson;
     z-index: 1;
 }
