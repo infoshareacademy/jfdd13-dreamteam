@@ -9,13 +9,13 @@ class Render {
       //add id
       el.id = id++;
       child.innerText = el.name;
-      child.style.width = `50px`;
-      child.style.height = `50px`;
+      // child.style.width = `50px`;
+      // child.style.height = `50px`;
       child.style.background = `red`;
 
 
       child.setAttribute('id', `${el.name}${el.id}`)
-      child.setAttribute('class', `${el.name}`)
+      child.setAttribute('class', `obstacle ${el.name}`)
 
 
 
@@ -71,7 +71,6 @@ class BoardElement {
     // Render
   }
   static changePosition(el, x, y) {
-    const element = el;
     let elX = el.position.x
     let elY = el.position.y
     elX = x
