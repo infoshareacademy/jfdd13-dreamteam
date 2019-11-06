@@ -5,25 +5,31 @@ footer{
     padding:0;
     margin:0;
 }
-#cookies{
+.cookies{
     display: none;
     position: fixed;
-    bottom:0;
-    padding: 1rem;
+    bottom: 0;
     background: #fff;
     width: 100%;
     min-height: 8vh;
-    text-align: center;
     z-index: 1;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
     flex-flow: wrap;
 }
 .cookies__span{
     display: flex;
-    margin-right: 1rem;
+    padding: .5rem 1rem;
+}
+#cookies__accept{    
+    background-color: #1976D2;
+    color: white;
+    border: none;
+    border-radius: 6px;
 }
 #cookies__accept:hover{
     cursor: pointer;
-    transition: background 0.8s ease-out;
-    border-bottom: 1px solid black;
+    transition: background 0.3s ease-out;
+    background-color: #2196F3;
 }
