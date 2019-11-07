@@ -22,11 +22,8 @@ footer{
     display: flex;
     padding: .5rem 1rem;
 }
-#cookies__accept{    
-    background-color: #1976D2;
-    color: white;
-    border: none;
-    border-radius: 6px;
+#cookies__accept{
+    margin: 0 1rem;
 }
 #cookies__accept:hover{
     cursor: pointer;
