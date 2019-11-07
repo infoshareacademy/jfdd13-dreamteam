@@ -1,3 +1,5 @@
+// UWAGI AS: plik nie uzywany?!
+
 /**
  * Created by alexander on 28/10/2019.
  */

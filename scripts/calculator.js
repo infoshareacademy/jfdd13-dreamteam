@@ -1,5 +1,8 @@
+// UWAGI AS: opakować w funkcję zamowykonującą się
+// UWAGI AS: po co tyle enterów w kodzie?
 
-    const sliderPeople = document.getElementById("myRange");
+
+    const sliderPeople = document.getElementById("myRange"); // UWAGI AS: niepotrzebna tabulacja
     const sliderDays = document.getElementById("myRange1");
     const outputPeople = document.getElementById("demo");
     const outputDays = document.getElementById("demo1");
@@ -47,7 +50,7 @@ function checkPrice() {
     price = price * (1 - discount / 100);
 
     if (checkbox.checked) {
-        price = price + 5;
+        price = price + 5;     // UWAGI AS: W zadaniu jest 5zł za kazdy dzień z psem ;) czyli trzeba jesze ta 5tke wymnozyc z dniami
     }
 
     return price;
@@ -57,7 +60,7 @@ function checkPrice() {
 function displayPrice() {
     
     price = 300;
-    discount = 0;
+    discount = 0; // UWAGI AS: discount w tym scopie nie istnieje.. istnieje tylko w funkcji checkPrice. poza tym przy tej konstrukcji kodu nie trzeba go resetowac.
     // showPrice = document.querySelector('.price');
     // showPrice.innerText = ` ${checkPrice()} zł`;
     showParagraph = document.querySelector('.price_comment');

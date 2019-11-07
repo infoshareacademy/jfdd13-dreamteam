@@ -1,3 +1,4 @@
+// UWAGI AS: cały kod mozna zamknac w funkcji zamowykonujacej sie, ograniczymy dzieki temu ilosc zmiennych na window
 const nav = document.querySelector('.nav');
 const navMobile = document.querySelector('.nav__mobile');
 const navList__container = document.querySelector('.list__container');
@@ -44,8 +45,12 @@ const navFocus = () => { //underline nav item on focus
         navLinkArr.forEach((element) => {
 
             element.classList.remove(isActive);
-
-            if (scrollY >= 20 && scrollY < hero.offsetHeight / 2) {
+            // UWAGI AS: hero.offsetHeight , functions.offsetHeight, calculator_divs.offsetHeight to zmiennej, poprawi to czytelnosc ifologi
+            // UWAGI AS: czy aby na pewno ta ifologia musi latać w pętli?
+            // UWAGI AS: moze da sie uproscic wnętrze ifów? np zapamietywać tylko index navLinkArr i i nadanie klasy dać juz za ifami?
+            // UWAGI AS: np. let activeEl = 0;
+            if (scrollY >= 20 && scrollY < hero.offsetHeight / 2) { 
+                // UWAGI AS: np. activeEl = 0;
                 navLinkArr[0].classList.add(isActive);
             } else if (scrollY > hero.offsetHeight / 2 && scrollY < hero.offsetHeight + functions.offsetHeight / 2) {
                 navLinkArr[1].classList.add(isActive);
@@ -56,6 +61,7 @@ const navFocus = () => { //underline nav item on focus
             } else if (scrollY > hero.offsetHeight + functions.offsetHeight + form.offsetHeight + calculator_divs.offsetHeight / 2) {
                 navLinkArr[4].classList.add(isActive);
             }
+            // UWAGI AS: np. navLinkArr[activeEL].classList.add(isActive);
         })
     });
 

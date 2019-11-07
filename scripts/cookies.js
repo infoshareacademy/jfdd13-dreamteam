@@ -1,10 +1,11 @@
+// UWAGI AS: zamknąć w funkcji samowykonujacej sie i wtedy nie potrzeba Tworu "cookieQuest"
 function cookieQuest() {
     const
         cookieInfo = document.getElementById('cookies'),
         cookieBtn = document.getElementById('cookies__accept'),
         setMyCookie = () => {
-        document.cookie ="name=user;expires=Fri, 31 Dec 9999 23:59:59 GMT;path=/;SameSite=Lax";
-    };
+        document.cookie ="name=user;expires=Fri, 31 Dec 9999 23:59:59 GMT;path=/;SameSite=Lax"; // UWAGI AS: tabulacja
+    }; // UWAGI AS: tabulacja
 
     function getCookie(cname) {
         const name = cname + "=";
@@ -33,8 +34,8 @@ function cookieQuest() {
     };
 
     const cookiePop = () => {
-        if (getCookie('name') === ''){
-            setTimeout(() => popUp(), 1000);
+        if (getCookie('name') === ''){ // UWAGI AS: moze wystarczyc uproscic zapis do formy: if (!getCookie('name')) {}
+            setTimeout(() => popUp(), 1000); // UWAGI AS: wystarczy forma: setTimeout(popUp, 1000);
         }
     };
 
