@@ -2,10 +2,10 @@
 // UWAGI AS: po co tyle enterów w kodzie?
 
 
-    const sliderPeople = document.getElementById("myRange"); // UWAGI AS: niepotrzebna tabulacja
-    const sliderDays = document.getElementById("myRange1");
-    const outputPeople = document.getElementById("demo");
-    const outputDays = document.getElementById("demo1");
+const sliderPeople = document.getElementById("myRange"),
+    sliderDays = document.getElementById("myRange1"),
+    outputPeople = document.getElementById("demo"),
+    outputDays = document.getElementById("demo1");
 
 
 function sliderWorking() {
@@ -58,12 +58,11 @@ function checkPrice() {
 }
 
 function displayPrice() {
-    
+
     price = 300;
-    discount = 0; // UWAGI AS: discount w tym scopie nie istnieje.. istnieje tylko w funkcji checkPrice. poza tym przy tej konstrukcji kodu nie trzeba go resetowac.
     // showPrice = document.querySelector('.price');
     // showPrice.innerText = ` ${checkPrice()} zł`;
-    showParagraph = document.querySelector('.price_comment');
+    const showParagraph = document.querySelector('.price_comment');
     showParagraph.innerHTML = `Cena bazowa wynosi 300 zł, a cena dla Ciebie to <span class="price">${checkPrice()} zł</span>.`
 
 }
