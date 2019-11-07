@@ -39,9 +39,6 @@
 .check__input{
     width:2rem;
 }
-.btn{
-    text-transform: capitalize;
-}
 .form__input{
     border: 0.1rem solid #BDBDBD;
     padding: 0.5rem 0 0.5rem 0.2rem;
