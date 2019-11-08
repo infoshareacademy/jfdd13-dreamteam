@@ -13,23 +13,23 @@ class Render {
       // child.style.height = `50px`;
       child.style.background = `red`;
 
-
-      child.setAttribute('id', `${el.name}${el.id}`)
-      child.setAttribute('class', `obstacle ${el.name}`)
-
-
+      child.setAttribute('id', `${el.name}${el.id}`);
+      child.setAttribute('class', `obstacle ${el.name}`);
 
       console.log(`this el is: ${el}`);
-      console.log(`this el id is ${el.id}`)
-      el.position.x = 'dupa123'
-      el.position.y = 'dupa123'
+      console.log(`this el id is ${el.id}`);
+    
       obstacleArr.push(el);
 
     }
 
     parentVar.appendChild(child);
-    el.domEl = document.getElementById(`${el.name}${el.id}`)
+    el.domEl = document.getElementById(`${el.name}${el.id}`);
+
+    el.position.x = generatePositionX(el.domEl);
+    el.position.y = generatePositionY(el.domEl)
   }
+
   static styleEl(el, arg, output) {
     el.style.arg = output;
     // document.getElementById('player').style.background = red
@@ -142,4 +142,14 @@ function createObstacle(name) {
 
 function definePosition(element) {
   const randomX = 200;
+}
+
+function generatePositionX(element) {
+  const bW = board.domEl.offsetWidth;
+  return element.style.left = bW +100 + 'px'
+}
+
+function generatePositionY(element) {
+  const bH = board.domEl.offsetHeight
+  return element.style.top = bH - 100 + 'px'
 }
