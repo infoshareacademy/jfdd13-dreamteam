@@ -126,6 +126,13 @@ class Obstacle extends BoardElement {
     this.type = 'obstacle'
   }
 }
+class Bird extends BoardElement {
+  constructor(name, domEl, id, position, speed, type) {
+    super(domEl, id, position, speed)
+    this.name = name;
+    this.type = 'bird'
+  }
+}
 let id = 1;
 const body = document.querySelector('body');
 const board = {
@@ -139,6 +146,9 @@ const obstacleArr = []
 
 function createObstacle(name) {
   return new Obstacle(name, '', '', {}, 1, '')
+}
+function createBird(name) {
+  return new Bird(name, '', '', {}, 1, '')
 }
 
 function definePosition(element) {
