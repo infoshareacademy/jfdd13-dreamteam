@@ -136,8 +136,9 @@ class Obstacle extends BoardElement {
 }
 class Bird extends BoardElement {
   constructor(name, domEl, id, position, speed, type) {
-    super(domEl, id, position, speed)
+    super(domEl, id, speed)
     this.name = name;
+    this.position = position;
     this.type = 'bird'
   }
 }
@@ -152,27 +153,27 @@ const board = {
 const obstacleArr = []
 
 
-function createObstacle(name) {
+createObstacle = (name) => {
   return new Obstacle(name, '', '', {}, 1, '')
 }
-function createBird(name) {
-  return new Bird(name, '', '', {}, 1, '')
+createBird = (name) => {
+  return new Bird(name, '', '', {x:600,y:600}, 1, '')
 }
 
 function definePosition(element) {
   const randomX = 200;
 }
 
-function generatePositionX(element) {
+generatePositionX = element => {
   const bW = board.domEl.offsetWidth;
   return element.style.left = bW +100 + 'px'
 }
 
-function generateFixedY(element) {
+generateFixedY = element => {
   const bH = board.domEl.offsetHeight;
     return element.style.top = bH -200 + 'px'
 }
-function generateRandomY(element) {
+generateRandomY = element =>  {
   const bH = board.domEl.offsetHeight;
   const randomY = Math.floor(Math.random() * 300) + 300;
     return element.style.top = bH - randomY + 'px'
