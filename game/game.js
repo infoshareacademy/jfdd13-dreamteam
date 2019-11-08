@@ -9,19 +9,27 @@ class Render {
       el.id = id++;
       child.innerText = el.name;
       child.style.width = `20px`;
-      child.style.height = `20px`;
-      child.style.background = `red`;
+      child.style.height = `200px`;
+      child.style.background = `grey`;
 
       child.setAttribute('id', `${el.name}${el.id}`);
       child.setAttribute('class', `obstacle ${el.name}`);
 
       // console.log(`this el is: ${el}`);
-      console.log(`this ${el.type} el id is ${el.id}`);
-    
       obstacleArr.push(el);
-
+     
+    } else if (el.type === 'bird') {
+        el.id = id++;
+        child.innerText = el.name;
+        child.style.width = `20px`;
+        child.style.height = `20px`;
+        child.style.background = `red`;
+        child.setAttribute('id', `${el.name}${el.id}`);
+        child.setAttribute('class', `bird ${el.name}`);
+        obstacleArr.push(el);
     }
-
+    console.log(`this ${el.type} el id is ${el.id}`);
+ 
     parentVar.appendChild(child);
     el.domEl = document.getElementById(`${el.name}${el.id}`);
 
