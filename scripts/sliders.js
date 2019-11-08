@@ -1,74 +1,75 @@
-const slideList = [
-  {
-    img: "../img/bg-1366x768.png",
-    text: "Ruszaj w drogę",
-    text2: "Zaplanuj swoją podróż szybciej niż kiedykolwiek wcześniej!"
-  },
-  {
-    img: "../img/bg1.jpg",
-    text: "Podróżuj więcej. Płać mniej.",
-    text2: "Bądź pewien, że wybrałeś najkorzystniejszą dla siebie ofertę."
-  },
-  {
-    img: "../img/bg2.jpg",
-    text: "Odkryj świat z way.to",
-    text2: "Portal stworzony przez miłośników podróżowania, chcących zarażać swoją pasją"
-  }];
+// function slider() {
+    const slideList = [
+        {
+            img: "../img/bg0.jpg",
+            text: "Ruszaj w drogę",
+            text2: "Zaplanuj swoją podróż szybciej niż kiedykolwiek wcześniej!"
+        },
+        {
+            img: "../img/bg1.jpg",
+            text: "Podróżuj więcej. Płać mniej.",
+            text2: "Bądź pewien, że wybrałeś najkorzystniejszą dla siebie ofertę."
+        },
+        {
+            img: "../img/bg2.jpg",
+            text: "Odkryj świat z way.to",
+            text2: "Portal stworzony przez miłośników podróżowania, chcących zarażać swoją pasją"
+        }];
+    const arrowNext = document.getElementById('hero__arrow--next');
+    const arrowPrev = document.getElementById('hero__arrow--prev');
+    const image = document.querySelector('.hero');
+    const h1 = document.querySelector('h1.heading__h1');
+    const h3 = document.querySelector('h3.heading__h3');
 
-const image = document.querySelector('.hero');
-const h1 = document.querySelector('h1.heading__h1');
-const h3 = document.querySelector('h3.heading__h3');
-// const h1 = document.querySelectorAll('h1.heading__h1 h3.heading__h3');
-
-const dots = [...document.querySelectorAll('.dots span')];
-
-const time = 5000;
-let active = 0;
-const changeDots = () => {
-  const activeDot = dots.findIndex(dot => dot.classList.contains('active'));
-  dots[activeDot].classList.remove('active');
-  dots[active].classList.add('active');
-}
+    let time = 5000;
+    let active = 1;
 
 
+    const changeSlide = (direction = 1) => {
+        if (direction === 1) {
+            active++
+        } else {
+            active--
+        }
+        if (active === -1) {active = 2}
+        if (active === slideList.length || active <= 0) {
+            active = 0;
+        }
+        const nextImg = slideList[active].img;
+        image.style.transition = `background ease-in`;
+        image.style.transitionDuration = '2s';
+        image.style.backgroundImage = `url("${nextImg}")`;
+        image.style.backgroundSize = "cover";
+        h1.textContent = slideList[active].text;
+        h3.textContent = slideList[active].text2;
+        console.log(`active is ${active}`)
+    };
 
-const changeSlide = () => {
-  active++;
-  if(active === slideList.length){
-    active = 0;
-  } 
-  const nextImg = slideList[active].img;
-  image.style.background = `url("${nextImg}") no-repeat center`
-  image.style.backgroundSize = "cover";
-  h1.textContent = slideList[active].text;
-  h3.textContent = slideList[active].text2;
-  changeDots()
-  }
+    const plusSlides = () => {
+        if (arrowPrev) {
+            changeSlide();
+            console.log('dupa1')
 
-const prev = document.querySelector('.prev');
-const next = document.querySelector('.next'); 
+        } else {
+            changeSlide(10)
+        }
+    };
+    arrowPrev.addEventListener('click', () => {
+        changeSlide(-1);
+        clearInterval(change);
+        console.log('click prev');
+    });
 
-const plusSlides = () => {
-    if (prev){
-      changeSlide();
-      changeDots();
-      
-    }
-  }
+    arrowNext.addEventListener('click', () => {
+        changeSlide(1);
+        clearInterval(change);
+        console.log('click next');
 
-// function bang(i) {
-//   changeSlide(slideList += i)
+    });
+    const change = setInterval(changeSlide, time);
+
 // }
 
-// const bang = () => {
-//   if (dots){
-//     changeSlide();
-//     changeDots();
-    
-//   }
-// }
 
-setInterval(changeSlide, time);
-// setInterval(changeDots, time);
 
 

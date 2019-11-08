@@ -1,9 +1,9 @@
 @media all and (min-width: 1366px)
   .hero
-    background-image: url("../img/bg-1366x768.png")
+    //background-image: url("../img/bg-1366x768.png")
 @media all and (min-width: 500px) and (max-width: 1365px)
   .hero
-    background-image: url("../img/bg-1024x576.png")
+    //background-image: url("../img/bg-1024x576.png")
 .wrapper
   overflow: hidden
 .hero
@@ -12,8 +12,23 @@
   flex-direction: column
   height: 100vh
   width: 100vw
-  background: #cccccc url("../img/bg-1366x768.png") no-repeat center
+  background-color: #cccccc
+  background-image: url("../img/bg1.jpg")
   background-size: cover
+  transition: background 2s ease-in-out
+  &__arrow
+    cursor: pointer
+    position: absolute
+    top: calc(50% - 50px)
+    padding: 0 1rem
+    color: white
+    font-weight: bold
+    font-size: 50px
+    transition: 0.6s ease
+    &--prev
+      left: 0
+    &--next
+      right: 0
 .hero-image
   display: flex
   flex-direction: column
