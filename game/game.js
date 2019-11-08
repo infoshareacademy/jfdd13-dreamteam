@@ -16,8 +16,9 @@ class Render {
       child.setAttribute('id', `${el.name}${el.id}`);
       child.setAttribute('class', `obstacle ${el.name}`);
 
-      console.log(`this el is: ${el}`);
+      // console.log(`this el is: ${el}`);
       console.log(`this el id is ${el.id}`);
+      
     
       obstacleArr.push(el);
 
@@ -28,6 +29,8 @@ class Render {
 
     el.position.x = generatePositionX(el.domEl);
     el.position.y = generatePositionY(el.domEl)
+    console.log(`this el posY is ${el.position.y}`);
+
   }
 
   static styleEl(el, arg, output) {
@@ -151,6 +154,6 @@ function generatePositionX(element) {
 
 function generatePositionY(element) {
   const bH = board.domEl.offsetHeight;
-  const randomY = Math.floor(Math.random() * 400)+200;
+  const randomY = Math.floor(Math.random() * 300) + 300;
     return element.style.top = bH - randomY + 'px'
 }
