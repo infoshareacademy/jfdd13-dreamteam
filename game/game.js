@@ -33,8 +33,16 @@ class Render {
     parentVar.appendChild(child);
     el.domEl = document.getElementById(`${el.name}${el.id}`);
 
+    // where we create new objects
+
+    if (el.type === 'obstacle') {
+      el.position.y = generateFixedY(el.domEl);
+    } else if (el.type === 'bird') {
+      el.position.y = generateRandomY(el.domEl);
+    }
+    
     el.position.x = generatePositionX(el.domEl);
-    el.position.y = generatePositionY(el.domEl)
+        
     console.log(`this el posY is ${el.position.y}`);
 
   }
@@ -160,7 +168,11 @@ function generatePositionX(element) {
   return element.style.left = bW +100 + 'px'
 }
 
-function generatePositionY(element) {
+function generateFixedY(element) {
+  const bH = board.domEl.offsetHeight;
+    return element.style.top = bH -200 + 'px'
+}
+function generateRandomY(element) {
   const bH = board.domEl.offsetHeight;
   const randomY = Math.floor(Math.random() * 300) + 300;
     return element.style.top = bH - randomY + 'px'
