@@ -1,3 +1,11 @@
+let id = 1;
+let speed = 1;
+const body = document.querySelector('body');
+const board = {
+  domEl: document.querySelector('.board')
+}
+const obstacleArr = []
+
 class Render {
   static create(el, parent = board.domEl) {
     const parentVar = parent //direct parent - board in DOM
@@ -34,16 +42,14 @@ class Render {
     el.domEl = document.getElementById(`${el.name}${el.id}`);
 
     // where we create new objects
-
     if (el.type === 'obstacle') {
       el.position.y = generateFixedY(el.domEl);
     } else if (el.type === 'bird') {
       el.position.y = generateRandomY(el.domEl);
     }
     
-    el.position.x = generatePositionX(el.domEl);
-        
-    console.log(`this el posY is ${el.position.y}`);
+    child.style.left = el.position.x+ 'px'        
+    console.log(`this el position Y is ${el.position.y}`);
 
   }
 
@@ -129,35 +135,29 @@ const play = new Player('Andrzej', '', 0, '', '')
 
 class Obstacle extends BoardElement {
   constructor(name, domEl, id, position, speed, type) {
-    super(domEl, id, position, speed)
+    super(domEl, id)
     this.name = name;
+    this.position = {x:700, y:400};
+    this.speed = 1;
     this.type = 'obstacle'
   }
 }
 class Bird extends BoardElement {
   constructor(name, domEl, id, position, speed, type) {
-    super(domEl, id, speed)
+    super(domEl, id)
     this.name = name;
-    this.position = position;
+    this.position = {x:700, y:position.y};
+    this.speed = 2;
     this.type = 'bird'
   }
 }
-let id = 1;
-const body = document.querySelector('body');
-const board = {
-  domEl: document.querySelector('.board')
-}
-
-// const bird = new Obstacle('Kakadu', '', '', {x: 100, y: 200}, 1, 'obstacle');
-
-const obstacleArr = []
 
 
 createObstacle = (name) => {
-  return new Obstacle(name, '', '', {}, 1, '')
+  return new Obstacle(name, '', '', {x:600,y:600}, 1, '')
 }
 createBird = (name) => {
-  return new Bird(name, '', '', {x:600,y:600}, 1, '')
+  return new Bird(name, '', '', {x:600,y:''}, 1, '')
 }
 
 function definePosition(element) {
