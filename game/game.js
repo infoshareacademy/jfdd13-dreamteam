@@ -1,5 +1,7 @@
 let id = 1;
 let speed = 1;
+const speedObst = 1;
+const speedBird = 2;
 const body = document.querySelector('body');
 const board = {
   domEl: document.querySelector('.board')
@@ -132,7 +134,7 @@ class Obstacle extends BoardElement {
     super(domEl, id)
     this.name = name;
     this.position = {x:700, y:400};
-    this.speed = 1;
+    this.speed = speedObst;
     this.type = 'obstacle'
   }
 }
@@ -141,7 +143,7 @@ class Bird extends BoardElement {
     super(domEl, id)
     this.name = name;
     this.position = {x:700, y:position.y};
-    this.speed = 2;
+    this.speed = speedBird;
     this.type = 'bird'
   }
 }
