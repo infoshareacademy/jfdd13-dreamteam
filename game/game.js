@@ -150,6 +150,7 @@ function generatePositionX(element) {
 }
 
 function generatePositionY(element) {
-  const bH = board.domEl.offsetHeight
-  return element.style.top = bH - 100 + 'px'
+  const bH = board.domEl.offsetHeight;
+  const randomY = Math.floor(Math.random() * 400)+200;
+    return element.style.top = bH - randomY + 'px'
 }
