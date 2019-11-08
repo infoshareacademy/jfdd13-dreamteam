@@ -3,8 +3,8 @@ let speed = 1;
 const body = document.querySelector('body');
 const board = {
   domEl: document.querySelector('.board')
-}
-const obstacleArr = []
+};
+const obstacleArr = [];
 
 class Render {
   static create(el, parent = board.domEl) {
@@ -12,45 +12,39 @@ class Render {
     // console.log(`parentVar in create is ${parentVar}`);
     const child = document.createElement('div');
 
+    //add id
+    el.id = id++;
+    child.innerText = el.name;
+    child.setAttribute('id', `${el.name}${el.id}`);
+
     if (el.type === 'obstacle') {
-      //add id
-      el.id = id++;
-      child.innerText = el.name;
       child.style.width = `20px`;
       child.style.height = `200px`;
       child.style.background = `grey`;
-
-      child.setAttribute('id', `${el.name}${el.id}`);
       child.setAttribute('class', `obstacle ${el.name}`);
-
-      // console.log(`this el is: ${el}`);
       obstacleArr.push(el);
      
     } else if (el.type === 'bird') {
-        el.id = id++;
-        child.innerText = el.name;
-        child.style.width = `20px`;
-        child.style.height = `20px`;
-        child.style.background = `red`;
-        child.setAttribute('id', `${el.name}${el.id}`);
-        child.setAttribute('class', `bird ${el.name}`);
-        obstacleArr.push(el);
+      child.style.width = `20px`;
+      child.style.height = `20px`;
+      child.style.background = `red`;
+      child.setAttribute('class', `bird ${el.name}`);
+      obstacleArr.push(el);
     }
     console.log(`this ${el.type} el id is ${el.id}`);
  
     parentVar.appendChild(child);
     el.domEl = document.getElementById(`${el.name}${el.id}`);
 
-    // where we create new objects
+    // where we create new object - depends on its type
     if (el.type === 'obstacle') {
-      el.position.y = generateFixedY(el.domEl);
+      child.style.left = el.position.x+ 'px'        
+      child.style.top = el.position.y+ 'px';
     } else if (el.type === 'bird') {
+      child.style.left = el.position.x+ 'px'        
       el.position.y = generateRandomY(el.domEl);
     }
-    
-    child.style.left = el.position.x+ 'px'        
-    console.log(`this el position Y is ${el.position.y}`);
-
+    console.log(`this el position y is ${el.position.y}`);
   }
 
   static styleEl(el, arg, output) {
@@ -164,15 +158,15 @@ function definePosition(element) {
   const randomX = 200;
 }
 
-generatePositionX = element => {
-  const bW = board.domEl.offsetWidth;
-  return element.style.left = bW +100 + 'px'
-}
+// generatePositionX = element => {
+//   const bW = board.domEl.offsetWidth;
+//   return element.style.left = bW +100 + 'px'
+// }
 
-generateFixedY = element => {
-  const bH = board.domEl.offsetHeight;
-    return element.style.top = bH -200 + 'px'
-}
+// generateFixedY = element => {
+//   const bH = board.domEl.offsetHeight;
+//     return element.style.top = bH -200 + 'px'
+// }
 generateRandomY = element =>  {
   const bH = board.domEl.offsetHeight;
   const randomY = Math.floor(Math.random() * 300) + 300;
