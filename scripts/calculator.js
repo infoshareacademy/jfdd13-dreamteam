@@ -1,9 +1,7 @@
-
-    const sliderPeople = document.getElementById("myRange");
-    const sliderDays = document.getElementById("myRange1");
-    const outputPeople = document.getElementById("demo");
-    const outputDays = document.getElementById("demo1");
-
+const sliderPeople = document.getElementById("myRange");
+const sliderDays = document.getElementById("myRange1");
+const outputPeople = document.getElementById("demo");
+const outputDays = document.getElementById("demo1");
 
 function sliderWorking() {
 
@@ -55,9 +53,8 @@ function checkPrice() {
 }
 
 function displayPrice() {
-    
+
     price = 300;
-    discount = 0;
     // showPrice = document.querySelector('.price');
     // showPrice.innerText = ` ${checkPrice()} zł`;
     showParagraph = document.querySelector('.price_comment');
