@@ -1,24 +1,22 @@
 class Render {
   static create(el, parent = board.domEl) {
     const parentVar = parent //direct parent - board in DOM
-    console.log(`parentVar in create is ${parentVar}`);
+    // console.log(`parentVar in create is ${parentVar}`);
     const child = document.createElement('div');
-
 
     if (el.type === 'obstacle') {
       //add id
       el.id = id++;
       child.innerText = el.name;
-      // child.style.width = `50px`;
-      // child.style.height = `50px`;
+      child.style.width = `20px`;
+      child.style.height = `20px`;
       child.style.background = `red`;
 
       child.setAttribute('id', `${el.name}${el.id}`);
       child.setAttribute('class', `obstacle ${el.name}`);
 
       // console.log(`this el is: ${el}`);
-      console.log(`this el id is ${el.id}`);
-      
+      console.log(`this ${el.type} el id is ${el.id}`);
     
       obstacleArr.push(el);
 
@@ -113,34 +111,26 @@ const play = new Player('Andrzej', '', 0, '', '')
 
 // const bird = new Obstacle('Bird', document.getElementById('bird'), 1, {[0] : 100, [1]: 200}, 1)
 
-
 class Obstacle extends BoardElement {
   constructor(name, domEl, id, position, speed, type) {
     super(domEl, id, position, speed)
     this.name = name;
     this.type = 'obstacle'
-
-
   }
 }
-
-const bird = new Obstacle('Bird', '', 1, {
-  [0]: 100,
-  [1]: 200
-}, 1, 'obstacle');
-const obstacleArr = []
-
 let id = 1;
 const body = document.querySelector('body');
 const board = {
   domEl: document.querySelector('.board')
 }
 
+// const bird = new Obstacle('Kakadu', '', '', {x: 100, y: 200}, 1, 'obstacle');
+
+const obstacleArr = []
+
+
 function createObstacle(name) {
-  return new Obstacle(name, '', '', {
-    x: 100,
-    y: 100
-  }, 1, '')
+  return new Obstacle(name, '', '', {}, 1, '')
 }
 
 function definePosition(element) {
