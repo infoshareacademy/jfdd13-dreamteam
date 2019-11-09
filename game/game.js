@@ -1,13 +1,32 @@
 let id = 1;
-const speed = 1;
-const speedObst = 1;
-const speedBird = 2;
-const body = document.querySelector('body');
-const board = {
-  domEl: document.querySelector('.board')
-};
-const obstacleArr = [];
-const startBtn = document.getElementById('start__btn');
+
+const 
+  body = document.querySelector('body'),
+  board = {
+    domEl: document.querySelector('.board')
+    },
+  
+  obstEl = document.querySelectorAll('.obstacle'),
+  birdEl = document.querySelectorAll('.bird'),
+  
+  startBtn = document.getElementById('start__btn');
+
+const 
+  obstWidth = '20px',
+  obstHeight = '200px',
+  birdWidth = '20px',
+  birdHeight = '20px',
+  speed = 1,
+  speedObst = 1,
+  speedBird = 2,
+  obstacleArr = [];  
+
+  generateRandomY = element =>  {
+    const bH = board.domEl.offsetHeight;
+    const randomY = Math.floor(Math.random() * 300) + 300;
+      return element.style.top = bH - randomY +'px'
+  };
+
 const startGame = () => {
   startBtn.style.display = 'none';
   event.preventDefault();
@@ -20,43 +39,42 @@ const startGame = () => {
   // Render.changePosition()
   setInterval(() => Render.changePosition(),3000,);
 };
+
 class Render {
+
   static create(el, parent = board.domEl) {
     const parentVar = parent //direct parent - board in DOM
     // console.log(`parentVar in create is ${parentVar}`);
     const child = document.createElement('div');
-
+    
     //add id
     el.id = id++;
     child.innerText = el.name;
     child.setAttribute('id', `${el.name}${el.id}`);
 
+    parentVar.appendChild(child);
+    el.domEl = document.getElementById(`${el.name}${el.id}`);
+
     if (el.type === 'obstacle') {
-      child.style.width = `20px`;
-      child.style.height = `200px`;
+      child.style.width = obstWidth;
+      child.style.height = obstHeight;
       child.style.background = `grey`;
       child.setAttribute('class', `obstacle ${el.name}`);
       obstacleArr.push(el);
      
     } else if (el.type === 'bird') {
-      child.style.width = `20px`;
-      child.style.height = `20px`;
+      child.style.width = birdWidth;
+      child.style.height = birdHeight;
       child.style.background = `red`;
       child.setAttribute('class', `bird ${el.name}`);
       obstacleArr.push(el);
     }
     // console.log(`this ${el.type} el id is ${el.id}`);
- 
-    parentVar.appendChild(child);
-    el.domEl = document.getElementById(`${el.name}${el.id}`);
 
-    // where we create new object - depends on its type
-    if (el.type === 'obstacle') {
-      child.style.left = el.position.x+ 'px';        
-      child.style.top = el.position.y+ 'px';
-    } else if (el.type === 'bird') {
-      child.style.left = el.position.x+ 'px'        
-      el.position.y = generateRandomY(el.domEl);
+    child.style.left = el.position.x + 'px';
+    child.style.top = el.position.y + 'px';
+    if (el.type === 'bird') {
+    el.position.y = generateRandomY(el.domEl);
     }
     console.log(`this el position y is ${el.position.y}`);
   }
@@ -67,8 +85,6 @@ class Render {
   }
   static changePosition(domEl) {
 
-    const obstEl = document.querySelectorAll('.obstacle');
-    const birdEl = document.querySelectorAll('.bird');
     // obstEl.offsetLeft;
     // birdEl.offsetLeft;
     // const obstElY = document.querySelector('.obstacle').offsetTop;
@@ -82,7 +98,7 @@ class Render {
       if (el.type==='obstacle'){
         x = obstEl.forEach((item,index)=> {
           (item.name==='obstacle').offsetLeft + 'px';
-          console.log(`${el.name} in on` + x)
+          // console.log(`${el.name} in on` + x)
           BoardElement.move(obstEl)
       })
      } else if (el.type ==='bird'){
@@ -143,9 +159,10 @@ class BoardElement {
     this.speed = speed;
     this.type = type;
   }
-  static move() {
-    this.x -=speed;
-    this.y -=speed;
+
+  static move(domEl, position) {
+    this.position.x -= speed;
+    this.position.y -= speed;
 
 
     // Render
@@ -231,10 +248,10 @@ function definePosition(element) {
 //   const bH = board.domEl.offsetHeight;
 //     return element.style.top = bH -200 + 'px'
 // }
-generateRandomY = element =>  {
-  const bH = board.domEl.offsetHeight;
-  const randomY = Math.floor(Math.random() * 300) + 300;
-    return element.style.top = bH - randomY + 'px'
-};
+// generateRandomY = element =>  {
+//   const bH = board.domEl.offsetHeight;
+//   const randomY = Math.floor(Math.random() * 300) + 300;
+//     return element.style.top = bH - randomY
+// };
 
 startBtn.addEventListener('click', startGame);
