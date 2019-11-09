@@ -42,16 +42,13 @@ const changeSlide = (direction = 1) => {
     image.style.transitionDuration = '2s';
     image.style.backgroundImage = `url("${nextImg}")`;
     image.style.backgroundSize = "cover";
-    h1.textContent = slideList[active].text;
-    h3.textContent = slideList[active].text2;
-    console.log(`active is ${active}`)
+    h1.innerText = slideList[active].text;
+    h3.innerText = slideList[active].text2;
 };
 
 const plusSlides = () => {
     if (arrowPrev) {
         changeSlide();
-        console.log('dupa1')
-
     } else {
         changeSlide(10)
     }
@@ -59,17 +56,14 @@ const plusSlides = () => {
 arrowPrev.addEventListener('click', () => {
     changeSlide(-1);
     clearInterval(change);
-    console.log('click prev');
 });
 
 arrowNext.addEventListener('click', () => {
     changeSlide(1);
     clearInterval(change);
-    console.log('click next');
-
 });
 const change = setInterval(changeSlide, time);
-
+changeSlide()
 // }
 
 
