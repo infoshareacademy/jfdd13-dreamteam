@@ -24,7 +24,7 @@ const
   generateRandomY = element =>  {
     const bH = board.domEl.offsetHeight;
     const randomY = Math.floor(Math.random() * 300) + 300;
-      return element.style.top = bH - randomY +'px'
+      return bH - randomY 
   };
 
 const startGame = () => {
@@ -52,30 +52,28 @@ class Render {
     child.innerText = el.name;
     child.setAttribute('id', `${el.name}${el.id}`);
 
-    parentVar.appendChild(child);
-    el.domEl = document.getElementById(`${el.name}${el.id}`);
 
     if (el.type === 'obstacle') {
       child.style.width = obstWidth;
       child.style.height = obstHeight;
       child.style.background = `grey`;
       child.setAttribute('class', `obstacle ${el.name}`);
-      obstacleArr.push(el);
      
     } else if (el.type === 'bird') {
       child.style.width = birdWidth;
       child.style.height = birdHeight;
       child.style.background = `red`;
       child.setAttribute('class', `bird ${el.name}`);
-      obstacleArr.push(el);
     }
     // console.log(`this ${el.type} el id is ${el.id}`);
 
     child.style.left = el.position.x + 'px';
     child.style.top = el.position.y + 'px';
-    if (el.type === 'bird') {
-    el.position.y = generateRandomY(el.domEl);
-    }
+    parentVar.appendChild(child);
+    el.domEl = document.getElementById(`${el.name}${el.id}`);
+
+    obstacleArr.push(el);
+
     console.log(`this el position y is ${el.position.y}`);
   }
 
@@ -107,10 +105,6 @@ class Render {
         // console.log(x)
         BoardElement.move(birdEl)
       }) 
-
-      // for (let i=0; i<5; i++){
-      
-      // BoardElement.move(domEl)
       
       }
     })
@@ -221,7 +215,7 @@ class Bird extends BoardElement {
   constructor(name, domEl, id, position, speed, type) {
     super(domEl, id)
     this.name = name;
-    this.position = {x:700, y:position.y};
+    this.position = {x:700, y:generateRandomY(domEl)};
     this.speed = speedBird;
     this.type = 'bird'
   }
