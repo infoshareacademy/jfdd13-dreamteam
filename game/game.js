@@ -7,7 +7,18 @@ const board = {
   domEl: document.querySelector('.board')
 };
 const obstacleArr = [];
+const startBtn = document.getElementById('start__btn');
+const startGame = () => {
+  startBtn.style.display = 'none';
+  event.preventDefault();
 
+  for (let i=0; i<10; i++) {
+    Render.create(createBird('ufo'));
+    Render.create(createObstacle('dom'));
+    obstacleArr.push();
+  }
+  // setInterval(() => Render.changePosition(),100);
+};
 class Render {
   static create(el, parent = board.domEl) {
     const parentVar = parent //direct parent - board in DOM
@@ -54,8 +65,8 @@ class Render {
     // document.getElementById('player').style.background = red
   }
   static changePosition(el) {
-    el.domEl.style.left = el.position.x + 'px';
-    el.domEl.style.top = el.position.y + 'px';
+    child.style.left = el.position.x + 'px';
+    child.style.top = el.position.y + 'px';
   }
   static destroy(el) {
 
@@ -148,13 +159,12 @@ class Bird extends BoardElement {
   }
 }
 
-
 createObstacle = (name) => {
-  return new Obstacle(name, '', '', {x:600,y:600}, 1, '')
-}
+  return new Obstacle(name, '', '', {}, 1, '')
+};
 createBird = (name) => {
-  return new Bird(name, '', '', {x:600,y:''}, 1, '')
-}
+  return new Bird(name, '', '', {}, 1, '')
+};
 
 function definePosition(element) {
   const randomX = 200;
@@ -173,4 +183,6 @@ generateRandomY = element =>  {
   const bH = board.domEl.offsetHeight;
   const randomY = Math.floor(Math.random() * 300) + 300;
     return element.style.top = bH - randomY + 'px'
-}
+};
+
+startBtn.addEventListener('click', startGame);
