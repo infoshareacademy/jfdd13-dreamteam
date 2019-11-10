@@ -1,53 +1,81 @@
 
 
 let id = 1;
-let speed = 1;
-const speedObst = 1;
-const speedBird = 2;
-const body = document.querySelector('body');
-const board = {
-  domEl: document.querySelector('.board')
+
+const 
+  body = document.querySelector('body'),
+  board = {
+    domEl: document.querySelector('.board')
+    },
+  
+  obstEl = document.querySelectorAll('.obstacle'),
+  birdEl = document.querySelectorAll('.bird'),
+  
+  startBtn = document.getElementById('start__btn');
+
+const 
+  obstWidth = '20px',
+  obstHeight = '200px',
+  birdWidth = '20px',
+  birdHeight = '20px',
+  speed = 1,
+  speedObst = 1,
+  speedBird = 2,
+  obstacleArr = [];  
+
+  generateRandomY = element =>  {
+    const bH = board.domEl.offsetHeight;
+    const randomY = Math.floor(Math.random() * 300) + 300;
+      return bH - randomY 
+  };
+
+const startGame = () => {
+  startBtn.style.display = 'none';
+  event.preventDefault();
+
+  for (let i=0; i<5; i++) {
+    Render.create(createBird('ufo'));
+    Render.create(createObstacle('dom'));
+    obstacleArr.push();
+  }
+  // Render.changePosition()
+  setInterval(() => Render.changePosition(),3000,);
 };
-const obstacleArr = [];
 
 class Render {
+
   static create(el, parent = board.domEl) {
     const parentVar = parent //direct parent - board in DOM
     // console.log(`parentVar in create is ${parentVar}`);
     const child = document.createElement('div');
-
+    
     //add id
     el.id = id++;
     child.innerText = el.name;
     child.setAttribute('id', `${el.name}${el.id}`);
 
+
     if (el.type === 'obstacle') {
-      child.style.width = `20px`;
-      child.style.height = `200px`;
+      child.style.width = obstWidth;
+      child.style.height = obstHeight;
       child.style.background = `grey`;
       child.setAttribute('class', `obstacle ${el.name}`);
-      obstacleArr.push(el);
      
     } else if (el.type === 'bird') {
-      child.style.width = `20px`;
-      child.style.height = `20px`;
+      child.style.width = birdWidth;
+      child.style.height = birdHeight;
       child.style.background = `red`;
       child.setAttribute('class', `bird ${el.name}`);
-      obstacleArr.push(el);
     }
-    console.log(`this ${el.type} el id is ${el.id}`);
- 
+    // console.log(`this ${el.type} el id is ${el.id}`);
+
+    child.style.left = el.position.x + 'px';
+    child.style.top = el.position.y + 'px';
     parentVar.appendChild(child);
     el.domEl = document.getElementById(`${el.name}${el.id}`);
 
-    // where we create new object - depends on its type
-    if (el.type === 'obstacle') {
-      child.style.left = el.position.x+ 'px'        
-      child.style.top = el.position.y+ 'px';
-    } else if (el.type === 'bird') {
-      child.style.left = el.position.x+ 'px'        
-      el.position.y = generateRandomY(el.domEl);
-    }
+    obstacleArr.push(el);
+
     console.log(`this el position y is ${el.position.y}`);
   }
 
@@ -55,10 +83,59 @@ class Render {
     el.style.arg = output;
     // document.getElementById('player').style.background = red
   }
-  static changePosition(el) {
-    el.domEl.style.left = el.position.x + 'px';
-    el.domEl.style.top = el.position.y + 'px';
+  static changePosition(domEl) {
+
+    // obstEl.offsetLeft;
+    // birdEl.offsetLeft;
+    // const obstElY = document.querySelector('.obstacle').offsetTop;
+    // const birdElY = document.querySelector('.bird').offsetTop;
+    // console.log(obstElX,obstElY,birdElX,birdElY);
+
+    obstacleArr.forEach((el,i) =>{
+      
+      let x = el.position.x;
+      
+      if (el.type==='obstacle'){
+        x = obstEl.forEach((item,index)=> {
+          (item.name==='obstacle').offsetLeft + 'px';
+          // console.log(`${el.name} in on` + x)
+          BoardElement.move(obstEl)
+      })
+     } else if (el.type ==='bird'){
+      x = birdEl.forEach((item,index)=> {
+        (item.name==='bird').offsetLeft + 'px';
+        // console.log(x)
+        BoardElement.move(birdEl)
+      }) 
+      
+      }
+    })
   }
+
+  // static changePosition(el) {
+
+  //   const obstEl = document.querySelector('.obstacle');
+  //   const birdEl = document.querySelector('.bird');
+  //   const obstElX = obstEl.offsetLeft;
+  //   const obstElY = obstEl.offsetTop;
+  //   const birdElX = birdEl.offsetLeft;
+  //   const birdElY = birdEl.offsetTop;
+  //   console.log(obstElX,obstElY,birdElX,birdElY);
+
+  //   obstacleArr.forEach((el,i) =>{
+  //     el.position.x = obstElX
+  //   });
+
+      // birdEl.style.top = e.position.y + 'px';
+    // });
+
+  //   birdEl.forEach((el,iter)=>{
+  //     birdEl.style.left = elX + 'px';
+  //     birdEl.style.top = elY + 'px';
+  //     birdEl.move();
+  //   });
+
+  // }
   static destroy(el) {
 
   }
@@ -68,36 +145,32 @@ class Render {
 
 class BoardElement {
 
-  constructor(name, domEl, id, position, speed, type) {
+  constructor(name, domEl, id, position={}, speed, type) {
     this.name = name;
     this.domEl = domEl;
     this.id = id;
-    this.position = {
-
-        x: '',
-        y: ''
-
-    };
+    this.position = position;
+    this.position.x = position.x;
+    this.position.y = position.y;
     this.speed = speed;
     this.type = type;
   }
-  static move(el) {
-    console.log(msg)
-    const x = el.position.x
-    const y = el.position.y
 
-
+  static move(domEl, position) {
+    this.position.x -= speed;
+    this.position.y -= speed;
 
 
     // Render
   }
-  static changePosition(el, x, y) {
-    let elX = el.position.x
-    let elY = el.position.y
-    elX = x
-    elY = y
-  }
 }
+  // static changePosition(el, x, y) {
+  //   this.x = x
+  //   this.y = y
+  //   const elX = el.position.x
+  //   const elY = el.position.y
+  
+
 
 class Player extends BoardElement {
   constructor(name, domEl, id, position, speed, type) {
@@ -144,7 +217,7 @@ class Bird extends BoardElement {
   constructor(name, domEl, id, position, speed, type) {
     super(domEl, id)
     this.name = name;
-    this.position = {x:700, y:position.y};
+    this.position = {x:700, y:generateRandomY(domEl)};
     this.speed = speedBird;
     this.type = 'bird'
   }
@@ -152,11 +225,11 @@ class Bird extends BoardElement {
 
 
 createObstacle = (name) => {
-  return new Obstacle(name, '', '', {x:600,y:600}, 1, '')
-}
+  return new Obstacle(name, '', '', {}, 1, '')
+};
 createBird = (name) => {
-  return new Bird(name, '', '', {x:600,y:''}, 1, '')
-}
+  return new Bird(name, '', '', {}, 1, '')
+};
 
 function definePosition(element) {
   const randomX = 200;
@@ -171,5 +244,10 @@ function definePosition(element) {
 //   const bH = board.domEl.offsetHeight;
 //     return element.style.top = bH -200 + 'px'
 // }
+// generateRandomY = element =>  {
+//   const bH = board.domEl.offsetHeight;
+//   const randomY = Math.floor(Math.random() * 300) + 300;
+//     return element.style.top = bH - randomY
+// };
 
-
+startBtn.addEventListener('click', startGame);
