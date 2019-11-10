@@ -82,13 +82,13 @@ class Render {
  const obstArr = document.querySelectorAll('.obstacle');
    childrenArray.forEach((el,i) =>{
    let x = el.position.x;
-   x -= 100;
    console.log(x);
-      // let x = el.offsetLeft;
-   BoardElement.move(obstArr);
-console.log('tu')  ;
+  
   })         
-   }
+BoardElement.move(domEl);
+  console.log('tu')  ;
+    
+}
 
  
   static destroy(el) {
@@ -112,8 +112,8 @@ class BoardElement {
   }
 
   static move(domEl) {
-    this.x -= speed;
-    this.y -= speed;
+    this.x = this.x - speed;
+    this.y = this.y - speed;
 
   }
     // Render
