@@ -80,17 +80,16 @@ class Render {
   }
 
   static changePosition(domEl) {
-
- const obstArr = document.querySelectorAll('.obstacle');
-   childrenArray.forEach((el,i) =>{
-   let x = el.position.x;
-   console.log(x);
+    const obstArr = document.querySelectorAll('.obstacle');
+    childrenArray.forEach((el,i) =>{
+      let x = el.position.x;
+      console.log(`x= ${el.position.x}`);
   
-  })         
-BoardElement.move(domEl);
-  console.log('tu')  ;
-    
-}
+    })         
+    BoardElement.move(domEl);
+    console.log('time to move!')  ;
+  
+  }
 
  
   static destroy(el) {
@@ -101,8 +100,7 @@ BoardElement.move(domEl);
 }
 
 class BoardElement {
-
-  constructor(name, domEl, id, position={}, speed, type) {
+  constructor(name, domEl, id, position = {x:'',y:''}, speed, type) {
     this.name = name;
     this.domEl = domEl;
     this.id = id;
@@ -111,7 +109,7 @@ class BoardElement {
     this.position.y = position.y;
     this.speed = speed;
     this.type = type;
-  }
+ }
 
   static move(domEl) {
     this.x = this.x - speed;
@@ -162,21 +160,23 @@ const play = new Player('Andrzej', '', 0, '', '')
 // const bird = new Obstacle('Bird', document.getElementById('bird'), 1, {[0] : 100, [1]: 200}, 1)
 
 class Obstacle extends BoardElement {
-  constructor(name, domEl, id, position, speed, type) {
-    super(domEl, id)
+  constructor(name, domEl, id, position={x:'',y:''}, speed, type) {
+    super(domEl, id, position);
     this.name = name;
-    this.position = {x:700, y:400};
+    this.position.x = 700;
+    this.position.y = 400;
     this.speed = speedObst;
-    this.type = 'obstacle'
+    this.type = "obstacle";
   }
 }
 class Bird extends BoardElement {
   constructor(name, domEl, id, position, speed, type) {
-    super(domEl, id)
+    super(domEl, id, position);
     this.name = name;
-    this.position = {x:700, y:generateRandomY(domEl)};
+    this.position.x = 700;
+    this.position.y = generateRandomY(domEl);
     this.speed = speedBird;
-    this.type = 'bird'
+    this.type = "bird";
   }
 }
 
