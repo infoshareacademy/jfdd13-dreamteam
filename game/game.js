@@ -7,10 +7,6 @@ const
   board = {
     domEl: document.querySelector('.board')
     },
-  
-  obstEl = document.querySelectorAll('.obstacle'),
-  birdEl = document.querySelectorAll('.bird'),
-  
   startBtn = document.getElementById('start__btn');
 
 const 
@@ -21,7 +17,7 @@ const
   speed = 1,
   speedObst = 1,
   speedBird = 2,
-  obstacleArr = [];  
+  childrenArray = [];  
 
   generateRandomY = element =>  {
     const bH = board.domEl.offsetHeight;
@@ -36,10 +32,9 @@ const startGame = () => {
   for (let i=0; i<5; i++) {
     Render.create(createBird('ufo'));
     Render.create(createObstacle('dom'));
-    obstacleArr.push();
   }
-  // Render.changePosition()
-  setInterval(() => Render.changePosition(),3000,);
+
+  setInterval(() => Render.changePosition(),2000,);
 };
 
 class Render {
@@ -74,68 +69,30 @@ class Render {
     parentVar.appendChild(child);
     el.domEl = document.getElementById(`${el.name}${el.id}`);
 
-    obstacleArr.push(el);
+    childrenArray.push(el);
 
-    console.log(`this el position y is ${el.position.y}`);
+    // console.log(`this el position y is ${el.position.y}`);
   }
 
   static styleEl(el, arg, output) {
     el.style.arg = output;
     // document.getElementById('player').style.background = red
   }
+
   static changePosition(domEl) {
 
-    // obstEl.offsetLeft;
-    // birdEl.offsetLeft;
-    // const obstElY = document.querySelector('.obstacle').offsetTop;
-    // const birdElY = document.querySelector('.bird').offsetTop;
-    // console.log(obstElX,obstElY,birdElX,birdElY);
+ const obstArr = document.querySelectorAll('.obstacle');
+   childrenArray.forEach((el,i) =>{
+   let x = el.position.x;
+   console.log(x);
+  
+  })         
+BoardElement.move(domEl);
+  console.log('tu')  ;
+    
+}
 
-    obstacleArr.forEach((el,i) =>{
-      
-      let x = el.position.x;
-      
-      if (el.type==='obstacle'){
-        x = obstEl.forEach((item,index)=> {
-          (item.name==='obstacle').offsetLeft + 'px';
-          // console.log(`${el.name} in on` + x)
-          BoardElement.move(obstEl)
-      })
-     } else if (el.type ==='bird'){
-      x = birdEl.forEach((item,index)=> {
-        (item.name==='bird').offsetLeft + 'px';
-        // console.log(x)
-        BoardElement.move(birdEl)
-      }) 
-      
-      }
-    })
-  }
-
-  // static changePosition(el) {
-
-  //   const obstEl = document.querySelector('.obstacle');
-  //   const birdEl = document.querySelector('.bird');
-  //   const obstElX = obstEl.offsetLeft;
-  //   const obstElY = obstEl.offsetTop;
-  //   const birdElX = birdEl.offsetLeft;
-  //   const birdElY = birdEl.offsetTop;
-  //   console.log(obstElX,obstElY,birdElX,birdElY);
-
-  //   obstacleArr.forEach((el,i) =>{
-  //     el.position.x = obstElX
-  //   });
-
-      // birdEl.style.top = e.position.y + 'px';
-    // });
-
-  //   birdEl.forEach((el,iter)=>{
-  //     birdEl.style.left = elX + 'px';
-  //     birdEl.style.top = elY + 'px';
-  //     birdEl.move();
-  //   });
-
-  // }
+ 
   static destroy(el) {
 
   }
@@ -156,13 +113,13 @@ class BoardElement {
     this.type = type;
   }
 
-  static move(domEl, position) {
-    this.position.x -= speed;
-    this.position.y -= speed;
+  static move(domEl) {
+    this.x = this.x - speed;
+    this.y = this.y - speed;
 
-
-    // Render
   }
+    // Render
+  
 }
   // static changePosition(el, x, y) {
   //   this.x = x
