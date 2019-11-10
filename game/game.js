@@ -1,3 +1,5 @@
+
+
 let id = 1;
 let speed = 1;
 const speedObst = 1;
@@ -169,8 +171,5 @@ function definePosition(element) {
 //   const bH = board.domEl.offsetHeight;
 //     return element.style.top = bH -200 + 'px'
 // }
-generateRandomY = element =>  {
-  const bH = board.domEl.offsetHeight;
-  const randomY = Math.floor(Math.random() * 300) + 300;
-    return element.style.top = bH - randomY + 'px'
-}
+
+
