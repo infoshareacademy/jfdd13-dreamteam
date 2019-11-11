@@ -11,14 +11,16 @@ const
   instBtn = document.getElementById('inst__btn');
 
 const 
-  playerWidth = '40px',
-  playerHeight = '40px',
-  obstWidth = '40px',
-  obstHeight = '200px',
-  birdWidth = '20px',
-  birdHeight = '20px',
+  playerWidth = 40,
+  playerHeight = 40,
+  obstWidth = 40,
+  obstHeight = 200,
+  birdWidth = 20,
+  birdHeight = 20,
   boardWidth = 600,
   boardHeight = 600,
+  boardStart = 0,
+  frameUp = 20,
   speed = 1,
   speedObst = 1,
   speedBird = 2,
@@ -74,20 +76,20 @@ class Render {
     child.setAttribute('id', `${el.name}${el.id}`);
 
     if (el.type === 'player') {
-      child.style.width = playerWidth;
-      child.style.height = playerHeight;
+      child.style.width = playerWidth + 'px';
+      child.style.height = playerHeight + 'px';
       child.style.background = `blue`;
       child.setAttribute('class', `player`);
      
     } else if (el.type === 'obstacle') {
-      child.style.width = obstWidth;
-      child.style.height = obstHeight;
+      child.style.width = obstWidth + 'px';
+      child.style.height = obstHeight + 'px';
       child.style.background = `grey`;
       child.setAttribute('class', `obstacle ${el.name}`);
      
     } else if (el.type === 'bird' || el.type === 'birdZ') {
-      child.style.width = birdWidth;
-      child.style.height = birdHeight;
+      child.style.width = birdWidth + 'px';
+      child.style.height = birdHeight +'px';
       child.style.background = `red`;
       child.setAttribute('class', `bird ${el.name}`);
     }
@@ -141,27 +143,26 @@ class Render {
       if(el.type==='player'){
       switch (event.code) {
         case "ArrowLeft":
-          if(el.position.x > 0) {
+          if(el.position.x > boardStart) {
             el.playerLeft()
           };
 
           // Player.changePosition();
           break;
         case "ArrowRight":
-          if(el.position.x + 40 < boardWidth) {
+          if(el.position.x + playerWidth < boardWidth) {
             el.playerRight()
           };
   
           break;
         case "ArrowUp":
-          if(el.position.y > 20) {
+          if(el.position.y > frameUp) {
             el.playerUp()
           };
   
           break;
         case "ArrowDown":
-          if(el.position.y + 40 < boardHeight) {
-            
+          if(el.position.y + playerHeight < boardHeight) {
             el.playerDown()
           };
   
@@ -190,19 +191,19 @@ class BoardElement {
     this.position.y = position.y;
     this.speed = speed;
     this.type = type;
- }
+  }
   playerLeft(){
-  this.position.x -= this.speed / 2 ;
-  }
-  playerRight(){
-    this.position.x += this.speed;
-  }
-  playerUp(){
-    this.position.y -= this.speed * 4;
-  }
-  playerDown(){
-    this.position.y += this.speed * 4;
-  }
+    this.position.x -= this.speed / 2 ;
+    }
+    playerRight(){
+      this.position.x += this.speed;
+    }
+    playerUp(){
+      this.position.y -= this.speed * 4;
+    }
+    playerDown(){
+      this.position.y += this.speed * 4;
+    }
   moveObst() {
     this.position.x -= this.speed;
   }
