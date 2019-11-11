@@ -83,12 +83,14 @@ class Render {
                 child.style.height = birdHeight;
                 child.style.backgroundColor = 'red';
                 child.style.left = el.position.x + 'px';
+                child.style.top = el.position.y + 'px';
                 console.log(el.name);
 
             } else if (el.name === 'obstacle') {
                 child.style.width = obstWidth;
                 child.style.height = obstHeight;
                 child.style.background = `grey`;
+                child.style.bottom = `0px`;
             }
             child.setAttribute('class', `obstacle ${el.name}`);
         } else {
@@ -268,11 +270,11 @@ class Bird extends BoardElement {
 createPlayer = (name) => {
     return new Player(name, '', 0, {x: 100, y: 200}, speed, 'player');
 };
-createObstacle = (name) => {
-    return new Obstacle(name, '', '', {x: 700, y: 400}, speedObst, 'obstacle');
+createObstacle = () => {
+    return new Obstacle('obstacle', '', '', {x: 700, y: 400}, speedObst, 'obstacle');
 };
-createBird = (name) => {
-    return new Bird(name, '', '', {x: 700, y: generateBirdY()}, speedBird, 'bird')
+createBird = () => {
+    return new Obstacle('bird', '', '', {x: 700, y: generateBirdY()}, speedBird, 'obstacle')
 };
 createBirdZ = (name) => {
     return new Bird(name, '', '', {x: 700, y: generateBirdY()}, speedBird, 'birdZ')
@@ -288,17 +290,14 @@ createBirdZ = (name) => {
 //     return element.style.top = bH -200 + 'px'
 // }
 generateBirdY = () => {
-    const randPositions = [350, 400, 500];
-    const bH = board.domEl.offsetHeight;
+    const randPositions = [350, 400, 450, 500];
     const getPosition = Math.round(Math.random() * randPositions.length - 1); //generate random arr index
-    const randomY = Math.floor(Math.random() * 300) + 300;
-    const result = randPositions[getPosition];
+    const result = randPositions[getPosition] - 250;
     if (result !== undefined) {
         return result;
     } else { //avoid func return undefined
         return randPositions[1];
     }
-    // return element.style.top = bH - randPositions[getPosition];
 
 };
 
