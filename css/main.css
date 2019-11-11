@@ -215,6 +215,9 @@ body {
 .info__list {
   padding: 1rem;
 }
+.info__text {
+  padding: 0 0 2rem 0;
+}
 
 .card {
   display: flex;
@@ -291,13 +294,13 @@ body {
 }
 @media all and (max-width: 700px) {
   .grid__container {
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(460px, 1fr);
     margin: 0 2rem;
     grid-gap: 0;
     padding: 0;
   }
   .grid__container--inner {
+    padding: 1rem;
     grid-gap: 1rem;
   }
 
@@ -306,8 +309,7 @@ body {
     height: 130px;
   }
 
-  .info__container {
-    padding-bottom: 3rem;
+  .info__wrapper {
     border-bottom: 1px solid #BDBDBD;
   }
 }

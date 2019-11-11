@@ -26,6 +26,8 @@
     padding: 1rem 0
   &__list
     padding: 1rem
+  &__text
+    padding: 0 0 2rem 0
 .card
   display: flex
   justify-content: center
@@ -82,19 +84,20 @@
     margin: 1rem 0
 @media all and (max-width: 700px)
   .grid__container
-    grid-template-rows: 1fr 1fr
-    grid-template-columns: 1fr
+    grid-template-columns: minmax(460px, 1fr)
     margin: 0 2rem
     grid-gap: 0
     padding: 0
     &--inner
+      padding: 1rem
       grid-gap: 1rem
   .card
     align-items: flex-start
     height: 130px
-  .info__container
-    padding-bottom: 3rem
+  .info__wrapper
     border-bottom: 1px solid $divider-color
+  .info__container
+    //padding-bottom: 3rem
 @media all and (max-width: 470px)
   .grid__container
     margin: .5rem
