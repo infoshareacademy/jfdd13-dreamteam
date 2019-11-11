@@ -8,6 +8,7 @@ const
     domEl: document.querySelector('.board')
     },
   startBtn = document.getElementById('start__btn');
+  instBtn = document.getElementById('inst__btn');
 
 const 
   obstWidth = '40px',
@@ -27,6 +28,7 @@ const
 
 startGame = () => {
   startBtn.style.display = 'none';
+  instBtn.style.display = 'none';
   event.preventDefault();
 
   firstLoop = () => {
