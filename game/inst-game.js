@@ -1,6 +1,6 @@
 const modal = document.getElementById("instBoxM");
 
-const btn = document.getElementById("inst-btn");
+const btn = document.getElementById("inst__btn");
 
 const span = document.getElementsByClassName("close")[0];
 
