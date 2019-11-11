@@ -61,12 +61,23 @@
 
 .frame__left {
     left: -300px;
-
 }
 
 .frame__right {
     right: -300px;
+/*    TO BE DELETED*/
+    z-index: 0;
+}
 
+.highscore {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    top: 0;
+    width: 300px;
+    height: 40px;
+    z-index: 3;
+    /*background: orange;*/
 }
 
 .player {
@@ -127,15 +138,6 @@
     position: fixed;
     left: 1000px;
 } */
-
-.mount {
-    position: absolute;
-    font-size: 290px;
-    top: 300px;
-    left: -80px;
-    color: gray;
-    display: block;
-}
 
 
 /*.tree {*/

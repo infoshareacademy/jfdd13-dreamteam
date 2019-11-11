@@ -10,35 +10,36 @@
     <link rel="stylesheet" href="./inst-game.css">
 </head>
 <body>
-    <div class="container">
-        <div id="highscore">foo</div>
-        <div class="board" id="board">
-            <div class="frame frame__up"></div>
-            <div class="frame frame__right"></div>
-            <div class="frame frame__bottom"></div>
-            <div class="frame frame__left"></div>
-        </div>
+<div class="container">
+    <div class="highscore" id="highscore">Najlepszy wynik to:</div>
+    <div class="board" id="board">
+        <div class="frame frame__top"></div>
+        <div class="frame frame__left"></div>
+        <div class="frame frame__right"></div>
+        <div class="frame frame__bottom"></div>
+    </div>
 
-        <div class="buttons">
-            <button id="start__btn">Start</button>
-            <button id="inst__btn">Instrukcja</button>
-        </div>
+    <div class="buttons">
+        <button class="btn" id="start__btn">Start</button>
+        <button class="btn" id="inst__btn">Instrukcja</button>
+    </div>
 
     <div id="instBoxM" class="instBox">
-    <div class="instBoxPop">
-    <span class="close">&times;</span>
-    <h2 class="titleBox">Instrukcja gry jest bardzo trudna</h2>
-        <ul>
-            <li>To jest gra</li>
-            <li>W grę można grać</li>
-            <li>Podstawą jest robienie bum, bum i ciach, ciach</li>
-            <li>Należy używać &lArr;&uArr;&dArr;&rArr;</li>
-            <li>Należy używać dużo enter</li>
-            <li>Jak przegrasz robi się wielkie Bum!</li>
+        <div class="instBoxPop">
+            <span class="close">&times;</span>
+            <h2 class="titleBox">Instrukcja gry jest bardzo trudna</h2>
+            <ul>
+                <li>To jest gra</li>
+                <li>W grę można grać</li>
+                <li>Podstawą jest robienie bum, bum i ciach, ciach</li>
+                <li>Należy używać &lArr;&uArr;&dArr;&rArr;</li>
+                <li>Należy używać dużo enter</li>
+                <li>Jak przegrasz robi się wielkie Bum!</li>
 
-        </ul>
+            </ul>
+        </div>
     </div>
-    </div>
+</div>
 
     <script src="./game.js"></script>
     <script src="./inst-game.js"></script>
