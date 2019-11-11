@@ -16,7 +16,7 @@ const slideList = [
   }];
 
 const image = document.querySelector('.hero');
-const h1 = document.getElementById('slider__heading')
+const h1 = document.getElementById('slider__heading');
 const h1span = document.getElementById('slider__text');
 // const h1 = document.querySelectorAll('h1.heading__h1 h3.heading__h3');
 
@@ -28,7 +28,7 @@ const changeDots = () => {
   const activeDot = dots.findIndex(dot => dot.classList.contains('active'));
   dots[activeDot].classList.remove('active');
   dots[active].classList.add('active');
-}
+};
 
 
 
@@ -51,7 +51,7 @@ const plusSlides = () => {
     if (prev){
       changeSlide();
       changeDots();
-      
+
     }
   };
 changeSlide();
