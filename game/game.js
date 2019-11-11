@@ -165,29 +165,28 @@ class Obstacle extends BoardElement {
     
     super(domEl, id, position);
     this.name = name;
-    this.position.x = 700;
-    this.position.y = 400;
-    this.speed = speedObst;
-    this.type = "obstacle";
+    this.position.x = position.x;
+    this.position.y = position.y;
+    this.speed = speed;
+    this.type = type;
   }
 }
 class Bird extends BoardElement {
   constructor(name, domEl, id, position, speed, type) {
     super(domEl, id, position);
     this.name = name;
-    this.position.x = 700;
-    this.position.y = generateRandomY(domEl);
-    this.speed = speedBird;
-    this.type = "bird";
+    this.position.x = position.x;
+    this.position.y = position.y;
+    this.speed = speed;
+    this.type = type;
   }
 }
 
-
 createObstacle = (name) => {
-  return new Obstacle(name, '', '', {}, 1, '');
+  return new Obstacle(name, '', '', {x:700,y:400}, speedObst, 'obstacle');
 };
 createBird = (name) => {
-  return new Bird(name, '', '', {}, 1, '')
+  return new Bird(name, '', '', {x:700,y:generateRandomY()}, speedBird, 'bird')
 };
 
 function definePosition(element) {
