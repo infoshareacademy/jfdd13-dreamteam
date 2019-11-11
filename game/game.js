@@ -17,6 +17,8 @@ const
   obstHeight = '200px',
   birdWidth = '20px',
   birdHeight = '20px',
+  boardWidth = 600,
+  boardHeight = 600,
   speed = 1,
   speedObst = 1,
   speedBird = 2,
@@ -139,20 +141,29 @@ class Render {
       if(el.type==='player'){
       switch (event.code) {
         case "ArrowLeft":
-          el.playerLeft();
+          if(el.position.x > 0) {
+            el.playerLeft()
+          };
 
           // Player.changePosition();
           break;
         case "ArrowRight":
-          el.playerRight();
+          if(el.position.x + 40 < boardWidth) {
+            el.playerRight()
+          };
   
           break;
         case "ArrowUp":
-          el.playerUp();
+          if(el.position.y > 20) {
+            el.playerUp()
+          };
   
           break;
         case "ArrowDown":
-          el.playerDown();
+          if(el.position.y + 40 < boardHeight) {
+            
+            el.playerDown()
+          };
   
           break;
         default:
