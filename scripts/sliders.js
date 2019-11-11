@@ -18,11 +18,11 @@ const slideList = [
 const image = document.querySelector('.hero');
 const h1 = document.getElementById('slider__heading');
 const h1span = document.getElementById('slider__text');
-// const h1 = document.querySelectorAll('h1.heading__h1 h3.heading__h3');
-
-const dots = [...document.querySelectorAll('.dots span')];
-
+const arrowPrev = document.getElementById('slider--prev');
+const arrowNext = document.getElementById('slider--next');
 const time = 5000;
+
+
 let active = 0;
 
 
@@ -47,8 +47,15 @@ const plusSlides = () => {
       changeSlide();
     }
   };
+
+const slides =  setInterval(changeSlide, time);
+arrowPrev.addEventListener('click', () => {
+  plusSlides(-1);
+  clearInterval(slides)
+});
+arrowNext.addEventListener('click', () => {
+  plusSlides(1);
+  clearInterval(slides)
+});
 changeSlide();
-
-setInterval(changeSlide, time);
-
 
