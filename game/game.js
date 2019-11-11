@@ -29,12 +29,12 @@ const startGame = () => {
   startBtn.style.display = 'none';
   event.preventDefault();
 
-  for (let i=0; i<5; i++) {
+  //for (let i=0; i<5; i++) {
     Render.create(createBird('ufo'));
     Render.create(createObstacle('dom'));
-  }
+  //}
 
-  setInterval(() => Render.changePosition(),2000,);
+  setInterval(Render.changePosition,100);
 };
 
 class Render {
@@ -69,6 +69,7 @@ class Render {
     parentVar.appendChild(child);
     el.domEl = document.getElementById(`${el.name}${el.id}`);
 
+    console.log('create', el);
     childrenArray.push(el);
 
     // console.log(`this el position y is ${el.position.y}`);
@@ -80,14 +81,13 @@ class Render {
   }
 
   static changePosition(domEl) {
-    const obstArr = document.querySelectorAll('.obstacle');
     childrenArray.forEach((el,i) =>{
       let x = el.position.x;
       console.log(`x= ${el.position.x}`);
-  
+      el.move();
+      el.domEl.style.left = el.position.x + 'px';
+
     })         
-    BoardElement.move(domEl);
-    console.log('time to move!')  ;
   
   }
 
@@ -111,9 +111,10 @@ class BoardElement {
     this.type = type;
  }
 
-  static move(domEl) {
-    this.x = this.x - speed;
-    this.y = this.y - speed;
+  move() {
+    this.position.x = this.position.x - this.speed;
+    console.log(this.position.x);
+    // this.y = this.y - this.speed;
 
   }
     // Render
@@ -161,6 +162,7 @@ const play = new Player('Andrzej', '', 0, '', '')
 
 class Obstacle extends BoardElement {
   constructor(name, domEl, id, position={x:'',y:''}, speed, type) {
+    
     super(domEl, id, position);
     this.name = name;
     this.position.x = 700;
@@ -182,7 +184,7 @@ class Bird extends BoardElement {
 
 
 createObstacle = (name) => {
-  return new Obstacle(name, '', '', {}, 1, '')
+  return new Obstacle(name, '', '', {}, 1, '');
 };
 createBird = (name) => {
   return new Bird(name, '', '', {}, 1, '')
@@ -242,12 +244,13 @@ const startGame1 = () => {
   gameStarted();
 
 
-setTimeout(() => {
-  gameCompleted(Math.random() * 200)
   setTimeout(() => {
-    startGame1()
-  }, 1000)
-  }, 5000)
+    gameCompleted(Math.random() * 200)
+    setTimeout(() => {
+      startGame1()
+    }, 1000)
+
+    }, 5000)
 }
 
 
