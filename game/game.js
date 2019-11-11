@@ -88,7 +88,11 @@ class Render {
       el.moveObst();
       el.domEl.style.left = el.position.x + 'px';
       }
-      
+      if(el.type==='bird'){
+        el.moveBird();
+        el.domEl.style.left = el.position.x + 'px';
+        el.domEl.style.top = el.position.y + 'px';  
+      }
 
     })         
   
@@ -119,7 +123,7 @@ class BoardElement {
   }
   moveBird(){
     this.position.x -= this.speed;
-    this.position.y -= this.speed;
+    this.position.y += this.speed /2;
   }
     // console.log(this.position.x);
 
