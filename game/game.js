@@ -84,8 +84,11 @@ class Render {
     childrenArray.forEach((el,i) =>{
       let x = el.position.x;
       console.log(`child x= ${x}`);
-      el.move();
+      if(el.type==='obstacle'){
+      el.moveObst();
       el.domEl.style.left = el.position.x + 'px';
+      }
+      
 
     })         
   
@@ -111,12 +114,15 @@ class BoardElement {
     this.type = type;
  }
 
-  move() {
+  moveObst() {
     this.position.x -= this.speed;
-    // console.log(this.position.x);
-    // this.position.y -= this.speed;
-
   }
+  moveBird(){
+    this.position.x -= this.speed;
+    this.position.y -= this.speed;
+  }
+    // console.log(this.position.x);
+
     // Render
   
 }
