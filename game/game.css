@@ -7,8 +7,9 @@
 .container {
     position: relative;
     display: flex;
-    width: 100vw;
-    min-height: 100vh;
+    width: 1200px;
+    height: 640px;
+    /* background: rgb(155, 205, 255); */
     background: darkslategrey;
 }
 
@@ -163,24 +164,31 @@
     position: absolute;
     width: 600px;
     height: 600px;
-    visibility: hidden;
+    /* visibility: hidden; */
+    /* background: darkslategrey; */
     background: rgb(155, 205, 255);
-    z-index: 1;
+    z-index: 2;
 }
 
 .frame__up {
-    top: -600px;
+    top: -580px;
+    
     /* height: 20px; */
 }
-.frame__right {
+.frame__right{
     left: 600px;
+    width: 100px;
+
 }
 .frame__bottom {
     top: 600px;
+    left:-20px;
+    height: 20px;
+    width: 720px;
 }
 .frame__left {
-    left: -600px;
-    /* width: 20px; */
+    left: -20px;
+    width: 20px;
 }
 /* .frame__records {
     display: flex;
