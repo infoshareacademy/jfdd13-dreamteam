@@ -29,10 +29,21 @@ const
         event.preventDefault();
         document.addEventListener("keydown", event => Render.KeySupport(Player, event));
 
+        checkPosition = () => {
+            const outOfTheBoard = childrenArray.map(item => item.position.x < 0);
+            const trashItem = outOfTheBoard.indexOf(true);
+            if (trashItem > 0)  {
+
+                Render.destroy(childrenArray[trashItem])
+            }
+
+        }
+
+
         firstLoop = () => {
             Render.create(createPlayer('pilot'));
             Render.create(createBird('bird'));
-            Render.create(createObstacle('dom'));
+            Render.create(createObstacle('obstacle'));
         };
         obstacleLoop = () => {
             Render.create(createObstacle());
@@ -44,6 +55,7 @@ const
             // Render.create(createBirdZ('zet'));
         };
         mainLoop = () => {
+            setInterval(checkPosition, 100);
             setInterval(obstacleLoop, 12000);
             setInterval(birdLoop, 6000);
             setInterval(birdZLoop, 9000);
@@ -184,7 +196,10 @@ class Render {
     };
 
     static destroy(el) {
-
+        el.domEl.remove();
+        el.position.x = 1000;
+        el.position.y = -1000;
+        return el = 0;
     }
 
     //destroy element
