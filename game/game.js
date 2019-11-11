@@ -194,16 +194,16 @@ class BoardElement {
   }
   playerLeft(){
     this.position.x -= this.speed / 2 ;
-    }
-    playerRight(){
-      this.position.x += this.speed;
-    }
-    playerUp(){
-      this.position.y -= this.speed * 4;
-    }
-    playerDown(){
-      this.position.y += this.speed * 4;
-    }
+  }
+  playerRight(){
+    this.position.x += this.speed;
+  }
+  playerUp(){
+    this.position.y -= this.speed * 4;
+  }
+  playerDown(){
+    this.position.y += this.speed * 4;
+  }
   moveObst() {
     this.position.x -= this.speed;
   }
