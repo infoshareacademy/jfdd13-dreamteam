@@ -18,7 +18,7 @@ const slideList = [
 const image = document.querySelector('.hero');
 const h1 = document.querySelector('h1.heading__h1');
 const h3 = document.querySelector('h3.heading__h3');
-// const h1 = document.querySelectorAll('h1.heading__h1 h3.heading__h3');
+
 
 const dots = [...document.querySelectorAll('.dots span')];
 
@@ -48,27 +48,37 @@ const changeSlide = () => {
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next'); 
 
-const plusSlides = () => {
-    if (prev){
-      changeSlide();
-      changeDots();
+// const plusSlides = () => {
+//     if (prev){
+//       changeSlide();
+//       changeDots();
       
-    }
-  }
-
-// function bang(i) {
-//   changeSlide(slideList += i)
-// }
-
-// const bang = () => {
-//   if (dots){
-//     changeSlide();
-//     changeDots();
-    
+//     }
 //   }
-// }
 
-setInterval(changeSlide, time);
+let indexInterval = setInterval(changeSlide, time)
+
+  const plusSlides = (e) => {
+      console.log(prev, next);
+      if (e.prev || e.next){
+        clearInterval(indexInterval)
+        e.prev ? active-- : active++;
+        if(active === slideList.length){
+          active = 0
+        } else if(active <0){
+          active = slideList.length - 1
+        }
+      const nextImg = slideList[active].img;
+      image.style.background = `url("${nextImg}") no-repeat center`
+      image.style.backgroundSize = "cover";
+      h1.textContent = slideList[active].text;
+      h3.textContent = slideList[active].text2;
+      changeDots()
+      setInterval(changeSlide, time);
+      }
+      }
+
+// setInterval(changeSlide, time);
 // setInterval(changeDots, time);
 
 
