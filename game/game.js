@@ -10,7 +10,7 @@ const
   startBtn = document.getElementById('start__btn');
 
 const 
-  obstWidth = '20px',
+  obstWidth = '40px',
   obstHeight = '200px',
   birdWidth = '20px',
   birdHeight = '20px',
@@ -33,19 +33,24 @@ startGame = () => {
     Render.create(createBird('ufo'));
     Render.create(createObstacle('dom'));
   };
-  birdLoop = () => {
-    Render.create(createBird('ufo'));
-  };
   obstacleLoop = () => {
-    Render.create(createObstacle('ufo'));
+    Render.create(createObstacle('o'));
   };
-  renderLoop = () => {
+  birdLoop = () => {
+    Render.create(createBird('b'));
+  };
+  birdZLoop = () => {
+    Render.create(createBirdZ('zet'));
+  };
+  mainLoop = () => {
+    setInterval(obstacleLoop,12000);
     setInterval(birdLoop,6000);
-    setInterval(obstacleLoop,11000);  
+    setInterval(birdZLoop,9000);  
   };
+  
   setTimeout(firstLoop, 300);
   setInterval(Render.changePosition,100);
-  renderLoop();
+  mainLoop();
 };
 
 class Render {
@@ -67,7 +72,7 @@ class Render {
       child.style.background = `grey`;
       child.setAttribute('class', `obstacle ${el.name}`);
      
-    } else if (el.type === 'bird') {
+    } else if (el.type === 'bird' || el.type === 'birdZ') {
       child.style.width = birdWidth;
       child.style.height = birdHeight;
       child.style.background = `red`;
@@ -102,6 +107,10 @@ class Render {
       if(el.type==='bird'){
         el.moveBird();
         el.domEl.style.left = el.position.x + 'px';
+      };
+      if(el.type==='birdZ'){
+        el.moveBirdZ();
+        el.domEl.style.left = el.position.x + 'px';
         el.domEl.style.top = el.position.y + 'px';  
       };
 
@@ -132,6 +141,9 @@ class BoardElement {
     this.position.x -= this.speed;
   }
   moveBird(){
+    this.position.x -= this.speed;
+  }
+  moveBirdZ(){
     this.position.x -= this.speed;
     this.position.y += this.speed /4;
   }
@@ -197,6 +209,9 @@ createObstacle = (name) => {
 };
 createBird = (name) => {
   return new Bird(name, '', '', {x:700,y:generateRandomY()}, speedBird, 'bird')
+};
+createBirdZ = (name) => {
+  return new Bird(name, '', '', {x:700,y:generateRandomY()}, speedBird, 'birdZ')
 };
 
 function definePosition(element) {
