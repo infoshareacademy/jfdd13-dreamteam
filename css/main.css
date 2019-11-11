@@ -167,6 +167,9 @@ body {
   background-color: #BDBDBD;
   border-radius: 50%;
 }
+.icon__container--functions > i {
+  color: #fff;
+}
 
 @media all and (max-width: 650px) {
   .functions__grid {
