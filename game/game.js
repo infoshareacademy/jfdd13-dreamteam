@@ -17,24 +17,35 @@ const
   speed = 1,
   speedObst = 1,
   speedBird = 2,
-  childrenArray = [];  
+  childrenArray = [],  
 
   generateRandomY = element =>  {
     const bH = board.domEl.offsetHeight;
     const randomY = Math.floor(Math.random() * 300) + 300;
       return bH - randomY 
-  };
+  },
 
-const startGame = () => {
+startGame = () => {
   startBtn.style.display = 'none';
   event.preventDefault();
 
-  //for (let i=0; i<5; i++) {
+  firstLoop = () => {
     Render.create(createBird('ufo'));
     Render.create(createObstacle('dom'));
-  //}
-
+  };
+  birdLoop = () => {
+    Render.create(createBird('ufo'));
+  };
+  obstacleLoop = () => {
+    Render.create(createObstacle('ufo'));
+  };
+  renderLoop = () => {
+    setInterval(birdLoop,6000);
+    setInterval(obstacleLoop,11000);  
+  };
+  setTimeout(firstLoop, 300);
   setInterval(Render.changePosition,100);
+  renderLoop();
 };
 
 class Render {
@@ -69,34 +80,33 @@ class Render {
     parentVar.appendChild(child);
     el.domEl = document.getElementById(`${el.name}${el.id}`);
 
-    console.log('create', el);
+    console.log('create', el.name);
     childrenArray.push(el);
 
     // console.log(`this el position y is ${el.position.y}`);
-  }
+  };
 
   static styleEl(el, arg, output) {
     el.style.arg = output;
     // document.getElementById('player').style.background = red
-  }
+  };
 
   static changePosition(domEl) {
     childrenArray.forEach((el,i) =>{
       let x = el.position.x;
-      console.log(`child x= ${x}`);
+      // console.log(`child x= ${x}`);
       if(el.type==='obstacle'){
-      el.moveObst();
-      el.domEl.style.left = el.position.x + 'px';
-      }
+        el.moveObst();
+        el.domEl.style.left = el.position.x + 'px';
+      };
       if(el.type==='bird'){
         el.moveBird();
         el.domEl.style.left = el.position.x + 'px';
         el.domEl.style.top = el.position.y + 'px';  
-      }
+      };
 
-    })         
-  
-  }
+    });         
+  };
 
  
   static destroy(el) {
@@ -123,20 +133,10 @@ class BoardElement {
   }
   moveBird(){
     this.position.x -= this.speed;
-    this.position.y += this.speed /2;
+    this.position.y += this.speed /4;
   }
-    // console.log(this.position.x);
-
-    // Render
-  
 }
-  // static changePosition(el, x, y) {
-  //   this.x = x
-  //   this.y = y
-  //   const elX = el.position.x
-  //   const elY = el.position.y
-  
-
+/////////
 
 class Player extends BoardElement {
   constructor(name, domEl, id, position, speed, type) {
