@@ -5,63 +5,128 @@
 }
 
 .container {
-    position: relative;
     display: flex;
-    width: 1200px;
-    height: 640px;
-    /* background: rgb(155, 205, 255); */
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100%;
+    min-height: 100vh;
     background: darkslategrey;
+    overflow: hidden;
 }
 
 .board {
-    display: flex;
     position: relative;
     width: 600px;
     height: 600px;
-    margin: 0 auto;
     background: darkolivegreen;
     /* background-image: url(./img/landscape.png) */
+}
+
+.buttons {
+    position: absolute;
+    height: 100px;
+    top: calc(50% - 50px);
+}
+.btn {
+    padding: 1rem;
+    width: 180px;
+    height: 60px;
+}
+.frame {
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background: rgb(155, 205, 255);
+    z-index: 2;
+}
+
+.frame__top, .frame__bottom {
+    height: 50px;
+    width: 100%;
+}
+
+.frame__left, .frame__right {
+    width: 300px;
+    top: -10vh;
+    height: 120vh
+}
+.frame__top {
+    top: -50px;
+}
+
+.frame__bottom {
+    bottom: -50px;
+}
+
+.frame__left {
+    left: -300px;
+
+}
+
+.frame__right {
+    right: -300px;
+
 }
 
 .player {
     position: absolute;
     z-index: 1;
 }
+
 #player img {
     width: 20%;
 }
+
 .obstacle {
     position: absolute;
-}
-
-#start__btn {
-    position: absolute;
     z-index: 1;
-    top: 45%;
-    left: 35%;
-    width: 120px;
-    height: 50px;
-    font-size: 30px;
-    font-weight: 700;
-    border-radius: 19px;
-    border-width: thick;
-    z-index: 2;
 }
 
 
-#inst__btn {
-    position: absolute;
-    z-index: 1;
-    top: 60%;
-    left: 35%;
-    width: 190px;
-    height: 50px;
-    font-size: 30px;
-    font-weight: 700;
-    border-radius: 19px;
-    border-width: thick;
-    z-index: 2;
-}
+/*#start__btn {*/
+/*    position: absolute;*/
+/*    top: 45%;*/
+/*    left: 35%;*/
+/*    width: 120px;*/
+/*    height: 50px;*/
+/*    font-size: 30px;*/
+/*    font-weight: 700;*/
+/*    border-radius: 19px;*/
+/*    border-width: thick;*/
+/*    z-index: 2;*/
+/*}*/
+
+
+/*#inst__btn {*/
+/*    position: absolute;*/
+/*    top: 60%;*/
+/*    left: 35%;*/
+/*    width: 190px;*/
+/*    height: 50px;*/
+/*    font-size: 30px;*/
+/*    font-weight: 700;*/
+/*    border-radius: 19px;*/
+/*    border-width: thick;*/
+/*    z-index: 2;*/
+/*}*/
+
+
+/* height: 20px; */
+
+
+/*.frame__bottom {*/
+/*    top: 600px;*/
+/*    left: -20px;*/
+/*    height: 20px;*/
+/*    width: 720px;*/
+/*}*/
+
+/* .frame__records {
+    display: flex;
+    position: fixed;
+    left: 1000px;
+} */
 
 .mount {
     position: absolute;
@@ -72,126 +137,90 @@
     display: block;
 }
 
-.tree {
-    position: absolute;
-    display: inline-flex;
-    top: 460px;
-    font-size: 130px;
-    color: green;
-}
 
-.tree1 {
-    left: 10px;
-}
-.tree2 {
-    left: 55px;
-    color: limegreen;
-    font-size: 120px;
-    top: 475px;
-    z-index: 1;
-}
-.tree3 {
-    left: 110px;
-    color: darkgreen;
-    font-size: 160px;
-    top: 420px;
-}
-.tree4 {
-    left: 190px;
-    z-index: 1;
-}
+/*.tree {*/
+/*    position: absolute;*/
+/*    display: inline-flex;*/
+/*    top: 460px;*/
+/*    font-size: 130px;*/
+/*    color: green;*/
+/*}*/
 
-.city {
-    position: absolute;
-    top: 390px;
-    font-size: 200px;
-}
-.city1 {
-    left: 370px;
-    color: wheat;
-    z-index: 0;
-}
-.city2 {
-    left: 640px;
-    color: gold;
-    font-size: 150px;
-    top: 442px;
-}
-.city3 {
-    left: 760px;
-    font-size: 280px;
-    top: 307px;
-    color: brown;
-    z-index: 0;
-}
+/*.tree1 {*/
+/*    left: 10px;*/
+/*}*/
+/*.tree2 {*/
+/*    left: 55px;*/
+/*    color: limegreen;*/
+/*    font-size: 120px;*/
+/*    top: 475px;*/
+/*    z-index: 1;*/
+/*}*/
+/*.tree3 {*/
+/*    left: 110px;*/
+/*    color: darkgreen;*/
+/*    font-size: 160px;*/
+/*    top: 420px;*/
+/*}*/
+/*.tree4 {*/
+/*    left: 190px;*/
+/*    z-index: 1;*/
+/*}*/
 
-.bird {
-    position: absolute;
-}
-.bird1 {
-    top: 60px;
-    left: 340px;
-    color: whitesmoke;
-}
-.bird2 {
-    top: 70px;
-    left: 840px;
-    color: grey;
-}
+/*.city {*/
+/*    position: absolute;*/
+/*    top: 390px;*/
+/*    font-size: 200px;*/
+/*}*/
+/*.city1 {*/
+/*    left: 370px;*/
+/*    color: wheat;*/
+/*    z-index: 0;*/
+/*}*/
+/*.city2 {*/
+/*    left: 640px;*/
+/*    color: gold;*/
+/*    font-size: 150px;*/
+/*    top: 442px;*/
+/*}*/
+/*.city3 {*/
+/*    left: 760px;*/
+/*    font-size: 280px;*/
+/*    top: 307px;*/
+/*    color: brown;*/
+/*    z-index: 0;*/
+/*}*/
 
-.cloud {
-    position: absolute;
-    font-size: 60px;
-}
-.cloud1 {
-    top: 20px;
-    left: 80px;
-    color: lightgray;
-}
-.cloud2 {
-    top: 80px;
-    left: 480px;
-    color: lightgrey;
-}
-.cloud3 {
-    top: 30px;
-    left: 540px;
-    color: lightgray;
-}
+/*.bird {*/
+/*    position: absolute;*/
+/*}*/
+/*.bird1 {*/
+/*    top: 60px;*/
+/*    left: 340px;*/
+/*    color: whitesmoke;*/
+/*}*/
+/*.bird2 {*/
+/*    top: 70px;*/
+/*    left: 840px;*/
+/*    color: grey;*/
+/*}*/
 
-.frame {
-    display: flex;
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    /* visibility: hidden; */
-    /* background: darkslategrey; */
-    background: rgb(155, 205, 255);
-    z-index: 2;
-}
-
-.frame__up {
-    top: -580px;
-    
-    /* height: 20px; */
-}
-.frame__right{
-    left: 600px;
-    width: 100px;
-
-}
-.frame__bottom {
-    top: 600px;
-    left:-20px;
-    height: 20px;
-    width: 720px;
-}
-.frame__left {
-    left: -20px;
-    width: 20px;
-}
-/* .frame__records {
-    display: flex;
-    position: fixed;
-    left: 1000px;
-} */
+/*.cloud {*/
+/*    position: absolute;*/
+/*    font-size: 60px;*/
+/*}*/
+/*.cloud1 {*/
+/*    top: 20px;*/
+/*    left: 80px;*/
+/*    color: lightgray;*/
+/*}*/
+/*.cloud2 {*/
+/*    top: 80px;*/
+/*    left: 480px;*/
+/*    color: lightgrey;*/
+/*}*/
+/*.cloud3 {*/
+/*    top: 30px;*/
+/*    left: 540px;*/
+/*    color: lightgray;*/
+/*}*/
