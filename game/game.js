@@ -114,8 +114,8 @@ class Render {
       // console.log(`child x= ${x}`);
       
       if(el.type==='player'){  
-        el.domEl.style.left = el.position.x + 'px';
-        el.domEl.style.top = el.position.y + 'px';  
+        el.domEl.style.left = x + 'px';
+        el.domEl.style.top = y + 'px';  
       };
       if(el.type==='obstacle'){
         el.moveObst();
@@ -135,30 +135,24 @@ class Render {
   };
   static KeySupport(domEl, event) {
     childrenArray.forEach((el,i) =>{
-      let x = el.position.x;
-      let y = el.position.y;
   
       if(el.type==='player'){
       switch (event.code) {
         case "ArrowLeft":
           el.playerLeft();
-          el.domEl.style.left = x + 'px';
-  
+
           // Player.changePosition();
           break;
         case "ArrowRight":
           el.playerRight();
-          el.domEl.style.left = x + 'px';
   
           break;
         case "ArrowUp":
           el.playerUp();
-          el.domEl.style.top = y + 'px';
   
           break;
         case "ArrowDown":
           el.playerDown();
-          el.domEl.style.top = y + 'px';
   
           break;
         default:
@@ -187,16 +181,16 @@ class BoardElement {
     this.type = type;
  }
   playerLeft(){
-  this.position.x -= this.speed;
+  this.position.x -= this.speed / 2 ;
   }
   playerRight(){
     this.position.x += this.speed;
   }
   playerUp(){
-    this.position.y -= this.speed *4;
+    this.position.y -= this.speed * 4;
   }
   playerDown(){
-    this.position.y += this.speed *4;
+    this.position.y += this.speed * 4;
   }
   moveObst() {
     this.position.x -= this.speed;
