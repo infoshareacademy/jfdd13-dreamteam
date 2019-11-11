@@ -83,7 +83,7 @@ class Render {
   static changePosition(domEl) {
     childrenArray.forEach((el,i) =>{
       let x = el.position.x;
-      console.log(`x= ${el.position.x}`);
+      console.log(`child x= ${x}`);
       el.move();
       el.domEl.style.left = el.position.x + 'px';
 
@@ -112,9 +112,9 @@ class BoardElement {
  }
 
   move() {
-    this.position.x = this.position.x - this.speed;
-    console.log(this.position.x);
-    // this.y = this.y - this.speed;
+    this.position.x -= this.speed;
+    // console.log(this.position.x);
+    // this.position.y -= this.speed;
 
   }
     // Render
