@@ -54,7 +54,7 @@ const plusSlides = () => {
       
     }
   };
-changeSlide()
+changeSlide();
 
 setInterval(changeSlide, time);
 
