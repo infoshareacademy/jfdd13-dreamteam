@@ -16,8 +16,8 @@ const slideList = [
   }];
 
 const image = document.querySelector('.hero');
-const h1 = document.querySelector('h1.heading__h1');
-const h3 = document.querySelector('h3.heading__h3');
+const h1 = document.getElementById('slider__heading')
+const h1span = document.getElementById('slider__text');
 // const h1 = document.querySelectorAll('h1.heading__h1 h3.heading__h3');
 
 const dots = [...document.querySelectorAll('.dots span')];
@@ -38,12 +38,11 @@ const changeSlide = () => {
     active = 0;
   } 
   const nextImg = slideList[active].img;
-  image.style.background = `url("${nextImg}") no-repeat center`
+  image.style.background = `url("${nextImg}") no-repeat center`;
   image.style.backgroundSize = "cover";
   h1.textContent = slideList[active].text;
-  h3.textContent = slideList[active].text2;
-  changeDots()
-  }
+  h1span.textContent = slideList[active].text2;
+  };
 
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next'); 
@@ -54,21 +53,9 @@ const plusSlides = () => {
       changeDots();
       
     }
-  }
-
-// function bang(i) {
-//   changeSlide(slideList += i)
-// }
-
-// const bang = () => {
-//   if (dots){
-//     changeSlide();
-//     changeDots();
-    
-//   }
-// }
+  };
+changeSlide()
 
 setInterval(changeSlide, time);
-// setInterval(changeDots, time);
 
 
