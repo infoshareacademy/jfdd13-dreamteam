@@ -1,6 +1,7 @@
 @import "nav_icons.css";
-@import "form2.css";
+@import "cookies.css";
 @import "calculator.css";
+@import "form2.css";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -47,6 +48,7 @@ body {
   text-transform: uppercase;
   background: #1976D2;
   border: none;
+  cursor: pointer;
 }
 .btn:focus {
   outline: none;
@@ -67,6 +69,13 @@ body {
 }
 .btn-hero:hover {
   background-color: #2196F3;
+}
+.btn__cookies {
+  max-width: 110px;
+  max-height: 30px;
+  margin: 0 1rem;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 .icon__container {
