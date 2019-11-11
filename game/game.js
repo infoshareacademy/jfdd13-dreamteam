@@ -35,10 +35,10 @@ const
             Render.create(createObstacle('dom'));
         };
         obstacleLoop = () => {
-            Render.create(createObstacle('o'));
+            Render.create(createObstacle());
         };
         birdLoop = () => {
-            Render.create(createObstacle('bird'));
+            Render.create(createBird());
         };
         birdZLoop = () => {
             // Render.create(createBirdZ('zet'));
