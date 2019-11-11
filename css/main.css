@@ -274,16 +274,6 @@ body {
   text-decoration: underline;
 }
 
-@media all and (min-width: 900px) {
-  .info__wrapper {
-    position: relative;
-  }
-
-  .info__text {
-    position: absolute;
-    bottom: 0;
-  }
-}
 @media all and (max-width: 1200px) {
   .grid__container--inner {
     grid-template-columns: 1fr;
