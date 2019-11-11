@@ -22,11 +22,8 @@
     /* background-image: url(./img/landscape.png) */
 }
 
-#player {
+.player {
     position: absolute;
-    top: 200px;
-    left: 100px;
-    /* font-size: 100px; */
     z-index: 1;
 }
 #player img {
