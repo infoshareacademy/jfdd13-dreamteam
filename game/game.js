@@ -9,12 +9,12 @@ const
 instBtn = document.getElementById('inst__btn');
 
 const
-    playerWidth = '40px',
-    playerHeight = '40px',
-    obstWidth = '40px',
-    obstHeight = '200px',
-    birdWidth = '40px',
-    birdHeight = '40px',
+    playerWidth = 40,
+    playerHeight = 40,
+    obstWidth = 40,
+    obstHeight = 200,
+    birdWidth = 40,
+    birdHeight = 40,
     boardWidth = 600,
     boardHeight = 600,
     speed = 1,
@@ -84,23 +84,23 @@ class Render {
         child.setAttribute('id', `${el.name}${el.id}`);
 
         if (el.type === 'player') {
-            child.style.width = playerWidth;
-            child.style.height = playerHeight;
+            child.style.width = playerWidth + 'px';
+            child.style.height = playerHeight + 'px';
             child.style.background = `blue`;
             child.setAttribute('class', `player`);
 
         } else if (el.type === 'obstacle') {
             if (el.name === 'bird') {
-                child.style.width = birdWidth;
-                child.style.height = birdHeight;
+                child.style.width = birdWidth + 'px';
+                child.style.height = birdHeight + 'px';
                 child.style.backgroundColor = 'red';
                 child.style.left = el.position.x + 'px';
                 child.style.top = el.position.y + 'px';
                 console.log(el.name);
 
             } else if (el.name === 'obstacle') {
-                child.style.width = obstWidth;
-                child.style.height = obstHeight;
+                child.style.width = obstWidth + 'px';
+                child.style.height = obstHeight + 'px';
                 child.style.background = `grey`;
                 child.style.bottom = `0px`;
             }
@@ -109,8 +109,8 @@ class Render {
             throw Error('unresolved object type in render create, line 90')
         }
         // else if (el.type === 'bird' || el.type === 'birdZ') {
-        //     child.style.width = birdWidth;
-        //     child.style.height = birdHeight;
+        //     child.style.width = birdWidth + 'px';
+        //     child.style.height = birdHeight + 'px';
         //     child.style.background = `red`;
         //     child.setAttribute('class', `bird ${el.name}`);
         // }
