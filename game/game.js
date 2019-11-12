@@ -11,7 +11,7 @@ instBtn = document.getElementById('inst__btn');
 const
     playerWidth = 40,
     playerHeight = 40,
-    obstWidth = 40,
+    obstWidth = 100,
     obstHeight = 200,
     birdWidth = 40,
     birdHeight = 40,
