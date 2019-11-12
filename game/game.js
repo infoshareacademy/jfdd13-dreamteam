@@ -16,6 +16,7 @@ const
     obstHeight = 200,
     birdWidth = 40,
     birdHeight = 40,
+    boardStart = 0,
     boardWidth = 600,
     boardHeight = 600,
     startLine = 150,
@@ -131,7 +132,7 @@ class Render {
 
         // console.log(`this ${el.type} el id is ${el.id}`);
         parentVar.appendChild(child);
-        console.log('create', el.name);
+        // console.log('create', el.name);
         el.domEl = document.getElementById(`${el.name}${el.id}`);
         childrenArray.push(el);
         // console.log(`this el position y is ${el.position.y}`);
@@ -175,28 +176,25 @@ class Render {
             if (el.type === 'player') {
                 switch (event.code) {
                     case "ArrowLeft":
-                        if (el.position.x > 0) {
+                        if (el.position.x > boardStart) {
                             el.playerLeft()
                         }
                         // Player.changePosition();
                         break;
                     case "ArrowRight":
-                        if (el.position.x + 40 < boardWidth) {
+                        if (el.position.x + playerWidth < boardWidth) {
                             el.playerRight()
                         }
-
                         break;
                     case "ArrowUp":
-                        if (el.position.y > 20) {
+                        if (el.position.y > boardStart) {
                             el.playerUp()
                         }
-
                         break;
                     case "ArrowDown":
-                        if (el.position.y + 40 < boardHeight) {
+                        if (el.position.y + createPlayer < boardHeight) {
                             el.playerDown()
                         }
-
                         break;
                     default:
                         return
