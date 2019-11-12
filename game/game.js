@@ -21,6 +21,7 @@ const
     speedObst = 1,
     speedBird = 2,
     childrenArray = [],
+    playerArr = [],
 
 
     startGame = () => {
@@ -28,17 +29,6 @@ const
         instBtn.style.display = 'none';
         event.preventDefault();
         document.addEventListener("keydown", event => Render.KeySupport(Player, event));
-
-        checkPosition = () => {
-            const outOfTheBoard = childrenArray.map(item => item.position.x < 0);
-            const trashItem = outOfTheBoard.indexOf(true);
-            if (trashItem > 0)  {
-
-                Render.destroy(childrenArray[trashItem])
-            }
-
-        }
-
 
         firstLoop = () => {
             Render.create(createPlayer('pilot'));
@@ -54,20 +44,37 @@ const
         birdZLoop = () => {
             // Render.create(createBirdZ('zet'));
         };
+
+
+        checkPosition = () => {
+            const outOfTheBoard = childrenArray.map(item => item.position.x < 0);
+            const trashItem = outOfTheBoard.indexOf(true);
+            // console.log(childrenArray);
+            // console.log(outOfTheBoard)
+            // console.log(trashItem)
+            if (trashItem > 0)  {
+
+                Render.destroy(childrenArray[trashItem])
+            }
+
+        };
+
+
         mainLoop = () => {
-            setInterval(checkPosition, 100);
+            setTimeout(() => {
+                setInterval(checkPosition, 100)
+            }, 500);
+
             setInterval(obstacleLoop, 12000);
             setInterval(birdLoop, 6000);
             setInterval(birdZLoop, 9000);
-            //further 4 lines just for testing purposes
-            // birdLoop()
-
 
         };
 
         setTimeout(firstLoop, 300);
-        setInterval(Render.changePosition, 100);
-        requestAnimationFrame(mainLoop);
+        const draw = () => setInterval(Render.changePosition, 100);
+        requestAnimationFrame(draw);
+        mainLoop()
     };
 
 // document.addEventListener("keydown", event => Render.KeySupport(Player, event)); //added just for testing
@@ -88,6 +95,9 @@ class Render {
             child.style.height = playerHeight;
             child.style.background = `blue`;
             child.setAttribute('class', `player`);
+            parentVar.appendChild(child);
+            el.domEl = document.getElementById(`${el.name}${el.id}`);
+            playerArr.push(el)
 
         } else if (el.type === 'obstacle') {
             if (el.name === 'bird') {
@@ -104,9 +114,12 @@ class Render {
                 child.style.background = `grey`;
                 child.style.bottom = `0px`;
             }
+            parentVar.appendChild(child);
+            el.domEl = document.getElementById(`${el.name}${el.id}`);
             child.setAttribute('class', `obstacle ${el.name}`);
+            childrenArray.push(el);
         } else {
-            throw Error('unresolved object type in render create, line 90')
+            throw Error('unresolved object type in render create, line 114')
         }
         // else if (el.type === 'bird' || el.type === 'birdZ') {
         //     child.style.width = birdWidth;
@@ -122,7 +135,7 @@ class Render {
         el.domEl = document.getElementById(`${el.name}${el.id}`);
 
         console.log('create', el.name);
-        childrenArray.push(el);
+
 
         // console.log(`this el position y is ${el.position.y}`);
     };
@@ -132,16 +145,18 @@ class Render {
         // document.getElementById('player').style.background = red
     };
 
-    static changePosition(domEl) {
+    static changePosition() {
+        if (playerArr[0]) {
+            playerArr[0].domEl.style.left = playerArr[0].position.x + 'px';
+            playerArr[0].domEl.style.top = playerArr[0].position.y + 'px';
+
+        }
+
         childrenArray.forEach((el, i) => {
             let x = el.position.x;
             let y = el.position.y;
             // console.log(`child x= ${x}`);
 
-            if (el.type === 'player') {
-                el.domEl.style.left = x + 'px';
-                el.domEl.style.top = y + 'px';
-            }
             if (el.type === 'obstacle') {
                 el.moveObst();
                 el.domEl.style.left = x + 'px';
@@ -160,7 +175,7 @@ class Render {
     };
 
     static KeySupport(domEl, event) {
-        childrenArray.forEach((el, i) => {
+        playerArr.forEach((el, i) => {
 
             if (el.type === 'player') {
                 switch (event.code) {
@@ -286,7 +301,7 @@ createPlayer = (name) => {
     return new Player(name, '', 0, {x: 100, y: 200}, speed, 'player');
 };
 createObstacle = () => {
-    return new Obstacle('obstacle', '', '', {x: 700, y: 400}, speedObst, 'obstacle');
+    return new Obstacle('obstacle', '', '', {x: 700, y: 0}, speedObst, 'obstacle');
 };
 createBird = () => {
     return new Obstacle('bird', '', '', {x: 700, y: generateBirdY()}, speedBird, 'obstacle')
