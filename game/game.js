@@ -88,7 +88,7 @@ class Render {
             child.style.height = playerHeight + 'px';
             // child.style.background = `blue`;
             child.setAttribute('class', `player`);
-            child.style.backgroundImage = "url('img/airplane_icon.png')";
+            child.style.backgroundImage = "url('img/ptasiek.png')";
             child.style.backgroundRepeat = 'round';
       
 
