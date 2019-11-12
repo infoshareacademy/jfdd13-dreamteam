@@ -230,11 +230,16 @@ body {
   height: 150px;
 }
 .card__img {
+  position: relative;
   display: block;
   height: 75px;
   border-radius: 50%;
   border: 3px solid #BDBDBD;
   margin: 0.5rem 0.5rem 1rem 0.5rem;
+  transition: transform 0.3s ease-in;
+}
+.card__img--transform {
+  transform: rotateY(180deg);
 }
 .card__info {
   display: flex;
