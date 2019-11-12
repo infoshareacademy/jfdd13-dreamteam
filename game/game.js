@@ -30,6 +30,7 @@ const
     startGame = () => {
         startBtn.style.display = 'none';
         instBtn.style.display = 'none';
+        backBtn.style.display = 'none';
         event.preventDefault();
         document.addEventListener("keydown", event => Render.KeySupport(Player, event));
 
