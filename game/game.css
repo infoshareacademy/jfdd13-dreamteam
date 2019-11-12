@@ -65,7 +65,7 @@
 
 .frame__left {
     left: -300px;
-    z-index: 0;
+    /* z-index: 0; */
 }
 
 .frame__right {
@@ -101,10 +101,11 @@
     width: 20%;
 }
 
-.obstacle {
+.obstacle, .bird, .birdz {
     position: absolute;
     z-index: 1;
 }
+
 
 .titleBox {
     text-align: center;
