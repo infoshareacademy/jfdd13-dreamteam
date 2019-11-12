@@ -1,50 +1,44 @@
 .calculator_divs {
-
+    margin: 1rem 0;
+}
+.calculator__wrapper {
     display: flex;
     justify-content: space-evenly;
-    margin: 40px 0
+    /*margin: 40px 0*/
+    border-bottom: 1px solid #BDBDBD;
+    margin: 0 2rem;
+    padding: 0 0 1rem 0;
 }
 
-
 .calculator_board {
-
-
     display: flex;
     flex-flow: column;
     align-items: center;
 }
 
-
 .holidays_img {
-
     display: flex;
     justify-content: center;
-
 }
 
 .holidays_img img {
     display: block;
     height: auto;
     width: 400px;
+    border-radius: 5px;
 }
 
-
 .heading__h2--calculator {
-
     text-align: center;
-} 
-
+}
 
 .price {
-
     color: red;
 }
 
-.price_comment{
-
+.price_comment {
     padding-top: 10px;
     font-weight: bold;
-
 }
 
 /* suwak */
@@ -52,7 +46,6 @@
 .slidecontainer {
     width: 100%;
     padding-bottom: 40px;
-
 }
 
 .calculator {
@@ -60,16 +53,13 @@
     flex-flow: column;
     justify-content: flex-start;
     align-items: center;
-
 }
 
-.range_div{
-
+.range_div {
     height: 30px;
     display: flex;
     align-items: center;
     position: relative;
-
 }
 
 .slider {
@@ -105,25 +95,19 @@
 }
 
 .title_range {
-
     padding-bottom: 20px;
 }
 
+@media all and (max-width: 870px) {
 
-@media all and (max-width: 870px){
-
-    .calculator_divs{
-
+    .calculator__wrapper {
         flex-flow: column;
         align-items: center;
-
     }
 
-    .calculator{
-
+    .calculator {
         margin: 40px 10px 0;
     }
-
 
     .holidays_img img {
         display: block;

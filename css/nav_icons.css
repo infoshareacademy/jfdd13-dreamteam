@@ -85,7 +85,7 @@
     text-align: center;
 }
 
-@media all and (min-width: 701px) {
+@media all and (min-width: 851px) {
     .nav__mobile {
         display: none;
     }
@@ -142,7 +142,7 @@
     }
 }
 
-@media all and (max-width: 700px) {
+@media all and (max-width: 850px) {
 
     .nav {
         display: block;

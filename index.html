@@ -1,17 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>Dream Team Project</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Be+Vietnam:400,500,700|Roboto&display=swap&subset=latin-ext"
           rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-    <!--<link rel="stylesheet" href="css/functions_kopia.css">-->
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/sliders.css" rel="stylesheet">
 </head>
 
 <body>
@@ -24,25 +24,25 @@
             </div>
             <a class="nav__mobile"><i class="far fa-paper-plane"></i>way.to</a>
             <ul class="list__container">
-                <li class="list__item"><a href="#main" class="nav__link link1">
+                <li class="list__item"><a class="nav__link link1" href="#main">
                     Strona główna
                 </a></li>
-                <li class="list__item"><a href="#functions" class="nav__link link2">
+                <li class="list__item"><a class="nav__link link2" href="#functions">
                     Dlaczego my?
                 </a></li>
-                <li class="list__item"><a href="#form" class="nav__link link3">
+                <li class="list__item"><a class="nav__link link3" href="#form">
                     Formularz
                 </a></li>
-                <li class="list__item"><a href="#calculator" class="nav__link link4">
+                <li class="list__item"><a class="nav__link link4" href="#calculator">
                     kalkulator
-                    </a></li>
-                <li class="list__item"><a href="#footer" class="nav__link link5">
+                </a></li>
+                <li class="list__item"><a class="nav__link link5" href="#footer">
                     Autorzy
                 </a></li>
             </ul>
         </nav>
     </header>
-    <main id="main" class="main">
+    <main class="main" id="main">
         <section class="hero">
             <div class="icons">
                 <div class="icons__col">
@@ -68,17 +68,16 @@
             </div>
             <div class="hero-image">
                 <div class="hero-text">
-                    <h1 class="heading heading__h1">Ruszaj w drogę</h1>
-                    <h3 class="heading heading__h3">Zaplanuj swoją podróż szybciej niż kiedykolwiek wcześniej!</h3>
+                    <h1 class="heading heading__h1" id="slider__heading">Ruszaj w drogę</h1>
+                    <span class="heading heading__h3 hero__text" id="slider__text">Zaplanuj swoją podróż szybciej niż kiedykolwiek wcześniej!</span>
                 </div>
-                <div class="btn__container btn__container-hero">
-                    <button class="btn btn-hero">Enter</button>
-                </div>
+                <a class="prev" id="slider--prev">&#10094;</a>
+                <a class="next" id="slider--next">&#10095;</a>
             </div>
         </section>
         <section class="functions" id="functions">
             <h2 class="heading heading__h2">
-              Poznaj way.to</h2>
+                Poznaj way.to</h2>
             <div class="functions__grid">
                 <div class="functions__container">
                     <div class="icon__container icon__container--functions">
@@ -147,8 +146,8 @@
                         <h3 class="heading heading__h3">Kontakt</h3>
                         <p class="text__paragraph">
                             W razie jakichkolwiek pytań zapraszamy do kontaktu mailowego <a
-                                href="mailto:dreamteamproject@gmail.com" target="_blank" type="email"
-                                class="link__email">dreamteamproject@gmail.com</a> lub kontaktu telefonicznego (nr
+                                class="link__email" href="mailto:dreamteamproject@gmail.com" target="_blank"
+                                type="email">dreamteamproject@gmail.com</a> lub kontaktu telefonicznego (nr
                             tel 111 222 333). Pracujemy codziennie od 6:00 do 24:00.
                         </p>
                     </div>
@@ -184,105 +183,126 @@
         <section class="form" id="form">
             <div class="form__div">
                 <h2 class="heading heading__h2">Zapisz się na naszą premierę!</h2>
-                <form class="form__form" action="#" method="post">
+                <form action="#" class="form__form" method="post">
                     <label for="form__input">Podaj swój adres
-                        <input id="form__input" class="form__input" type="email" name="email"
-                               placeholder="wpisz tutaj...">
+                        <input class="form__input" id="form__input" name="email" placeholder="wpisz tutaj..."
+                               type="email">
                     </label>
                     <div class="form__check">
                         <label class="check__span" for="check__input">Zgoda na przetwarzanie danych osobowych
-                            <input class="check__input" type="checkbox" id="check__input">
+                            <input class="check__input" id="check__input" type="checkbox">
                         </label>
                     </div>
                     <div class="form__btn">
-                        <span id="thankYou" class="check__span">Uwaga: Wiadomość zostanie przesłana jednorazowo</span>
-                        <button id="form__submit" class="btn btn-hero" type="submit">wyślij</button>
+                        <span class="check__span" id="thankYou">Uwaga: Wiadomość zostanie przesłana jednorazowo</span>
+                        <button class="btn btn-hero" id="form__submit" type="submit">wyślij</button>
                     </div>
                 </form>
             </div>
         </section>
         <section class="calculator_divs" id="calculator">
-            <div class="calculator_board">
-                <h2 class="heading heading__h2 heading__h2--calculator">Wycieczka tygodnia - wyjazd na Majorkę!</h2>
-                <div class="holidays_img">
-                    <img src="img/majorka.png" alt="Plaza na Majorce">
-                </div>
-                <h3 class="heading heading__h3 heading__h3--calculator">Cena: 300zł/ dobę za osobę</h3>
-            </div>
-            <div class="calculator">
-                <div class="slidecontainer">
-                    <h2 class='heading heading__h2 heading__h2--calculator'>Kalkulator ceny dla Ciebie</h2>
-                    <label for="myRange" class="title_range">Ustaw liczbę uczestników:</label>
-                    <div class="range_div">
-                        <input type="range" min="1" max="10" class="slider" id="myRange">
+            <div class="calculator__wrapper">
+                <div class="calculator_board">
+                    <h2 class="heading heading__h2 heading__h2--calculator">Wycieczka tygodnia - wyjazd na Majorkę!</h2>
+                    <div class="holidays_img">
+                        <img alt="Plaza na Majorce" src="img/majorka.png">
                     </div>
-                    <p>Wybrana liczba uczestników: <span id="demo"></span></p>
+                    <h3 class="heading heading__h3 heading__h3--calculator">Cena: 300zł/ dobę za osobę</h3>
                 </div>
-                <div class="slidecontainer">
-                    <label for="myRange1" class="title_range">Ustaw liczbę dni:</label>
-                    <div class="range_div">
-                        <input type="range" min="1" max="14" class="slider" id="myRange1">
+                <div class="calculator">
+                    <div class="slidecontainer">
+                        <h2 class='heading heading__h2 heading__h2--calculator'>Kalkulator ceny dla Ciebie</h2>
+                        <label class="title_range" for="myRange">Ustaw liczbę uczestników:</label>
+                        <div class="range_div">
+                            <input class="slider" id="myRange" max="10" min="1" type="range">
+                        </div>
+                        <p>Wybrana liczba uczestników: <span id="demo"></span></p>
                     </div>
-                    <p>Wybrana liczba dni: <span id="demo1"></span></p>
+                    <div class="slidecontainer">
+                        <label class="title_range" for="myRange1">Ustaw liczbę dni:</label>
+                        <div class="range_div">
+                            <input class="slider" id="myRange1" max="14" min="1" type="range">
+                        </div>
+                        <p>Wybrana liczba dni: <span id="demo1"></span></p>
+                    </div>
+                    <div><label for="checkbox_dog">Czy zabierasz na wycieczkę psa? Zaznacz pole, jeśli
+                        tak: </label><input
+                            id="checkbox_dog" type="checkbox"></div>
+                    <button class="btn btn_calculator">Sprawdź</button>
+                    <p class="price_comment"></p>
                 </div>
-                <div><span>Czy zabierasz na wycieczkę psa? Zaznacz pole, jeśli tak: </span><input
-                        type="checkbox" id="checkbox_dog"></div>
-                <button class="btn btn_calculator">Sprawdź</button>
-                <p class="price_comment"></p>
             </div>
         </section>
         <section class="authors" id="footer">
-            <div class="footer__info">
-                <h2 class="heading heading__h2">Informacje o autorach</h2>
-                <!--<span style="text-align: center; margin: 1rem">Wybierz wizytówkę i skontaktuj się z nami!</span>-->
-            </div>
+            <h2 class="heading heading__h2">Informacje o autorach</h2>
             <div class="grid__container">
                 <div class="grid__left info__wrapper" id="authors__left">
                     <h3 class="heading heading__h3 info__heading">Zespół o jakim Ci się nie śniło!</h3>
                     <div class="info__container">
-                        <div class="info__item">
-                            <p class="paragraph">
-                                Stworzyli SPA w 2 tygodnie, polacy ich nienawidzą.
+                        <div class=''>
+                            <p class="paragraph info__item">
+                                Jesteśmy drużyną przyszłych junior frontend deweloperów. Poznaliśmy się na kursie
+                                organizowanym przez Infoshare Academy, który odbywa się w Oliva Business Centre, w
+                                Gdańsku.
+                                <br>
+                                <br>
+                                Ten projekt to wynik miesiąca wspólnej pracy - niezliczonych godzin spędzonych nad
+                                poszczególnymi sekcjami i poprawkami ich dotyczącymi. Tworząc stronę, staramy się
+                                korzystać z dobrych praktyk i nowoczesnych technologii, m.in. są to:
                             </p>
-                            <p class="paragraph">Zobacz jak to zrobili!</p>
+                            <ul class="info__list">
+                                <li>Scrum</li>
+                                <li>Jira</li>
+                                <li>Git</li>
+                                <li>Sass</li>
+                            </ul>
                         </div>
                     </div>
+                    <p class="info__text paragraph--centered">
+                        Jeśli chcesz się z nami skontaktować, lub zobaczyć nasz Github wybierz jedną <span
+                            class="paragraph--underline">(lub więcej!)</span> z naszych wizytówek!
+                    </p>
                 </div>
                 <div class="grid__right grid__container grid__container--inner">
                     <div class="card card--michal">
-                        <img src="img/card-michal100.png" alt="" class="card__img">
+                        <img alt="" class="card__img" src="img/card-michal100.png">
                         <div class="card__info">
                             <h4 class="heading heading__h4 heading__h4--authors">Michał Kuśnierz</h4>
                             <div class="card__icons">
                                 <div class="icon__container icon__container--authors"><i
                                         class="fab fa-linkedin icon"></i>
                                     <span class="icon__text">
-                                     <a href="https://www.linkedin.com/in/michal-kusnierz/" target="_blank"
+                                     <a class="icon__link" href="https://www.linkedin.com/in/michal-kusnierz/"
                                         rel="noreferrer noopener"
-                                        class="icon__link">
+                                        target="_blank">
                                          Skontaktuj się</a>
                                 </span></div>
                                 <div class="icon__container icon__container--authors"><i class="fab fa-github icon"></i><span
                                         class="icon__text">
-                                    <a href="https://github.com/michal-kusnierz" target="_blank"
+                                    <a class="icon__link" href="https://github.com/michal-kusnierz"
                                        rel="noreferrer noopener"
-                                       class="icon__link">Zobacz projekty</a>
+                                       target="_blank">Zobacz projekty</a>
                                 </span></div>
                             </div>
                         </div>
                     </div>
                     <div class="card card--martyna">
-                        <img src="img/card-martyna100.png" alt="" class="card__img">
+                        <img alt="" class="card__img" src="img/card-martyna100.png">
                         <div class="card__info">
                             <h4 class="heading heading__h4 heading__h4--authors">Martyna Michno</h4>
                             <div class="card__icons">
                                 <div class="icon__container icon__container--authors"><i
                                         class="fab fa-linkedin  icon"></i><span
-                                        class="icon__text">Skontaktuj się</span></div>
+                                        class="icon__text">
+                                     <a class="icon__link" href="https://www.linkedin.com/in/martyna-michno/"
+                                        rel="noreferrer noopener"
+                                        target="_blank">
+                                         Skontaktuj się</a>
+                                </span></div>
                                 <div class="icon__container icon__container--authors"><i class="fab fa-github icon"></i><span
                                         class="icon__text">
-                                    <a href="https://github.com/martyna-michno" target="_blank"
-                                       rel="noreferrer noopener" class="icon__link">
+                                    <a class="icon__link" href="https://github.com/martyna-michno"
+                                       rel="noreferrer noopener" target="_blank">
                                         Zobacz projekty
                                     </a>
                                 </span></div>
@@ -290,23 +310,24 @@
                         </div>
                     </div>
                     <div class="card card--aleksander">
-                        <img src="img/card-aleksander100.png" alt="" class="card__img">
+                        <img alt="" class="card__img" src="img/card-aleksander100.png">
                         <div class="card__info">
                             <h4 class="heading heading__h4 heading__h4--authors">Aleksander Walczuk</h4>
                             <div class="card__icons">
                                 <div class="icon__container icon__container--authors"><i
                                         class="fab fa-linkedin icon"></i><span
                                         class="icon__text">
-                                    <a href="https://www.linkedin.com/in/aleksanderwalczuk547777735/" target="_blank"
+                                    <a class="icon__link" href="https://www.linkedin.com/in/aleksanderwalczuk547777735/"
                                        rel="noreferrer noopener"
-                                       class="icon__link">
+                                       target="_blank">
                                         Skontaktuj się
                                     </a>
                                 </span></div>
                                 <div class="icon__container icon__container--authors"><i class="fab fa-github icon"></i><span
                                         class="icon__text">
-                                    <a href="https://github.com/rednaxela700" target="_blank" rel="noreferrer noopener"
-                                       class="icon__link">
+                                    <a class="icon__link" href="https://github.com/rednaxela700"
+                                       rel="noreferrer noopener"
+                                       target="_blank">
                                         Zobacz projekty
                                     </a>
                                 </span></div>
@@ -314,23 +335,24 @@
                         </div>
                     </div>
                     <div class="card card--rafal">
-                        <img src="img/card-rafal100.png" alt="" class="card__img">
+                        <img alt="" class="card__img" src="img/card-rafal100.png">
                         <div class="card__info">
                             <h4 class="heading heading__h4 heading__h4--authors">Rafał Wensław</h4>
                             <div class="card__icons">
                                 <div class="icon__container icon__container--authors"><i
                                         class="fab fa-linkedin icon"></i><span
                                         class="icon__text">
-                                     <a href="https://www.linkedin.com/in/rafa%C5%82-wens%C5%82aw-646450155/"
-                                        target="_blank" rel="noreferrer noopener"
-                                        class="icon__link">
+                                     <a class="icon__link"
+                                        href="https://www.linkedin.com/in/rafa%C5%82-wens%C5%82aw-646450155/"
+                                        rel="noreferrer noopener"
+                                        target="_blank">
                                         Skontaktuj się
                                     </a>
                                 </span></div>
                                 <div class="icon__container icon__container--authors"><i class="fab fa-github icon"></i><span
                                         class="icon__text">
-                                    <a href="https://github.com/RafWen" target="_blank" rel="noreferrer noopener"
-                                       class="icon__link">
+                                    <a class="icon__link" href="https://github.com/RafWen" rel="noreferrer noopener"
+                                       target="_blank">
                                         Zobacz projekty
                                     </a>
                                 </span>
@@ -342,17 +364,20 @@
             </div>
         </section>
     </main>
-    <footer>
-        <div class="cookies" id="cookies">
-            <span class="cookies__span">Ta strona korzysta z ciasteczek, by świadczyć usługi na najwyższym poziomie.</span>
-            <span class="cookies__span btn btn--acept" id="cookies__accept">Rozumiem</span>
+    <footer class="footer">
+        <div class="cookies__container" id="cookies">
+            <span class="cookies__text">Ta strona korzysta z ciasteczek, by świadczyć usługi na najwyższym poziomie.</span>
+            <button class="btn btn__cookies" id="cookies__accept">Rozumiem</button>
         </div>
         <span style="text-align: center; display: block">&copy; Dreamteam 2019</span>
     </footer>
+
 </div>
 <script src="scripts/navscroll.js"></script>
+<script src="scripts/sliders.js"></script>
 <script src="scripts/cookies.js"></script>
 <script src="scripts/mail_storage.js"></script>
 <script src="scripts/calculator.js"></script>
+<script src="scripts/authors.js"></script>
 </body>
 </html>

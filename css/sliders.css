@@ -1,0 +1,51 @@
+.sliderHero {
+  border-style: solid;
+  border-bottom: 5px green;
+  border-radius: 20px;
+  padding: 20px;;
+  background: black;
+  width: 600px;
+  height: 200px;
+}
+
+
+.dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+.dots span {
+  display: inline-block;
+  background-color: #000;
+  margin: 0 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px white;
+}
+
+.dots span.active {
+  box-shadow: 0 0 0 2px, 0 0 3px 5px greenyellow;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 50px;
+  transition: 0.6s ease;
+  /* border-radius: 0 3px 3px 0; */
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  /* border-radius: 3px 0 0 3px; */
+}
