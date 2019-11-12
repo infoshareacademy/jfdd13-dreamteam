@@ -1,9 +1,9 @@
 @media all and (min-width: 1366px)
   .hero
-    background-image: url("../img/bg-1366x768.png")
+    //background-image: url("../img/bg-1366x768.png")
 @media all and (min-width: 500px) and (max-width: 1365px)
   .hero
-    background-image: url("../img/bg-1024x576.png")
+    //background-image: url("../img/bg-1024x576.png")
 .wrapper
   overflow: hidden
 .hero
@@ -14,7 +14,6 @@
   width: 100vw
   background: url("../img/bg-1366x768.png") no-repeat center
   background-size: cover
-  transition: background .1s ease-in
 .hero-image
   display: flex
   flex-direction: column
@@ -27,8 +26,15 @@
   align-items: center
   color: #fff
   padding: 0 0 3.8rem
-.hero__text
-  text-align: center
-@media all and  (max-width: 500px)
-  .hero-text
-    padding-bottom: 1rem
+.hero__heading
+  font-family: $font-secondary
+  &-h1
+    margin-bottom: 2rem
+    padding: 0 .5rem 0 0
+//
+//.hero-text
+//  text-align: center
+//  position: absolute
+//  top: 25%
+//  left: 25%
+//  color: white

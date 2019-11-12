@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100%;
+    min-height: 100vh;
+    background: darkslategrey;
+    overflow: hidden;
+}
+
+.board {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: darkolivegreen;
+    background-image: url(./img/landscape.png)
+}
+
+.buttons {
+    position: absolute;
+    height: 100px;
+    top: calc(50% - 50px);
+}
+.btn {
+    padding: 1rem;
+    width: 180px;
+    height: 60px;
+}
+.frame {
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background: rgb(155, 205, 255);
+    z-index: 2;
+}
+
+.frame__top, .frame__bottom {
+    height: 300px;
+    width: 100%;
+}
+
+.frame__left, .frame__right {
+    width: 300px;
+    top: -10vh;
+    height: 120vh
+}
+.frame__top {
+    top: -300px;
+}
+
+.frame__bottom {
+    bottom: -300px;
+}
+
+.frame__left {
+    left: -300px;
+    z-index: 0;
+}
+
+.frame__right {
+    right: -300px;
+/*    TO BE DELETED*/
+    /* z-index: 0; */
+}
+
+.highscore {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    top: -50px;
+    right: -100px;
+    width: 300px;
+    height: 40px;
+    z-index: 3;
+    /*background: orange;*/
+}
+
+.countdown__container {
+    right: calc(25% + 150px);
+    justify-content: center;
+    top: -50px;
+}
+
+.player {
+    position: absolute;
+    z-index: 2;
+}
+
+#player img {
+    width: 20%;
+}
+
+.obstacle {
+    position: absolute;
+    z-index: 1;
+}
+
+.titleBox {
+    text-align: center;
+}
