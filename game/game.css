@@ -20,7 +20,7 @@
     width: 600px;
     height: 600px;
     background: darkolivegreen;
-    /* background-image: url(./img/landscape.png) */
+    background-image: url(./img/landscape.png)
 }
 
 .buttons {
@@ -67,7 +67,7 @@
 .frame__right {
     right: -300px;
 /*    TO BE DELETED*/
-    z-index: 0;
+    /* z-index: 0; */
 }
 
 .highscore {
@@ -90,7 +90,7 @@
 
 .player {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
 }
 
 #player img {

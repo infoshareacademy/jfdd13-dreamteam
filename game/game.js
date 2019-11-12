@@ -99,7 +99,7 @@ class Render {
                 // child.style.backgroundColor = 'red';
                 child.style.left = el.position.x + 'px';
                 child.style.top = el.position.y + 'px';
-                console.log(el.name);
+                // console.log(el.name);
                 child.style.backgroundImage = "url('img/bird_gull.png')";
                 child.style.backgroundRepeat = 'round';
           
@@ -129,7 +129,7 @@ class Render {
         parentVar.appendChild(child);
         el.domEl = document.getElementById(`${el.name}${el.id}`);
 
-        console.log('create', el.name);
+        // console.log('create', el.name);
         childrenArray.push(el);
 
         // console.log(`this el position y is ${el.position.y}`);
@@ -204,6 +204,8 @@ class Render {
     };
 
     static destroy(el) {
+        el.domEl.style.transition = 'opacity .1s ease-out'
+        el.domEl.style.opacity = '0'
         el.domEl.remove();
         el.position.x = 1000;
         el.position.y = -1000;
