@@ -10,6 +10,8 @@ function addMail(){
         localStorage.setItem("email", inputMail.value);
         thankYou.classList.add('form__red--no');
         thankYou.innerText = 'Dziękujemy! Zapewniamy o bezpieczeństwie Państwa danych.';
+        // setTimeout(document.location.assign('./game/game.html'), 200);
+        document.location.assign('./game/game.html')
     } else {
         thankYou.classList.add('form__red');
         thankYou.innerText = 'Prosimy o podanie adresu e-mail.';
