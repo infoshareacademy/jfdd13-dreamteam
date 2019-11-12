@@ -66,8 +66,9 @@ const
         };
 
         setTimeout(firstLoop, 300);
-        setInterval(Render.changePosition, 100);
-        requestAnimationFrame(mainLoop);
+        const draw = () => setInterval(Render.changePosition, 100);
+        requestAnimationFrame(draw);
+        mainLoop()
     };
 
 // document.addEventListener("keydown", event => Render.KeySupport(Player, event)); //added just for testing
