@@ -35,6 +35,7 @@ const hero__slider = () => {
     }
     const nextImg = slideList[active].img;
     image.style.backgroundImage = `url("${nextImg}")`;
+    image.style.backgroundPosition = 'center';
     image.style.backgroundSize = "cover";
     h1.textContent = slideList[active].text;
     h1span.textContent = slideList[active].text2;
