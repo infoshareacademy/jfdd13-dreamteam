@@ -19,7 +19,7 @@ const
     boardHeight = 600,
     speed = 1,
     speedObst = 1,
-    speedBird = 2,
+    speedBird = 3,
     childrenArray = [],
 
 
@@ -56,7 +56,7 @@ const
         mainLoop = () => {
             setInterval(checkPosition, 100);
             setInterval(obstacleLoop, 12000);
-            setInterval(birdLoop, 6000);
+            setInterval(birdLoop, 1500);
             setInterval(birdZLoop, 9000);
             //further 4 lines just for testing purposes
             // birdLoop()
@@ -305,13 +305,13 @@ createBirdZ = (name) => {
 //     return element.style.top = bH -200 + 'px'
 // }
 generateBirdY = () => {
-    const randPositions = [350, 400, 450, 500];
+    const randPositions = [250, 300, 350, 400, 450, 480, 550, 600];
     const getPosition = Math.round(Math.random() * randPositions.length - 1); //generate random arr index
     const result = randPositions[getPosition] - 250;
     if (result !== undefined) {
         return result;
     } else { //avoid func return undefined
-        return randPositions[1];
+        return randPositions[0];
     }
 
 };
