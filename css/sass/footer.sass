@@ -34,11 +34,15 @@
   align-items: center
   height: 150px
   &__img
+    position: relative
     display: block
     height: 75px
     border-radius: 50%
     border: 3px solid $divider-color
     margin: .5rem .5rem 1rem .5rem
+    transition: transform .3s ease-in
+    &--transform
+      transform: rotateY(180deg)
   &__info
     display: flex
     flex-flow: column
