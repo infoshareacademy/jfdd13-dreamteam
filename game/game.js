@@ -192,7 +192,7 @@ class Render {
                         }
                         break;
                     case "ArrowDown":
-                        if (el.position.y + createPlayer < boardHeight) {
+                        if (el.position.y + playerHeight < boardHeight) {
                             el.playerDown()
                         }
                         break;
