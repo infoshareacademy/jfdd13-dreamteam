@@ -5,8 +5,9 @@ const
     board = {
         domEl: document.querySelector('.board')
     },
-    startBtn = document.getElementById('start__btn');
-instBtn = document.getElementById('inst__btn');
+    startBtn = document.getElementById('start__btn'),
+    instBtn = document.getElementById('inst__btn'),
+    backBtn = document.getElementById('back__btn');
 
 const
     playerWidth = 40,
@@ -22,6 +23,9 @@ const
     speedBird = 3,
     childrenArray = [],
 
+    backToMenu = () => {
+        document.location.assign('../index.html');
+    };
 
     startGame = () => {
         startBtn.style.display = 'none';
@@ -327,6 +331,8 @@ generateBirdY = () => {
 };
 
 startBtn.addEventListener('click', startGame);
+backBtn.addEventListener('click', backToMenu);
+
 
 
 //high score

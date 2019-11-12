@@ -33,6 +33,10 @@
     width: 180px;
     height: 60px;
 }
+.btn:hover{
+    cursor: pointer;
+    font-weight: 600;
+}
 .frame {
     position: absolute;
     width: 100px;
