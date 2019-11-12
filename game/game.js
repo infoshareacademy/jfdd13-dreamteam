@@ -19,8 +19,8 @@ const
     boardWidth = 600,
     boardHeight = 600,
     speed = 1,
-    speedObst = 1,
-    speedBird = 3,
+    speedObst = 10,
+    speedBird = 10,
     childrenArray = [],
 
     backToMenu = () => {
@@ -35,7 +35,7 @@ const
         document.addEventListener("keydown", event => Render.KeySupport(Player, event));
 
         checkPosition = () => {
-            const outOfTheBoard = childrenArray.map(item => item.position.x < 0);
+            const outOfTheBoard = childrenArray.map(item => item.position.x < -obstWidth);
             const trashItem = outOfTheBoard.indexOf(true);
             if (trashItem > 0)  {
 
@@ -60,7 +60,7 @@ const
         };
         mainLoop = () => {
             setInterval(checkPosition, 100);
-            setInterval(obstacleLoop, 25000);
+            setInterval(obstacleLoop, 5000);
             setInterval(birdLoop, 1900);
             setInterval(birdZLoop, 9000);
             //further 4 lines just for testing purposes
