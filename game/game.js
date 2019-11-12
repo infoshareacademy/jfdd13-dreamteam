@@ -88,7 +88,7 @@ class Render {
             child.style.height = playerHeight + 'px';
             // child.style.background = `blue`;
             child.setAttribute('class', `player`);
-            child.style.backgroundImage = "url('img/airplane_heart.png')";
+            child.style.backgroundImage = "url('img/airplane_icon.png')";
             child.style.backgroundRepeat = 'round';
       
 
@@ -96,12 +96,13 @@ class Render {
             if (el.name === 'bird') {
                 child.style.width = birdWidth + 'px';
                 child.style.height = birdHeight + 'px';
-                child.style.backgroundColor = 'red';
+                // child.style.backgroundColor = 'red';
                 child.style.left = el.position.x + 'px';
                 child.style.top = el.position.y + 'px';
                 console.log(el.name);
+                child.style.backgroundImage = "url('img/bird_gull.png')";
+                child.style.backgroundRepeat = 'round';
           
-
             } else if (el.name === 'obstacle') {
                 child.style.width = obstWidth + 'px';
                 child.style.height = obstHeight + 'px';
