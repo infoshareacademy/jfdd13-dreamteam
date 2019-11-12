@@ -42,7 +42,7 @@
 }
 
 .frame__top, .frame__bottom {
-    height: 50px;
+    height: 300px;
     width: 100%;
 }
 
@@ -52,11 +52,11 @@
     height: 120vh
 }
 .frame__top {
-    top: -50px;
+    top: -300px;
 }
 
 .frame__bottom {
-    bottom: -50px;
+    bottom: -300px;
 }
 
 .frame__left {
@@ -73,11 +73,18 @@
     display: flex;
     position: absolute;
     align-items: center;
-    top: 0;
+    top: -50px;
+    right: -100px;
     width: 300px;
     height: 40px;
     z-index: 3;
     /*background: orange;*/
+}
+
+.countdown__container {
+    right: calc(25% + 150px);
+    justify-content: center;
+    top: -50px;
 }
 
 .player {

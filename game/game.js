@@ -37,8 +37,7 @@ const
                 Render.destroy(childrenArray[trashItem])
             }
 
-        }
-
+        };
 
         firstLoop = () => {
             Render.create(createPlayer('pilot'));
@@ -64,7 +63,7 @@ const
 
 
         };
-
+        countdown();
         setTimeout(firstLoop, 300);
         const draw = () => setInterval(Render.changePosition, 100);
         requestAnimationFrame(draw);
