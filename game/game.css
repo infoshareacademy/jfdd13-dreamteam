@@ -33,6 +33,10 @@
     width: 180px;
     height: 60px;
 }
+.btn:hover{
+    cursor: pointer;
+    font-weight: 600;
+}
 .frame {
     position: absolute;
     width: 100px;
@@ -61,7 +65,7 @@
 
 .frame__left {
     left: -300px;
-    z-index: 0;
+    /* z-index: 0; */
 }
 
 .frame__right {
@@ -97,10 +101,11 @@
     width: 20%;
 }
 
-.obstacle {
+.obstacle, .bird, .birdz {
     position: absolute;
     z-index: 1;
 }
+
 
 .titleBox {
     text-align: center;
