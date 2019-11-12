@@ -1,6 +1,7 @@
 @import "nav_icons.css";
-@import "form2.css";
+@import "cookies.css";
 @import "calculator.css";
+@import "form2.css";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,7 +20,6 @@ body {
 .heading__h1 {
   font-size: 2.5rem;
   text-transform: none;
-  margin: 0.67rem 0;
 }
 .heading__h2 {
   margin: 1rem 0 1.5rem;
@@ -48,6 +48,7 @@ body {
   text-transform: uppercase;
   background: #1976D2;
   border: none;
+  cursor: pointer;
 }
 .btn:focus {
   outline: none;
@@ -69,6 +70,13 @@ body {
 .btn-hero:hover {
   background-color: #2196F3;
 }
+.btn__cookies {
+  max-width: 110px;
+  max-height: 30px;
+  margin: 0 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
 
 .icon__container {
   font-size: 1.1rem;
@@ -78,6 +86,23 @@ body {
   text-align: center;
 }
 
+.paragraph--underline {
+  text-decoration: underline;
+}
+.paragraph--centered {
+  text-align: center;
+}
+
+@media all and (min-width: 1366px) {
+  .hero {
+    background-image: url("../img/bg-1366x768.png");
+  }
+}
+@media all and (min-width: 500px) and (max-width: 1365px) {
+  .hero {
+    background-image: url("../img/bg-1024x576.png");
+  }
+}
 .wrapper {
   overflow: hidden;
 }
@@ -88,26 +113,9 @@ body {
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  background-color: #cccccc;
-  background-image: url("../img/bg1.jpg");
+  background: url("../img/bg-1366x768.png") no-repeat center;
   background-size: cover;
-  transition: background 2s ease-in-out;
-}
-.hero__arrow {
-  cursor: pointer;
-  position: absolute;
-  top: calc(50% - 50px);
-  padding: 0 1rem;
-  color: white;
-  font-weight: bold;
-  font-size: 50px;
-  transition: 0.6s ease;
-}
-.hero__arrow--prev {
-  left: 0;
-}
-.hero__arrow--next {
-  right: 0;
+  transition: background 0.1s ease-in;
 }
 
 .hero-image {
@@ -125,6 +133,15 @@ body {
   padding: 0 0 3.8rem;
 }
 
+.hero__text {
+  text-align: center;
+}
+
+@media all and (max-width: 500px) {
+  .hero-text {
+    padding-bottom: 1rem;
+  }
+}
 .functions__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -151,6 +168,9 @@ body {
   background-color: #BDBDBD;
   border-radius: 50%;
 }
+.icon__container--functions > i {
+  color: #fff;
+}
 
 @media all and (max-width: 650px) {
   .functions__grid {
@@ -172,28 +192,35 @@ body {
 }
 .grid__container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
   grid-gap: 2rem;
-  padding: 1rem;
+  padding: 1rem 0;
+  margin: 0 2rem;
 }
 .grid__container--inner {
   grid-template-rows: 1fr 1fr;
   grid-gap: 0;
+  align-self: center;
 }
 
-.info__wrapper {
-  background-color: #BBDEFB;
-  border-radius: 5%;
-}
 .info__wrapper > .heading__h3 {
-  margin: 1rem 0;
+  padding: 1rem 0;
   text-align: center;
+  border-bottom: 3px solid #BBDEFB;
 }
 .info__container {
   display: flex;
-  align-items: center;
-  height: calc(100% - (1rem + 18px + 10px));
-  margin: 1rem 0;
+  margin: 1rem 0 0;
+  padding: 1rem;
+}
+.info__item {
+  padding: 1rem 0;
+}
+.info__list {
+  padding: 1rem;
+}
+.info__text {
+  padding: 0 0 2rem 0;
 }
 
 .card {
@@ -219,6 +246,7 @@ body {
   width: 172px;
   align-self: center;
   font-weight: 500;
+  margin: 0 0 1rem 0;
 }
 
 .card__icons {
@@ -253,10 +281,11 @@ body {
 
   .card {
     justify-content: center;
+    height: 120px;
   }
 
   .heading__h4--authors {
-    margin: 0 0 1rem 0;
+    margin: 0;
   }
 
   .card__info {
@@ -269,17 +298,23 @@ body {
 }
 @media all and (max-width: 700px) {
   .grid__container {
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(460px, 1fr);
     margin: 0 2rem;
+    grid-gap: 0;
+    padding: 0;
   }
   .grid__container--inner {
+    padding: 1rem;
     grid-gap: 1rem;
   }
 
   .card {
     align-items: flex-start;
     height: 130px;
+  }
+
+  .info__wrapper {
+    border-bottom: 1px solid #BDBDBD;
   }
 }
 @media all and (max-width: 470px) {

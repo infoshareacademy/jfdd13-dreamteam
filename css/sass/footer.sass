@@ -2,28 +2,32 @@
 .grid
   &__container
     display: grid
-    grid-template-columns: 1fr 1fr
+    grid-template-columns: 1fr auto
     grid-gap: 2rem
-    padding: 1rem
+    padding: 1rem 0
+    margin: 0 2rem
     &--inner
       grid-template-rows: 1fr 1fr
       grid-gap: 0
+      align-self: center
 .info
   &__wrapper
-    background-color: $primary-color-light
-    border-radius: 5%
-
     & > .heading__h3
-      margin: 1rem 0
+      padding: 1rem 0
       text-align: center
+      border-bottom: 3px solid $primary-color-light
   &__container
     display: flex
-    align-items: center
     //fix this shitline
-    height: calc(100% - (1rem + 18px + 10px))
-    margin: 1rem 0
-    //height: inherit
-
+    //height: calc(100% - (1rem + 18px + 10px))
+    margin: 1rem 0 0
+    padding: 1rem
+  &__item
+    padding: 1rem 0
+  &__list
+    padding: 1rem
+  &__text
+    padding: 0 0 2rem 0
 .card
   display: flex
   justify-content: center
@@ -44,6 +48,8 @@
   width: 172px
   align-self: center
   font-weight: 500
+  margin: 0 0 1rem 0
+
 .card__icons
   display: flex
   flex-flow: column
@@ -62,29 +68,35 @@
     &:hover
       text-decoration: underline
 
-
 @media all and (max-width: 1200px)
   .grid__container
     &--inner
       grid-template-columns: 1fr
   .card
     justify-content: center
+    height: 120px
   .heading__h4--authors
-    margin: 0 0 1rem 0
+    margin: 0
   .card__info
     width: 190px
   .card__icons
     margin: 1rem 0
 @media all and (max-width: 700px)
   .grid__container
-    grid-template-rows: 1fr 1fr
-    grid-template-columns: 1fr
+    grid-template-columns: minmax(460px, 1fr)
     margin: 0 2rem
+    grid-gap: 0
+    padding: 0
     &--inner
+      padding: 1rem
       grid-gap: 1rem
   .card
     align-items: flex-start
     height: 130px
+  .info__wrapper
+    border-bottom: 1px solid $divider-color
+  .info__container
+    //padding-bottom: 3rem
 @media all and (max-width: 470px)
   .grid__container
     margin: .5rem

@@ -1,71 +1,61 @@
-// function slider() {
 const slideList = [
-    {
-        img: "../img/bg0.jpg",
-        text: "Ruszaj w drogę",
-        text2: "Zaplanuj swoją podróż szybciej niż kiedykolwiek wcześniej!"
-    },
-    {
-        img: "../img/bg1.jpg",
-        text: "Podróżuj więcej. Płać mniej.",
-        text2: "Bądź pewien, że wybrałeś najkorzystniejszą dla siebie ofertę."
-    },
-    {
-        img: "../img/bg2.jpg",
-        text: "Odkryj świat z way.to",
-        text2: "Portal stworzony przez miłośników podróżowania, chcących zarażać swoją pasją"
-    }];
-const arrowNext = document.getElementById('hero__arrow--next');
-const arrowPrev = document.getElementById('hero__arrow--prev');
+  {
+    img: "../img/bg-1366x768.png",
+    text: "Ruszaj w drogę",
+    text2: "Zaplanuj swoją podróż szybciej niż kiedykolwiek wcześniej!"
+  },
+  {
+    img: "../img/bg1.jpg",
+    text: "Podróżuj więcej. Płać mniej.",
+    text2: "Bądź pewien, że wybrałeś najkorzystniejszą dla siebie ofertę."
+  },
+  {
+    img: "../img/bg2.jpg",
+    text: "Odkryj świat z way.to",
+    text2: "Portal stworzony przez miłośników podróżowania, chcących zarażać swoją pasją"
+  }];
+
 const image = document.querySelector('.hero');
-const h1 = document.querySelector('h1.heading__h1');
-const h3 = document.querySelector('h3.heading__h3');
+const h1 = document.getElementById('slider__heading');
+const h1span = document.getElementById('slider__text');
+const arrowPrev = document.getElementById('slider--prev');
+const arrowNext = document.getElementById('slider--next');
+const time = 5000;
 
-let time = 5000;
-let active = 1;
+
+let active = 0;
 
 
-const changeSlide = (direction = 1) => {
-    if (direction === 1) {
-        active++
-    } else {
-        active--
-    }
-    if (active === -1) {
-        active = 2
-    }
-    if (active === slideList.length || active <= 0) {
-        active = 0;
-    }
-    const nextImg = slideList[active].img;
-    image.style.transition = `background ease-in`;
-    image.style.transitionDuration = '2s';
-    image.style.backgroundImage = `url("${nextImg}")`;
-    image.style.backgroundSize = "cover";
-    h1.innerText = slideList[active].text;
-    h3.innerText = slideList[active].text2;
-};
+
+const changeSlide = () => {
+  active++;
+  if(active === slideList.length){
+    active = 0;
+  } 
+  const nextImg = slideList[active].img;
+  image.style.backgroundImage = `url("${nextImg}")`;
+  image.style.backgroundSize = "cover";
+  h1.textContent = slideList[active].text;
+  h1span.textContent = slideList[active].text2;
+  };
+
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next'); 
 
 const plusSlides = () => {
-    if (arrowPrev) {
-        changeSlide();
-    } else {
-        changeSlide(10)
+    if (prev){
+      changeSlide();
     }
-};
+  };
+
+const slides =  setInterval(changeSlide, time);
 arrowPrev.addEventListener('click', () => {
-    changeSlide(-1);
-    clearInterval(change);
+  plusSlides(-1);
+  clearInterval(slides)
 });
-
 arrowNext.addEventListener('click', () => {
-    changeSlide(1);
-    clearInterval(change);
+  plusSlides(1);
+  clearInterval(slides)
 });
-const change = setInterval(changeSlide, time);
-changeSlide()
-// }
-
-
-
+changeSlide();
 
