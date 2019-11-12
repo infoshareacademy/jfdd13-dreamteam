@@ -17,9 +17,10 @@
 .instBoxPop {
   background-color: rgb(166, 214, 245);
   margin: auto;
-  padding: 20px;
+  padding: 0 30px;
   border: 1px solid silver;
-  width: 80%;
+  width: 600px;
+  height: 250px;
   border-radius: 20px;
 }
 
