@@ -88,7 +88,7 @@ class Render {
             child.style.height = playerHeight + 'px';
             // child.style.background = `blue`;
             child.setAttribute('class', `player`);
-            child.style.backgroundImage = "url('img/airplane_icon.png')";
+            child.style.backgroundImage = "url('img/airplane_heart.png')";
             child.style.backgroundRepeat = 'round';
       
 
@@ -105,9 +105,9 @@ class Render {
             } else if (el.name === 'obstacle') {
                 child.style.width = obstWidth + 'px';
                 child.style.height = obstHeight + 'px';
-                child.style.background = `grey`;
+                // child.style.background = `grey`;
                 child.style.bottom = `0px`;
-                child.style.backgroundImage = "url('img/obst_tree1.png')";
+                child.style.backgroundImage = "url('img/tree1.png')";
                 child.style.backgroundRepeat = 'round';
 
             }
