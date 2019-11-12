@@ -101,3 +101,7 @@
     position: absolute;
     z-index: 1;
 }
+
+.titleBox {
+    text-align: center;
+}
