@@ -55,8 +55,8 @@ const
         };
         mainLoop = () => {
             setInterval(checkPosition, 100);
-            setInterval(obstacleLoop, 12000);
-            setInterval(birdLoop, 1500);
+            setInterval(obstacleLoop, 25000);
+            setInterval(birdLoop, 1900);
             setInterval(birdZLoop, 9000);
             //further 4 lines just for testing purposes
             // birdLoop()
