@@ -80,14 +80,17 @@ class Render {
 
         //add id
         el.id = id++;
-        child.innerText = el.name;
+        // child.innerText = el.name;
         child.setAttribute('id', `${el.name}${el.id}`);
 
         if (el.type === 'player') {
             child.style.width = playerWidth + 'px';
             child.style.height = playerHeight + 'px';
-            child.style.background = `blue`;
+            // child.style.background = `blue`;
             child.setAttribute('class', `player`);
+            child.style.backgroundImage = "url('img/airplane_icon.png')";
+            child.style.backgroundRepeat = 'round';
+      
 
         } else if (el.type === 'obstacle') {
             if (el.name === 'bird') {
@@ -97,12 +100,16 @@ class Render {
                 child.style.left = el.position.x + 'px';
                 child.style.top = el.position.y + 'px';
                 console.log(el.name);
+          
 
             } else if (el.name === 'obstacle') {
                 child.style.width = obstWidth + 'px';
                 child.style.height = obstHeight + 'px';
                 child.style.background = `grey`;
                 child.style.bottom = `0px`;
+                child.style.backgroundImage = "url('img/obst_tree1.png')";
+                child.style.backgroundRepeat = 'round';
+
             }
             child.setAttribute('class', `obstacle ${el.name}`);
         } else {
