@@ -52,7 +52,10 @@ const next = document.querySelector('.next');
 //     if (prev){
 //       changeSlide();
 //       changeDots();
-      
+//     }
+//     else if (next){
+//       changeSlide();
+//       changeDots();
 //     }
 //   }
 
@@ -65,18 +68,20 @@ let indexInterval = setInterval(changeSlide, time)
         e.prev ? active-- : active++;
         if(active === slideList.length){
           active = 0
-        } else if(active <0){
+        } else if(active < 0)  {
           active = slideList.length - 1
         }
-      const nextImg = slideList[active].img;
+      nextImg;
       image.style.background = `url("${nextImg}") no-repeat center`
       image.style.backgroundSize = "cover";
       h1.textContent = slideList[active].text;
       h3.textContent = slideList[active].text2;
       changeDots()
-      setInterval(changeSlide, time);
+      indexInterval(changeSlide, time);
       }
       }
+
+window.addEventListener('onclick', plusSlides)
 
 // setInterval(changeSlide, time);
 // setInterval(changeDots, time);
