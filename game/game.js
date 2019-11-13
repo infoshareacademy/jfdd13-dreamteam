@@ -16,6 +16,7 @@ const
     obstHeight = 200,
     birdWidth = 40,
     birdHeight = 40,
+    boardStart = 0,
     boardWidth = 600,
     boardHeight = 600,
     startLine = 150,
@@ -25,11 +26,21 @@ const
     speedBird = 10,
     speedBirdZ = 4,
     childrenArray = [],
+    checkCollisionArray=[],
+    checkPlayArray=[],
 
     backToMenu = () => {
         document.location.assign('../index.html');
     };
 
+    checkCollision = () => {
+     
+
+    }
+
+    gameOver = (domEl) => {
+        console.log('mamy kolizję')
+    }
     startGame = () => {
         startBtn.style.display = 'none';
         instBtn.style.display = 'none';
@@ -44,13 +55,14 @@ const
 
                 Render.destroy(childrenArray[trashItem])
             }
-
         };
 
         firstLoop = () => {
             Render.create(createPlayer());
             Render.create(createBird());
             Render.create(createObstacle());
+            checkCollision();
+           
         };
         obstacleLoop = () => {
             Render.create(createObstacle());
@@ -63,6 +75,7 @@ const
         };
         mainLoop = () => {
             setInterval(checkPosition, 100);
+            setInterval(checkCollision, 100);
             setInterval(obstacleLoop, 5000);
             setInterval(birdLoop, 2000);
             setInterval(birdZLoop, 9000);
@@ -77,6 +90,7 @@ const
         requestAnimationFrame(draw);
         mainLoop()
     };
+
 
 // document.addEventListener("keydown", event => Render.KeySupport(Player, event)); //added just for testing
 class Render {
@@ -93,7 +107,7 @@ class Render {
         child.style.left = el.position.x + 'px';
         child.style.top = el.position.y + 'px';
 
-        if (el.type === 'player') {
+        if (el.name === 'player') {
             child.style.width = playerWidth + 'px';
             child.style.height = playerHeight + 'px';
             // child.style.backgroundColor = `blue`;
@@ -101,7 +115,7 @@ class Render {
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `player`);
       
-        } else if (el.type === 'obstacle') {
+        } else if (el.name === 'obstacle') {
             child.style.width = obstWidth + 'px';
             child.style.height = obstHeight + 'px';
             // child.style.bottom = `0px`;
@@ -110,7 +124,7 @@ class Render {
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `obstacle ${el.name}`);
 
-        } else if (el.type === 'bird'){
+        } else if (el.name === 'bird'){
             child.style.width = birdWidth + 'px';
             child.style.height = birdHeight + 'px';
             // child.style.backgroundColor = `red`;
@@ -118,7 +132,7 @@ class Render {
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `bird ${el.name}`);
                 
-        } else if (el.type === 'birdz') {
+        } else if (el.name === 'birdz') {
             child.style.width = birdWidth + 'px';
             child.style.height = birdHeight + 'px';
             // child.style.backgroundColor = 'white';
@@ -126,12 +140,12 @@ class Render {
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `birdz ${el.name}`);
         } else {
-            throw Error('unresolved object type in render create, line 90')
+            throw Error('unresolved object name in render create, line 90')
         }
 
         // console.log(`this ${el.type} el id is ${el.id}`);
         parentVar.appendChild(child);
-        console.log('create', el.name);
+        // console.log('create', el.name);
         el.domEl = document.getElementById(`${el.name}${el.id}`);
         childrenArray.push(el);
         // console.log(`this el position y is ${el.position.y}`);
@@ -148,24 +162,23 @@ class Render {
             let y = el.position.y;
             // console.log(`child x= ${x}`);
 
-            if (el.type === 'player') {
+            if (el.name === 'player') {
                 el.domEl.style.left = x + 'px';
                 el.domEl.style.top = y + 'px';
             
-            }else if (el.type === 'obstacle') {
+            }else if (el.name === 'obstacle') {
                 el.moveObst();
                 el.domEl.style.left = x + 'px';
             
-            } else if (el.type === 'bird') {
+            } else if (el.name === 'bird') {
                 el.moveObst();
                 el.domEl.style.left = x + 'px';
             
-            } else if (el.type === 'birdz') {
+            } else if (el.name === 'birdz') {
                 el.moveBirdZ();
                 el.domEl.style.left = x + 'px';
                 el.domEl.style.top = y + 'px';
             }
-
         });
     };
 
@@ -175,28 +188,25 @@ class Render {
             if (el.type === 'player') {
                 switch (event.code) {
                     case "ArrowLeft":
-                        if (el.position.x > 0) {
+                        if (el.position.x > boardStart) {
                             el.playerLeft()
                         }
                         // Player.changePosition();
                         break;
                     case "ArrowRight":
-                        if (el.position.x + 40 < boardWidth) {
+                        if (el.position.x + playerWidth < boardWidth) {
                             el.playerRight()
                         }
-
                         break;
                     case "ArrowUp":
-                        if (el.position.y > 20) {
+                        if (el.position.y > boardStart) {
                             el.playerUp()
                         }
-
                         break;
                     case "ArrowDown":
-                        if (el.position.y + 40 < boardHeight) {
+                        if (el.position.y + playerHeight < boardHeight) {
                             el.playerDown()
                         }
-
                         break;
                     default:
                         return
@@ -301,10 +311,10 @@ createObstacle = () => {
     return new Obstacle('obstacle', '', '', {x: creationLine, y: (boardHeight - obstHeight)}, speedObst, 'obstacle');
 };
 createBird = () => {
-    return new Obstacle('bird', '', '', {x: creationLine, y: generateBirdY()}, speedObst, 'bird');
+    return new Obstacle('bird', '', '', {x: creationLine, y: generateBirdY()}, speedObst, 'obstacle');
 };
 createBirdZ = () => {
-    return new Obstacle('birdz', '', '', {x: creationLine, y: generateBirdY()}, speedObst, 'birdz');
+    return new Obstacle('birdz', '', '', {x: creationLine, y: generateBirdY()}, speedObst, 'obstacle');
 };
 
 // generatePositionX = element => {
