@@ -28,19 +28,28 @@ const
     childrenArray = [],
     checkCollisionArray=[],
     checkPlayArray=[],
-
     backToMenu = () => {
         document.location.assign('../index.html');
-    };
+    },
+    checkCollision = (arr) => {
+        const playa = childrenArray[0];
+        const obstacleArr = arr.filter(item => item.type === 'obstacle');
+        obstacleArr.forEach(item => {
+            if (item.position.x !== playa.position.x || item.position.y !== playa.position.y) {
+                return false
+            }
+            return true
 
-    checkCollision = () => {
-     
+            //teraz to samo w skroconym zapisie:
+            // return !(item.position.x !== playa.position.x || item.position.y !== playa.position.y);
 
-    }
+        })
 
-    gameOver = (domEl) => {
-        console.log('mamy kolizję')
-    }
+    },
+
+    gameOver = () => {
+    alert('game over');
+   },
     startGame = () => {
         startBtn.style.display = 'none';
         instBtn.style.display = 'none';
@@ -86,6 +95,7 @@ const
         };
         countdown();
         setTimeout(firstLoop, 100);
+        //To w tym momencie chcemy sprawdzic kolizje!
         const draw = () => setInterval(Render.changePosition, 100);
         requestAnimationFrame(draw);
         mainLoop()
@@ -157,6 +167,11 @@ class Render {
     };
 
     static changePosition(domEl) {
+        //najpierw sprawdzam pozycje, jesli nie ma kolizji, to wykonuje ruch
+
+        (checkCollision()) ? gameOver() :  //jezeli checkCollision zwraca true to wywołujemy gameOver,
+            // przy false lecimy dalej
+
         childrenArray.forEach((el, i) => {
             let x = el.position.x;
             let y = el.position.y;
