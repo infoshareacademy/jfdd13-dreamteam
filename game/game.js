@@ -26,30 +26,36 @@ const
     speedBird = 10,
     speedBirdZ = 4,
     childrenArray = [],
-    checkCollisionArray=[],
-    checkPlayArray=[],
+    checkCollisionArray = [],
+    checkPlayArray = [],
+    checkCollision = (arr) => {
+        if (arr) {
+            const playa = arr[0];
+            const obstacleArr = arr.filter(item => item.type !== playa.type);
+
+            obstacleArr.forEach(item => {
+                if (item.position.x === playa.position.x || item.position.y === playa.position.y) {
+                    console.log('BUM');
+                    return true
+                } else {
+                    console.log(playa.position.x + ' ' + item.position.x);
+                    return false
+                }
+            })
+        }
+        //teraz to samo w skroconym zapisie:
+        // return !(item.position.x !== playa.position.x || item.position.y !== playa.position.y);
+    },
+
+    // },
+    gameOver = () => {
+        alert('game over');
+    },
     backToMenu = () => {
         document.location.assign('../index.html');
     },
-    checkCollision = (arr) => {
-        const playa = childrenArray[0];
-        const obstacleArr = arr.filter(item => item.type === 'obstacle');
-        obstacleArr.forEach(item => {
-            if (item.position.x !== playa.position.x || item.position.y !== playa.position.y) {
-                return false
-            }
-            return true
 
-            //teraz to samo w skroconym zapisie:
-            // return !(item.position.x !== playa.position.x || item.position.y !== playa.position.y);
 
-        })
-
-    },
-
-    gameOver = () => {
-    alert('game over');
-   },
     startGame = () => {
         startBtn.style.display = 'none';
         instBtn.style.display = 'none';
@@ -60,7 +66,7 @@ const
         checkPosition = () => {
             const outOfTheBoard = childrenArray.map(item => item.position.x < -obstWidth);
             const trashItem = outOfTheBoard.indexOf(true);
-            if (trashItem > 0)  {
+            if (trashItem > 0) {
 
                 Render.destroy(childrenArray[trashItem])
             }
@@ -71,7 +77,7 @@ const
             Render.create(createBird());
             Render.create(createObstacle());
             checkCollision();
-           
+
         };
         obstacleLoop = () => {
             Render.create(createObstacle());
@@ -124,7 +130,7 @@ class Render {
             child.style.backgroundImage = "url('img/ptasiek.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `player`);
-      
+
         } else if (el.name === 'obstacle') {
             child.style.width = obstWidth + 'px';
             child.style.height = obstHeight + 'px';
@@ -134,14 +140,14 @@ class Render {
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `obstacle ${el.name}`);
 
-        } else if (el.name === 'bird'){
+        } else if (el.name === 'bird') {
             child.style.width = birdWidth + 'px';
             child.style.height = birdHeight + 'px';
             // child.style.backgroundColor = `red`;
             child.style.backgroundImage = "url('img/bird_gull.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `bird ${el.name}`);
-                
+
         } else if (el.name === 'birdz') {
             child.style.width = birdWidth + 'px';
             child.style.height = birdHeight + 'px';
@@ -169,32 +175,32 @@ class Render {
     static changePosition(domEl) {
         //najpierw sprawdzam pozycje, jesli nie ma kolizji, to wykonuje ruch
 
-        (checkCollision()) ? gameOver() :  //jezeli checkCollision zwraca true to wywołujemy gameOver,
+        (checkCollision(childrenArray)) ? alert('GAMEOVER') :  //jezeli checkCollision zwraca true to wywołujemy gameOver,
             // przy false lecimy dalej
 
-        childrenArray.forEach((el, i) => {
-            let x = el.position.x;
-            let y = el.position.y;
-            // console.log(`child x= ${x}`);
+            childrenArray.forEach((el, i) => {
+                let x = el.position.x;
+                let y = el.position.y;
+                // console.log(`child x= ${x}`);
 
-            if (el.name === 'player') {
-                el.domEl.style.left = x + 'px';
-                el.domEl.style.top = y + 'px';
-            
-            }else if (el.name === 'obstacle') {
-                el.moveObst();
-                el.domEl.style.left = x + 'px';
-            
-            } else if (el.name === 'bird') {
-                el.moveObst();
-                el.domEl.style.left = x + 'px';
-            
-            } else if (el.name === 'birdz') {
-                el.moveBirdZ();
-                el.domEl.style.left = x + 'px';
-                el.domEl.style.top = y + 'px';
-            }
-        });
+                if (el.name === 'player') {
+                    el.domEl.style.left = x + 'px';
+                    el.domEl.style.top = y + 'px';
+
+                } else if (el.name === 'obstacle') {
+                    el.moveObst();
+                    el.domEl.style.left = x + 'px';
+
+                } else if (el.name === 'bird') {
+                    el.moveObst();
+                    el.domEl.style.left = x + 'px';
+
+                } else if (el.name === 'birdz') {
+                    el.moveBirdZ();
+                    el.domEl.style.left = x + 'px';
+                    el.domEl.style.top = y + 'px';
+                }
+            });
     };
 
     static KeySupport(domEl, event) {
@@ -231,8 +237,8 @@ class Render {
     };
 
     static destroy(el) {
-        el.domEl.style.transition = 'opacity .1s ease-out'
-        el.domEl.style.opacity = '0'
+        el.domEl.style.transition = 'opacity .1s ease-out';
+        el.domEl.style.opacity = '0';
         el.domEl.remove();
         el.position.x = 1000;
         el.position.y = -1000;
@@ -355,7 +361,6 @@ generateBirdY = () => {
 
 startBtn.addEventListener('click', startGame);
 backBtn.addEventListener('click', backToMenu);
-
 
 
 //high score
