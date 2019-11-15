@@ -1,0 +1,22 @@
+.instruction_game{
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+};
+
+.instruction_game_box {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: blanchedalmond;
+  padding: 1rem 2rem;
+  width: 30rem;
+  border-radius: 0.5rem;
+}
