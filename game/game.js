@@ -145,16 +145,16 @@ class Render {
         child.style.top = el.position.y + 'px';
 
         if (el.name === 'player') {
-            child.style.width = playerWidth + 'px';
-            child.style.height = playerHeight + 'px';
+            child.style.width = el.size.w + 'px';
+            child.style.height = el.size.h + 'px';
             // child.style.backgroundColor = `blue`;
             child.style.backgroundImage = "url('img/ptasiek.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `player`);
 
         } else if (el.name === 'obstacle') {
-            child.style.width = obstWidth + 'px';
-            child.style.height = obstHeight + 'px';
+            child.style.width = el.size.w + 'px';
+            child.style.height = el.size.h + 'px';
             // child.style.bottom = `0px`;
             // child.style.backgroundColor = `grey`;
             child.style.backgroundImage = "url('img/tree1.png')";
@@ -162,16 +162,16 @@ class Render {
             child.setAttribute('class', `obstacle ${el.name}`);
 
         } else if (el.name === 'bird') {
-            child.style.width = birdWidth + 'px';
-            child.style.height = birdHeight + 'px';
+            child.style.width = el.size.w + 'px';
+            child.style.height = el.size.h + 'px';
             // child.style.backgroundColor = `red`;
             child.style.backgroundImage = "url('img/bird_gull.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `bird ${el.name}`);
 
         } else if (el.name === 'birdz') {
-            child.style.width = birdWidth + 'px';
-            child.style.height = birdHeight + 'px';
+            child.style.width = el.size.w + 'px';
+            child.style.height = el.size.h + 'px';
             // child.style.backgroundColor = 'white';
             child.style.backgroundImage = "url('img/bird_eagle.png')";
             child.style.backgroundRepeat = 'round';
@@ -271,13 +271,16 @@ class Render {
 }
 
 class BoardElement {
-    constructor(name, domEl, id, position = {x: '', y: ''}, speed, type) {
+    constructor(name, domEl, id, position = {x: '', y: ''}, size = {w: '', h: ''}, speed, type) {
         this.name = name;
         this.domEl = domEl;
         this.id = id;
         this.position = position;
         this.position.x = position.x;
         this.position.y = position.y;
+        this.size = size;
+        this.size.w = size.w;
+        this.size.h = size.h;
         this.speed = speed;
         this.type = type;
     }
@@ -311,52 +314,46 @@ class BoardElement {
 /////////
 
 class Player extends BoardElement {
-    constructor(name, domEl, id, position = {x: '', y: ''}, speed, type) {
-        super(domEl, position);
+    constructor(name, domEl, id, position = {x: '', y: ''},  size = {w: '', h: ''}, speed, type) {
+        super(domEl, position, size);
         this.name = name;
         this.id = id;
         this.position.x = position.x;
         this.position.y = position.y;
+        this.size.w = size.w;
+        this.size.h = size.h;
         this.speed = speed;
         this.type = type;
     }
 }
 
 class Obstacle extends BoardElement {
-    constructor(name, domEl, id, position = {x: '', y: ''}, speed, type) {
+    constructor(name, domEl, id, position = {x: '', y: ''}, size = {w: '', h: ''}, speed, type) {
 
-        super(domEl, id, position);
+        super(domEl, id, position, size);
         this.name = name;
         this.position.x = position.x;
         this.position.y = position.y;
+        this.size.w = size.w;
+        this.size.h = size.h;
         this.speed = speed;
         this.type = type;
     }
 }
 
-// class Bird extends BoardElement {
-//     constructor(name, domEl, id, position = {x: '', y: ''}, speed, type) {
-//         super(domEl, id, position);
-//         this.name = name;
-//         this.position.x = position.x;
-//         this.position.y = position.y;
-//         this.speed = speed;
-//         this.type = type;
-//     }
-// }
 
 // const play = new Player( 'Andrzej', '', 0, 'speed', 'player')
 createPlayer = () => {
-    return new Player('player', '', id, {x: startLine, y: startLine}, speed, 'player');
+    return new Player('player', '', id, {x: startLine, y: startLine}, {w: playerWidth, h: playerHeight}, speed, 'player');
 };
 createObstacle = () => {
-    return new Obstacle('obstacle', '', '', {x: creationLine, y: (boardHeight - obstHeight)}, speedObst, 'obstacle');
+    return new Obstacle('obstacle', '', '', {x: creationLine, y: boardHeight-obstHeight}, {w: obstWidth, h: obstHeight}, speedObst, 'obstacle');
 };
 createBird = () => {
-    return new Obstacle('bird', '', '', {x: creationLine, y: generateBirdY()}, speedObst, 'obstacle');
+    return new Obstacle('bird', '', '', {x: creationLine, y: generateBirdY()}, {w: birdWidth, h: birdHeight}, speedObst, 'obstacle');
 };
 createBirdZ = () => {
-    return new Obstacle('birdz', '', '', {x: creationLine, y: generateBirdY()}, speedObst, 'obstacle');
+    return new Obstacle('birdz', '', '', {x: creationLine, y: generateBirdY()},{w: birdWidth, h: birdHeight}, speedObst, 'obstacle');
 };
 
 // generatePositionX = element => {
