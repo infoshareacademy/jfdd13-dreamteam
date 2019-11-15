@@ -40,7 +40,7 @@ const
                 playX + playerWidth >= item.position.x &&
                 playX <= item.position.x + obstWidth}
                 {console.log('bum1');
-            } else if (item.name === 'obstacle')
+            } if (item.name === 'obstacle')
                 {playX + playerWidth >= item.position.x &&
                 playY + playerHeight >= item.position.y &&
                 playY <= item.position.y}
