@@ -27,26 +27,39 @@ const
     speedBirdZ = 1,
     childrenArray = [],
 
-    checkCollision = (arr) => {
-        if (arr) {
-            const playa = arr[0];
-            const obstacleArr = arr.filter(item => item.type !== playa.type);
-
-            obstacleArr.forEach(item => {
-                if (item.position.x === playa.position.x || item.position.y === playa.position.y) {
-                    console.log('BUM');
-                    return true
-                } else {
-                    console.log(playa.position.x + ' ' + item.position.x);
-                    return false
-                }
+    checkCollision = () => {
+        const playArr = childrenArray[0],
+        playX = playArr.position.x, 
+        playY = playArr.position.y, 
+        playW = playArr.size.w, 
+        playH = playArr.size.h, 
+        obstacleArr = childrenArray.filter(item => item.type !== 'player');
+    // console.log(playX,playY, playW, playH)
+    
+        obstacleArr.forEach(item => {
+            const obstX = item.position.x,
+            obstY = item.position.y,
+            obstW = item.size.w,
+            obstH = item.size.h;
+    // console.log(obstX, obstY, obstW, obstH)
+            if ((playX+playW) >= obstX 
+                &&
+                (playX+playW) <= (obstX+obstW)
+                &&
+                (playY+playH) >= obstY 
+                &&
+                (playY+playH) <= (obstY+obstH)){
+                console.log('BUM');
+                return true;
+            } else {
+                console.log('wait');
+                return false;
+            }
             })
         }
-        //teraz to samo w skroconym zapisie:
-        // return !(item.position.x !== playa.position.x || item.position.y !== playa.position.y);
-    },
+    
 
-    // },
+    
     gameOver = () => {
         alert('game over');
     },
