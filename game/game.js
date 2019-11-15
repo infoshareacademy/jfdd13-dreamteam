@@ -22,30 +22,51 @@ const
     startLine = 150,
     creationLine = 700,
     speed = 1,
-    speedObst = 10,
-    speedBird = 10,
-    speedBirdZ = 4,
+    speedObst = 1,
+    speedBird = 1,
+    speedBirdZ = 1,
     childrenArray = [],
-    checkCollisionArray = [],
-    checkPlayArray = [],
-    checkCollision = (arr) => {
-        if (arr) {
-            const playa = arr[0];
-            const obstacleArr = arr.filter(item => item.type !== playa.type);
 
-            obstacleArr.forEach(item => {
-                if (item.position.x === playa.position.x || item.position.y === playa.position.y) {
-                    console.log('BUM');
-                    return true
-                } else {
-                    console.log(playa.position.x + ' ' + item.position.x);
-                    return false
-                }
-            })
+    checkCollision = () => {
+        
+        const playArr = childrenArray[0],
+            playX = playArr.position.x, 
+            playY = playArr.position.y, 
+            obstacleArr = childrenArray.filter(item => item.type !== 'player');
+        
+        obstacleArr.forEach(item => {
+            if (item.name === 'obstacle')
+                {playY + playerHeight >= item.position.y && 
+                playX + playerWidth >= item.position.x &&
+                playX <= item.position.x + obstWidth}
+                {console.log('bum1');
+            } else if (item.name === 'obstacle')
+                {playX + playerWidth >= item.position.x &&
+                playY + playerHeight >= item.position.y &&
+                playY <= item.position.y}
+            {
+                 console.log('bum2')
+
+            } if (item.name === 'bird' || item.name === 'birdz')
+                playY + playerHeight >= item.position.y && 
+                (playX + playerWidth >= item.position.x &&
+                playX <= item.position.x + birdWidth);{
+                    console.log('bum3')
+            } if (item.name === 'bird' || item.name === 'birdz')
+                playX + playerWidth >= item.position.x &&
+                (playY + playerHeight >= item.position.y &&
+                playY <= item.position.y); {
+                 console.log('bum4')
+            } if (item.name === 'bird' || item.name === 'birdz')
+            playY <= item.position.y + birdHeight &&
+                playX + playerWidth >= item.position.y &&
+                playX <= item.position.y + birdWidth
+            {console.log('no5')}
         }
+        )};
         //teraz to samo w skroconym zapisie:
         // return !(item.position.x !== playa.position.x || item.position.y !== playa.position.y);
-    },
+    // },
 
     // },
     gameOver = () => {
