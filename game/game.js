@@ -22,103 +22,109 @@ const
     startLine = 150,
     creationLine = 700,
     speed = 1,
-    speedObst = 1,
-    speedBird = 1,
-    speedBirdZ = 1,
+    speedObst = 4,
+    speedBird = 10,
+    speedBirdZ = 4,
     childrenArray = [],
+    intervals = [],
 
-    checkCollision = () => {
-        const playArr = childrenArray[0],
-        playX = playArr.position.x, 
-        playY = playArr.position.y, 
-        playW = playArr.size.w, 
-        playH = playArr.size.h, 
-        obstacleArr = childrenArray.filter(item => item.type !== 'player');
-    // console.log(playX,playY, playW, playH)
-    
-        obstacleArr.forEach(item => {
-            const obstX = item.position.x,
-            obstY = item.position.y,
-            obstW = item.size.w,
-            obstH = item.size.h;
-    // console.log(obstX, obstY, obstW, obstH)
-            if ((playX+playW) >= obstX 
-                &&
-                (playX+playW) <= (obstX+obstW)
-                &&
-                (playY+playH) >= obstY 
-                &&
-                (playY+playH) <= (obstY+obstH)){
-                console.log('BUM');
-                return true;
-            } else {
-                console.log('wait');
-                return false;
-            }
-            })
+backToMenu = () => {
+    document.location.assign('../index.html');
+},
+
+startGame = () => {
+    startBtn.style.display = 'none';
+    instBtn.style.display = 'none';
+    backBtn.style.display = 'none';
+    event.preventDefault();
+    document.addEventListener("keydown", event => Render.KeySupport(Player, event));
+
+    checkPosition = () => {
+        const outOfTheBoard = childrenArray.map(item => item.position.x < -obstWidth);
+        const trashItem = outOfTheBoard.indexOf(true);
+        if (trashItem > 0) {
+
+            Render.destroy(childrenArray[trashItem])
         }
-    
-
-    
-    gameOver = () => {
-        alert('game over');
-    },
-    backToMenu = () => {
-        document.location.assign('../index.html');
-    },
-
-
-    startGame = () => {
-        startBtn.style.display = 'none';
-        instBtn.style.display = 'none';
-        backBtn.style.display = 'none';
-        event.preventDefault();
-        document.addEventListener("keydown", event => Render.KeySupport(Player, event));
-
-        checkPosition = () => {
-            const outOfTheBoard = childrenArray.map(item => item.position.x < -obstWidth);
-            const trashItem = outOfTheBoard.indexOf(true);
-            if (trashItem > 0) {
-
-                Render.destroy(childrenArray[trashItem])
-            }
-        };
-
-        firstLoop = () => {
-            Render.create(createPlayer());
-            Render.create(createBird());
-            Render.create(createObstacle());
-            checkCollision();
-
-        };
-        obstacleLoop = () => {
-            Render.create(createObstacle());
-        };
-        birdLoop = () => {
-            Render.create(createBird());
-        };
-        birdZLoop = () => {
-            Render.create(createBirdZ());
-        };
-        mainLoop = () => {
-            setInterval(checkPosition, 100);
-            setInterval(checkCollision, 100);
-            setInterval(obstacleLoop, 5000);
-            setInterval(birdLoop, 2000);
-            setInterval(birdZLoop, 9000);
-            //further 4 lines just for testing purposes
-            // birdLoop()
-
-
-        };
-        countdown();
-        setTimeout(firstLoop, 100);
-        //To w tym momencie chcemy sprawdzic kolizje!
-        const draw = () => setInterval(Render.changePosition, 100);
-        requestAnimationFrame(draw);
-        mainLoop()
     };
 
+    firstLoop = () => {
+        Render.create(createPlayer());
+        Render.create(createBird());
+        Render.create(createObstacle());
+        checkCollision();
+
+    };
+    obstacleLoop = () => {
+        Render.create(createObstacle());
+    };
+    birdLoop = () => {
+        Render.create(createBird());
+    };
+    birdZLoop = () => {
+        Render.create(createBirdZ());
+    };
+    mainLoop = () => {
+        const int1 = setInterval(checkPosition, 100),
+        int2 =  setInterval(checkCollision, 100),
+        int3 =  setInterval(obstacleLoop, 5000),
+        int4 =  setInterval(birdLoop, 2000),
+        int5 =  setInterval(birdZLoop, 9000);
+        intervals.push(int1, int2, int3, int4, int5);
+        //further 4 lines just for testing purposes
+        // birdLoop()
+    console.log(intervals)
+
+    };
+    countdown();
+    setTimeout(firstLoop, 100);
+    //To w tym momencie chcemy sprawdzic kolizje!
+    const draw = () => setInterval(Render.changePosition, 100);
+    intervals.push(draw());
+    requestAnimationFrame(draw);
+    mainLoop()
+},
+
+checkCollision = () => {
+    const playArr = childrenArray[0],
+    playX = playArr.position.x, 
+    playY = playArr.position.y, 
+    playW = playArr.size.w, 
+    playH = playArr.size.h, 
+    obstacleArr = childrenArray.filter(item => item.type !== 'player');
+    // console.log(playX,playY, playW, playH)
+
+    obstacleArr.forEach(item => {
+        const obstX = item.position.x,
+        obstY = item.position.y,
+        obstW = item.size.w,
+        obstH = item.size.h;
+        // console.log(obstX, obstY, obstW, obstH)
+        if ((playX+playW) >= obstX 
+            &&
+            (playX+playW) <= (obstX+obstW)
+            &&
+            (playY+playH) >= obstY 
+            &&
+            (playY+playH) <= (obstY+obstH)){
+            // console.log('BUM');
+            clearAllIntervals();
+            gameOver();
+            return true;
+        } else {
+            // console.log('play on');
+            return false;
+        }
+    })
+    },
+clearAllIntervals = () => {
+    intervals.forEach(clearInterval);
+    },
+gameOver = () => {
+    alert('GAME OVER');
+    clearAllIntervals();
+    location.reload(board);
+    };
 
 // document.addEventListener("keydown", event => Render.KeySupport(Player, event)); //added just for testing
 class Render {
