@@ -1,9 +1,9 @@
 @media all and (min-width: 1366px)
   .hero
-    background-image: url("../img/bg-1366x768.png")
+    //background-image: url("../img/bg-1366x768.png")
 @media all and (min-width: 500px) and (max-width: 1365px)
   .hero
-    background-image: url("../img/bg-1024x576.png")
+    //background-image: url("../img/bg-1024x576.png")
 .wrapper
   overflow: hidden
 .hero
@@ -13,13 +13,7 @@
   height: 100vh
   width: 100vw
   background-size: cover
-  &--bg-1
-    // background: #cccccc url("../img/bg-1366x768.png") no-repeat center
-  &--bg-2
-    background: #cccccc url("../img/bg1.jpg") no-repeat center
-  &--bg-3
-    background: #cccccc url("../img/bg2.jpg") no-repeat center
-
+  transition: background .1s ease-in
 .hero-image
   display: flex
   flex-direction: column
