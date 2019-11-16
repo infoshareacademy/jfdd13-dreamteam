@@ -22,7 +22,7 @@ const
     startLine = 150,
     creationLine = 700,
     speed = 1,
-    speedObst = 4,
+    speedObst = 2,
     speedBird = 10,
     speedBirdZ = 4,
     childrenArray = [],
@@ -45,45 +45,45 @@ startGame = () => {
         if (trashItem > 0) {
 
             Render.destroy(childrenArray[trashItem])
-        }
+        };
     };
 
     firstLoop = () => {
         Render.create(createPlayer());
         Render.create(createBird());
         Render.create(createObstacle());
-        checkCollision();
-
     };
+
     obstacleLoop = () => {
-        Render.create(createObstacle());
+        Render.create(createObstacle('a'));
     };
     birdLoop = () => {
-        Render.create(createBird());
+        Render.create(createBird('b'));
     };
     birdZLoop = () => {
-        Render.create(createBirdZ());
+        Render.create(createBirdZ('c'));
     };
     mainLoop = () => {
-        const int1 = setInterval(checkPosition, 100),
+        const 
+        draw = setInterval(Render.changePosition, 100),
+        int1 = setInterval(checkPosition, 100),
         int2 =  setInterval(checkCollision, 100),
         int3 =  setInterval(obstacleLoop, 5000),
         int4 =  setInterval(birdLoop, 2000),
         int5 =  setInterval(birdZLoop, 9000);
-        intervals.push(int1, int2, int3, int4, int5);
+        intervals.push(draw, int1, int2, int3, int4, int5);
         //further 4 lines just for testing purposes
         // birdLoop()
-    console.log(intervals)
-
+    // console.log(intervals);
     };
+
     countdown();
-    setTimeout(firstLoop, 100);
+    firstLoop();
     //To w tym momencie chcemy sprawdzic kolizje!
-    const draw = () => setInterval(Render.changePosition, 100);
-    intervals.push(draw());
-    requestAnimationFrame(draw);
-    mainLoop()
-},
+    // mainLoop();
+    raf = requestAnimationFrame(mainLoop);    
+    checkCollision();
+};
 
 checkCollision = () => {
     const playArr = childrenArray[0],
@@ -108,23 +108,29 @@ checkCollision = () => {
             &&
             (playY+playH) <= (obstY+obstH)){
             // console.log('BUM');
-            clearAllIntervals();
             gameOver();
             return true;
         } else {
             // console.log('play on');
             return false;
-        }
-    })
-    },
-clearAllIntervals = () => {
-    intervals.forEach(clearInterval);
-    },
-gameOver = () => {
-    alert('GAME OVER');
-    clearAllIntervals();
-    location.reload(board);
+        };
+    });
     };
+
+clearAllIntervals = () => {
+    intervals.forEach(i => {
+        clearInterval(i);
+    });
+};
+gameOver = () => {
+    console.log('GAME OVER');
+    cancelAnimationFrame(raf);
+    clearAllIntervals();
+
+    //TUTAJ JAKIŚ MODAL TRZEBA WYWOŁAĆ JAK SĄDZĘ?
+    
+    // setTimeout(location.reload(board),5000);
+};
 
 // document.addEventListener("keydown", event => Render.KeySupport(Player, event)); //added just for testing
 class Render {
@@ -193,7 +199,7 @@ class Render {
     static changePosition(domEl) {
         //najpierw sprawdzam pozycje, jesli nie ma kolizji, to wykonuje ruch
 
-        (checkCollision(childrenArray)) ? alert('GAMEOVER') :  //jezeli checkCollision zwraca true to wywołujemy gameOver,
+        (checkCollision()) ? alert('GAMEOVER') :  //jezeli checkCollision zwraca true to wywołujemy gameOver,
             // przy false lecimy dalej
 
             childrenArray.forEach((el, i) => {
@@ -423,7 +429,7 @@ function highScore() {
 
 const startTimer = (duration, display) => {
     let timer = duration, minutes, seconds;
-    setInterval(function () {
+    const intTime = setInterval(function () {
         minutes = parseInt(timer / 60, 10)
         seconds = parseInt(timer % 60, 10);
 
@@ -436,10 +442,12 @@ const startTimer = (duration, display) => {
             timer = duration;
         }
     }, 1000);
+    intervals.push(intTime);
 };
 
 const countdown = () => {
     const twoMinutes = 60 * 2,
         display = document.querySelector('#countdown');
     startTimer(twoMinutes, display);
+
 };
