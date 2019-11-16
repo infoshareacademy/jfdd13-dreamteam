@@ -22,9 +22,9 @@ const
     startLine = 150,
     creationLine = 700,
     speed = 1,
-    speedObst = 2,
-    speedBird = 10,
-    speedBirdZ = 4,
+    speedObst = 1,
+    speedBird = 4,
+    speedBirdZ = 10,
     childrenArray = [],
     intervals = [],
 
@@ -211,11 +211,7 @@ class Render {
                     el.domEl.style.left = x + 'px';
                     el.domEl.style.top = y + 'px';
 
-                } else if (el.name === 'obstacle') {
-                    el.moveObst();
-                    el.domEl.style.left = x + 'px';
-
-                } else if (el.name === 'bird') {
+                } else if (el.name === 'obstacle'|| el.name === 'bird') {
                     el.moveObst();
                     el.domEl.style.left = x + 'px';
 
@@ -353,10 +349,10 @@ createObstacle = () => {
     return new Obstacle('obstacle', '', '', {x: creationLine, y: boardHeight-obstHeight}, {w: obstWidth, h: obstHeight}, speedObst, 'obstacle');
 };
 createBird = () => {
-    return new Obstacle('bird', '', '', {x: creationLine, y: generateBirdY()}, {w: birdWidth, h: birdHeight}, speedObst, 'obstacle');
+    return new Obstacle('bird', '', '', {x: creationLine, y: generateBirdY()}, {w: birdWidth, h: birdHeight}, speedBird, 'obstacle');
 };
 createBirdZ = () => {
-    return new Obstacle('birdz', '', '', {x: creationLine, y: generateBirdY()},{w: birdWidth, h: birdHeight}, speedObst, 'obstacle');
+    return new Obstacle('birdz', '', '', {x: creationLine, y: generateBirdY()},{w: birdWidth, h: birdHeight}, speedBirdZ, 'obstacle');
 };
 
 // generatePositionX = element => {
