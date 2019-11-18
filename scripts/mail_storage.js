@@ -7,27 +7,27 @@ const mailStorage = () => {
         thankYou = document.querySelector("#thankYou");
 
     function addMail() {
-        if (validateMail() === true) {
+        if (validateMail()) {
             localStorage.setItem("email", inputMail.value);
             thankYou.classList.add('form__red--no');
             thankYou.innerText = 'Dziękujemy! Zapewniamy o bezpieczeństwie Państwa danych.';
+            // popGame()
         } else {
             thankYou.classList.add('form__red');
             thankYou.innerText = 'Prosimy o podanie adresu e-mail.';
         }
-        ;
-    };
+
+    }
 
     function givePerm() {
         event.preventDefault();
-        if (checkbox.checked === true) {
+        if (checkbox.checked) {
             addMail();
         } else {
             thankYou.classList.add('form__red');
             thankYou.innerText = 'Prosimy o wyrażenie zgody na przetwarzanie danych osobowych.';
         }
-        ;
-    };
+    }
 
     function validateMail() {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
