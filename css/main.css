@@ -318,5 +318,9 @@ body {
     padding: 0;
   }
 }
+.info__container {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
 /*# sourceMappingURL=main.css.map */
