@@ -60,3 +60,22 @@
     text-decoration: underline
   &--centered
     text-align: center
+
+.modal
+  &__game
+    position: absolute
+    top: -1.5rem
+    left: calc(50% - 200px)
+    width: 400px
+    height: 300px
+    display: none
+    flex-flow: column
+    justify-content: space-between
+    align-items: center
+    background-color: #fff
+    border: 1px solid $divider-color
+    z-index: 4
+    &--active
+      display: flex
+
+

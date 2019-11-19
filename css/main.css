@@ -94,6 +94,24 @@ body {
   text-align: center;
 }
 
+.modal__game {
+  position: absolute;
+  top: -1.5rem;
+  left: calc(50% - 200px);
+  width: 400px;
+  height: 300px;
+  display: none;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #BDBDBD;
+  z-index: 4;
+}
+.modal__game--active {
+  display: flex;
+}
+
 .wrapper {
   overflow: hidden;
 }
