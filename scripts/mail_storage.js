@@ -7,25 +7,17 @@ const mailStorage = () => {
         thankYou = document.querySelector("#thankYou"),
         popGame = () => {
             console.log('popGame init log')
-            //hide wrapper overflow on modal pop
-            const wrapper = document.querySelector('.wrapper');
-            wrapper.style.overflow = 'hidden';
-
-
-            const modal = document.createElement('div')
-            const modalHeight = 300;
-            const modalWidth = 400;
-            modal.style.top = this.scrollY + window.pageYOffset / 2 - modalHeight + 'px';
-            modal.style.left = document.querySelector('.wrapper').offsetWidth / 2 - modalWitdh + 'px'
 
 
         },
         popGameModal = () => {
-            const btnGame = document.getElementById('#gamebtn__game--redirect');
+            const btnGame = document.getElementById('btn__game--redirect');
+            const btnBack = document.getElementById('btn__game--close');
             const gameModal = document.getElementById('modal__game');
             gameModal.style.display = 'flex';
 
-            btnGame.addEventListener('click', popGame)
+            btnGame.addEventListener('click', popGame);
+            btnBack.addEventListener('click', () => gameModal.style.display = 'none')
         },
         validateMail = () => {
             const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
