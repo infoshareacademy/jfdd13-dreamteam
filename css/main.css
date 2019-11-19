@@ -57,6 +57,9 @@ body {
 .btn:hover {
   background: #2196F3;
 }
+.btn__modal {
+  margin: 1rem;
+}
 .btn__container {
   display: flex;
   justify-content: center;
@@ -108,8 +111,8 @@ body {
   border: 1px solid #BDBDBD;
   z-index: 4;
 }
-.modal__game--active {
-  display: flex;
+.modal__game--instruction {
+  margin-left: 2rem;
 }
 
 .wrapper {
