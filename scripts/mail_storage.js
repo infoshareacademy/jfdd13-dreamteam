@@ -5,9 +5,6 @@ const mailStorage = () => {
         btn = document.querySelector('button'),
         submitMail = document.querySelector("#form__submit"),
         thankYou = document.querySelector("#thankYou"),
-        popGameModal = () => {
-        const btnGame = document.getElementById('#gamebtn__game--redirect')
-        },
         popGame = () => {
             console.log('popGame init log')
             //hide wrapper overflow on modal pop
@@ -23,6 +20,11 @@ const mailStorage = () => {
 
 
         },
+        popGameModal = () => {
+            const btnGame = document.getElementById('#gamebtn__game--redirect');
+
+            btnGame.addEventListener('click', popGame)
+        },
         validateMail = () => {
             const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(String(inputMail.value).toLowerCase());
@@ -32,7 +34,7 @@ const mailStorage = () => {
                 localStorage.setItem("email", inputMail.value);
                 thankYou.classList.add('form__red--no');
                 thankYou.innerText = 'Dziękujemy! Zapewniamy o bezpieczeństwie Państwa danych.';
-                popGame()
+                popGameModal()
             } else {
                 thankYou.classList.add('form__red');
                 thankYou.innerText = 'Prosimy o podanie adresu e-mail.';
