@@ -7,7 +7,7 @@ const mailStorage = () => {
         thankYou = document.querySelector("#thankYou"),
         popGameModal = () => {
         const btnGame = document.getElementById('#gamebtn__game--redirect')
-        }
+        },
         popGame = () => {
             console.log('popGame init log')
             //hide wrapper overflow on modal pop
