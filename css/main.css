@@ -100,7 +100,7 @@ body {
 .modal__game {
   position: absolute;
   top: -1.5rem;
-  left: calc(50% - 200px);
+  left: calc(50% - 250px);
   width: 500px;
   height: 400px;
   padding: 2rem;
