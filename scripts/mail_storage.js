@@ -5,17 +5,12 @@ const mailStorage = () => {
         btn = document.querySelector('button'),
         submitMail = document.querySelector("#form__submit"),
         thankYou = document.querySelector("#thankYou"),
-        popGame = () => {
-            console.log('popGame init log')
-
-
-        },
+        popGame = () => {document.location.assign('./game/game.html')},
         popGameModal = () => {
             const btnGame = document.getElementById('btn__game--redirect');
             const btnBack = document.getElementById('btn__game--close');
             const gameModal = document.getElementById('modal__game');
             gameModal.style.display = 'flex';
-
             btnGame.addEventListener('click', popGame);
             btnBack.addEventListener('click', () => gameModal.style.display = 'none')
         },
