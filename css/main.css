@@ -101,8 +101,9 @@ body {
   position: absolute;
   top: -1.5rem;
   left: calc(50% - 200px);
-  width: 400px;
-  height: 300px;
+  width: 500px;
+  height: 400px;
+  padding: 2rem;
   display: none;
   flex-flow: column;
   justify-content: space-between;
@@ -113,6 +114,9 @@ body {
 }
 .modal__game--instruction {
   margin-left: 2rem;
+}
+.modal__paragraph {
+  margin: 1rem 0;
 }
 
 .wrapper {
