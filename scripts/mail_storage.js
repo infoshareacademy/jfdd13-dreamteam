@@ -22,6 +22,8 @@ const mailStorage = () => {
         },
         popGameModal = () => {
             const btnGame = document.getElementById('#gamebtn__game--redirect');
+            const gameModal = document.getElementById('modal__game');
+            gameModal.style.display = 'flex';
 
             btnGame.addEventListener('click', popGame)
         },
