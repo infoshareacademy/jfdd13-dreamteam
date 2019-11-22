@@ -57,6 +57,9 @@ body {
 .btn:hover {
   background: #2196F3;
 }
+.btn__modal {
+  margin: 1rem;
+}
 .btn__container {
   display: flex;
   justify-content: center;
@@ -92,6 +95,28 @@ body {
 }
 .paragraph--centered {
   text-align: center;
+}
+
+.modal__game {
+  position: absolute;
+  top: -1.5rem;
+  left: calc(50% - 200px);
+  width: 500px;
+  height: 400px;
+  padding: 2rem;
+  display: none;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #BDBDBD;
+  z-index: 4;
+}
+.modal__game--instruction {
+  margin-left: 2rem;
+}
+.modal__paragraph {
+  margin: 1rem 0;
 }
 
 .wrapper {
@@ -313,9 +338,14 @@ body {
 }
 @media all and (max-width: 470px) {
   .grid__container {
+    grid-template-columns: minmax(320px, 1fr);
     margin: 0.5rem;
     padding: 0;
   }
+}
+.info__container {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=main.css.map */
