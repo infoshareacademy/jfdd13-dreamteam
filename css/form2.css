@@ -8,17 +8,19 @@
 .primary-text-color    { color: #212121; }
 .secondary-text-color  { color: #757575; }
 .divider-color         { border-color: #BDBDBD; } */
-
-.form, .form__div, .form__btn{
-    background: #fff;
+.form {
+    position: relative;
+}
+.form__div, .form__btn{
     color: #212121;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    /* min-width: 400px; */
-    height: 100%;
     margin: 0;
     align-items: center;
+}
+.form__div {
+    margin: 0 2rem;
+    border-bottom: 1px solid #BDBDBD;
 }
 .form__head{
     padding:1rem 0;
@@ -38,9 +40,6 @@
 }
 .check__input{
     width:2rem;
-}
-.btn{
-    text-transform: capitalize;
 }
 .form__input{
     border: 0.1rem solid #BDBDBD;

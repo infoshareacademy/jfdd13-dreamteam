@@ -1,0 +1,87 @@
+.heading
+  font-family: Be Vietnam, sans-serif
+  text-align: center
+  &__h1
+    font-size: 2.5rem
+    text-transform: none
+    margin: .67rem 0
+  &__h2
+    margin: 1rem 0 1.5rem
+  &__h3 //titles in functions section
+    font-family: $font-primary
+    text-align: left
+    margin: .5rem 0
+    &--calculator
+      margin-top: 20px
+  &__h4
+    font-size: 1.1rem
+//footer - authors names
+.btn
+  max-width: 240px
+  width: 140px
+  height: 50px
+  padding: .5rem 1rem
+  margin: 1rem 0
+  color: #fff
+  border-radius: 0.5rem
+  font-size: 1.2rem
+  text-transform: uppercase
+  background: #1976D2
+  border: none
+  cursor: pointer
+  &:focus 
+    outline: none
+  &:hover
+    background: $primary-color
+  &__modal
+    margin: 1rem
+
+  &__container
+    display: flex
+    justify-content: center
+    &-hero
+      order: -1
+      margin: 2rem
+      //padding: 2rem 0 0 0
+  &-hero
+    background-color: $primary-color-dark
+    &:hover
+      background-color: $primary-color
+  &__cookies
+    max-width: 110px
+    max-height: 30px
+    margin: 0 1rem
+    font-size: 0.9rem
+    text-align: center
+.icon__container
+  font-size: 1.1rem
+  & > i
+    display: inline-block
+    text-align: center
+.paragraph
+  &--underline
+    text-decoration: underline
+  &--centered
+    text-align: center
+
+.modal
+  &__game
+    position: absolute
+    top: -1.5rem
+    left: calc(50% - 200px)
+    width: 500px
+    height: 400px
+    padding: 2rem
+    display: none
+    flex-flow: column
+    justify-content: space-between
+    align-items: center
+    background-color: #fff
+    border: 1px solid $divider-color
+    z-index: 4
+    &--instruction
+      margin-left: 2rem
+  &__paragraph
+    margin: 1rem 0
+
+

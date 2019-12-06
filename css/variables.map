@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "variables.css",
+	"sources": [
+		"sass/variables.sass"
+	],
+	"sourcesContent": [
+		"$primary-color-dark:   #1976D2;\n$primary-color:        #2196F3;\n$primary-color-light:  #BBDEFB;\n$primary-color-text:   #FFFFFF;\n$accent-color:         #8BC34A;\n$primary-text-color:   #212121;\n$secondary-text-color: #757575;\n$divider-color:        #BDBDBD;\n\n\n//$color-primary: #1976D2\n//$color-secondary: #FFC107\n$font-primary: Roboto, sans-serif;\n$font-secondary: Be Vietnam, sans-serif;\n"
+	],
+	"names": [],
+	"mappings": ""
+}
