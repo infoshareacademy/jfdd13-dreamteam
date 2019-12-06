@@ -72,15 +72,12 @@ startGame = () => {
         int4 =  setInterval(birdLoop, 2000),
         int5 =  setInterval(birdZLoop, 9000);
         intervals.push(draw, int1, int2, int3, int4, int5);
-        //further 4 lines just for testing purposes
-        // birdLoop()
-    // console.log(intervals);
+
     };
 
     countdown();
     firstLoop();
-    //To w tym momencie chcemy sprawdzic kolizje!
-    // mainLoop();
+
     raf = requestAnimationFrame(mainLoop);    
 };
 
@@ -106,11 +103,9 @@ checkCollision = () => {
             (playY+playH) >= obstY 
             &&
             (playY+playH) <= (obstY+obstH)){
-            // console.log('BUM');
             gameOver();
             return true;
         } else {
-            // console.log('play on');
             return false;
         };
     });
@@ -131,17 +126,13 @@ gameOver = () => {
     // setTimeout(location.reload(board),5000);
 };
 
-// document.addEventListener("keydown", event => Render.KeySupport(Player, event)); //added just for testing
 class Render {
 
     static create(el, parent = board.domEl) {
-        const parentVar = parent //direct parent - board in DOM
-        // console.log(`parentVar in create is ${parentVar}`);
+        const parentVar = parent 
         const child = document.createElement('div');
 
-        //add id
         el.id = id++;
-        // child.innerText = el.name;
         child.setAttribute('id', `${el.name}${el.id}`);
         child.style.left = el.position.x + 'px';
         child.style.top = el.position.y + 'px';
@@ -157,7 +148,6 @@ class Render {
         } else if (el.name === 'obstacle') {
             child.style.width = el.size.w + 'px';
             child.style.height = el.size.h + 'px';
-            // child.style.bottom = `0px`;
             // child.style.backgroundColor = `grey`;
             child.style.backgroundImage = "url('img/tree3.png')";
             child.style.backgroundRepeat = 'round';
@@ -182,12 +172,9 @@ class Render {
             throw Error('unresolved object name in render create, line 90')
         }
 
-        // console.log(`this ${el.type} el id is ${el.id}`);
         parentVar.appendChild(child);
-        // console.log('create', el.name);
         el.domEl = document.getElementById(`${el.name}${el.id}`);
         childrenArray.push(el);
-        // console.log(`this el position y is ${el.position.y}`);
     };
 
     static styleEl(el, arg, output) {
@@ -196,7 +183,6 @@ class Render {
     };
 
     static changePosition(domEl) {
-        //najpierw sprawdzam pozycje, jesli nie ma kolizji, to wykonuje ruch
 
         (checkCollision()) ? alert('GAMEOVER') :  //jezeli checkCollision zwraca true to wywołujemy gameOver,
             // przy false lecimy dalej
@@ -231,7 +217,6 @@ class Render {
                         if (el.position.x > boardStart) {
                             el.playerLeft()
                         }
-                        // Player.changePosition();
                         break;
                     case "ArrowRight":
                         if (el.position.x + playerWidth < boardWidth) {
@@ -263,8 +248,6 @@ class Render {
         el.position.y = -1000;
         return el = 0;
     }
-
-    //destroy element
 
 }
 
@@ -309,7 +292,6 @@ class BoardElement {
     }
 }
 
-/////////
 
 class Player extends BoardElement {
     constructor(name, domEl, id, position = {x: '', y: ''},  size = {w: '', h: ''}, speed, type) {
@@ -339,8 +321,6 @@ class Obstacle extends BoardElement {
     }
 }
 
-
-// const play = new Player( 'Andrzej', '', 0, 'speed', 'player')
 createPlayer = () => {
     return new Player('player', '', id, {x: startLine, y: startLine}, {w: playerWidth, h: playerHeight}, speed, 'player');
 };
@@ -354,22 +334,13 @@ createBirdZ = () => {
     return new Obstacle('birdz', '', '', {x: creationLine, y: generateBirdY()},{w: birdWidth, h: birdHeight}, speedBirdZ, 'obstacle');
 };
 
-// generatePositionX = element => {
-//   const bW = board.domEl.offsetWidth;
-//   return element.style.left = bW +100 + 'px'
-// }
-
-// generateFixedY = element => {
-//   const bH = board.domEl.offsetHeight;
-//     return element.style.top = bH -200 + 'px'
-// }
 generateBirdY = () => {
     const randPositions = [250, 300, 350, 400, 450, 480, 550, 600];
     const getPosition = Math.round(Math.random() * randPositions.length - 1); //generate random arr index
     const result = randPositions[getPosition] - 250;
     if (result !== undefined) {
         return result;
-    } else { //avoid func return undefined
+    } else { 
         return randPositions[0];
     }
 
@@ -378,8 +349,6 @@ generateBirdY = () => {
 startBtn.addEventListener('click', startGame);
 backBtn.addEventListener('click', backToMenu);
 
-
-//high score
 function highScore() {
 
     const getHighScore = () => localStorage.getItem('highscore') || 0
