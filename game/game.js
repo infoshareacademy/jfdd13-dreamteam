@@ -65,9 +65,9 @@ startGame = () => {
     };
     mainLoop = () => {
         const 
-        draw = setInterval(Render.changePosition, 100),
+        draw = setInterval(Render.changePosition, 10),
         int1 = setInterval(checkPosition, 100),
-        int2 =  setInterval(checkCollision, 100),
+        int2 =  setInterval(checkCollision, 1),
         int3 =  setInterval(obstacleLoop, 5000),
         int4 =  setInterval(birdLoop, 2000),
         int5 =  setInterval(birdZLoop, 9000);
