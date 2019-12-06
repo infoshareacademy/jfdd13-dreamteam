@@ -23,8 +23,8 @@ const
     creationLine = 700,
     speed = 1,
     speedObst = 1,
-    speedBird = 4,
-    speedBirdZ = 10,
+    speedBird = 1,
+    speedBirdZ = 1,
     childrenArray = [],
     intervals = [],
 
