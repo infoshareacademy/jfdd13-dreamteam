@@ -12,7 +12,7 @@ const
 const
     playerWidth = 40,
     playerHeight = 40,
-    obstWidth = 100,
+    obstWidth = 160,
     obstHeight = 200,
     birdWidth = 40,
     birdHeight = 40,
@@ -160,7 +160,7 @@ class Render {
             child.style.height = el.size.h + 'px';
             // child.style.bottom = `0px`;
             // child.style.backgroundColor = `grey`;
-            child.style.backgroundImage = "url('img/tree1.png')";
+            child.style.backgroundImage = "url('img/tree3.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `obstacle ${el.name}`);
 
