@@ -82,7 +82,6 @@ startGame = () => {
     //To w tym momencie chcemy sprawdzic kolizje!
     // mainLoop();
     raf = requestAnimationFrame(mainLoop);    
-    checkCollision();
 };
 
 checkCollision = () => {
