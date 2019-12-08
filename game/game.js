@@ -179,28 +179,25 @@ class Render {
 
     static changePosition(domEl) {
 
-        (checkCollision()) ? alert('GAMEOVER') :  //jezeli checkCollision zwraca true to wywołujemy gameOver,
-            // przy false lecimy dalej
+        childrenArray.forEach((el, i) => {
+            let x = el.position.x;
+            let y = el.position.y;
+            // console.log(`child x= ${x}`);
 
-            childrenArray.forEach((el, i) => {
-                let x = el.position.x;
-                let y = el.position.y;
-                // console.log(`child x= ${x}`);
+            if (el.name === 'player') {
+                el.domEl.style.left = x + 'px';
+                el.domEl.style.top = y + 'px';
 
-                if (el.name === 'player') {
-                    el.domEl.style.left = x + 'px';
-                    el.domEl.style.top = y + 'px';
+            } else if (el.name === 'obstacle'|| el.name === 'bird') {
+                el.moveObst();
+                el.domEl.style.left = x + 'px';
 
-                } else if (el.name === 'obstacle'|| el.name === 'bird') {
-                    el.moveObst();
-                    el.domEl.style.left = x + 'px';
-
-                } else if (el.name === 'birdz') {
-                    el.moveBirdZ();
-                    el.domEl.style.left = x + 'px';
-                    el.domEl.style.top = y + 'px';
-                }
-            });
+            } else if (el.name === 'birdz') {
+                el.moveBirdZ();
+                el.domEl.style.left = x + 'px';
+                el.domEl.style.top = y + 'px';
+            }
+        });
     };
 
     static KeySupport(domEl, event) {
