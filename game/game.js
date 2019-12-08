@@ -32,11 +32,14 @@ const
 backToMenu = () => {
     document.location.assign('../index.html');
 },
-
-startGame = () => {
+hideButtons = () => {
     startBtn.style.display = 'none';
     instBtn.style.display = 'none';
     backBtn.style.display = 'none';
+},
+
+startGame = () => {
+    hideButtons();
     event.preventDefault();
     document.addEventListener("keydown", event => Render.KeySupport(Player, event));
 
@@ -169,7 +172,7 @@ class Render {
         if (el.name === 'player') {
             child.style.width = el.size.w + 'px';
             child.style.height = el.size.h + 'px';
-            // child.style.backgroundColor = `blue`;
+            child.style.backgroundColor = `blue`;
             child.style.backgroundImage = "url('img/player_plane.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `player`);
@@ -177,7 +180,7 @@ class Render {
         } else if (el.name === 'obstacle') {
             child.style.width = el.size.w + 'px';
             child.style.height = el.size.h + 'px';
-            // child.style.backgroundColor = `grey`;
+            child.style.backgroundColor = `grey`;
             child.style.backgroundImage = "url('img/tree3.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `obstacle ${el.name}`);
@@ -185,7 +188,7 @@ class Render {
         } else if (el.name === 'bird') {
             child.style.width = el.size.w + 'px';
             child.style.height = el.size.h + 'px';
-            // child.style.backgroundColor = `red`;
+            child.style.backgroundColor = `red`;
             child.style.backgroundImage = "url('img/bird_gull.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `bird ${el.name}`);
@@ -193,7 +196,7 @@ class Render {
         } else if (el.name === 'birdz') {
             child.style.width = el.size.w + 'px';
             child.style.height = el.size.h + 'px';
-            // child.style.backgroundColor = 'white';
+            child.style.backgroundColor = 'white';
             child.style.backgroundImage = "url('img/bird_eagle.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `birdz ${el.name}`);
