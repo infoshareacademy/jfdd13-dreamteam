@@ -23,8 +23,8 @@ const
     creationLine = 700,
     speed = 1,
     speedObst = 1,
-    speedBird = 1,
-    speedBirdZ = 1,
+    speedBird = 2,
+    speedBirdZ = 2,
     childrenArray = [],
     intervals = [],
 
@@ -66,7 +66,7 @@ startGame = () => {
     mainLoop = () => {
         const 
         draw = setInterval(Render.changePosition, 10),
-        int1 = setInterval(checkPosition, 100),
+        int1 = setInterval(checkPosition, 10),
         int2 =  setInterval(checkCollision, 1),
         int3 =  setInterval(obstacleLoop, 5000),
         int4 =  setInterval(birdLoop, 2000),
@@ -78,15 +78,15 @@ startGame = () => {
     countdown();
     firstLoop();
 
-    raf = requestAnimationFrame(mainLoop);    
+    raf = requestAnimationFrame(mainLoop);
 };
 
 checkCollision = () => {
     const playArr = childrenArray[0],
-    playX = playArr.position.x, 
-    playY = playArr.position.y, 
-    playW = playArr.size.w, 
-    playH = playArr.size.h, 
+    playX = playArr.position.x,
+    playY = playArr.position.y,
+    playW = playArr.size.w,
+    playH = playArr.size.h,
     obstacleArr = childrenArray.filter(item => item.type !== 'player');
     // console.log(playX,playY, playW, playH)
 
@@ -109,7 +109,7 @@ checkCollision = () => {
             return false;
         };
     });
-    };
+};
 
 clearAllIntervals = () => {
     intervals.forEach(i => {
