@@ -16,6 +16,7 @@ const
     obstHeight = 200,
     birdWidth = 40,
     birdHeight = 40,
+    birdCorr = 0.9,
     boardStart = 0,
     boardWidth = 600,
     boardHeight = 600,
@@ -154,17 +155,17 @@ checkCollision = () => {
       obstH = item.size.h;
     // console.log(obstX, obstY, obstW, obstH)
     if (
-      (playX + playW*0.9 >= obstX &&
-        playX + playW*0.9 <= obstX + obstW*0.9 &&
-        playY + playH*0.9 >= obstY &&
-        playY + playH*0.9 <= obstY + obstH*0.9) ||
-      (playX + playW*0.9 >= obstX &&
+      (playX + playW*birdCorr >= obstX &&
+        playX + playW*birdCorr <= obstX + obstW*birdCorr &&
+        playY + playH*birdCorr >= obstY &&
+        playY + playH*birdCorr <= obstY + obstH*birdCorr) ||
+      (playX + playW*birdCorr >= obstX &&
         playX <= obstX + obstW &&
-        playY + playH*0.9 >= obstY &&
-        playY + playH*0.9 <= obstY + obstH*0.9) ||
-      (playX + playW*0.9 >= obstX &&
-        playX <= obstX + obstW*0.9 &&
-        playY <= obstY + obstH*0.9 &&
+        playY + playH*birdCorr >= obstY &&
+        playY + playH*birdCorr <= obstY + obstH*birdCorr) ||
+      (playX + playW*birdCorr >= obstX &&
+        playX <= obstX + obstW*birdCorr &&
+        playY <= obstY + obstH*birdCorr &&
         playY >= obstY)
     ) {
       gameOver();
