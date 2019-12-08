@@ -310,6 +310,19 @@ body {
   text-decoration: underline;
 }
 
+
+.btn-app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 70px
+  }
+
+.btn_app{
+width: 150px;
+}
+
 @media all and (max-width: 1200px) {
   .grid__container--inner {
     grid-template-columns: 1fr;
