@@ -37,7 +37,11 @@ hideButtons = () => {
     instBtn.style.display = 'none';
     backBtn.style.display = 'none';
 },
-
+showButtons = () => {
+    startBtn.style.display = 'inline-block';
+    instBtn.style.display = 'inline-block';
+    backBtn.style.display = 'inline-block';
+},
 startGame = () => {
     hideButtons();
     event.preventDefault();
@@ -152,6 +156,7 @@ gameOver = () => {
     cancelAnimationFrame(raf);
     clearAllIntervals();
     clearAllTimeouts();
+    showButtons();
 
     //TUTAJ JAKIŚ MODAL TRZEBA WYWOŁAĆ JAK SĄDZĘ?
     
