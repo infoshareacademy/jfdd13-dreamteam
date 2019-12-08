@@ -27,6 +27,7 @@ const
     speedBirdZ = 2,
     childrenArray = [],
     intervals = [],
+    timeouts = [],
 
 backToMenu = () => {
     document.location.assign('../index.html');
@@ -70,14 +71,21 @@ startGame = () => {
         int2 = setInterval(checkCollision, 1),
         int3 = setInterval(obstacleLoop, 5000),
         int4 = setInterval(birdLoop, 2000),
-        int5 = setInterval(birdZLoop, 9000);
+        int5 = setInterval(birdZLoop, 8000)
+        lev2 = setTimeout(level2, 10000);
         intervals.push(draw, int1, int2, int3, int4, int5);
-
+        timeouts.push(lev2);
+    };
+    level2 = () => {
+        const 
+        int6 = setInterval(birdLoop, 500),
+        int7 = setInterval(birdZLoop, 2000);
+        intervals.push(int6, int7);
     };
 
     countdown();
     firstLoop();
-
+    
     raf = requestAnimationFrame(mainLoop);
 };
 
