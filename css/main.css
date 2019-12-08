@@ -302,6 +302,9 @@ body {
   margin-top: 70px
   }
 
+.btn_app{
+width: 150px;
+}
 
 @media all and (max-width: 1200px) {
   .grid__container--inner {
