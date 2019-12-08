@@ -10,7 +10,7 @@ const
     backBtn = document.getElementById('back__btn');
 
 const
-    playerWidth = 40,
+    playerWidth = 50,
     playerHeight = 40,
     obstWidth = 200,
     obstHeight = 200,
@@ -147,8 +147,8 @@ class Render {
         if (el.name === 'player') {
             child.style.width = el.size.w + 'px';
             child.style.height = el.size.h + 'px';
-            child.style.backgroundColor = `blue`;
-            child.style.backgroundImage = "url('img/ptasiek.png')";
+            // child.style.backgroundColor = `blue`;
+            child.style.backgroundImage = "url('img/player_plane.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `player`);
 
