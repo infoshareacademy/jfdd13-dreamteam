@@ -19,7 +19,7 @@ const
     boardStart = 0,
     boardWidth = 600,
     boardHeight = 600,
-    startLine = 150,
+    startLine = 160,
     creationLine = 700,
     speed = 1,
     speedObst = 1,
@@ -67,10 +67,10 @@ startGame = () => {
         const 
         draw = setInterval(Render.changePosition, 10),
         int1 = setInterval(checkPosition, 10),
-        int2 =  setInterval(checkCollision, 1),
-        int3 =  setInterval(obstacleLoop, 5000),
-        int4 =  setInterval(birdLoop, 2000),
-        int5 =  setInterval(birdZLoop, 9000);
+        int2 = setInterval(checkCollision, 1),
+        int3 = setInterval(obstacleLoop, 5000),
+        int4 = setInterval(birdLoop, 2000),
+        int5 = setInterval(birdZLoop, 9000);
         intervals.push(draw, int1, int2, int3, int4, int5);
 
     };
