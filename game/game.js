@@ -42,6 +42,11 @@ showButtons = () => {
     instBtn.style.display = 'inline-block';
     backBtn.style.display = 'inline-block';
 },
+refresh = () => {
+    location.reload(board);
+    showButtons();
+    timeouts.push(refresh);
+},
 startGame = () => {
     hideButtons();
     event.preventDefault();
@@ -152,15 +157,15 @@ clearAllTimeouts = () => {
 };
 
 gameOver = () => {
-    console.log('GAME OVER');
-    cancelAnimationFrame(raf);
-    clearAllIntervals();
-    clearAllTimeouts();
-    showButtons();
+  console.log('GAME OVER');
+  cancelAnimationFrame(raf);
+  clearAllIntervals();
+  clearAllTimeouts();
+  setTimeout(refresh, 1500);
 
-    //TUTAJ JAKIŚ MODAL TRZEBA WYWOŁAĆ JAK SĄDZĘ?
-    
-    // setTimeout(location.reload(board),5000);
+  //TUTAJ JAKIŚ MODAL TRZEBA WYWOŁAĆ JAK SĄDZĘ?
+
+      // setTimeout(location.reload(board),5000);
 };
 
 class Render {
