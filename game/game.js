@@ -45,11 +45,15 @@ showButtons = () => {
 refresh = () => {
     location.reload(board);
     showButtons();
+    startBtn.addEventListener('click', startGame);
+    backBtn.addEventListener('click', backToMenu);
     timeouts.push(refresh);
 },
 startGame = () => {
     hideButtons();
     event.preventDefault();
+    removeEventListener('click', startGame);
+    removeEventListener('click', backToMenu);
     document.addEventListener("keydown", event => Render.KeySupport(Player, event));
 
     checkPosition = () => {
