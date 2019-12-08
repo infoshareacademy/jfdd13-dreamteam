@@ -12,7 +12,7 @@ const
 const
     playerWidth = 40,
     playerHeight = 40,
-    obstWidth = 160,
+    obstWidth = 200,
     obstHeight = 200,
     birdWidth = 40,
     birdHeight = 40,
