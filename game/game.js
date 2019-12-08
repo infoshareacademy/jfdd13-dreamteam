@@ -177,11 +177,6 @@ class Render {
         childrenArray.push(el);
     };
 
-    static styleEl(el, arg, output) {
-        el.style.arg = output;
-        // document.getElementById('player').style.background = red
-    };
-
     static changePosition(domEl) {
 
         (checkCollision()) ? alert('GAMEOVER') :  //jezeli checkCollision zwraca true to wywołujemy gameOver,
