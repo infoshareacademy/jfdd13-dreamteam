@@ -131,10 +131,18 @@ clearAllIntervals = () => {
         clearInterval(i);
     });
 };
+
+clearAllTimeouts = () => {
+    timeouts.forEach(i => {
+        clearTimeout(i);
+    });
+};
+
 gameOver = () => {
     console.log('GAME OVER');
     cancelAnimationFrame(raf);
     clearAllIntervals();
+    clearAllTimeouts();
 
     //TUTAJ JAKIŚ MODAL TRZEBA WYWOŁAĆ JAK SĄDZĘ?
     
