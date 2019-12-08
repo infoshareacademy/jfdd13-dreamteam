@@ -14,6 +14,7 @@ const
     playerHeight = 40,
     obstWidth = 200,
     obstHeight = 200,
+    treeCorr = 0.5,
     birdWidth = 40,
     birdHeight = 40,
     birdCorr = 0.9,
@@ -129,13 +130,13 @@ checkCollision = () => {
       obstH = item.size.h;
 
     if (
-      (playX + playW*0.5 >= obstX &&
+      (playX + playW*treeCorr >= obstX &&
         playX + playW <= obstX + obstW &&
-        playY + playH*0.5 >= obstY &&
+        playY + playH*treeCorr >= obstY &&
         playY + playH <= obstY + obstH) ||
-      (playX + playW*0.4 >= obstX &&
-        playX <= obstX + obstW*0.4 &&
-        playY + playH*0.6 >= obstY &&
+      (playX + playW*treeCorr >= obstX &&
+        playX <= obstX + obstW*treeCorr &&
+        playY + playH*treeCorr >= obstY &&
         playY + playH <= obstY + obstH) ||
       (playX + playW >= obstX &&
         playX <= obstX + obstW &&
@@ -214,7 +215,7 @@ class Render {
         if (el.name === 'player') {
             child.style.width = el.size.w + 'px';
             child.style.height = el.size.h + 'px';
-            // child.style.backgroundColor = `blue`;
+            child.style.backgroundColor = `blue`;
             child.style.backgroundImage = "url('img/player_plane.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `player`);
@@ -230,7 +231,7 @@ class Render {
         } else if (el.name === 'bird') {
             child.style.width = el.size.w + 'px';
             child.style.height = el.size.h + 'px';
-            // child.style.backgroundColor = `red`;
+            child.style.backgroundColor = `red`;
             child.style.backgroundImage = "url('img/bird_gull.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `bird ${el.name}`);
