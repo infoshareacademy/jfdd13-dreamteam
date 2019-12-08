@@ -26,6 +26,8 @@ const
     speedBird = 2,
     speedBirdZ = 2,
     childrenArray = [],
+    birdsArray = [],
+    treesArray = [],
     intervals = [],
     timeouts = [],
 
@@ -116,28 +118,53 @@ checkCollision = () => {
     playX = playArr.position.x,
     playY = playArr.position.y,
     playW = playArr.size.w,
-    playH = playArr.size.h,
-    obstacleArr = childrenArray.filter(item => item.type !== 'player');
-  // console.log(playX,playY, playW, playH)
+    playH = playArr.size.h;
+    // obstacleArr = childrenArray.filter(item => item.type !== 'player');
 
-  obstacleArr.forEach(item => {
+  treesArray.forEach(item => {
+    const obstX = item.position.x,
+      obstY = item.position.y,
+      obstW = item.size.w,
+      obstH = item.size.h;
+
+    if (
+      (playX + playW*0.5 >= obstX &&
+        playX + playW <= obstX + obstW &&
+        playY + playH*0.5 >= obstY &&
+        playY + playH <= obstY + obstH) ||
+      (playX + playW*0.4 >= obstX &&
+        playX <= obstX + obstW*0.4 &&
+        playY + playH*0.6 >= obstY &&
+        playY + playH <= obstY + obstH) ||
+      (playX + playW >= obstX &&
+        playX <= obstX + obstW &&
+        playY <= obstY + obstH &&
+        playY >= obstY)
+    ) {
+      gameOver();
+      return true;
+    } else {
+      return false;
+    }
+  });
+  birdsArray.forEach(item => {
     const obstX = item.position.x,
       obstY = item.position.y,
       obstW = item.size.w,
       obstH = item.size.h;
     // console.log(obstX, obstY, obstW, obstH)
     if (
-      (playX + playW >= obstX &&
-        playX + playW <= obstX + obstW &&
-        playY + playH >= obstY &&
-        playY + playH <= obstY + obstH) ||
-      (playX + playW >= obstX &&
+      (playX + playW*0.9 >= obstX &&
+        playX + playW*0.9 <= obstX + obstW*0.9 &&
+        playY + playH*0.9 >= obstY &&
+        playY + playH*0.9 <= obstY + obstH*0.9) ||
+      (playX + playW*0.9 >= obstX &&
         playX <= obstX + obstW &&
-        playY + playH >= obstY &&
-        playY + playH <= obstY + obstH) ||
-      (playX + playW >= obstX &&
-        playX <= obstX + obstW &&
-        playY <= obstY + obstH &&
+        playY + playH*0.9 >= obstY &&
+        playY + playH*0.9 <= obstY + obstH*0.9) ||
+      (playX + playW*0.9 >= obstX &&
+        playX <= obstX + obstW*0.9 &&
+        playY <= obstY + obstH*0.9 &&
         playY >= obstY)
     ) {
       gameOver();
@@ -186,7 +213,7 @@ class Render {
         if (el.name === 'player') {
             child.style.width = el.size.w + 'px';
             child.style.height = el.size.h + 'px';
-            child.style.backgroundColor = `blue`;
+            // child.style.backgroundColor = `blue`;
             child.style.backgroundImage = "url('img/player_plane.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `player`);
@@ -194,26 +221,27 @@ class Render {
         } else if (el.name === 'obstacle') {
             child.style.width = el.size.w + 'px';
             child.style.height = el.size.h + 'px';
-            child.style.backgroundColor = `grey`;
+            // child.style.backgroundColor = `grey`;
             child.style.backgroundImage = "url('img/tree3.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `obstacle ${el.name}`);
-
+            treesArray.push(el);
         } else if (el.name === 'bird') {
             child.style.width = el.size.w + 'px';
             child.style.height = el.size.h + 'px';
-            child.style.backgroundColor = `red`;
+            // child.style.backgroundColor = `red`;
             child.style.backgroundImage = "url('img/bird_gull.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `bird ${el.name}`);
-
+            birdsArray.push(el);
         } else if (el.name === 'birdz') {
             child.style.width = el.size.w + 'px';
             child.style.height = el.size.h + 'px';
-            child.style.backgroundColor = 'white';
+            // child.style.backgroundColor = 'white';
             child.style.backgroundImage = "url('img/bird_eagle.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `birdz ${el.name}`);
+            birdsArray.push(el);
         } else {
             throw Error('unresolved object name in render create, line 90')
         }
