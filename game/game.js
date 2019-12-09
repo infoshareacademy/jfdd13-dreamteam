@@ -1,4 +1,6 @@
-let id = 0;
+let id = 0,
+    seconds = 0, 
+    minutes = 0;
 
 const
     body = document.querySelector('body'),
@@ -7,7 +9,8 @@ const
     },
     startBtn = document.getElementById('start__btn'),
     instBtn = document.getElementById('inst__btn'),
-    backBtn = document.getElementById('back__btn');
+    backBtn = document.getElementById('back__btn'),
+    clock = document.getElementById('clock');
 
 const
     playerWidth = 50,
@@ -53,6 +56,22 @@ refresh = () => {
     backBtn.addEventListener('click', backToMenu);
     timeouts.push(refresh);
 },
+timer = () => {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+    clock.innerText = minutes + ":" + seconds;
+    }
+    clock.innerText = seconds + ' sek.';
+    
+},
+
+startTimer = () => {
+    const timerInt = setInterval(timer, 1000);
+    intervals.push(timerInt);
+},
+
 startGame = () => {
     hideButtons();
     event.preventDefault();
@@ -93,7 +112,7 @@ startGame = () => {
         int4 = setInterval(birdLoop, 2000),
         int5 = setInterval(birdZLoop, 8000),
         lev2 = setTimeout(level2, 10000),
-        lev3 = setTimeout(level2, 20000);
+        lev3 = setTimeout(level3, 20000);
         intervals.push(draw, int1, int2, int3, int4, int5);
         timeouts.push(lev2, lev3);
     };
@@ -109,9 +128,8 @@ startGame = () => {
         int9 = setInterval(birdZLoop, 1500);
         intervals.push(int8, int9);
     };
-    countdown();
     firstLoop();
-    
+    startTimer();
     raf = requestAnimationFrame(mainLoop);
 };
 
@@ -459,27 +477,6 @@ function highScore() {
 
 }
 
-const startTimer = (duration, display) => {
-    let timer = duration, minutes, seconds;
-    const intTime = setInterval(function () {
-        minutes = parseInt(timer / 60, 10)
-        seconds = parseInt(timer % 60, 10);
 
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.innerText = minutes + ":" + seconds;
 
-        if (--timer < 0) {
-            timer = duration;
-        }
-    }, 1000);
-    intervals.push(intTime);
-};
-
-const countdown = () => {
-    const twoMinutes = 60 * 2,
-        display = document.querySelector('#countdown');
-    startTimer(twoMinutes, display);
-
-};
