@@ -1,394 +1,556 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-          name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      name="viewport"
+    />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
     <title>Dream Team Project</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Be+Vietnam:400,500,700|Roboto&display=swap&subset=latin-ext"
-          rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/sliders.css" rel="stylesheet">
-</head>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Be+Vietnam:400,500,700|Roboto&display=swap&subset=latin-ext"
+      rel="stylesheet"
+    />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/sliders.css" rel="stylesheet" />
+  </head>
 
-<body>
-<div class="wrapper">
-    <header class="header">
+  <body>
+    <div class="wrapper">
+      <header class="header">
         <nav class="nav">
-            <div class="logo_container">
-                <div class="logo_img"><i class="far fa-paper-plane"></i></div>
-                <span class="logo_text">way.to</span>
-            </div>
-            <a class="nav__mobile"><i class="far fa-paper-plane"></i>way.to</a>
-            <ul class="list__container">
-                <li class="list__item"><a class="nav__link link1" href="#main">
-                    Strona główna
-                </a></li>
-                <li class="list__item"><a class="nav__link link2" href="#functions">
-                    Dlaczego my?
-                </a></li>
-                <li class="list__item"><a class="nav__link link3" href="#form">
-                    Formularz
-                </a></li>
-                <li class="list__item"><a class="nav__link link4" href="#calculator">
-                    kalkulator
-                </a></li>
-                <li class="list__item"><a class="nav__link link5" href="#footer">
-                    Autorzy
-                </a></li>
-            </ul>
+          <div class="logo_container">
+            <div class="logo_img"><i class="far fa-paper-plane"></i></div>
+            <span class="logo_text">way.to</span>
+          </div>
+          <a class="nav__mobile"><i class="far fa-paper-plane"></i>way.to</a>
+          <ul class="list__container">
+            <li class="list__item">
+              <a class="nav__link link1" href="#main">
+                Strona główna
+              </a>
+            </li>
+            <li class="list__item">
+              <a class="nav__link link2" href="#functions">
+                Dlaczego my?
+              </a>
+            </li>
+            <li class="list__item">
+              <a class="nav__link link3" href="#form">
+                Formularz
+              </a>
+            </li>
+            <li class="list__item">
+              <a class="nav__link link4" href="#calculator">
+                kalkulator
+              </a>
+            </li>
+            <li class="list__item">
+              <a class="nav__link link5" href="#footer">
+                Autorzy
+              </a>
+            </li>
+          </ul>
         </nav>
-    </header>
-    <main class="main" id="main">
+      </header>
+      <main class="main" id="main">
         <section class="hero">
-            <div class="icons">
-                <div class="icons__col">
-                    <figure class="icons__container">
-                        <div class="icons__item"><i class="far fa-compass"></i></div>
-                        <figcaption class="icons__caption">Wybierz kierunek</figcaption>
-                    </figure>
-                    <figure class="icons__container">
-                        <div class="icons__item"><i class="fas fa-sun"></i></div>
-                        <figcaption class="icons__caption">Sprawdź pogodę</figcaption>
-                    </figure>
-                </div>
-                <div class="icons__col">
-                    <figure class="icons__container">
-                        <div class="icons__item"><i class="fas fa-wallet"></i></div>
-                        <figcaption class="icons__caption">Zaplanuj wydatki</figcaption>
-                    </figure>
-                    <figure class="icons__container">
-                        <div class="icons__item"><i class="fas fa-landmark"></i></div>
-                        <figcaption class="icons__caption">Zobacz atrakcje</figcaption>
-                    </figure>
-                </div>
+          <div class="icons">
+            <div class="icons__col">
+              <figure class="icons__container">
+                <div class="icons__item"><i class="far fa-compass"></i></div>
+                <figcaption class="icons__caption">Wybierz kierunek</figcaption>
+              </figure>
+              <figure class="icons__container">
+                <div class="icons__item"><i class="fas fa-sun"></i></div>
+                <figcaption class="icons__caption">Sprawdź pogodę</figcaption>
+              </figure>
             </div>
-            <div class="hero-image">
-                <div class="hero-text">
-                    <h1 class="heading heading__h1" id="slider__heading">Ruszaj w drogę</h1>
-                    <span class="heading heading__h3 hero__text" id="slider__text">Zaplanuj swoją podróż szybciej niż kiedykolwiek wcześniej!</span>
-                </div>
-                <a class="prev" id="slider--prev">&#10094;</a>
-                <a class="next" id="slider--next">&#10095;</a>
+            <div class="icons__col">
+              <figure class="icons__container">
+                <div class="icons__item"><i class="fas fa-wallet"></i></div>
+                <figcaption class="icons__caption">Zaplanuj wydatki</figcaption>
+              </figure>
+              <figure class="icons__container">
+                <div class="icons__item"><i class="fas fa-landmark"></i></div>
+                <figcaption class="icons__caption">Zobacz atrakcje</figcaption>
+              </figure>
             </div>
+          </div>
+          <div class="hero-image">
+            <div class="hero-text">
+              <h1 class="heading heading__h1" id="slider__heading">
+                Ruszaj w drogę
+              </h1>
+              <span class="heading heading__h3 hero__text" id="slider__text"
+                >Zaplanuj swoją podróż szybciej niż kiedykolwiek
+                wcześniej!</span
+              >
+            </div>
+            <a class="prev" id="slider--prev">&#10094;</a>
+            <a class="next" id="slider--next">&#10095;</a>
+          </div>
         </section>
         <section class="functions" id="functions">
-            <h2 class="heading heading__h2">
-                Poznaj way.to</h2>
-            <div class="functions__grid">
-                <div class="functions__container">
-                    <div class="icon__container icon__container--functions">
-                        <i class="fas fa-id-badge"></i>
-                    </div>
-                    <div class="text__container">
-                        <h3 class="heading heading__h3">O portalu</h3>
-                        <p class="text__paragraph">Dzięki wyszukiwarce z różnymi filtrami, które uwzględniają
-                            m.in. prognozę pogody, wydatki oraz kierunek podróży, spośród wielu ofert dostępnych na
-                            naszym portalu, znajdziesz idealną dla siebie.
-                        </p>
-                    </div>
-                </div>
-                <div class="functions__container">
-                    <div class="icon__container icon__container--functions">
-                        <i class="fas fa-hotel"></i>
-                    </div>
-                    <div class="text__container">
-                        <h3 class="heading heading__h3">Jak rezerwować</h3>
-                        <p class="text__paragraph">Znajdź miejsce, które Cię interesuje. Użyj prostego w
-                            obsłudze suwaka, żeby wybrać liczbę osób, długość pobytu i sprawdź, ile będzie Cię
-                            kosztowała wycieczka. Potwierdź, żeby dokonać rezerwacji. </p>
-                    </div>
-
-                </div>
-                <div class="functions__container">
-                    <div class="icon__container icon__container--functions">
-                        <i class="far fa-grin-stars"></i>
-                    </div>
-                    <div class="text__container">
-                        <h3 class="heading heading__h3">Oferta dnia</h3>
-                        <p class="text__paragraph">
-                            Na naszym portalu codziennie pojawia się oferta dnia, która uwzględnia największe zniżki,
-                            związane najczęściej z bliskim terminem wyjazdu.
-                        </p>
-                    </div>
-
-                </div>
-                <div class="functions__container">
-                    <div class="icon__container icon__container--functions">
-                        <i class="fas fa-user-lock"></i>
-                    </div>
-                    <div class="text__container">
-                        <h3 class="heading heading__h3">Polityka prywatności</h3>
-                        <p class="text__paragraph">Polityka prywatności służy jako pomoc w zrozumieniu, jakie
-                            dane zbieramy
-                            i w jakim celu oraz do czego je wykorzystujemy.</p>
-                    </div>
-                </div>
-                <div class="functions__container">
-                    <div class="icon__container icon__container--functions">
-                        <i class="fas fa-pencil-alt"></i>
-                    </div>
-                    <div class="text__container">
-                        <h3 class="heading heading__h3">Opinie</h3>
-                        <p class="text__paragraph">Przy każdej wycieczce możesz sprawdzić opinie klientów, którzy z niej
-                            skorzystali, co z pewnością pomoże uniknąć nieprzyjemnej niespodzianki.
-                        </p>
-                    </div>
-                </div>
-                <div class="functions__container">
-                    <div class="icon__container icon__container--functions">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div class="text__container">
-                        <h3 class="heading heading__h3">Kontakt</h3>
-                        <p class="text__paragraph">
-                            W razie jakichkolwiek pytań zapraszamy do kontaktu mailowego <a
-                                class="link__email" href="mailto:dreamteamproject@gmail.com" target="_blank"
-                                type="email">dreamteamproject@gmail.com</a> lub kontaktu telefonicznego (nr
-                            tel 111 222 333). Pracujemy codziennie od 6:00 do 24:00.
-                        </p>
-                    </div>
-
-                </div>
-                <div class="functions__container">
-                    <div class="icon__container icon__container--functions">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <div class="text__container">
-                        <h3 class="heading heading__h3">Zarys kosztów</h3>
-                        <p class="text__paragraph">
-                            Sprawdź, ile może wynieść Cię pobyt, transport do i na miejscu oraz życie codzienne. Dzięki
-                            tym informacjom ceny nie będą dla Ciebie zaskoczeniem i wycieczka nie zrujnuje domowego
-                            budżetu.
-                        </p>
-                    </div>
-                </div>
-                <div class="functions__container">
-                    <div class="icon__container icon__container--functions">
-                        <i class="far fa-handshake"></i>
-                    </div>
-                    <div class="text__container">
-                        <h3 class="heading heading__h3">Współpraca</h3>
-                        <p class="text__paragraph">
-                            Współpracujemy z wieloma podmiotami - od dużych hoteli po kameralne kwatery. Jeśli jesteś
-                            właścicielem hotelu, pensjonatu czy apartamentu, skontaktuj się z nami!
-                        </p>
-                    </div>
-                </div>
+          <h2 class="heading heading__h2">
+            Poznaj way.to
+          </h2>
+          <div class="functions__grid">
+            <div class="functions__container">
+              <div class="icon__container icon__container--functions">
+                <i class="fas fa-id-badge"></i>
+              </div>
+              <div class="text__container">
+                <h3 class="heading heading__h3">O portalu</h3>
+                <p class="text__paragraph">
+                  Dzięki wyszukiwarce z różnymi filtrami, które uwzględniają
+                  m.in. prognozę pogody, wydatki oraz kierunek podróży, spośród
+                  wielu ofert dostępnych na naszym portalu, znajdziesz idealną
+                  dla siebie.
+                </p>
+              </div>
             </div>
+            <div class="functions__container">
+              <div class="icon__container icon__container--functions">
+                <i class="fas fa-hotel"></i>
+              </div>
+              <div class="text__container">
+                <h3 class="heading heading__h3">Jak rezerwować</h3>
+                <p class="text__paragraph">
+                  Znajdź miejsce, które Cię interesuje. Użyj prostego w obsłudze
+                  suwaka, żeby wybrać liczbę osób, długość pobytu i sprawdź, ile
+                  będzie Cię kosztowała wycieczka. Potwierdź, żeby dokonać
+                  rezerwacji.
+                </p>
+              </div>
+            </div>
+            <div class="functions__container">
+              <div class="icon__container icon__container--functions">
+                <i class="far fa-grin-stars"></i>
+              </div>
+              <div class="text__container">
+                <h3 class="heading heading__h3">Oferta dnia</h3>
+                <p class="text__paragraph">
+                  Na naszym portalu codziennie pojawia się oferta dnia, która
+                  uwzględnia największe zniżki, związane najczęściej z bliskim
+                  terminem wyjazdu.
+                </p>
+              </div>
+            </div>
+            <div class="functions__container">
+              <div class="icon__container icon__container--functions">
+                <i class="fas fa-user-lock"></i>
+              </div>
+              <div class="text__container">
+                <h3 class="heading heading__h3">Polityka prywatności</h3>
+                <p class="text__paragraph">
+                  Polityka prywatności służy jako pomoc w zrozumieniu, jakie
+                  dane zbieramy i w jakim celu oraz do czego je wykorzystujemy.
+                </p>
+              </div>
+            </div>
+            <div class="functions__container">
+              <div class="icon__container icon__container--functions">
+                <i class="fas fa-pencil-alt"></i>
+              </div>
+              <div class="text__container">
+                <h3 class="heading heading__h3">Opinie</h3>
+                <p class="text__paragraph">
+                  Przy każdej wycieczce możesz sprawdzić opinie klientów, którzy
+                  z niej skorzystali, co z pewnością pomoże uniknąć
+                  nieprzyjemnej niespodzianki.
+                </p>
+              </div>
+            </div>
+            <div class="functions__container">
+              <div class="icon__container icon__container--functions">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="text__container">
+                <h3 class="heading heading__h3">Kontakt</h3>
+                <p class="text__paragraph">
+                  W razie jakichkolwiek pytań zapraszamy do kontaktu mailowego
+                  <a
+                    class="link__email"
+                    href="mailto:dreamteamproject@gmail.com"
+                    target="_blank"
+                    type="email"
+                    >dreamteamproject@gmail.com</a
+                  >
+                  lub kontaktu telefonicznego (nr tel 111 222 333). Pracujemy
+                  codziennie od 6:00 do 24:00.
+                </p>
+              </div>
+            </div>
+            <div class="functions__container">
+              <div class="icon__container icon__container--functions">
+                <i class="fas fa-chart-bar"></i>
+              </div>
+              <div class="text__container">
+                <h3 class="heading heading__h3">Zarys kosztów</h3>
+                <p class="text__paragraph">
+                  Sprawdź, ile może wynieść Cię pobyt, transport do i na miejscu
+                  oraz życie codzienne. Dzięki tym informacjom ceny nie będą dla
+                  Ciebie zaskoczeniem i wycieczka nie zrujnuje domowego budżetu.
+                </p>
+              </div>
+            </div>
+            <div class="functions__container">
+              <div class="icon__container icon__container--functions">
+                <i class="far fa-handshake"></i>
+              </div>
+              <div class="text__container">
+                <h3 class="heading heading__h3">Współpraca</h3>
+                <p class="text__paragraph">
+                  Współpracujemy z wieloma podmiotami - od dużych hoteli po
+                  kameralne kwatery. Jeśli jesteś właścicielem hotelu,
+                  pensjonatu czy apartamentu, skontaktuj się z nami!
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
         <section class="form" id="form">
-            <div class="form__div">
-                <h2 class="heading heading__h2">Zapisz się na naszą premierę!</h2>
-                <form action="#" class="form__form" method="post">
-                    <label for="form__input">Podaj swój adres
-                        <input class="form__input" id="form__input" name="email" placeholder="wpisz tutaj..."
-                               type="email">
-                    </label>
-                    <div class="form__check">
-                        <label class="check__span" for="check__input">Zgoda na przetwarzanie danych osobowych
-                            <input class="check__input" id="check__input" type="checkbox">
-                        </label>
-                    </div>
-                    <div class="form__btn">
-                        <span class="check__span" id="thankYou">Uwaga: Wiadomość zostanie przesłana jednorazowo</span>
-                        <button class="btn btn-hero" id="form__submit" type="submit">wyślij</button>
-                    </div>
-                </form>
-            </div>
+          <div class="form__div">
+            <h2 class="heading heading__h2">Zapisz się na naszą premierę!</h2>
+            <form action="#" class="form__form" method="post">
+              <label for="form__input"
+                >Podaj swój adres
+                <input
+                  class="form__input"
+                  id="form__input"
+                  name="email"
+                  placeholder="wpisz tutaj..."
+                  type="email"
+                />
+              </label>
+              <div class="form__check">
+                <label class="check__span" for="check__input"
+                  >Zgoda na przetwarzanie danych osobowych
+                  <input
+                    class="check__input"
+                    id="check__input"
+                    type="checkbox"
+                  />
+                </label>
+              </div>
+              <div class="form__btn">
+                <span class="check__span" id="thankYou"
+                  >Uwaga: Wiadomość zostanie przesłana jednorazowo</span
+                >
+                <button class="btn btn-hero" id="form__submit" type="submit">
+                  wyślij
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="modal__container" id="modal__container">
             <div class="modal__game" id="modal__game">
-                <h3 class="heading heading__h3">Dziękujemy za skorzystanie z formularza!</h3>
-                <div>
-                    <p class="modal__paragraph paragraph--centered">Możesz teraz zagrać w grę:</p>
-                    <ul class="modal__game--instruction">
-                        <li>Twoim zadaniem jest omijanie przeszkód, które pojawiają się na Twojej drodze.</li>
-                        <li>Uważaj zarówno na ptaki, jak i budynki!</li>
-                        <li>Do poruszania się używaj strzałek (&lArr;&uArr;&dArr;&rArr;).</li>
-                        <li>Pamiętaj, że masz tylko jedno życie - zderzenie z jakąkolwiek przeszkodą to koniec gry.</li>
-                        <li>Powodzenia :)</li>
-                    </ul>
-                </div>
-                <div>
-                    <button class="btn btn__modal" id="btn__game--redirect">Zagraj</button>
-                    <button class="btn btn__modal" id="btn__game--close">Zamknij</button>
-                </div>
+              <h3 class="heading heading__h3">
+                Dziękujemy za skorzystanie z formularza!
+              </h3>
+              <div>
+                <p class="modal__paragraph paragraph--centered">
+                  Możesz teraz zagrać w grę:
+                </p>
+                <ul class="modal__game--instruction">
+                  <li>
+                    Twoim zadaniem jest omijanie przeszkód, które pojawiają się
+                    na Twojej drodze.
+                  </li>
+                  <li>Uważaj zarówno na ptaki, jak i budynki!</li>
+                  <li>
+                    Do poruszania się używaj strzałek
+                    (&lArr;&uArr;&dArr;&rArr;).
+                  </li>
+                  <li>
+                    Pamiętaj, że masz tylko jedno życie - zderzenie z
+                    jakąkolwiek przeszkodą to koniec gry.
+                  </li>
+                  <li>Powodzenia :)</li>
+                </ul>
+              </div>
+              <div>
+              <button class="btn btn__modal" id="btn__game--redirect">
+                Zagraj
+              </button>
+              <button class="btn btn__modal" id="btn__game--close">
+                Zamknij
+              </button>
             </div>
+            </div>
+          </div>
         </section>
         <section class="calculator_divs" id="calculator">
-            <div class="calculator__wrapper">
-                <div class="calculator_board">
-                    <h2 class="heading heading__h2 heading__h2--calculator">Wycieczka tygodnia - wyjazd na Majorkę!</h2>
-                    <div class="holidays_img">
-                        <img alt="Plaza na Majorce" src="img/majorka.png">
-                    </div>
-                    <h3 class="heading heading__h3 heading__h3--calculator">Cena: 300zł/ dobę za osobę</h3>
-                </div>
-                <div class="calculator">
-                    <div class="slidecontainer">
-                        <h2 class='heading heading__h2 heading__h2--calculator'>Kalkulator ceny dla Ciebie</h2>
-                        <label class="title_range" for="myRange">Ustaw liczbę uczestników:</label>
-                        <div class="range_div">
-                            <input class="slider" id="myRange" max="10" min="1" type="range">
-                        </div>
-                        <p>Wybrana liczba uczestników: <span id="demo"></span></p>
-                    </div>
-                    <div class="slidecontainer">
-                        <label class="title_range" for="myRange1">Ustaw liczbę dni:</label>
-                        <div class="range_div">
-                            <input class="slider" id="myRange1" max="14" min="1" type="range">
-                        </div>
-                        <p>Wybrana liczba dni: <span id="demo1"></span></p>
-                    </div>
-                    <div><label for="checkbox_dog">Czy zabierasz na wycieczkę psa? Zaznacz pole, jeśli
-                        tak: </label><input
-                            id="checkbox_dog" type="checkbox"></div>
-                    <button class="btn btn_calculator">Sprawdź</button>
-                    <p class="price_comment"></p>
-                </div>
+          <div class="calculator__wrapper">
+            <div class="calculator_board">
+              <h2 class="heading heading__h2 heading__h2--calculator">
+                Wycieczka tygodnia - wyjazd na Majorkę!
+              </h2>
+              <div class="holidays_img">
+                <img alt="Plaza na Majorce" src="img/majorka.png" />
+              </div>
+              <h3 class="heading heading__h3 heading__h3--calculator">
+                Cena: 300zł/ dobę za osobę
+              </h3>
             </div>
+            <div class="calculator">
+              <div class="slidecontainer">
+                <h2 class="heading heading__h2 heading__h2--calculator">
+                  Kalkulator ceny dla Ciebie
+                </h2>
+                <label class="title_range" for="myRange"
+                  >Ustaw liczbę uczestników:</label
+                >
+                <div class="range_div">
+                  <input
+                    class="slider"
+                    id="myRange"
+                    max="10"
+                    min="1"
+                    type="range"
+                  />
+                </div>
+                <p>Wybrana liczba uczestników: <span id="demo"></span></p>
+              </div>
+              <div class="slidecontainer">
+                <label class="title_range" for="myRange1"
+                  >Ustaw liczbę dni:</label
+                >
+                <div class="range_div">
+                  <input
+                    class="slider"
+                    id="myRange1"
+                    max="14"
+                    min="1"
+                    type="range"
+                  />
+                </div>
+                <p>Wybrana liczba dni: <span id="demo1"></span></p>
+              </div>
+              <div>
+                <label for="checkbox_dog"
+                  >Czy zabierasz na wycieczkę psa? Zaznacz pole, jeśli tak: </label
+                ><input id="checkbox_dog" type="checkbox" />
+              </div>
+
+              <button class="btn btn_calculator">Sprawdź</button>
+              <p class="price_comment"></p>
+            </div>
+          </div>
         </section>
         <section class="authors" id="footer">
-            <h2 class="heading heading__h2">Informacje o autorach</h2>
-            <div class="grid__container">
-                <div class="grid__left info__wrapper" id="authors__left">
-                    <h3 class="heading heading__h3 info__heading">Zespół o jakim Ci się nie śniło!</h3>
-                    <div class="info__container">
-                        <div class=''>
-                            <p class="paragraph info__item">
-                                Jesteśmy drużyną przyszłych junior frontend deweloperów. Poznaliśmy się na kursie
-                                organizowanym przez Infoshare Academy, który odbywa się w Oliva Business Centre, w
-                                Gdańsku.
-                                <br>
-                                <br>
-                                Ten projekt to wynik miesiąca wspólnej pracy - niezliczonych godzin spędzonych nad
-                                poszczególnymi sekcjami i poprawkami ich dotyczącymi. Tworząc stronę, staramy się
-                                korzystać z dobrych praktyk i nowoczesnych technologii, m.in. są to:
-                            </p>
-                            <ul class="info__list">
-                                <li>Scrum</li>
-                                <li>Jira</li>
-                                <li>Git</li>
-                                <li>Sass</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p class="info__text paragraph--centered">
-                        Jeśli chcesz się z nami skontaktować, lub zobaczyć nasz Github wybierz jedną <span
-                            class="paragraph--underline">(lub więcej!)</span> z naszych wizytówek!
-                    </p>
+          <h2 class="heading heading__h2">Informacje o autorach</h2>
+          <div class="grid__container">
+            <div class="grid__left info__wrapper" id="authors__left">
+              <h3 class="heading heading__h3 info__heading">
+                Zespół o jakim Ci się nie śniło!
+              </h3>
+              <div class="info__container">
+                <div class="">
+                  <p class="paragraph info__item">
+                    Jesteśmy drużyną przyszłych junior frontend deweloperów.
+                    Poznaliśmy się na kursie organizowanym przez Infoshare
+                    Academy, który odbywa się w Oliva Business Centre, w
+                    Gdańsku.
+                    <br />
+                    <br />
+                    Ten projekt to wynik miesiąca wspólnej pracy - niezliczonych
+                    godzin spędzonych nad poszczególnymi sekcjami i poprawkami
+                    ich dotyczącymi. Tworząc stronę, staramy się korzystać z
+                    dobrych praktyk i nowoczesnych technologii, m.in. są to:
+                  </p>
+                  <ul class="info__list">
+                    <li>Scrum</li>
+                    <li>Jira</li>
+                    <li>Git</li>
+                    <li>Sass</li>
+                  </ul>
                 </div>
-                <div class="grid__right grid__container grid__container--inner">
-                    <div class="card card--michal">
-                        <img alt="" class="card__img" src="img/card-michal100.png">
-                        <div class="card__info">
-                            <h4 class="heading heading__h4 heading__h4--authors">Michał Kuśnierz</h4>
-                            <div class="card__icons">
-                                <div class="icon__container icon__container--authors"><i
-                                        class="fab fa-linkedin icon"></i>
-                                    <span class="icon__text">
-                                     <a class="icon__link" href="https://www.linkedin.com/in/michal-kusnierz/"
-                                        rel="noreferrer noopener"
-                                        target="_blank">
-                                         Skontaktuj się</a>
-                                </span></div>
-                                <div class="icon__container icon__container--authors"><i class="fab fa-github icon"></i><span
-                                        class="icon__text">
-                                    <a class="icon__link" href="https://github.com/michal-kusnierz"
-                                       rel="noreferrer noopener"
-                                       target="_blank">Zobacz projekty</a>
-                                </span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card card--martyna">
-                        <img alt="" class="card__img" src="img/card-martyna100.png">
-                        <div class="card__info">
-                            <h4 class="heading heading__h4 heading__h4--authors">Martyna Michno</h4>
-                            <div class="card__icons">
-                                <div class="icon__container icon__container--authors"><i
-                                        class="fab fa-linkedin  icon"></i><span
-                                        class="icon__text">
-                                     <a class="icon__link" href="https://www.linkedin.com/in/martyna-michno/"
-                                        rel="noreferrer noopener"
-                                        target="_blank">
-                                         Skontaktuj się</a>
-                                </span></div>
-                                <div class="icon__container icon__container--authors"><i class="fab fa-github icon"></i><span
-                                        class="icon__text">
-                                    <a class="icon__link" href="https://github.com/martyna-michno"
-                                       rel="noreferrer noopener" target="_blank">
-                                        Zobacz projekty
-                                    </a>
-                                </span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card card--aleksander">
-                        <img alt="" class="card__img" src="img/card-aleksander100.png">
-                        <div class="card__info">
-                            <h4 class="heading heading__h4 heading__h4--authors">Aleksander Walczuk</h4>
-                            <div class="card__icons">
-                                <div class="icon__container icon__container--authors"><i
-                                        class="fab fa-linkedin icon"></i><span
-                                        class="icon__text">
-                                    <a class="icon__link" href="https://www.linkedin.com/in/aleksanderwalczuk547777735/"
-                                       rel="noreferrer noopener"
-                                       target="_blank">
-                                        Skontaktuj się
-                                    </a>
-                                </span></div>
-                                <div class="icon__container icon__container--authors"><i class="fab fa-github icon"></i><span
-                                        class="icon__text">
-                                    <a class="icon__link" href="https://github.com/rednaxela700"
-                                       rel="noreferrer noopener"
-                                       target="_blank">
-                                        Zobacz projekty
-                                    </a>
-                                </span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card card--rafal">
-                        <img alt="" class="card__img" src="img/card-rafal100.png">
-                        <div class="card__info">
-                            <h4 class="heading heading__h4 heading__h4--authors">Rafał Wensław</h4>
-                            <div class="card__icons">
-                                <div class="icon__container icon__container--authors"><i
-                                        class="fab fa-linkedin icon"></i><span
-                                        class="icon__text">
-                                     <a class="icon__link"
-                                        href="https://www.linkedin.com/in/rafa%C5%82-wens%C5%82aw-646450155/"
-                                        rel="noreferrer noopener"
-                                        target="_blank">
-                                        Skontaktuj się
-                                    </a>
-                                </span></div>
-                                <div class="icon__container icon__container--authors"><i class="fab fa-github icon"></i><span
-                                        class="icon__text">
-                                    <a class="icon__link" href="https://github.com/RafWen" rel="noreferrer noopener"
-                                       target="_blank">
-                                        Zobacz projekty
-                                    </a>
-                                </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
+              <p class="info__text paragraph--centered">
+                Jeśli chcesz się z nami skontaktować, lub zobaczyć nasz Github
+                wybierz jedną
+                <span class="paragraph--underline">(lub więcej!)</span> z
+                naszych wizytówek!
+              </p>
             </div>
+            <div class="grid__right grid__container grid__container--inner">
+              <div class="card card--michal">
+                <img alt="" class="card__img" src="img/card-michal100.png" />
+                <div class="card__info">
+                  <h4 class="heading heading__h4 heading__h4--authors">
+                    Michał Kuśnierz
+                  </h4>
+                  <div class="card__icons">
+                    <div class="icon__container icon__container--authors">
+                      <i class="fab fa-linkedin icon"></i>
+                      <span class="icon__text">
+                        <a
+                          class="icon__link"
+                          href="https://www.linkedin.com/in/michal-kusnierz/"
+                          rel="noreferrer noopener"
+                          target="_blank"
+                        >
+                          Skontaktuj się</a
+                        >
+                      </span>
+                    </div>
+                    <div class="icon__container icon__container--authors">
+                      <i class="fab fa-github icon"></i
+                      ><span class="icon__text">
+                        <a
+                          class="icon__link"
+                          href="https://github.com/michal-kusnierz"
+                          rel="noreferrer noopener"
+                          target="_blank"
+                          >Zobacz projekty</a
+                        >
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card card--martyna">
+                <img alt="" class="card__img" src="img/card-martyna100.png" />
+                <div class="card__info">
+                  <h4 class="heading heading__h4 heading__h4--authors">
+                    Martyna Michno
+                  </h4>
+                  <div class="card__icons">
+                    <div class="icon__container icon__container--authors">
+                      <i class="fab fa-linkedin  icon"></i
+                      ><span class="icon__text">
+                        <a
+                          class="icon__link"
+                          href="https://www.linkedin.com/in/martyna-michno/"
+                          rel="noreferrer noopener"
+                          target="_blank"
+                        >
+                          Skontaktuj się</a
+                        >
+                      </span>
+                    </div>
+                    <div class="icon__container icon__container--authors">
+                      <i class="fab fa-github icon"></i
+                      ><span class="icon__text">
+                        <a
+                          class="icon__link"
+                          href="https://github.com/martyna-michno"
+                          rel="noreferrer noopener"
+                          target="_blank"
+                        >
+                          Zobacz projekty
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card card--aleksander">
+                <img
+                  alt=""
+                  class="card__img"
+                  src="img/card-aleksander100.png"
+                />
+                <div class="card__info">
+                  <h4 class="heading heading__h4 heading__h4--authors">
+                    Aleksander Walczuk
+                  </h4>
+                  <div class="card__icons">
+                    <div class="icon__container icon__container--authors">
+                      <i class="fab fa-linkedin icon"></i
+                      ><span class="icon__text">
+                        <a
+                          class="icon__link"
+                          href="https://www.linkedin.com/in/aleksanderwalczuk547777735/"
+                          rel="noreferrer noopener"
+                          target="_blank"
+                        >
+                          Skontaktuj się
+                        </a>
+                      </span>
+                    </div>
+                    <div class="icon__container icon__container--authors">
+                      <i class="fab fa-github icon"></i
+                      ><span class="icon__text">
+                        <a
+                          class="icon__link"
+                          href="https://github.com/rednaxela700"
+                          rel="noreferrer noopener"
+                          target="_blank"
+                        >
+                          Zobacz projekty
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card card--rafal">
+                <img alt="" class="card__img" src="img/card-rafal100.png" />
+                <div class="card__info">
+                  <h4 class="heading heading__h4 heading__h4--authors">
+                    Rafał Wensław
+                  </h4>
+                  <div class="card__icons">
+                    <div class="icon__container icon__container--authors">
+                      <i class="fab fa-linkedin icon"></i
+                      ><span class="icon__text">
+                        <a
+                          class="icon__link"
+                          href="https://www.linkedin.com/in/rafa%C5%82-wens%C5%82aw-646450155/"
+                          rel="noreferrer noopener"
+                          target="_blank"
+                        >
+                          Skontaktuj się
+                        </a>
+                      </span>
+                    </div>
+                    <div class="icon__container icon__container--authors">
+                      <i class="fab fa-github icon"></i
+                      ><span class="icon__text">
+                        <a
+                          class="icon__link"
+                          href="https://github.com/RafWen"
+                          rel="noreferrer noopener"
+                          target="_blank"
+                        >
+                          Zobacz projekty
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
-    </main>
-    <footer class="footer">
+      </main>
+      <footer class="footer">
         <div class="cookies__container" id="cookies">
-            <span class="cookies__text">Ta strona korzysta z ciasteczek, by świadczyć usługi na najwyższym poziomie.</span>
-            <button class="btn btn__cookies" id="cookies__accept">Rozumiem</button>
+          <span class="cookies__text"
+            >Ta strona korzysta z ciasteczek, by świadczyć usługi na najwyższym
+            poziomie.</span
+          >
+          <button class="btn btn__cookies" id="cookies__accept">
+            Rozumiem
+          </button>
         </div>
-        <span style="text-align: center; display: block">&copy; Dreamteam 2019</span>
-    </footer>
-</div>
-<script type="module" src="scripts/main.js"></script>
-</body>
+        <span style="text-align: center; display: block"
+          >&copy; Dreamteam 2019</span
+        >
+      </footer>
+    </div>
+    <script type="module" src="scripts/main.js"></script>
+  </body>
 </html>
