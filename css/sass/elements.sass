@@ -1,10 +1,10 @@
-//button
 .heading
   font-family: Be Vietnam, sans-serif
   text-align: center
   &__h1
     font-size: 2.5rem
     text-transform: none
+    margin: .67rem 0
   &__h2
     margin: 1rem 0 1.5rem
   &__h3 //titles in functions section
@@ -33,6 +33,9 @@
     outline: none
   &:hover
     background: $primary-color
+  &__modal
+    margin: 1rem
+
   &__container
     display: flex
     justify-content: center
@@ -60,3 +63,36 @@
     text-decoration: underline
   &--centered
     text-align: center
+
+.modal
+  &__game
+    position: absolute
+    top: -1.5rem
+    left: calc(50% - 200px)
+    width: 500px
+    height: 400px
+    padding: 2rem
+    display: none
+    flex-flow: column
+    justify-content: space-between
+    align-items: center
+    background-color: #fff
+    border: 1px solid $divider-color
+    z-index: 4
+    &--instruction
+      margin-left: 2rem
+  &__paragraph
+    margin: 1rem 0
+@media all and (max-width: 400px)
+  .modal__game
+    width: 300px
+    height: 500px
+    left: calc(50% - 150px)
+    & >div:last-child
+      display: flex
+  .btn__modal
+    margin: 0
+    &:last-child
+      margin: 0 0 0 .5rem
+
+

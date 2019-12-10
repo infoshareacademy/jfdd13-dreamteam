@@ -1,169 +1,315 @@
-let id = 0;
+let id = 0,
+    seconds = 0, 
+    minutes = 0;
 
 const
     body = document.querySelector('body'),
     board = {
         domEl: document.querySelector('.board')
     },
-    startBtn = document.getElementById('start__btn');
-instBtn = document.getElementById('inst__btn');
+    startBtn = document.getElementById('start__btn'),
+    instBtn = document.getElementById('inst__btn'),
+    backBtn = document.getElementById('back__btn'),
+    clock = document.getElementById('clock');
+const getHighScore = () => localStorage.getItem('highscore') || 0;
+const displayHighScore = (value) =>
+    document.getElementById('highscore').innerText = `Najlepszy wynik: ${Math.round(value)}`;
+displayHighScore(getHighScore());
 
 const
-    playerWidth = 40,
+    playerWidth = 50,
     playerHeight = 40,
-    obstWidth = 100,
+    obstWidth = 200,
     obstHeight = 200,
+    treeCorr = 0.5,
     birdWidth = 40,
     birdHeight = 40,
+    birdCorr = 0.8,
+    boardStart = 0,
     boardWidth = 600,
     boardHeight = 600,
-    speed = 1,
+    startLine = 160,
+    creationLine = 700,
+    speed = 2,
     speedObst = 1,
-    speedBird = 3,
+    speedBird = 2,
+    speedBirdZ = 2,
     childrenArray = [],
+    birdsArray = [],
+    treesArray = [],
+    intervals = [],
+    timeouts = [],
 
+backToMenu = () => {
+    document.location.assign('../index.html');
+},
+hideButtons = () => {
+    startBtn.style.display = 'none';
+    instBtn.style.display = 'none';
+    backBtn.style.display = 'none';
+},
+showButtons = () => {
+    startBtn.style.display = 'inline-block';
+    instBtn.style.display = 'inline-block';
+    backBtn.style.display = 'inline-block';
+},
+refresh = () => {
+    location.reload(board);
+    showButtons();
+    startBtn.addEventListener('click', startGame);
+    backBtn.addEventListener('click', backToMenu);
+    timeouts.push(refresh);
+},
+timer = () => {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+    clock.innerText = minutes + ":" + seconds;
+    }
+    clock.innerText = seconds + ' sek.';
+    
+},
 
-    startGame = () => {
-        startBtn.style.display = 'none';
-        instBtn.style.display = 'none';
-        event.preventDefault();
-        document.addEventListener("keydown", event => Render.KeySupport(Player, event));
+startTimer = () => {
+    const timerInt = setInterval(timer, 1000);
+    intervals.push(timerInt);
+},
 
-        checkPosition = () => {
-            const outOfTheBoard = childrenArray.map(item => item.position.x < 0);
-            const trashItem = outOfTheBoard.indexOf(true);
-            if (trashItem > 0)  {
-
-                Render.destroy(childrenArray[trashItem])
-            }
-
+highScore = () => {
+    const score = (value) => {
+        value = seconds*10;
+        document.getElementById('score').innerText = `Twój wynik: ${value}`;
+        if(value>getHighScore()){
+            localStorage.setItem('highscore', value)
         };
-
-        firstLoop = () => {
-            Render.create(createPlayer('pilot'));
-            Render.create(createBird('bird'));
-            Render.create(createObstacle('obstacle'));
-        };
-        obstacleLoop = () => {
-            Render.create(createObstacle());
-        };
-        birdLoop = () => {
-            Render.create(createBird());
-        };
-        birdZLoop = () => {
-            // Render.create(createBirdZ('zet'));
-        };
-        mainLoop = () => {
-            setInterval(checkPosition, 100);
-            setInterval(obstacleLoop, 25000);
-            setInterval(birdLoop, 1900);
-            setInterval(birdZLoop, 9000);
-            //further 4 lines just for testing purposes
-            // birdLoop()
-
-
-        };
-        countdown();
-        setTimeout(firstLoop, 300);
-        const draw = () => setInterval(Render.changePosition, 100);
-        requestAnimationFrame(draw);
-        mainLoop()
     };
 
-// document.addEventListener("keydown", event => Render.KeySupport(Player, event)); //added just for testing
+    const gameStarted = () => {
+        
+        setInterval(() => {
+            score()
+        }, 1000)
+    };
+    const getScore = () => {
+        gameStarted();
+    };
+
+    getScore();
+},
+
+startGame = () => {
+    hideButtons();
+    event.preventDefault();
+    removeEventListener('click', startGame);
+    removeEventListener('click', backToMenu);
+    document.addEventListener("keydown", event => Render.KeySupport(Player, event));
+
+    checkPosition = () => {
+        const outOfTheBoard = childrenArray.map(item => item.position.x < -obstWidth);
+        const trashItem = outOfTheBoard.indexOf(true);
+        if (trashItem > 0) {
+
+            Render.destroy(childrenArray[trashItem])
+        };
+    };
+
+    firstLoop = () => {
+        Render.create(createPlayer());
+        Render.create(createBird());
+        Render.create(createObstacle());
+    };
+
+    obstacleLoop = () => {
+        Render.create(createObstacle('a'));
+    };
+    birdLoop = () => {
+        Render.create(createBird('b'));
+    };
+    birdZLoop = () => {
+        Render.create(createBirdZ('c'));
+    };
+    mainLoop = () => {
+        const 
+        draw = setInterval(Render.changePosition, 10),
+        int1 = setInterval(checkPosition, 10),
+        int2 = setInterval(checkCollision, 1),
+        int3 = setInterval(obstacleLoop, 5000),
+        int4 = setInterval(birdLoop, 2000),
+        int5 = setInterval(birdZLoop, 8000),
+        lev2 = setTimeout(level2, 10000),
+        lev3 = setTimeout(level3, 20000);
+        intervals.push(draw, int1, int2, int3, int4, int5);
+        timeouts.push(lev2, lev3);
+    };
+    level2 = () => {
+        const 
+        int6 = setInterval(birdLoop, 500),
+        int7 = setInterval(birdZLoop, 2000);
+        intervals.push(int6, int7);
+    };
+    level3 = () => {
+        const 
+        int8 = setInterval(birdLoop, 500),
+        int9 = setInterval(birdZLoop, 1500);
+        intervals.push(int8, int9);
+    };
+    firstLoop();
+    startTimer();
+    raf = requestAnimationFrame(mainLoop);
+    highScore();
+};
+
+checkCollision = () => {
+  const playArr = childrenArray[0],
+    playX = playArr.position.x,
+    playY = playArr.position.y,
+    playW = playArr.size.w,
+    playH = playArr.size.h;
+
+  treesArray.forEach(item => {
+    const obstX = item.position.x,
+      obstY = item.position.y,
+      obstW = item.size.w,
+      obstH = item.size.h;
+
+    if (
+      (playX + playW*treeCorr >= obstX &&
+        playX + playW <= obstX + obstW &&
+        playY + playH*treeCorr >= obstY &&
+        playY + playH <= obstY + obstH) ||
+      (playX + playW*treeCorr >= obstX &&
+        playX <= obstX + obstW*treeCorr &&
+        playY + playH*treeCorr >= obstY &&
+        playY + playH <= obstY + obstH*treeCorr) ||
+      (playX + playW >= obstX &&
+        playX <= obstX + obstW &&
+        playY <= obstY + obstH &&
+        playY >= obstY)
+    ) {
+      gameOver();
+      return true;
+    } else {
+      return false;
+    }
+  });
+  birdsArray.forEach(item => {
+    const obstX = item.position.x,
+      obstY = item.position.y,
+      obstW = item.size.w,
+      obstH = item.size.h;
+    if (
+      (playX + playW*birdCorr >= obstX &&
+        playX + playW*birdCorr <= obstX + obstW*birdCorr &&
+        playY + playH*birdCorr >= obstY &&
+        playY + playH*birdCorr <= obstY + obstH*birdCorr) ||
+      (playX + playW*birdCorr >= obstX &&
+        playX <= obstX + obstW &&
+        playY + playH*birdCorr >= obstY &&
+        playY + playH*birdCorr <= obstY + obstH*birdCorr) ||
+      (playX + playW*birdCorr >= obstX &&
+        playX <= obstX + obstW*birdCorr &&
+        playY <= obstY + obstH*birdCorr &&
+        playY >= obstY)
+    ) {
+      gameOver();
+      return true;
+    } else {
+      return false;
+    }
+  });
+};
+
+clearAllIntervals = () => {
+    intervals.forEach(i => {
+        clearInterval(i);
+    });
+};
+
+clearAllTimeouts = () => {
+    timeouts.forEach(i => {
+        clearTimeout(i);
+    });
+};
+
+gameOver = () => {
+  cancelAnimationFrame(raf);
+  clearAllIntervals();
+  clearAllTimeouts();
+  setTimeout(refresh, 2000);
+
+  //TUTAJ JAKIŚ MODAL TRZEBA WYWOŁAĆ JAK SĄDZĘ?
+
+      // setTimeout(location.reload(board),5000);
+};
+
 class Render {
 
     static create(el, parent = board.domEl) {
-        const parentVar = parent //direct parent - board in DOM
-        // console.log(`parentVar in create is ${parentVar}`);
+        const parentVar = parent 
         const child = document.createElement('div');
 
-        //add id
         el.id = id++;
-        // child.innerText = el.name;
         child.setAttribute('id', `${el.name}${el.id}`);
+        child.style.left = el.position.x + 'px';
+        child.style.top = el.position.y + 'px';
 
-        if (el.type === 'player') {
-            child.style.width = playerWidth + 'px';
-            child.style.height = playerHeight + 'px';
-            // child.style.background = `blue`;
-            child.setAttribute('class', `player`);
-            child.style.backgroundImage = "url('img/ptasiek.png')";
+        if (el.name === 'player') {
+            child.style.width = el.size.w + 'px';
+            child.style.height = el.size.h + 'px';
+            child.style.backgroundImage = "url('img/player_plane.png')";
             child.style.backgroundRepeat = 'round';
-      
+            child.setAttribute('class', `player`);
 
-        } else if (el.type === 'obstacle') {
-            if (el.name === 'bird') {
-                child.style.width = birdWidth + 'px';
-                child.style.height = birdHeight + 'px';
-                // child.style.backgroundColor = 'red';
-                child.style.left = el.position.x + 'px';
-                child.style.top = el.position.y + 'px';
-                // console.log(el.name);
-                child.style.backgroundImage = "url('img/bird_gull.png')";
-                child.style.backgroundRepeat = 'round';
-          
-            } else if (el.name === 'obstacle') {
-                child.style.width = obstWidth + 'px';
-                child.style.height = obstHeight + 'px';
-                // child.style.background = `grey`;
-                child.style.bottom = `0px`;
-                child.style.backgroundImage = "url('img/tree1.png')";
-                child.style.backgroundRepeat = 'round';
-
-            }
+        } else if (el.name === 'obstacle') {
+            child.style.width = el.size.w + 'px';
+            child.style.height = el.size.h + 'px';
+            child.style.backgroundImage = "url('img/tree3.png')";
+            child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `obstacle ${el.name}`);
+            treesArray.push(el);
+        } else if (el.name === 'bird') {
+            child.style.width = el.size.w + 'px';
+            child.style.height = el.size.h + 'px';
+            child.style.backgroundImage = "url('img/bird_gull.png')";
+            child.style.backgroundRepeat = 'round';
+            child.setAttribute('class', `bird ${el.name}`);
+            birdsArray.push(el);
+        } else if (el.name === 'birdz') {
+            child.style.width = el.size.w + 'px';
+            child.style.height = el.size.h + 'px';
+            child.style.backgroundImage = "url('img/bird_eagle.png')";
+            child.style.backgroundRepeat = 'round';
+            child.setAttribute('class', `birdz ${el.name}`);
+            birdsArray.push(el);
         } else {
-            throw Error('unresolved object type in render create, line 90')
+            throw Error('unresolved object name in render create, line 90')
         }
-        // else if (el.type === 'bird' || el.type === 'birdZ') {
-        //     child.style.width = birdWidth + 'px';
-        //     child.style.height = birdHeight + 'px';
-        //     child.style.background = `red`;
-        //     child.setAttribute('class', `bird ${el.name}`);
-        // }
-        // console.log(`this ${el.type} el id is ${el.id}`);
 
-        // child.style.left = el.position.x + 'px';
-        // child.style.top = el.position.y + 'px';
         parentVar.appendChild(child);
         el.domEl = document.getElementById(`${el.name}${el.id}`);
-
-        // console.log('create', el.name);
         childrenArray.push(el);
-
-        // console.log(`this el position y is ${el.position.y}`);
-    };
-
-    static styleEl(el, arg, output) {
-        el.style.arg = output;
-        // document.getElementById('player').style.background = red
     };
 
     static changePosition(domEl) {
+
         childrenArray.forEach((el, i) => {
             let x = el.position.x;
             let y = el.position.y;
-            // console.log(`child x= ${x}`);
-
-            if (el.type === 'player') {
+ 
+            if (el.name === 'player') {
                 el.domEl.style.left = x + 'px';
                 el.domEl.style.top = y + 'px';
-            }
-            if (el.type === 'obstacle') {
+
+            } else if (el.name === 'obstacle'|| el.name === 'bird') {
                 el.moveObst();
                 el.domEl.style.left = x + 'px';
-            }
-            if (el.type === 'bird') {
-                el.moveObst();
-                el.domEl.style.left = x + 'px';
-            }
-            if (el.type === 'birdZ') {
+
+            } else if (el.name === 'birdz') {
                 el.moveBirdZ();
                 el.domEl.style.left = x + 'px';
                 el.domEl.style.top = y + 'px';
             }
-
         });
     };
 
@@ -173,28 +319,24 @@ class Render {
             if (el.type === 'player') {
                 switch (event.code) {
                     case "ArrowLeft":
-                        if (el.position.x > 0) {
+                        if (el.position.x > boardStart) {
                             el.playerLeft()
                         }
-                        // Player.changePosition();
                         break;
                     case "ArrowRight":
-                        if (el.position.x + 40 < boardWidth) {
+                        if (el.position.x + playerWidth < boardWidth) {
                             el.playerRight()
                         }
-
                         break;
                     case "ArrowUp":
-                        if (el.position.y > 20) {
+                        if (el.position.y > boardStart) {
                             el.playerUp()
                         }
-
                         break;
                     case "ArrowDown":
-                        if (el.position.y + 40 < boardHeight) {
+                        if (el.position.y + playerHeight < boardHeight) {
                             el.playerDown()
                         }
-
                         break;
                     default:
                         return
@@ -204,26 +346,27 @@ class Render {
     };
 
     static destroy(el) {
-        el.domEl.style.transition = 'opacity .1s ease-out'
-        el.domEl.style.opacity = '0'
+        el.domEl.style.transition = 'opacity .1s ease-out';
+        el.domEl.style.opacity = '0';
         el.domEl.remove();
         el.position.x = 1000;
         el.position.y = -1000;
         return el = 0;
     }
 
-    //destroy element
-
 }
 
 class BoardElement {
-    constructor(name, domEl, id, position = {x: '', y: ''}, speed, type) {
+    constructor(name, domEl, id, position = {x: '', y: ''}, size = {w: '', h: ''}, speed, type) {
         this.name = name;
         this.domEl = domEl;
         this.id = id;
         this.position = position;
         this.position.x = position.x;
         this.position.y = position.y;
+        this.size = size;
+        this.size.w = size.w;
+        this.size.h = size.h;
         this.speed = speed;
         this.type = type;
     }
@@ -254,143 +397,60 @@ class BoardElement {
     }
 }
 
-/////////
 
 class Player extends BoardElement {
-    constructor(name, domEl, id, position = {x: '', y: ''}, speed, type) {
-        super(domEl, position);
+    constructor(name, domEl, id, position = {x: '', y: ''},  size = {w: '', h: ''}, speed, type) {
+        super(domEl, position, size);
         this.name = name;
         this.id = id;
         this.position.x = position.x;
         this.position.y = position.y;
+        this.size.w = size.w;
+        this.size.h = size.h;
         this.speed = speed;
         this.type = type;
     }
 }
 
 class Obstacle extends BoardElement {
-    constructor(name, domEl, id, position = {x: '', y: ''}, speed, type) {
+    constructor(name, domEl, id, position = {x: '', y: ''}, size = {w: '', h: ''}, speed, type) {
 
-        super(domEl, id, position);
+        super(domEl, id, position, size);
         this.name = name;
         this.position.x = position.x;
         this.position.y = position.y;
+        this.size.w = size.w;
+        this.size.h = size.h;
         this.speed = speed;
         this.type = type;
     }
 }
 
-class Bird extends BoardElement {
-    constructor(name, domEl, id, position, speed, type) {
-        super(domEl, id, position);
-        this.name = name;
-        this.position.x = position.x;
-        this.position.y = position.y;
-        this.speed = speed;
-        this.type = type;
-    }
-}
-
-// const play = new Player( 'Andrzej', '', 0, 'speed', 'player')
-createPlayer = (name) => {
-    return new Player(name, '', 0, {x: 100, y: 200}, speed, 'player');
+createPlayer = () => {
+    return new Player('player', '', id, {x: startLine, y: startLine}, {w: playerWidth, h: playerHeight}, speed, 'player');
 };
 createObstacle = () => {
-    return new Obstacle('obstacle', '', '', {x: 700, y: 400}, speedObst, 'obstacle');
+    return new Obstacle('obstacle', '', '', {x: creationLine, y: boardHeight-obstHeight}, {w: obstWidth, h: obstHeight}, speedObst, 'obstacle');
 };
 createBird = () => {
-    return new Obstacle('bird', '', '', {x: 700, y: generateBirdY()}, speedBird, 'obstacle')
+    return new Obstacle('bird', '', '', {x: creationLine, y: generateBirdY()}, {w: birdWidth, h: birdHeight}, speedBird, 'obstacle');
 };
-createBirdZ = (name) => {
-    return new Bird(name, '', '', {x: 700, y: generateBirdY()}, speedBird, 'birdZ')
+createBirdZ = () => {
+    return new Obstacle('birdz', '', '', {x: creationLine, y: generateBirdY()},{w: birdWidth, h: birdHeight}, speedBirdZ, 'obstacle');
 };
 
-// generatePositionX = element => {
-//   const bW = board.domEl.offsetWidth;
-//   return element.style.left = bW +100 + 'px'
-// }
-
-// generateFixedY = element => {
-//   const bH = board.domEl.offsetHeight;
-//     return element.style.top = bH -200 + 'px'
-// }
 generateBirdY = () => {
     const randPositions = [250, 300, 350, 400, 450, 480, 550, 600];
     const getPosition = Math.round(Math.random() * randPositions.length - 1); //generate random arr index
     const result = randPositions[getPosition] - 250;
     if (result !== undefined) {
         return result;
-    } else { //avoid func return undefined
+    } else { 
         return randPositions[0];
     }
 
 };
 
 startBtn.addEventListener('click', startGame);
+backBtn.addEventListener('click', backToMenu);
 
-
-//high score
-function highScore() {
-
-    const getHighScore = () => localStorage.getItem('highscore') || 0
-
-    const newScoreReceived = (value) => {
-        console.log(value, getHighScore())
-        if (value > getHighScore()) {
-            console.log('new highScore!')
-            localStorage.setItem('highscore', value)
-        } else {
-            console.log('lower')
-        }
-    };
-
-    const gameStarted = () => {
-        displayScore(getHighScore())
-    };
-
-    const gameCompleted = (score) => {
-        newScoreReceived(score);
-        displayScore(score);
-    };
-
-    const displayScore = (value) =>
-        document.getElementById('highscore').innerText = `Najlepszy wynik to: ${Math.round(value)}`;
-
-    const startGame1 = () => {
-        gameStarted();
-
-        setTimeout(() => {
-            gameCompleted(Math.random() * 200)
-            setTimeout(() => {
-                startGame1()
-            }, 1000)
-
-        }, 5000)
-    };
-
-    startGame1();
-
-}
-
-const startTimer = (duration, display) => {
-    let timer = duration, minutes, seconds;
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10)
-        seconds = parseInt(timer % 60, 10);
-
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.innerText = minutes + ":" + seconds;
-
-        if (--timer < 0) {
-            timer = duration;
-        }
-    }, 1000);
-};
-
-const countdown = () => {
-    const twoMinutes = 60 * 2,
-        display = document.querySelector('#countdown');
-    startTimer(twoMinutes, display);
-};

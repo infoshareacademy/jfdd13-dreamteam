@@ -20,6 +20,7 @@ body {
 .heading__h1 {
   font-size: 2.5rem;
   text-transform: none;
+  margin: 0.67rem 0;
 }
 .heading__h2 {
   margin: 1rem 0 1.5rem;
@@ -55,6 +56,9 @@ body {
 }
 .btn:hover {
   background: #2196F3;
+}
+.btn__modal {
+  margin: 1rem;
 }
 .btn__container {
   display: flex;
@@ -92,15 +96,56 @@ body {
 .paragraph--centered {
   text-align: center;
 }
-
-@media all and (min-width: 1366px) {
-  .hero {
-    background-image: url("../img/bg-1366x768.png");
-  }
+.modal__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* top: -1.5rem; */
+  /* left: calc(50% - 250px); */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 4;
 }
-@media all and (min-width: 500px) and (max-width: 1365px) {
-  .hero {
-    background-image: url("../img/bg-1024x576.png");
+.modal__game {
+  /* position: absolute; */
+  /* top: -1.5rem; */
+  /* left: calc(50% - 250px); */
+  width: 500px;
+  height: 400px;
+  padding: 2rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #BDBDBD;
+  z-index: 5;
+}
+.modal__game--instruction {
+  margin-left: 2rem;
+}
+.modal__paragraph {
+  margin: 1rem 0;
+}
+
+@media all and (max-width: 400px) {
+  .modal__game {
+    width: 300px;
+    height: 500px;
+    left: calc(50% - 150px);
+  }
+  .modal__game > div:last-child {
+    display: flex;
+  }
+
+  .btn__modal {
+    margin: 0;
+  }
+  .btn__modal:last-child {
+    margin: 0 0 0 0.5rem;
   }
 }
 .wrapper {
@@ -113,7 +158,6 @@ body {
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  background: url("../img/bg-1366x768.png") no-repeat center;
   background-size: cover;
   transition: background 0.1s ease-in;
 }
@@ -133,15 +177,14 @@ body {
   padding: 0 0 3.8rem;
 }
 
-.hero__text {
-  text-align: center;
+.hero__heading {
+  font-family: Be Vietnam, sans-serif;
+}
+.hero__heading-h1 {
+  margin-bottom: 2rem;
+  padding: 0 0.5rem 0 0;
 }
 
-@media all and (max-width: 500px) {
-  .hero-text {
-    padding-bottom: 1rem;
-  }
-}
 .functions__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -238,9 +281,7 @@ body {
   margin: 0.5rem 0.5rem 1rem 0.5rem;
   transition: transform 0.3s ease-in;
 }
-.card__img--transform {
-  transform: rotateY(180deg);
-}
+
 .card__info {
   display: flex;
   flex-flow: column;
@@ -277,6 +318,19 @@ body {
 }
 .icon__link:hover {
   text-decoration: underline;
+}
+
+
+.btn-app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 70px
+  }
+
+.btn_app{
+width: 150px;
 }
 
 @media all and (max-width: 1200px) {
@@ -324,9 +378,14 @@ body {
 }
 @media all and (max-width: 470px) {
   .grid__container {
+    grid-template-columns: minmax(320px, 1fr);
     margin: 0.5rem;
     padding: 0;
   }
+}
+.info__container {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=main.css.map */

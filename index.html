@@ -47,12 +47,12 @@
             <div class="icons">
                 <div class="icons__col">
                     <figure class="icons__container">
-                        <div class="icons__item"><i class="far fa-compass"></i></div>
-                        <figcaption class="icons__caption">Wybierz kierunek</figcaption>
+                        <div class="icons__item"><i class="fas fa-globe-europe"></i></div>
+                        <figcaption class="icons__caption">Wybierz kontynent</figcaption>
                     </figure>
                     <figure class="icons__container">
-                        <div class="icons__item"><i class="fas fa-sun"></i></div>
-                        <figcaption class="icons__caption">Sprawdź pogodę</figcaption>
+                        <div class="icons__item"><i class="far fa-calendar-alt"></i></div>
+                        <figcaption class="icons__caption">Sprawdź termin</figcaption>
                     </figure>
                 </div>
                 <div class="icons__col">
@@ -66,7 +66,10 @@
                     </figure>
                 </div>
             </div>
-            <div class="hero-image">
+          <div class="btn-app-container">
+            <button class="btn btn_app" onclick="window.location.href='http://app.dreamteam.jfdd13.is-academy.pl/'">zaloguj się</button>
+          </div>
+          <div class="hero-image">
                 <div class="hero-text">
                     <h1 class="heading heading__h1" id="slider__heading">Ruszaj w drogę</h1>
                     <span class="heading heading__h3 hero__text" id="slider__text">Zaplanuj swoją podróż szybciej niż kiedykolwiek wcześniej!</span>
@@ -86,7 +89,7 @@
                     <div class="text__container">
                         <h3 class="heading heading__h3">O portalu</h3>
                         <p class="text__paragraph">Dzięki wyszukiwarce z różnymi filtrami, które uwzględniają
-                            m.in. prognozę pogody, wydatki oraz kierunek podróży, spośród wielu ofert dostępnych na
+                            m.in. wydatki oraz kierunek podróży, spośród wielu ofert dostępnych na
                             naszym portalu, znajdziesz idealną dla siebie.
                         </p>
                     </div>
@@ -108,10 +111,9 @@
                         <i class="far fa-grin-stars"></i>
                     </div>
                     <div class="text__container">
-                        <h3 class="heading heading__h3">Oferta dnia</h3>
+                        <h3 class="heading heading__h3">Oferta tygodnia</h3>
                         <p class="text__paragraph">
-                            Na naszym portalu codziennie pojawia się oferta dnia, która uwzględnia największe zniżki,
-                            związane najczęściej z bliskim terminem wyjazdu.
+                            Na naszym portalu co tydzień pojawia się oferta tygodnia, która uwzględnia największe zniżki, związane najczęściej z bliskim terminem wyjazdu.
                         </p>
                     </div>
 
@@ -199,6 +201,25 @@
                     </div>
                 </form>
             </div>
+          <div class="modal__container" id="modal__container">
+            <div class="modal__game" id="modal__game">
+                <h3 class="heading heading__h3">Dziękujemy za skorzystanie z formularza!</h3>
+                <div>
+                    <p class="modal__paragraph paragraph--centered">Możesz teraz zagrać w grę:</p>
+                    <ul class="modal__game--instruction">
+                        <li>Twoim zadaniem jest omijanie przeszkód, które pojawiają się na Twojej drodze.</li>
+                        <li>Uważaj zarówno na ptaki, jak i budynki!</li>
+                        <li>Do poruszania się używaj strzałek (&lArr;&uArr;&dArr;&rArr;).</li>
+                        <li>Pamiętaj, że masz tylko jedno życie - zderzenie z jakąkolwiek przeszkodą to koniec gry.</li>
+                        <li>Powodzenia :)</li>
+                    </ul>
+                </div>
+                <div>
+                    <button class="btn btn__modal" id="btn__game--redirect">Zagraj</button>
+                    <button class="btn btn__modal" id="btn__game--close">Zamknij</button>
+                </div>
+            </div>
+          </div>
         </section>
         <section class="calculator_divs" id="calculator">
             <div class="calculator__wrapper">
@@ -371,13 +392,7 @@
         </div>
         <span style="text-align: center; display: block">&copy; Dreamteam 2019</span>
     </footer>
-
 </div>
-<script src="scripts/navscroll.js"></script>
-<script src="scripts/sliders.js"></script>
-<script src="scripts/cookies.js"></script>
-<script src="scripts/mail_storage.js"></script>
-<script src="scripts/calculator.js"></script>
-<script src="scripts/authors.js"></script>
+<script type="module" src="scripts/main.js"></script>
 </body>
 </html>
