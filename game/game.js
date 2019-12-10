@@ -458,13 +458,6 @@ function highScore() {
     const startGame1 = () => {
         gameStarted();
 
-        setTimeout(() => {
-            gameCompleted(Math.random() * 200)
-            setTimeout(() => {
-                startGame1()
-            }, 1000)
-
-        }, 5000)
     };
 
     startGame1();
