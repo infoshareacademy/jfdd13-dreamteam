@@ -96,21 +96,33 @@ body {
 .paragraph--centered {
   text-align: center;
 }
-
-.modal__game {
+.modal__container {
   position: absolute;
-  top: -1.5rem;
-  left: calc(50% - 200px);
+  top: 0;
+  left: 0;
+  /* top: -1.5rem; */
+  /* left: calc(50% - 250px); */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 4;
+}
+.modal__game {
+  /* position: absolute; */
+  /* top: -1.5rem; */
+  /* left: calc(50% - 250px); */
   width: 500px;
   height: 400px;
   padding: 2rem;
-  display: none;
+  display: flex;
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
   border: 1px solid #BDBDBD;
-  z-index: 4;
+  z-index: 5;
 }
 .modal__game--instruction {
   margin-left: 2rem;
@@ -269,9 +281,7 @@ body {
   margin: 0.5rem 0.5rem 1rem 0.5rem;
   transition: transform 0.3s ease-in;
 }
-.card__img--transform {
-  transform: rotateY(180deg);
-}
+
 .card__info {
   display: flex;
   flex-flow: column;

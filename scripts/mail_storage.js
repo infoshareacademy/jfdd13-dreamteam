@@ -9,7 +9,8 @@ const mailStorage = () => {
         popGameModal = () => {
             const btnGame = document.getElementById('btn__game--redirect');
             const btnBack = document.getElementById('btn__game--close');
-            const gameModal = document.getElementById('modal__game');
+            const gameModal = document.getElementById('modal__container');
+            gameModal.style.top = scrollY + 'px';
             gameModal.style.display = 'flex';
             btnGame.addEventListener('click', popGame);
             btnBack.addEventListener('click', () => gameModal.style.display = 'none')
