@@ -1,4 +1,6 @@
-let id = 0;
+let id = 0,
+    seconds = 0, 
+    minutes = 0;
 
 const
     body = document.querySelector('body'),
@@ -7,7 +9,8 @@ const
     },
     startBtn = document.getElementById('start__btn'),
     instBtn = document.getElementById('inst__btn'),
-    backBtn = document.getElementById('back__btn');
+    backBtn = document.getElementById('back__btn'),
+    clock = document.getElementById('clock');
 
 const
     playerWidth = 50,
@@ -53,6 +56,22 @@ refresh = () => {
     backBtn.addEventListener('click', backToMenu);
     timeouts.push(refresh);
 },
+timer = () => {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+    clock.innerText = minutes + ":" + seconds;
+    }
+    clock.innerText = seconds + ' sek.';
+    
+},
+
+startTimer = () => {
+    const timerInt = setInterval(timer, 1000);
+    intervals.push(timerInt);
+},
+
 startGame = () => {
     hideButtons();
     event.preventDefault();
@@ -93,7 +112,7 @@ startGame = () => {
         int4 = setInterval(birdLoop, 2000),
         int5 = setInterval(birdZLoop, 8000),
         lev2 = setTimeout(level2, 10000),
-        lev3 = setTimeout(level2, 20000);
+        lev3 = setTimeout(level3, 20000);
         intervals.push(draw, int1, int2, int3, int4, int5);
         timeouts.push(lev2, lev3);
     };
@@ -109,10 +128,10 @@ startGame = () => {
         int9 = setInterval(birdZLoop, 1500);
         intervals.push(int8, int9);
     };
-    countdown();
     firstLoop();
-    
+    startTimer();
     raf = requestAnimationFrame(mainLoop);
+    highScore();
 };
 
 checkCollision = () => {
@@ -121,7 +140,6 @@ checkCollision = () => {
     playY = playArr.position.y,
     playW = playArr.size.w,
     playH = playArr.size.h;
-    // obstacleArr = childrenArray.filter(item => item.type !== 'player');
 
   treesArray.forEach(item => {
     const obstX = item.position.x,
@@ -154,7 +172,6 @@ checkCollision = () => {
       obstY = item.position.y,
       obstW = item.size.w,
       obstH = item.size.h;
-    // console.log(obstX, obstY, obstW, obstH)
     if (
       (playX + playW*birdCorr >= obstX &&
         playX + playW*birdCorr <= obstX + obstW*birdCorr &&
@@ -194,7 +211,7 @@ gameOver = () => {
   cancelAnimationFrame(raf);
   clearAllIntervals();
   clearAllTimeouts();
-  setTimeout(refresh, 1500);
+  setTimeout(refresh, 2000);
 
   //TUTAJ JAKIŚ MODAL TRZEBA WYWOŁAĆ JAK SĄDZĘ?
 
@@ -215,7 +232,6 @@ class Render {
         if (el.name === 'player') {
             child.style.width = el.size.w + 'px';
             child.style.height = el.size.h + 'px';
-            // child.style.backgroundColor = `blue`;
             child.style.backgroundImage = "url('img/player_plane.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `player`);
@@ -223,7 +239,6 @@ class Render {
         } else if (el.name === 'obstacle') {
             child.style.width = el.size.w + 'px';
             child.style.height = el.size.h + 'px';
-            // child.style.backgroundColor = `grey`;
             child.style.backgroundImage = "url('img/tree3.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `obstacle ${el.name}`);
@@ -231,7 +246,6 @@ class Render {
         } else if (el.name === 'bird') {
             child.style.width = el.size.w + 'px';
             child.style.height = el.size.h + 'px';
-            // child.style.backgroundColor = `red`;
             child.style.backgroundImage = "url('img/bird_gull.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `bird ${el.name}`);
@@ -239,7 +253,6 @@ class Render {
         } else if (el.name === 'birdz') {
             child.style.width = el.size.w + 'px';
             child.style.height = el.size.h + 'px';
-            // child.style.backgroundColor = 'white';
             child.style.backgroundImage = "url('img/bird_eagle.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `birdz ${el.name}`);
@@ -258,8 +271,7 @@ class Render {
         childrenArray.forEach((el, i) => {
             let x = el.position.x;
             let y = el.position.y;
-            // console.log(`child x= ${x}`);
-
+ 
             if (el.name === 'player') {
                 el.domEl.style.left = x + 'px';
                 el.domEl.style.top = y + 'px';
@@ -458,28 +470,3 @@ function highScore() {
     startGame1();
 
 }
-
-const startTimer = (duration, display) => {
-    let timer = duration, minutes, seconds;
-    const intTime = setInterval(function () {
-        minutes = parseInt(timer / 60, 10)
-        seconds = parseInt(timer % 60, 10);
-
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.innerText = minutes + ":" + seconds;
-
-        if (--timer < 0) {
-            timer = duration;
-        }
-    }, 1000);
-    intervals.push(intTime);
-};
-
-const countdown = () => {
-    const twoMinutes = 60 * 2,
-        display = document.querySelector('#countdown');
-    startTimer(twoMinutes, display);
-
-};
