@@ -72,6 +72,31 @@ startTimer = () => {
     intervals.push(timerInt);
 },
 
+highScore = () => {
+    const getHighScore = () => localStorage.getItem('highscore') || 0;
+    const displayHighScore = (value) =>
+        document.getElementById('highscore').innerText = `Najlepszy wynik to: ${Math.round(value)}`;
+    const score = (value) => {
+        value = seconds*10;
+        document.getElementById('score').innerText = `Twój wynik to: ${value}`;
+        if(value>getHighScore()){
+            localStorage.setItem('highscore', value)
+        };
+    };
+
+    const gameStarted = () => {
+        displayHighScore(getHighScore());
+        setInterval(() => {
+            score()
+        }, 1000)
+    };
+    const getScore = () => {
+        gameStarted();
+    };
+
+    getScore();
+},
+
 startGame = () => {
     hideButtons();
     event.preventDefault();
@@ -428,37 +453,3 @@ generateBirdY = () => {
 startBtn.addEventListener('click', startGame);
 backBtn.addEventListener('click', backToMenu);
 
-function highScore() {
-
-    const getHighScore = () => localStorage.getItem('highscore') || 0
-
-    const newScoreReceived = (value) => {
-        console.log(value, getHighScore())
-        if (value > getHighScore()) {
-            console.log('new highScore!')
-            localStorage.setItem('highscore', value)
-        } else {
-            console.log('lower')
-        }
-    };
-
-    const gameStarted = () => {
-        displayScore(getHighScore())
-    };
-
-    const gameCompleted = (score) => {
-        newScoreReceived(score);
-        displayScore(score);
-    };
-
-    const displayScore = (value) =>
-        document.getElementById('highscore').innerText = `Najlepszy wynik to: ${Math.round(value)}`;
-
-    const startGame1 = () => {
-        gameStarted();
-
-    };
-
-    startGame1();
-
-}
