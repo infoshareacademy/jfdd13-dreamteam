@@ -68,14 +68,10 @@
     height: 15px;
     background: #d3d3d3;
     outline: none;
-    opacity: 0.7;
     border-radius: 4px;
     position: absolute;
 }
 
-.slider:hover {
-    opacity: 1;
-}
 
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
