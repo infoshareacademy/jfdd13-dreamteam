@@ -207,7 +207,6 @@ clearAllTimeouts = () => {
 };
 
 gameOver = () => {
-  console.log('GAME OVER');
   cancelAnimationFrame(raf);
   clearAllIntervals();
   clearAllTimeouts();
