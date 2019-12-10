@@ -75,10 +75,10 @@ startTimer = () => {
 highScore = () => {
     const getHighScore = () => localStorage.getItem('highscore') || 0;
     const displayHighScore = (value) =>
-        document.getElementById('highscore').innerText = `Najlepszy wynik to: ${Math.round(value)}`;
+        document.getElementById('highscore').innerText = `Najlepszy wynik: ${Math.round(value)}`;
     const score = (value) => {
         value = seconds*10;
-        document.getElementById('score').innerText = `Twój wynik to: ${value}`;
+        document.getElementById('score').innerText = `Twój wynik: ${value}`;
         if(value>getHighScore()){
             localStorage.setItem('highscore', value)
         };
