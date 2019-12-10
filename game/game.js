@@ -11,6 +11,10 @@ const
     instBtn = document.getElementById('inst__btn'),
     backBtn = document.getElementById('back__btn'),
     clock = document.getElementById('clock');
+const getHighScore = () => localStorage.getItem('highscore') || 0;
+const displayHighScore = (value) =>
+    document.getElementById('highscore').innerText = `Najlepszy wynik: ${Math.round(value)}`;
+displayHighScore(getHighScore());
 
 const
     playerWidth = 50,
@@ -73,9 +77,6 @@ startTimer = () => {
 },
 
 highScore = () => {
-    const getHighScore = () => localStorage.getItem('highscore') || 0;
-    const displayHighScore = (value) =>
-        document.getElementById('highscore').innerText = `Najlepszy wynik: ${Math.round(value)}`;
     const score = (value) => {
         value = seconds*10;
         document.getElementById('score').innerText = `Twój wynik: ${value}`;
@@ -85,7 +86,7 @@ highScore = () => {
     };
 
     const gameStarted = () => {
-        displayHighScore(getHighScore());
+        
         setInterval(() => {
             score()
         }, 1000)
