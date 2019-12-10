@@ -1,4 +1,4 @@
-const cookieQuest = () => {
+function cookieQuest() {
     const
         cookieInfo = document.getElementById('cookies'),
         cookieBtn = document.getElementById('cookies__accept'),
@@ -39,6 +39,6 @@ const cookieQuest = () => {
     };
 
     cookiePop();
-};
+}
 
-export default cookieQuest
+cookieQuest();

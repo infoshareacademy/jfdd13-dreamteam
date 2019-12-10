@@ -5,7 +5,7 @@ const btn = document.getElementById("inst__btn");
 const span = document.getElementsByClassName("close")[0];
 
 btn.onclick = function() {
-  modal.style.display = "flex";
+  modal.style.display = "block";
 }
 
 span.onclick = function() {
