@@ -227,10 +227,22 @@ clearAllTimeouts = () => {
   });
 };
 
+
+popGameOver = () => {
+    const gameOverModal = document.getElementById('modal__gameover--container');
+    const closeModal = document.getElementById('btn__game--close');
+    closePopGameOver = () => gameOverModal.style.display = 'none';
+      
+    gameOverModal.style.display = 'flex';
+    gameOverModal.style.top = scrollY + 'px';
+    closeModal.addEventListener('click', closePopGameOver);
+};
+
 gameOver = () => {
   cancelAnimationFrame(raf);
   clearAllIntervals();
   clearAllTimeouts();
+  popGameOver();
   setTimeout(refresh, 2000);
 
   //TUTAJ JAKIŚ MODAL TRZEBA WYWOŁAĆ JAK SĄDZĘ?
