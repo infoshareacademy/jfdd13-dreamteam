@@ -24,7 +24,10 @@
 }
 
 .buttons {
+  display: flex;
+  justify-content: space-around;
   position: absolute;
+  min-width: 500px;
   height: 100px;
   top: calc(50% - 50px);
 }
@@ -35,7 +38,6 @@
 }
 .btn:hover {
   cursor: pointer;
-  font-weight: 600;
 }
 .frame {
   position: absolute;
@@ -123,6 +125,31 @@
 .titleBox {
   text-align: center;
 }
+
+.btn {
+  max-width: 240px;
+  width: 140px;
+  height: 50px;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  color: #fff;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  background: #1976D2;
+  border: none;
+  cursor: pointer;
+}
+.btn:focus {
+  outline: none;
+}
+.btn:hover {
+  background: #2196F3;
+}
+
+.btn__modal {
+  margin: 1rem;
+}
 .modal__gameover--container {
     position: absolute;
     top: 0;
@@ -136,7 +163,7 @@
   }
   
   .modal__gameover {
-    width: 500px;
+    width: 600px;
     height: 300px;
     padding: 2rem;
     display: flex;
