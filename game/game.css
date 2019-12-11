@@ -123,33 +123,28 @@
 .titleBox {
   text-align: center;
 }
-
 .modal__gameover--container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* top: -1.5rem; */
-  /* left: calc(50% - 250px); */
-  display: none;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  z-index: 4;
-}
-
-.modal__gameover {
-  /* position: absolute; */
-  /* top: -1.5rem; */
-  /* left: calc(50% - 250px); */
-  width: 500px;
-  height: 400px;
-  padding: 2rem;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fff;
-  border: 1px solid #bdbdbd;
-  z-index: 5;
-}
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 4;
+  }
+  
+  .modal__gameover {
+    width: 500px;
+    height: 300px;
+    padding: 2rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #bdbdbd;
+    z-index: 5;
+  }
+  
