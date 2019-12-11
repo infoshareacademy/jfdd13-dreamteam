@@ -233,6 +233,7 @@ popGameOver = () => {
     closePopGameOver = () => {
         gameOverModal.style.display = 'none';
         refreshBoard();
+        clearTimeout(pop)
     };
     gameOverModal.style.display = 'flex';
     gameOverModal.style.top = scrollY + 'px';
@@ -243,7 +244,7 @@ gameOver = () => {
   cancelAnimationFrame(raf);
   clearAllIntervals();
   clearAllTimeouts();
-  popGameOver();
+  pop = setTimeout(popGameOver,300);
 };
 
 class Render {
