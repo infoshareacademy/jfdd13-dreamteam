@@ -226,10 +226,10 @@ clearAllTimeouts = () => {
   });
 };
 
-
 popGameOver = () => {
     const gameOverModal = document.getElementById('modal__gameover--container');
     const closeModal = document.getElementById('btn__game--close');
+    const modalRecord = document.getElementById("gameover__highscore");
     closePopGameOver = () => {
         gameOverModal.style.display = 'none';
         refreshBoard();
@@ -237,6 +237,7 @@ popGameOver = () => {
     };
     gameOverModal.style.display = 'flex';
     gameOverModal.style.top = scrollY + 'px';
+    modalRecord.innerText = `Dotychczasowy rekord: ${getHighScore()}`;
     closeModal.addEventListener('click', closePopGameOver);
 };
 
