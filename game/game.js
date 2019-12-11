@@ -76,6 +76,7 @@ displayHighScore(getHighScore());
   const score = value => {
     value = seconds * 10;
     document.getElementById("score").innerText = `Twój wynik: ${value}`;
+    localStorage.setItem("lastScore", value);
     if (value > getHighScore()) {
       localStorage.setItem("highscore", value);
     }
@@ -230,6 +231,9 @@ popGameOver = () => {
     const gameOverModal = document.getElementById('modal__gameover--container');
     const closeModal = document.getElementById('btn__game--close');
     const modalRecord = document.getElementById("gameover__highscore");
+    const modalScore = document.getElementById("gameover__score");
+    getLastScore = () => localStorage.getItem("lastScore");
+
     closePopGameOver = () => {
         gameOverModal.style.display = 'none';
         refreshBoard();
@@ -237,7 +241,8 @@ popGameOver = () => {
     };
     gameOverModal.style.display = 'flex';
     gameOverModal.style.top = scrollY + 'px';
-    modalRecord.innerText = `Dotychczasowy rekord: ${getHighScore()}`;
+    modalRecord.innerText = `Najlepszy wynik: ${getHighScore()}`;
+    modalScore.innerText = `Twój wynik: ${getLastScore()}`;
     closeModal.addEventListener('click', closePopGameOver);
 };
 
