@@ -46,12 +46,11 @@ const playerWidth = 50,
     instBtn.style.display = "inline-block";
     backBtn.style.display = "inline-block";
   },
-  refresh = () => {
+  refreshBoard = () => {
     location.reload(board);
     showButtons();
     startBtn.addEventListener("click", startGame);
     backBtn.addEventListener("click", backToMenu);
-    timeouts.push(refresh);
   },
   timer = () => {
     seconds++;
@@ -231,8 +230,10 @@ clearAllTimeouts = () => {
 popGameOver = () => {
     const gameOverModal = document.getElementById('modal__gameover--container');
     const closeModal = document.getElementById('btn__game--close');
-    closePopGameOver = () => gameOverModal.style.display = 'none';
-      
+    closePopGameOver = () => {
+        gameOverModal.style.display = 'none';
+        refreshBoard();
+    };
     gameOverModal.style.display = 'flex';
     gameOverModal.style.top = scrollY + 'px';
     closeModal.addEventListener('click', closePopGameOver);
@@ -243,11 +244,6 @@ gameOver = () => {
   clearAllIntervals();
   clearAllTimeouts();
   popGameOver();
-  setTimeout(refresh, 2000);
-
-  //TUTAJ JAKIŚ MODAL TRZEBA WYWOŁAĆ JAK SĄDZĘ?
-
-  // setTimeout(location.reload(board),5000);
 };
 
 class Render {
