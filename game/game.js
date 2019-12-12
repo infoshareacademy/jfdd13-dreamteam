@@ -7,7 +7,6 @@ const body = document.querySelector("body"),
     domEl: document.querySelector(".board")
   },
   boardButtons = document.querySelectorAll('.board__btn')
-  startBtn = document.getElementById("start__btn"),
   instBtn = document.getElementById("inst__btn"),
   backBtn = document.getElementById("back__btn"),
   clock = document.getElementById("clock");
@@ -44,8 +43,8 @@ const playerWidth = 50,
   refreshBoard = () => {
     location.reload(board);
     displayButtons(boardButtons, true);
-    startBtn.addEventListener("click", startGame);
-    backBtn.addEventListener("click", backToMenu);
+    boardButtons[1].addEventListener("click", startGame);
+    boardButtons[0].addEventListener("click", backToMenu);
   },
   timer = () => {
     seconds++;
@@ -68,8 +67,8 @@ const playerWidth = 50,
 displayHighScore(getHighScore());
 
 (highScore = () => {
-  const score = value => {
-    value = seconds * 10;
+  const score = () => {
+    const value = Math.floor(seconds * 10);
     document.getElementById("score").innerText = `Twój wynik: ${value}`;
     localStorage.setItem("lastScore", value);
     if (value > getHighScore()) {
@@ -91,8 +90,8 @@ displayHighScore(getHighScore());
   (startGame = () => {
     displayButtons(boardButtons, false);
     event.preventDefault();
-    removeEventListener("click", startGame);
-    removeEventListener("click", backToMenu);
+    removeEventListener("click", boardButtons[1]);
+    removeEventListener("click", boardButtons[0]);
     document.addEventListener("keydown", event =>
       Render.KeySupport(Player, event)
     );
@@ -502,5 +501,5 @@ generateBirdY = () => {
   }
 };
 
-startBtn.addEventListener("click", startGame);
-backBtn.addEventListener("click", backToMenu);
+boardButtons[1].addEventListener("click", startGame);
+boardButtons[0].addEventListener("click", backToMenu);
