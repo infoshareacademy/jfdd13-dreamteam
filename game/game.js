@@ -6,7 +6,7 @@ const body = document.querySelector("body"),
   board = {
     domEl: document.querySelector(".board")
   },
-  startBtn = document.getElementById("start__btn"),
+  boardButtons = document.querySelectorAll('.board__btn')
   instBtn = document.getElementById("inst__btn"),
   backBtn = document.getElementById("back__btn"),
   clock = document.getElementById("clock");
@@ -36,21 +36,15 @@ const playerWidth = 50,
   backToMenu = () => {
     document.location.assign("../index.html");
   },
-  hideButtons = () => {
-    startBtn.style.display = "none";
-    instBtn.style.display = "none";
-    backBtn.style.display = "none";
-  },
-  showButtons = () => {
-    startBtn.style.display = "inline-block";
-    instBtn.style.display = "inline-block";
-    backBtn.style.display = "inline-block";
+  displayButtons = (btns, param) => {
+    let visible = param ? 'inline-block' : 'none'
+    return  btns.forEach(btn => btn.style.display = visible)
   },
   refreshBoard = () => {
     location.reload(board);
-    showButtons();
-    startBtn.addEventListener("click", startGame);
-    backBtn.addEventListener("click", backToMenu);
+    displayButtons(boardButtons, true);
+    boardButtons[1].addEventListener("click", startGame);
+    boardButtons[0].addEventListener("click", backToMenu);
   },
   timer = () => {
     seconds++;
@@ -73,8 +67,8 @@ const playerWidth = 50,
 displayHighScore(getHighScore());
 
 (highScore = () => {
-  const score = value => {
-    value = seconds * 10;
+  const score = () => {
+    const value = Math.floor(seconds * 10);
     document.getElementById("score").innerText = `Twój wynik: ${value}`;
     localStorage.setItem("lastScore", value);
     if (value > getHighScore()) {
@@ -94,10 +88,10 @@ displayHighScore(getHighScore());
   getScore();
 }),
   (startGame = () => {
-    hideButtons();
+    displayButtons(boardButtons, false);
     event.preventDefault();
-    removeEventListener("click", startGame);
-    removeEventListener("click", backToMenu);
+    removeEventListener("click", boardButtons[1]);
+    removeEventListener("click", boardButtons[0]);
     document.addEventListener("keydown", event =>
       Render.KeySupport(Player, event)
     );
@@ -507,5 +501,5 @@ generateBirdY = () => {
   }
 };
 
-startBtn.addEventListener("click", startGame);
-backBtn.addEventListener("click", backToMenu);
+boardButtons[1].addEventListener("click", startGame);
+boardButtons[0].addEventListener("click", backToMenu);
