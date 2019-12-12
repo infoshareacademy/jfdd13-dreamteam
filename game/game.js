@@ -6,6 +6,7 @@ const body = document.querySelector("body"),
   board = {
     domEl: document.querySelector(".board")
   },
+  boardButtons = document.querySelectorAll('.board__btn')
   startBtn = document.getElementById("start__btn"),
   instBtn = document.getElementById("inst__btn"),
   backBtn = document.getElementById("back__btn"),
