@@ -37,19 +37,13 @@ const playerWidth = 50,
   backToMenu = () => {
     document.location.assign("../index.html");
   },
-  hideButtons = () => {
-    startBtn.style.display = "none";
-    instBtn.style.display = "none";
-    backBtn.style.display = "none";
-  },
-  showButtons = () => {
-    startBtn.style.display = "inline-block";
-    instBtn.style.display = "inline-block";
-    backBtn.style.display = "inline-block";
+  displayButtons = (btns, param) => {
+    let visible = param ? 'inline-block' : 'none'
+    return  btns.forEach(btn => btn.style.display = visible)
   },
   refreshBoard = () => {
     location.reload(board);
-    showButtons();
+    displayButtons(boardButtons, true);
     startBtn.addEventListener("click", startGame);
     backBtn.addEventListener("click", backToMenu);
   },
@@ -95,7 +89,7 @@ displayHighScore(getHighScore());
   getScore();
 }),
   (startGame = () => {
-    hideButtons();
+    displayButtons(boardButtons, false);
     event.preventDefault();
     removeEventListener("click", startGame);
     removeEventListener("click", backToMenu);
