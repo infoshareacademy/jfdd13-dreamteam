@@ -75,9 +75,10 @@ highScore = () => {
   const score = () => {
     const scoreDOM = document.getElementById("score")
     const value = Math.floor(seconds * 10);
+    const currentHighscore = getHighScore()
     scoreDOM.innerText = `Twój wynik: ${value}`;
     localStorage.setItem("lastScore", value);
-    if (value > getHighScore()) {
+    if (value > currentHighscore) {
       localStorage.setItem("highscore", value);
     }
   };
@@ -240,7 +241,6 @@ popGameOver = () => {
         clearTimeout(pop)
     };
     gameOverModal.style.display = 'flex';
-    gameOverModal.style.top = scrollY + 'px';
     modalRecord.innerText = `Najlepszy wynik: ${getHighScore()}`;
     modalScore.innerText = `Twój wynik: ${getLastScore()}`;
     closeModal.addEventListener('click', closePopGameOver);
