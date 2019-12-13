@@ -38,7 +38,9 @@ const playerWidth = 50,
   },
   displayButtons = (btns, param) => {
     let visible = param ? 'inline-block' : 'none'
-    return  btns.forEach(btn => btn.style.display = visible)
+    if ((btns)) {
+     btns.forEach(btn => btn.style.display = visible)
+  }
   },
   refreshBoard = () => {
     location.reload(board);
