@@ -60,16 +60,17 @@ const playerWidth = 50,
     intervals.push(timerInt);
   },
   getHighScore = () => localStorage.getItem("highscore") || 0,
-  displayHighScore = value =>
-    (document.getElementById(
-      "highscore"
-    ).innerText = `Najlepszy wynik: ${Math.round(value)}`);
+  displayHighScore = value => {
+    const highScoreDOM = document.getElementById("highscore")
+    highScoreDOM.innerText = `Najlepszy wynik: ${Math.round(value)}`;
+  }
 displayHighScore(getHighScore());
 
-(highScore = () => {
+highScore = () => {
   const score = () => {
+    const scoreDOM = document.getElementById("score")
     const value = Math.floor(seconds * 10);
-    document.getElementById("score").innerText = `Twój wynik: ${value}`;
+    scoreDOM.innerText = `Twój wynik: ${value}`;
     localStorage.setItem("lastScore", value);
     if (value > getHighScore()) {
       localStorage.setItem("highscore", value);
@@ -86,7 +87,7 @@ displayHighScore(getHighScore());
   };
 
   getScore();
-}),
+},
   (startGame = () => {
     displayButtons(boardButtons, false);
     event.preventDefault();
