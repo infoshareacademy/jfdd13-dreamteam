@@ -167,7 +167,7 @@
 .modal__gameover {
   position: relative;
   width: 600px;
-  height: 300px;
+  min-height: 300px;
   padding: 2rem;
   display: flex;
   flex-flow: column;
