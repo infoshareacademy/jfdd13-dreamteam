@@ -321,7 +321,7 @@ body {
 }
 
 
-.btn-app-container {
+.btn__app--container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -329,8 +329,8 @@ body {
   margin-top: 70px
   }
 
-.btn_app{
-width: 150px;
+.btn__app{
+width: auto;
 }
 
 @media all and (max-width: 1200px) {
