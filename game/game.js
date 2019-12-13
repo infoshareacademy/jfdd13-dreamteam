@@ -236,11 +236,11 @@ popGameOver = () => {
     getLastScore = () => localStorage.getItem("lastScore");
 
     closePopGameOver = () => {
-        gameOverModal.style.display = 'none';
+        displayElements(gameOverModal, false)
         refreshBoard();
         clearTimeout(pop)
     };
-    gameOverModal.style.display = 'flex';
+    displayElements(gameOverModal, true, 'flex')
     modalRecord.innerText = `Najlepszy wynik: ${getHighScore()}`;
     modalScore.innerText = `Twój wynik: ${getLastScore()}`;
     closeModal.addEventListener('click', closePopGameOver);
