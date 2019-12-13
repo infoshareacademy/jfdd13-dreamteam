@@ -36,15 +36,18 @@ const playerWidth = 50,
   backToMenu = () => {
     document.location.assign("../index.html");
   },
-  displayButtons = (btns, param) => {
+  displayElements = (el, param, override=null) => {
     let visible = param ? 'inline-block' : 'none'
-    if ((btns)) {
-     btns.forEach(btn => btn.style.display = visible)
-  }
+    if (el) {
+    if (el.hasOwnProperty(length)) {
+     el.forEach(btn => btn.style.display = override || visible)
+  } else {
+    el.style.display = override || visible
+  }}
   },
   refreshBoard = () => {
     location.reload(board);
-    displayButtons(boardButtons, true);
+    displayElements(boardButtons, true);
     boardButtons[1].addEventListener("click", startGame);
     boardButtons[0].addEventListener("click", backToMenu);
   },
@@ -91,7 +94,7 @@ highScore = () => {
   getScore();
 },
   (startGame = () => {
-    displayButtons(boardButtons, false);
+    displayElements(boardButtons, false);
     event.preventDefault();
     removeEventListener("click", boardButtons[1]);
     removeEventListener("click", boardButtons[0]);
