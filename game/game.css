@@ -1,123 +1,179 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100%;
-    min-height: 100vh;
-    background: #fff;
-    overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  background: #fff;
+  overflow: hidden;
 }
 
 .board {
-    position: relative;
-    width: 600px;
-    height: 600px;
-    background: #fff;
-    background-image: url(./img/landscape.png)
+  position: relative;
+  width: 600px;
+  height: 600px;
+  background: #fff;
+  background-image: url(./img/landscape.png);
 }
 
 .buttons {
-    position: absolute;
-    height: 100px;
-    top: calc(50% - 50px);
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  min-width: 500px;
+  height: 100px;
+  top: calc(50% - 50px);
 }
 .btn {
-    padding: 1rem;
-    width: 180px;
-    height: 60px;
+  padding: 1rem;
+  width: 180px;
+  height: 60px;
 }
-.btn:hover{
-    cursor: pointer;
-    font-weight: 600;
+.btn:hover {
+  cursor: pointer;
 }
 .frame {
-    position: absolute;
-    width: 100px;
-    height: 100%;
-    background: #fff;
-    z-index: 2;
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background: #fff;
+  z-index: 2;
 }
 
-.frame__top, .frame__bottom {
-    height: 300px;
-    width: 100%;
+.frame__top,
+.frame__bottom {
+  height: 300px;
+  width: 100%;
 }
 
-.frame__left, .frame__right {
-    width: 300px;
-    top: -10vh;
-    height: 120vh
+.frame__left,
+.frame__right {
+  width: 300px;
+  top: -10vh;
+  height: 120vh;
 }
-.frame__right{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.frame__right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .frame__top {
-    top: -300px;
+  top: -300px;
 }
 
 .frame__bottom {
-    bottom: -300px;
+  bottom: -300px;
 }
 
 .frame__left {
-    left: -300px;
-    /* z-index: 0; */
+  left: -300px;
+  /* z-index: 0; */
 }
 
 .frame__right {
-    right: -300px;
-/*    TO BE DELETED*/
-    /* z-index: 0; */
+  right: -300px;
+  /*    TO BE DELETED*/
+  /* z-index: 0; */
 }
 
 .highscore {
-    display: flex;
-    position: absolute;
-    align-items: center;
-    top: -50px;
-    right: -100px;
-    width: 300px;
-    height: 40px;
-    z-index: 3;
-    /*background: orange;*/
+  display: flex;
+  position: absolute;
+  align-items: center;
+  top: -50px;
+  right: -100px;
+  width: 300px;
+  height: 40px;
+  z-index: 3;
+  /*background: orange;*/
 }
-#score{
-    position: absolute;
-    top: 150px;
-    left: 20px;
-    font-weight: 700;
-    
+#score {
+  position: absolute;
+  top: 150px;
+  left: 20px;
+  font-weight: 700;
 }
 .countdown__container {
-    right: calc(25% + 150px);
-    justify-content: center;
-    top: -50px;
+  right: calc(25% + 150px);
+  justify-content: center;
+  top: -50px;
 }
 
 .player {
-    position: absolute;
-    z-index: 2;
+  position: absolute;
+  z-index: 2;
 }
 
 #player img {
-    width: 20%;
+  width: 20%;
 }
 
-.obstacle, .bird, .birdz {
-    position: absolute;
-    z-index: 1;
+.obstacle,
+.bird,
+.birdz {
+  position: absolute;
+  z-index: 1;
 }
-
 
 .titleBox {
-    text-align: center;
+  text-align: center;
+}
+
+.btn {
+  max-width: 240px;
+  width: 140px;
+  height: 50px;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  color: #fff;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  background: #1976d2;
+  border: none;
+  cursor: pointer;
+}
+.btn:focus {
+  outline: none;
+}
+.btn:hover {
+  background: #2196f3;
+}
+
+.btn__modal {
+  margin: 1rem;
+}
+.modal__gameover--container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 4;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__gameover {
+  position: relative;
+  width: 600px;
+  min-height: 300px;
+  padding: 2rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #bdbdbd;
+  z-index: 5;
 }
