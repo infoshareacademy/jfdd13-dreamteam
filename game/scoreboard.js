@@ -14,12 +14,11 @@ const playerScore = 400
 const playerName = 'Dupa'
 
 const addScore = (player, score) => {
-  let newScoreData = {}
-  newScoreData[player] = score
-  const newScore = [
-    getScore,
-    ...newScoreData
-  ]
+  const newScoreData = {
+    name: player,
+    score: score
+  }
+  getScore.push(newScoreData)
   
   return setScore(newScore)
 }
