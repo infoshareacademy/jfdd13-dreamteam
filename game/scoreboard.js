@@ -19,7 +19,7 @@ const addScore = (player, score) => {
     score: score
   }
   getScore.push(newScoreData)
-  
+
   return setScore(newScore)
 }
 
@@ -36,5 +36,12 @@ const displayScore = (data, parentEl) => {
     listContainer.appendChild(domListItem)
   })
   parentEl.appendChild(listContainer)
+}
+
+const checkScoresLength = arr => {
+  if (arr.length) {
+  // if (arr.length >= 10) {
+    arr.reduce((min, currValue) => Math.min(min, currValue), arr[0])
+  }
 }
 // setScore()
