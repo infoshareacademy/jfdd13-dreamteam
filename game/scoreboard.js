@@ -38,9 +38,12 @@ const displayScore = (data, parentEl) => {
   parentEl.appendChild(listContainer)
 }
 
-const checkScoresLength = arr => {
+const checkScores = arr => {
   if (arr.length) {
-    
+    if(arr.length < 10) {
+      return //retrieve playerName
+      //push score using addScore function
+    }
     const lowestScore = arr.reduce((prev,cur) => {
       return prev.score < cur.score ? prev : cur;
   }, +Infinity);
