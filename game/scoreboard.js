@@ -40,9 +40,8 @@ const displayScore = (data, parentEl) => {
 
 const checkScoresLength = arr => {
   if (arr.length) {
-  // if (arr.length >= 10) {
     
-    const secondTest = arr.reduce((prev,cur) => {
+    const lowestScore = arr.reduce((prev,cur) => {
       return prev.score < cur.score ? prev : cur;
   }, +Infinity);
   
