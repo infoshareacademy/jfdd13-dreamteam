@@ -41,8 +41,12 @@ const displayScore = (data, parentEl) => {
 const checkScoresLength = arr => {
   if (arr.length) {
   // if (arr.length >= 10) {
-    const test = arr.reduce((min, currValue) => Math.min(min, currValue), arr[0])
-    console.log(test)
+    
+    const secondTest = arr.reduce((prev,cur) => {
+      return prev.score < cur.score ? prev : cur;
+  }, +Infinity);
+  
+  console.log(secondTest)
   }
 }
 // setScore()
