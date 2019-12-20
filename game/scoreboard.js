@@ -47,22 +47,22 @@ const checkScores = arr => {
     const lowestScore = arr.reduce((prev,cur) => {
       return prev.score < cur.score ? prev : cur;
   }, +Infinity);
-  
+
   if (arr.length >= 10 && lowestScore.score < currentScore) {
-    
+
     // filter for all scores equal or below actual score
     // pop lowest
     // add new
     // sort
     // add to highscore obj
-    
+
     // further comments might be wrong
-    
+
     // const lowestScoreIndex = arr.indexOf(lowestScore.name)
     //take index of lowest score object and change it's values
     //to new playerName and score
   }
-  
+
   console.log(lowestScore)
   }
 }
