@@ -38,6 +38,8 @@ const displayScore = (data, parentEl) => {
   parentEl.appendChild(listContainer)
 }
 
+const currentScore = 666
+
 const checkScores = arr => {
   if (arr.length) {
     if(arr.length < 10) {
@@ -51,6 +53,7 @@ const checkScores = arr => {
     // Posortuj tablice od najwyzszego do najnizszego (sort)
     // Wez pierwsze 10 elementow (slice)
     // DONE :slightly_smiling_face:
+    arr.push(currentScore)
 
     
   }
