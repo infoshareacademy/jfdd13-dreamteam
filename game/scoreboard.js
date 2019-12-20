@@ -72,11 +72,8 @@ const checkScores = arr => {
       // Posortuj tablice od najwyzszego do najnizszego (sort)
       // Wez pierwsze 10 elementow (slice)
       // DONE :slightly_smiling_face:
-      processScores(arr, currentScore)
-      
+      const tenScoresArr = processScores(arr, currentScore).slice(0, 10)
     }
-
-    
 
     console.log(lowestScore);
   }
