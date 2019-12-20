@@ -67,11 +67,6 @@ const checkScores = arr => {
       return prev.score < cur.score ? prev : cur;
     }, +Infinity);
     if (lowestScore.score < currentScore) {
-      // Wez tablice poprzednich wynikow
-      // Dorzuc do niej nowy wynik. Bez znaczenia czy na poczatek czy na koniec (push, unshift)
-      // Posortuj tablice od najwyzszego do najnizszego (sort)
-      // Wez pierwsze 10 elementow (slice)
-      // DONE :slightly_smiling_face:
       const tenScoresArr = processScores(arr, currentScore).slice(0, 10)
     }
 
