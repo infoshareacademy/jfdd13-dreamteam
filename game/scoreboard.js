@@ -44,23 +44,15 @@ const checkScores = arr => {
       return //retrieve playerName
       //push score using addScore function
     }
-    const lowestScore = arr.reduce((prev,cur) => {
-      return prev.score < cur.score ? prev : cur;
-  }, +Infinity);
-
   if (arr.length >= 10 && lowestScore.score < currentScore) {
 
-    // filter for all scores equal or below actual score
-    // pop lowest
-    // add new
-    // sort
-    // add to highscore obj
+    // Wez tablice poprzednich wynikow
+    // Dorzuc do niej nowy wynik. Bez znaczenia czy na poczatek czy na koniec (push, unshift)
+    // Posortuj tablice od najwyzszego do najnizszego (sort)
+    // Wez pierwsze 10 elementow (slice)
+    // DONE :slightly_smiling_face:
 
-    // further comments might be wrong
-
-    // const lowestScoreIndex = arr.indexOf(lowestScore.name)
-    //take index of lowest score object and change it's values
-    //to new playerName and score
+    
   }
 
   console.log(lowestScore)
