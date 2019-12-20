@@ -68,6 +68,8 @@ const checkScores = arr => {
     }, +Infinity);
     if (lowestScore.score < currentScore) {
       const tenScoresArr = processScores(arr, currentScore).slice(0, 10)
+      //save scores in localStorage
+      //render on scoreboard
     }
 
     console.log(lowestScore);
