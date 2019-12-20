@@ -21,7 +21,7 @@ const addScore = (player, score) => {
   };
   getScore.push(newScoreData);
 
-  return setScore(newScore);
+  return setScore(newScoreData);
 };
 
 const displayScore = (data, parentEl) => {
@@ -39,11 +39,27 @@ const displayScore = (data, parentEl) => {
   parentEl.appendChild(listContainer);
 };
 
-const currentScore = 666;
+const currentScore = {
+  name: 'Pavarotti',
+  score: 99999
+};
+
+const processScores = (arr, score) => {
+  arr.push(score);
+  const sortedScores = arr.sort((a, b) => {
+    if (a.score < b.score) {
+      return 1
+    } else {
+      return -1
+    }
+  })
+  console.log(sortedScores)
+}
 
 const checkScores = arr => {
   if (arr.length) {
     if (arr.length < 10) {
+      processScores(arr, currentScore)
       return; //retrieve playerName
       //push score using addScore function
     }
@@ -56,9 +72,11 @@ const checkScores = arr => {
       // Posortuj tablice od najwyzszego do najnizszego (sort)
       // Wez pierwsze 10 elementow (slice)
       // DONE :slightly_smiling_face:
+      processScores(arr, currentScore)
+      
     }
 
-    arr.push(currentScore);
+    
 
     console.log(lowestScore);
   }
