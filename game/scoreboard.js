@@ -50,7 +50,7 @@ const checkScores = arr => {
     const lowestScore = arr.reduce((prev, cur) => {
       return prev.score < cur.score ? prev : cur;
     }, +Infinity);
-    if (arr.length >= 10 && lowestScore.score < currentScore) {
+    if (arr.length >= lowestScore.score < currentScore) {
       // Wez tablice poprzednich wynikow
       // Dorzuc do niej nowy wynik. Bez znaczenia czy na poczatek czy na koniec (push, unshift)
       // Posortuj tablice od najwyzszego do najnizszego (sort)
