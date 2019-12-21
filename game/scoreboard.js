@@ -84,9 +84,6 @@ const checkScores = arr => {
       return; //retrieve playerName
       //push score using addScore function
     }
-    const lowestScore = arr.reduce((prev, cur) => {
-      return prev.score < cur.score ? prev : cur;
-    }, +Infinity);
     if (lowestScore.score < currentScore) {
       const tenScoresArr = processScores(arr, currentScore).slice(0, 10)
       localStorage.setItem("gameScores", tenScoresArr)
