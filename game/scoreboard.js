@@ -45,7 +45,7 @@ const fillScores = (num) => {
 }
 }
 
-const displayScore = (data, parentEl) => {
+const renderScore = (data, parentEl) => {
   const listContainer = document.createElement("ul");
   data.map(item => {
     const domListItem = document.createElement("li");
