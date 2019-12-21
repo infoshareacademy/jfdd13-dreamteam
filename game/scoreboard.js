@@ -63,11 +63,8 @@ const renderScore = (data, parentEl) => {
 
 const sortScores = (arr) => {
   const sortedScores = arr.sort((a, b) => {
-    if (a.score < b.score) {
-      return 1
-    } else {
-      return -1
-    }
+     (a.score < b.score) ? 1:-1
+    
   })
   return sortedScores
 }
