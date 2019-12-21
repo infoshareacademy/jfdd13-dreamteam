@@ -58,23 +58,17 @@ const sortScores = arr => {
 
 const checkScores = arr => {
   if (arr.length) {
-    let output = ''
     if (arr.length <= 10) {
-      output = sortScores(arr);
+      const output = sortScores(arr);
       return renderScore(output, scoreboard)
-      //push score using addScore function
     } else {
       const tenScoresArr = sortScores(arr).slice(0, 10);
-      output = setScore(tenScoresArr)
-      console.log("tenScoresArr updated");
-      renderScore(output, scoreboard)
-      //save scores in localStorage
-      //render on scoreboard
+      setScore(tenScoresArr)
+      return renderScore(getScore, scoreboard)
     }
   }
 };
 
 btnx.addEventListener('click' , () => {
-  console.log('dupa1')
   checkScores(getScore)
 })
