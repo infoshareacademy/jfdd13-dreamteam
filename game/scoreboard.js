@@ -60,13 +60,8 @@ const displayScore = (data, parentEl) => {
   parentEl.appendChild(listContainer);
 };
 
-const currentScore = {
-  name: 'Pavarotti',
-  score: 99999
-};
 
-const processScores = (arr, score) => {
-  arr.push(score);
+const sortScores = (arr) => {
   const sortedScores = arr.sort((a, b) => {
     if (a.score < b.score) {
       return 1
@@ -74,25 +69,23 @@ const processScores = (arr, score) => {
       return -1
     }
   })
-  console.log(sortedScores)
+  return sortedScores
 }
 
 const checkScores = arr => {
   if (arr.length) {
-    if (arr.length < 10) {
-      processScores(arr, currentScore)
+    if (arr.length <= 10) {
+      sortScores(arr, currentScore)
       return; //retrieve playerName
       //push score using addScore function
-    }
-    if (lowestScore.score < currentScore) {
-      const tenScoresArr = processScores(arr, currentScore).slice(0, 10)
+    } else {
+      const tenScoresArr = sortScores(arr).slice(0, 10)
       localStorage.setItem("gameScores", tenScoresArr)
       console.log('tenScoresArr updated')
       //save scores in localStorage
       //render on scoreboard
     }
 
-    console.log(lowestScore);
   }
 };
 // setScore()
