@@ -8,7 +8,8 @@ const scoreData = [
     score: 555
   }
 ];
-const getScore = JSON.parse(localStorage.getItem("gameScores")) || [];
+const resetScore = localStorage.setItem("gameScores", JSON.stringify([]));
+const getScore = JSON.parse(localStorage.getItem("gameScores")) || resetScore;
 const setScore = data =>
   localStorage.setItem("gameScores", JSON.stringify(data));
 const playerScore = 400;
