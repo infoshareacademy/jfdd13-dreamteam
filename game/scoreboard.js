@@ -1,13 +1,3 @@
-const scoreData = [
-  {
-    name: "dupa",
-    score: 300
-  },
-  {
-    name: "z trupa",
-    score: 555
-  }
-];
 const resetScore = localStorage.setItem("gameScores", JSON.stringify([]));
 const getScore = JSON.parse(localStorage.getItem("gameScores")) || resetScore;
 const setScore = data =>
