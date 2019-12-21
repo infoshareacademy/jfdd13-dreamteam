@@ -2,8 +2,6 @@ const resetScore = localStorage.setItem("gameScores", JSON.stringify([]));
 const getScore = JSON.parse(localStorage.getItem("gameScores")) || resetScore;
 const setScore = data =>
   localStorage.setItem("gameScores", JSON.stringify(data));
-const playerScore = 400;
-const playerName = "Dupa";
 
 const generateRandomScore = () => Math.floor(Math.random() * 1000);
 
