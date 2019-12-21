@@ -15,7 +15,7 @@ const setScore = data =>
 const playerScore = 400;
 const playerName = "Dupa";
 
-const generateRandomScore = () => Math.floor(Math.random() * 1000)
+const generateRandomScore = () => Math.floor(Math.random() * 1000);
 
 const addScore = (player, score) => {
   const newScoreData = {
@@ -27,23 +27,23 @@ const addScore = (player, score) => {
   return setScore(newScoreData);
 };
 
-const fillScores = (num) => {
+const fillScores = num => {
   const nameArr = [
-    'Kent Sauro',
-'Donald Mitten',
-'Sherill Mayson',
-'Wilbur Overton',
-'Alison Daughtrey',
-'Coleen Carrington',
-'Mara Royce',
-'Vickey Sarris',
-'Patsy Narducci',
-'Josue Weitzel'
-  ]
+    "Kent Sauro",
+    "Donald Mitten",
+    "Sherill Mayson",
+    "Wilbur Overton",
+    "Alison Daughtrey",
+    "Coleen Carrington",
+    "Mara Royce",
+    "Vickey Sarris",
+    "Patsy Narducci",
+    "Josue Weitzel"
+  ];
   for (let i = 0; i < num; i++) {
-    addScore(nameArr[i], generateRandomScore())
-}
-}
+    addScore(nameArr[i], generateRandomScore());
+  }
+};
 
 const renderScore = (data, parentEl) => {
   const listContainer = document.createElement("ul");
@@ -60,29 +60,26 @@ const renderScore = (data, parentEl) => {
   parentEl.appendChild(listContainer);
 };
 
-
-const sortScores = (arr) => {
+const sortScores = arr => {
   const sortedScores = arr.sort((a, b) => {
-     (a.score < b.score) ? 1:-1
-    
-  })
-  return sortedScores
-}
+    a.score < b.score ? 1 : -1;
+  });
+  return sortedScores;
+};
 
 const checkScores = arr => {
   if (arr.length) {
     if (arr.length <= 10) {
-      sortScores(arr, currentScore)
+      sortScores(arr, currentScore);
       return; //retrieve playerName
       //push score using addScore function
     } else {
-      const tenScoresArr = sortScores(arr).slice(0, 10)
-      localStorage.setItem("gameScores", tenScoresArr)
-      console.log('tenScoresArr updated')
+      const tenScoresArr = sortScores(arr).slice(0, 10);
+      localStorage.setItem("gameScores", tenScoresArr);
+      console.log("tenScoresArr updated");
       //save scores in localStorage
       //render on scoreboard
     }
-
   }
 };
 // setScore()
