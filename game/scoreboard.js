@@ -27,6 +27,24 @@ const addScore = (player, score) => {
   return setScore(newScoreData);
 };
 
+const fillScores = (num) => {
+  const nameArr = [
+    'Kent Sauro',
+'Donald Mitten',
+'Sherill Mayson',
+'Wilbur Overton',
+'Alison Daughtrey',
+'Coleen Carrington',
+'Mara Royce',
+'Vickey Sarris',
+'Patsy Narducci',
+'Josue Weitzel'
+  ]
+  for (let i = 0; i < num; i++) {
+    addScore(nameArr[i], generateRandomScore())
+}
+}
+
 const displayScore = (data, parentEl) => {
   const listContainer = document.createElement("ul");
   data.map(item => {
