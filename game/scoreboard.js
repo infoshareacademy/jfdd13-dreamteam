@@ -14,6 +14,8 @@ const setScore = data =>
 const playerScore = 400;
 const playerName = "Dupa";
 
+const generateRandomScore = () => Math.floor(Math.random() * 1000)
+
 const addScore = (player, score) => {
   const newScoreData = {
     name: player,
