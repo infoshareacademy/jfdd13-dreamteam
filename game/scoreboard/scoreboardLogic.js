@@ -3,7 +3,7 @@ import { generateRandomScore, fillScores } from "./scoreboardHelpers";
 export const scoreboard = () => {
   const btnx = document.getElementById("scoreboardBtn");
   const scoreboard = document.getElementById("scoreboard");
-  const playerName = document.getElementById("playerName");
+  export const playerName = document.getElementById("playerName");
   const saveScoreBtn = document.getElementById("saveScore");
   const resetScore = () =>
     localStorage.setItem("gameScores", JSON.stringify([]));
@@ -21,10 +21,16 @@ export const scoreboard = () => {
     return setScore(getScore);
   };
 
-  const sortScores = arr =>
-    arr.sort((a, b) => {
-      a.score < b.score ? 1 : -1;
-    });
+  const sortScores = (arr) => {
+    const sortedScores = arr.sort((a, b) => {
+      if (a.score < b.score) {
+        return 1
+      } else {
+        return -1
+      }
+    })
+    return sortedScores
+  }
 
   const checkScores = arr => {
     if (arr.length) {
@@ -40,9 +46,12 @@ export const scoreboard = () => {
   };
 
   const handleScores = () => {
+    if (playerName.value !== '') {
     addScore(playerName.value, 998);
     playerName.value = ''
     checkScores(getScore);
+  }
+    
   };
 
   saveScoreBtn.addEventListener("click", () => {
@@ -50,6 +59,7 @@ export const scoreboard = () => {
   });
 
   btnx.addEventListener("click", () => {
+    sortScores(getScore)
     checkScores(getScore);
   });
 };

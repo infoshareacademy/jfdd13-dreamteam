@@ -70,10 +70,16 @@
       return setScore(getScore);
     };
 
-    const sortScores = arr =>
-      arr.sort((a, b) => {
-        a.score < b.score ? 1 : -1;
+    const sortScores = (arr) => {
+      const sortedScores = arr.sort((a, b) => {
+        if (a.score < b.score) {
+          return 1
+        } else {
+          return -1
+        }
       });
+      return sortedScores
+    };
 
     const checkScores = arr => {
       if (arr.length) {
@@ -89,9 +95,12 @@
     };
 
     const handleScores = () => {
+      if (playerName.value !== '') {
       addScore(playerName.value, 998);
       playerName.value = '';
       checkScores(getScore);
+    }
+      
     };
 
     saveScoreBtn.addEventListener("click", () => {
@@ -99,6 +108,7 @@
     });
 
     btnx.addEventListener("click", () => {
+      sortScores(getScore);
       checkScores(getScore);
     });
   };
