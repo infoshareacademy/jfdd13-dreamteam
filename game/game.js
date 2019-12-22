@@ -232,7 +232,7 @@ popGameOver = () => {
     const gameOverModal = document.getElementById('modal__gameover--container');
     const closeModal = document.getElementById('btn__game--close');
     const modalRecord = document.getElementById("gameover__highscore");
-    const modalScore = document.getElementById("gameover__score");
+    const modalScore = document.getElementById("playerScore");
     getLastScore = () => localStorage.getItem("lastScore");
 
     closePopGameOver = () => {
