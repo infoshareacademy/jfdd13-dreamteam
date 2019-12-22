@@ -177,3 +177,20 @@
   border: 1px solid #bdbdbd;
   z-index: 5;
 }
+.scoreboard__container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  min-height: 300px;
+  margin: 2rem auto;
+}
+.scoreboard__item {
+  margin: .5rem 1rem;
+}
+.scoreboard__value {
+  display: inline-block;
+  min-width: 180px;
+}
+.scoreboard__value:nth-child(2) {
+  text-align: center;
+}
