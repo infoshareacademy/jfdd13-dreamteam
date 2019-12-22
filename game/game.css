@@ -177,7 +177,12 @@
   border: 1px solid #bdbdbd;
   z-index: 5;
 }
+.scoreboard {
+  position: relative;
+}
+
 .scoreboard__container {
+  position: absolute;
   display: flex;
   flex-direction: column;
   width: 400px;
