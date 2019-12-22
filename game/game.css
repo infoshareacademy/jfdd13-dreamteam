@@ -188,6 +188,7 @@
   width: 400px;
   min-height: 300px;
   margin: 2rem auto;
+  z-index: 3;
 }
 .scoreboard__item {
   margin: .5rem 1rem;
@@ -225,5 +226,9 @@
   align-items: center;
   background-color: #fff;
   border: 1px solid #bdbdbd;
-  z-index: 5;
+}
+.modal__playerName {
+  min-width: 180px;
+  font-size: large;
+  padding: .25rem;
 }
