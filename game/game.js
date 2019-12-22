@@ -9,10 +9,9 @@ export const game = () => {
     board = {
       domEl: document.querySelector(".board")
     },
-    boardButtons = document.querySelectorAll(".board__btn");
-  (instBtn = document.getElementById("inst__btn")),
-    (backBtn = document.getElementById("back__btn")),
-    (clock = document.getElementById("clock"));
+    boardButtons = document.querySelectorAll(".board__btn"),
+    backBtn = document.getElementById("back__btn"),
+    clock = document.getElementById("clock");
 
   const playerWidth = 50,
     playerHeight = 40,
