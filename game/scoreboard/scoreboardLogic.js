@@ -2,7 +2,7 @@ import {renderScore} from './scoreboardRender'
 import {generateRandomScore, fillScores} from './scoreboardHelpers'
 const btnx = document.getElementById('scoreboardBtn')
 const scoreboard = document.getElementById('scoreboard')
-
+const playerName = document.getElementById('playerName')
 const resetScore = () => localStorage.setItem("gameScores", JSON.stringify([]));
 const getScore = JSON.parse(localStorage.getItem("gameScores")) || resetScore();
 
@@ -33,6 +33,11 @@ const checkScores = arr => {
     }
   }
 };
+
+const handleScores = () => {
+  addScore(playerName, 998)
+  checkScores(getScore)
+}
 
 btnx.addEventListener('click' , () => {
   checkScores(getScore)
