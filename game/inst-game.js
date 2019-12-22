@@ -1,4 +1,5 @@
-const modal = document.getElementById("instBoxM");
+export const instruction = () => {
+  const modal = document.getElementById("instBoxM");
 
 const btn = document.getElementById("inst__btn");
 
@@ -22,3 +23,4 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 };
+}
