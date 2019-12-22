@@ -1,4 +1,7 @@
-define(function () { 'use strict';
+(function (factory) {
+  typeof define === 'function' && define.amd ? define(factory) :
+  factory();
+}((function () { 'use strict';
 
   const instruction = () => {
     const modal = document.getElementById("instBoxM");
@@ -29,4 +32,4 @@ define(function () { 'use strict';
 
   instruction();
 
-});
+})));
