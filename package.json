@@ -11,7 +11,8 @@
     "rollup": "^1.27.14"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "jsBundlerWatch": "npx rollup -w --config"
   },
   "repository": {
     "type": "git",
