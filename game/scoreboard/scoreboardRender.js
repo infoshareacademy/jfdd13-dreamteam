@@ -1,4 +1,4 @@
-const renderScore = (data, parentEl) => {
+export const renderScore = (data, parentEl) => {
   const listContainer = document.createElement("ul");
   listContainer.classList.add('scoreboard__container')
   data.map(item => {
