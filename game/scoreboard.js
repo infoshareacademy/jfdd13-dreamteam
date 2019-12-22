@@ -49,12 +49,10 @@ const fillScores = num => {
   }
 };
 
-const sortScores = arr => {
-  const sortedScores = arr.sort((a, b) => {
+const sortScores = arr => arr.sort((a, b) => {
     a.score < b.score ? 1 : -1;
-  });
-  return sortedScores;
-};
+  ;
+});
 
 const checkScores = arr => {
   if (arr.length) {
