@@ -49,10 +49,11 @@
     parentEl.appendChild(listContainer);
   };
 
+  const playerName = document.getElementById("playerName");
+
   const scoreboard = () => {
     const btnx = document.getElementById("scoreboardBtn");
     const scoreboard = document.getElementById("scoreboard");
-    const playerName = document.getElementById("playerName");
     const saveScoreBtn = document.getElementById("saveScore");
     const resetScore = () =>
       localStorage.setItem("gameScores", JSON.stringify([]));
