@@ -41,6 +41,7 @@ export const scoreboard = () => {
 
   const handleScores = () => {
     addScore(playerName.value, 998);
+    playerName.value = ''
     checkScores(getScore);
   };
 

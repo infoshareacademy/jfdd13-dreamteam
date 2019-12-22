@@ -53,7 +53,7 @@
     const btnx = document.getElementById("scoreboardBtn");
     const scoreboard = document.getElementById("scoreboard");
     const playerName = document.getElementById("playerName");
-    const saveScoreBtn = document.getElementById("savescore");
+    const saveScoreBtn = document.getElementById("saveScore");
     const resetScore = () =>
       localStorage.setItem("gameScores", JSON.stringify([]));
     const getScore =
@@ -89,7 +89,8 @@
     };
 
     const handleScores = () => {
-      addScore(playerName, 998);
+      addScore(playerName.value, 998);
+      playerName.value = '';
       checkScores(getScore);
     };
 
