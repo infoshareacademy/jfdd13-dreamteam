@@ -1,9 +1,11 @@
 import { renderScore } from "./scoreboardRender";
 import { generateRandomScore, fillScores } from "./scoreboardHelpers";
+
+export const playerName = document.getElementById("playerName");
+
 export const scoreboard = () => {
   const btnx = document.getElementById("scoreboardBtn");
   const scoreboard = document.getElementById("scoreboard");
-  export const playerName = document.getElementById("playerName");
   const saveScoreBtn = document.getElementById("saveScore");
   const resetScore = () =>
     localStorage.setItem("gameScores", JSON.stringify([]));
