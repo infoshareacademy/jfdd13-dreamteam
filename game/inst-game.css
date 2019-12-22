@@ -9,7 +9,7 @@
   border-radius: 20px;
 } */
 
-.close {
+.modal__close {
   position: absolute;
   top: 0;
   right: 0;
@@ -19,8 +19,8 @@
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.modal__close:hover,
+:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
