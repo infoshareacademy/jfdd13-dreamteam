@@ -2,7 +2,7 @@ const modal = document.getElementById("instBoxM");
 
 const btn = document.getElementById("inst__btn");
 
-const span = document.getElementsByClassName("close")[0];
+const span = document.getElementsByClassName("modal__close")[0];
 const closeBtn = document.getElementById("close__btn");
 
 btn.onclick = function() {
