@@ -1,3 +1,5 @@
+import {currentPlayerName} from "./scoreboardLogic";
+
 export const renderScore = (data, parentEl) => {
   const listContainer = document.createElement("ol");
   listContainer.classList.add('scoreboard__container');
@@ -6,6 +8,9 @@ export const renderScore = (data, parentEl) => {
     const playerEl = document.createElement("span");
     domListItem.classList.add('scoreboard__item');
     playerEl.classList.add('scoreboard__value');
+    if (item.name === currentPlayerName) {
+      playerEl.style.fontWeight = 'bold'
+    }
     playerEl.innerText = item.name;
     domListItem.appendChild(playerEl);
     const scoreEl = document.createElement("span");

@@ -38,6 +38,9 @@
       const playerEl = document.createElement("span");
       domListItem.classList.add('scoreboard__item');
       playerEl.classList.add('scoreboard__value');
+      if (item.name === currentPlayerName) {
+        playerEl.style.fontWeight = 'bold';
+      }
       playerEl.innerText = item.name;
       domListItem.appendChild(playerEl);
       const scoreEl = document.createElement("span");
@@ -50,6 +53,7 @@
   };
 
   const playerName = document.getElementById("playerName");
+  let currentPlayerName = '';
 
   const scoreboard = () => {
     const btnx = document.getElementById("scoreboardBtn");
@@ -97,10 +101,13 @@
 
     const handleScores = () => {
       if (playerName.value !== '') {
-      addScore(playerName.value, 1200);
+        const currentScore = Number(localStorage.getItem('lastScore')) || 0;
+        if (currentScore) {
+      addScore(playerName.value, currentScore);
+      currentPlayerName = playerName.value;
       playerName.value = '';
       checkScores(getScore);
-    }};
+    }}};
 
     saveScoreBtn.addEventListener("click", () => {
       handleScores();

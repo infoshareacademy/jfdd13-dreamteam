@@ -2,6 +2,7 @@ import { renderScore } from "./scoreboardRender";
 import { generateRandomScore, fillScores } from "./scoreboardHelpers";
 
 export const playerName = document.getElementById("playerName");
+export let currentPlayerName = '';
 
 export const scoreboard = () => {
   const btnx = document.getElementById("scoreboardBtn");
@@ -49,10 +50,13 @@ export const scoreboard = () => {
 
   const handleScores = () => {
     if (playerName.value !== '') {
-    addScore(playerName.value, 1200);
+      const currentScore = Number(localStorage.getItem('lastScore')) || 0;
+      if (currentScore) {
+    addScore(playerName.value, currentScore);
+    currentPlayerName = playerName.value;
     playerName.value = '';
     checkScores(getScore);
-  }};
+  }}};
 
   saveScoreBtn.addEventListener("click", () => {
     handleScores();
