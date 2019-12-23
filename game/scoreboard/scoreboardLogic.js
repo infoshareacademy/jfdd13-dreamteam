@@ -49,7 +49,7 @@ export const scoreboard = () => {
 
   const handleScores = () => {
     if (playerName.value !== '') {
-    addScore(playerName.value, 998);
+    addScore(playerName.value, 1200);
     playerName.value = '';
     checkScores(getScore);
   }
@@ -57,7 +57,8 @@ export const scoreboard = () => {
   };
 
   saveScoreBtn.addEventListener("click", () => {
-    handleScores()
+    handleScores();
+    document.getElementById('modalInputs').style.display = 'none';
   });
 
   btnx.addEventListener("click", () => {
