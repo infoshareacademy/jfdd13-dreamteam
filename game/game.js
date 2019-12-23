@@ -10,7 +10,7 @@ const game = () => {
       minutes = 0;
 
   const board = document.querySelector(".board");
-  const boardDefault = board.innerHTML;
+  const boardDefault = board.innerHTML,
       clock = document.getElementById("clock");
 
   const playerWidth = 50,
@@ -47,7 +47,7 @@ const game = () => {
     }
   };
   const refreshBoard = () => {
-    board.innerHTML = boardDefault;
+    location.reload(board);
     displayElements(boardButtons, true);
     boardButtons[1].addEventListener("click", startGame);
     boardButtons[0].addEventListener("click", backToMenu);
@@ -233,8 +233,6 @@ const game = () => {
     const getLastScore = () => localStorage.getItem("lastScore");
 
     const closePopGameOver = (event) => {
-      const scoreDOM = document.getElementById("score");
-      scoreDOM.value = null;
       event.preventDefault()
       displayElements(gameOverModal, false);
       refreshBoard();
@@ -250,8 +248,6 @@ const game = () => {
     cancelAnimationFrame(raf);
     clearAllIntervals();
     clearAllTimeouts();
-    seconds = null;
-    id = 0;
     pop = setTimeout(popGameOver, 300);
   };
 
