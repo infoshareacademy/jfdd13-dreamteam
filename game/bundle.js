@@ -117,6 +117,6 @@
   // import {game} from './game'
   instruction();
   scoreboard();
-  game();
+  // game()
 
 })));
