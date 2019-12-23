@@ -8,8 +8,10 @@ export const scoreboard = () => {
   const btnx = document.getElementById("scoreboardBtn");
   const scoreboard = document.getElementById("scoreboard");
   const saveScoreBtn = document.getElementById("saveScore");
-  const resetScore = () =>
+  const resetScore = () => {
     localStorage.setItem("gameScores", JSON.stringify([]));
+    return JSON.parse(localStorage.getItem("gameScores"))
+  }
   const getScore =
     JSON.parse(localStorage.getItem("gameScores")) || resetScore();
 
