@@ -182,7 +182,7 @@
 }
 
 .scoreboard__container {
-  position: absolute;
+  /*position: absolute;*/
   display: flex;
   flex-direction: column;
   width: 400px;
