@@ -96,9 +96,10 @@
 }
 #score {
   position: absolute;
-  top: 150px;
-  left: 20px;
+  top: 50px;
+  right: -120px;
   font-weight: 700;
+  z-index: 4;
 }
 .countdown__container {
   right: calc(25% + 150px);
