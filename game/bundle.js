@@ -31,7 +31,7 @@
   };
 
   const renderScore = (data, parentEl) => {
-    const listContainer = document.createElement("ul");
+    const listContainer = document.createElement("ol");
     listContainer.classList.add('scoreboard__container');
     data.map(item => {
       const domListItem = document.createElement("li");

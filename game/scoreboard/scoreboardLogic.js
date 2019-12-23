@@ -30,9 +30,9 @@ export const scoreboard = () => {
       } else {
         return -1
       }
-    })
+    });
     return sortedScores
-  }
+  };
 
   const checkScores = arr => {
     if (arr.length) {
@@ -50,7 +50,7 @@ export const scoreboard = () => {
   const handleScores = () => {
     if (playerName.value !== '') {
     addScore(playerName.value, 998);
-    playerName.value = ''
+    playerName.value = '';
     checkScores(getScore);
   }
     
@@ -61,7 +61,7 @@ export const scoreboard = () => {
   });
 
   btnx.addEventListener("click", () => {
-    sortScores(getScore)
+    sortScores(getScore);
     checkScores(getScore);
   });
 };
