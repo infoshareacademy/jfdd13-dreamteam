@@ -198,7 +198,7 @@
   min-width: 180px;
 }
 .scoreboard__value:nth-child(2) {
-  text-align: center;
+  text-align: right;
 }
 
 .modal__container {
@@ -231,4 +231,9 @@
   min-width: 180px;
   font-size: large;
   padding: .25rem;
+}
+.modal__inputs {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
 }

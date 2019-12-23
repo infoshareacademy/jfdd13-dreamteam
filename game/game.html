@@ -64,13 +64,15 @@
         <div class="modal" id="modal__gameover">
             <h3 class="modal__gameover--h3 heading heading__h3">Koniec gry!</h3>
             <div class="scoreboard" id="scoreboard"></div>
-            <div>
-                <label for="playerName">Twój nick:</label>
-                <input type="text" name="playerName" class="modal__playerName" id="playerName">
-            </div>
-            <div>
-                <button class="btn" id="saveScore">Zapisz</button>
-                <button class="btn" id="scoreboardBtn">showScore</button>
+            <div class="modal__inputs" id="modalInputs">
+                <div>
+                    <label for="playerName">Twój nick:</label>
+                    <input type="text" name="playerName" class="modal__playerName" id="playerName">
+                </div>
+                <div>
+                    <button class="btn" id="saveScore">Zapisz</button>
+                    <button class="btn" id="scoreboardBtn">showScore</button>
+                </div>
             </div>
             <p id="playerScore">Twój wynik:</p>
             <p id="">Dotychczasowy rekord:</p>
