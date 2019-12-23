@@ -1,81 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>The GAME</title>
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="./game.css" type="text/css" />
-    <link rel="stylesheet" href="./inst-game.css" />
-  </head>
-  <body>
-    <div class="scoreboard" id="scoreboard"></div>
-    <label for="playerName">Twój nick:</label><input type="text" name="playerName" class="modal__playerName" id="playerName">
-    <button class="btn" id="saveScore">Zapisz</button>
-    <button class="btn" id="scoreboardBtn">showScore</button>
-    <div class="container">
-      <div class="board" id="board">
+    <link rel="stylesheet" href="./game.css" type="text/css"/>
+    <link rel="stylesheet" href="./inst-game.css"/>
+</head>
+<body>
+<div class="scoreboard" id="scoreboard"></div>
+<label for="playerName">Twój nick:</label><input type="text" name="playerName" class="modal__playerName"
+                                                 id="playerName">
+<button class="btn" id="saveScore">Zapisz</button>
+<button class="btn" id="scoreboardBtn">showScore</button>
+<div class="container">
+    <div class="board" id="board">
         <div class="highscore" id="highscore">Najlepszy wynik to:</div>
         <div class="highscore countdown__container">
-          Czas: &nbsp; <span id="clock"></span>
+            Czas: &nbsp; <span id="clock"></span>
         </div>
         <div class="frame frame__top"></div>
         <div class="frame frame__left"></div>
         <div class="frame frame__right">
-          <div id="score"></div>
+            <div id="score"></div>
         </div>
         <div class="frame frame__bottom"></div>
-      </div>
+    </div>
 
-      <div class="buttons">
+    <div class="buttons">
         <button class="btn board__btn" id="back__btn">Powrót</button>
         <button class="btn board__btn" id="start__btn">Start</button>
         <button class="btn board__btn" id="inst__btn">Instrukcja</button>
-      </div>
+    </div>
 
-      <div class="modal__container" id="instBoxM">
+    <div class="modal__container" id="instBoxM">
         <div class="modal">
-          <span class="modal__close">&times;</span>
-          <h2 class="titleBox">Instrukcja gry</h2>
-          <ul>
-            <li>
-              W tej grze możesz spełnić swoje marzenie o zostaniu pilotem! :)
-            </li>
-            <li>
-              Twoim zadaniem jest omijanie przeszkód, które pojawiają się na
-              Twojej drodze.
-            </li>
-            <li>Uważaj zarówno na ptaki, jak i na drzewa!</li>
-            <li>
-              Do poruszania się używaj strzałek (&lArr;&uArr;&dArr;&rArr;).
-            </li>
-            <li>
-              Pamiętaj, że masz tylko jedno życie - zderzenie z jakąkolwiek
-              przeszkodą to koniec gry.
-            </li>
-            <li>Powodzenia :)</li>
-          </ul>
-          <button class="btn instBox__btn" id="close__btn">Powrót</button>
-
+            <span class="modal__close">&times;</span>
+            <h2 class="titleBox">Instrukcja gry</h2>
+            <ul>
+                <li>
+                    W tej grze możesz spełnić swoje marzenie o zostaniu pilotem! :)
+                </li>
+                <li>
+                    Twoim zadaniem jest omijanie przeszkód, które pojawiają się na
+                    Twojej drodze.
+                </li>
+                <li>Uważaj zarówno na ptaki, jak i na drzewa!</li>
+                <li>
+                    Do poruszania się używaj strzałek (&lArr;&uArr;&dArr;&rArr;).
+                </li>
+                <li>
+                    Pamiętaj, że masz tylko jedno życie - zderzenie z jakąkolwiek
+                    przeszkodą to koniec gry.
+                </li>
+                <li>Powodzenia :)</li>
+            </ul>
+            <button class="btn instBox__btn" id="close__btn">Powrót</button>
         </div>
-      </div>
+    </div>
 
-        <div class="modal__container" id="modal__gameover--container">
-            <div class="modal" id="modal__gameover">
-                <h3 class="modal__gameover--h3 heading heading__h3">Koniec gry!</h3>
-                <p id="playerScore">Twój wynik:</p>
-                <p id="highscore">Dotychczasowy rekord:</p>
+    <div class="modal__container" id="modalGameover">
+        <div class="modal" id="modal__gameover">
+            <h3 class="modal__gameover--h3 heading heading__h3">Koniec gry!</h3>
+            <p id="playerScore">Twój wynik:</p>
+            <p id="">Dotychczasowy rekord:</p>
             <div>
                 <button class="btn btn__modal" id="btn__game--close">Zamknij</button>
             </div>
         </div>
-
     </div>
-
-    <script src="./bundle.js"></script>
-  </body>
+</div>
+<script src="./bundle.js"></script>
+<script src="./game.js"></script>
+</body>
 </html>
