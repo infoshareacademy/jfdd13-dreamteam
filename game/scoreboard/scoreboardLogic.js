@@ -52,9 +52,7 @@ export const scoreboard = () => {
     addScore(playerName.value, 1200);
     playerName.value = '';
     checkScores(getScore);
-  }
-    
-  };
+  }};
 
   saveScoreBtn.addEventListener("click", () => {
     handleScores();

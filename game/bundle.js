@@ -97,15 +97,14 @@
 
     const handleScores = () => {
       if (playerName.value !== '') {
-      addScore(playerName.value, 998);
+      addScore(playerName.value, 1200);
       playerName.value = '';
       checkScores(getScore);
-    }
-      
-    };
+    }};
 
     saveScoreBtn.addEventListener("click", () => {
       handleScores();
+      document.getElementById('modalInputs').style.display = 'none';
     });
 
     btnx.addEventListener("click", () => {
