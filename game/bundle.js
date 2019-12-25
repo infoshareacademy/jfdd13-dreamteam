@@ -94,7 +94,7 @@
           const output = sortScores(arr);
           return renderScore(output, scoreboard);
         } else {
-          const tenScoresArr = sortScores(arr).slice(0, 10);
+          const tenScoresArr = sortScores(arr).slice(0, 9);
           setScore(tenScoresArr);
           return renderScore(getScore, scoreboard);
         }
