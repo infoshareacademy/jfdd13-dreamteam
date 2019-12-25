@@ -238,3 +238,7 @@
   flex-flow: column;
   justify-content: space-between;
 }
+.modal__playerScore {
+  margin: 1rem;
+  text-align: center;
+}
