@@ -1,0 +1,147 @@
+export class BoardElement {
+  constructor(
+      name,
+      domEl,
+      id,
+      position = {x: "", y: ""},
+      size = {w: "", h: ""},
+      speed,
+      type
+  ) {
+    this.name = name;
+    this.domEl = domEl;
+    this.id = id;
+    this.position = position;
+    this.position.x = position.x;
+    this.position.y = position.y;
+    this.size = size;
+    this.size.w = size.w;
+    this.size.h = size.h;
+    this.speed = speed;
+    this.type = type;
+  }
+
+  playerLeft() {
+    this.position.x -= this.speed / 2;
+  }
+
+  playerRight() {
+    this.position.x += this.speed;
+  }
+
+  playerUp() {
+    this.position.y -= this.speed * 4;
+  }
+
+  playerDown() {
+    this.position.y += this.speed * 4;
+  }
+
+  moveObst() {
+    this.position.x -= this.speed;
+  }
+
+  moveBirdZ() {
+    this.position.x -= this.speed;
+    this.position.y += this.speed / 4;
+  }
+}
+
+export class Player extends BoardElement {
+  constructor(
+      name,
+      domEl,
+      id,
+      position = {x: "", y: ""},
+      size = {w: "", h: ""},
+      speed,
+      type
+  ) {
+    super(domEl, position, size);
+    this.name = name;
+    this.id = id;
+    this.position.x = position.x;
+    this.position.y = position.y;
+    this.size.w = size.w;
+    this.size.h = size.h;
+    this.speed = speed;
+    this.type = type;
+  }
+}
+
+export class Obstacle extends BoardElement {
+  constructor(
+      name,
+      domEl,
+      id,
+      position = {x: "", y: ""},
+      size = {w: "", h: ""},
+      speed,
+      type
+  ) {
+    super(domEl, id, position, size);
+    this.name = name;
+    this.position.x = position.x;
+    this.position.y = position.y;
+    this.size.w = size.w;
+    this.size.h = size.h;
+    this.speed = speed;
+    this.type = type;
+  }
+}
+
+export const createPlayer = () => {
+  return new Player(
+      "player",
+      "",
+      id,
+      {x: startLine, y: startLine},
+      {w: playerWidth, h: playerHeight},
+      speed,
+      "player"
+  );
+};
+export const createObstacle = () => {
+  return new Obstacle(
+      "obstacle",
+      "",
+      "",
+      {x: creationLine, y: boardHeight - obstHeight},
+      {w: obstWidth, h: obstHeight},
+      speedObst,
+      "obstacle"
+  );
+};
+export  const createBird = () => {
+  return new Obstacle(
+      "bird",
+      "",
+      "",
+      {x: creationLine, y: generateBirdY()},
+      {w: birdWidth, h: birdHeight},
+      speedBird,
+      "obstacle"
+  );
+};
+export  const createBirdZ = () => {
+  return new Obstacle(
+      "birdz",
+      "",
+      "",
+      {x: creationLine, y: generateBirdY()},
+      {w: birdWidth, h: birdHeight},
+      speedBirdZ,
+      "obstacle"
+  );
+};
+
+export const generateBirdY = () => {
+  const randPositions = [250, 300, 350, 400, 450, 480, 550, 600];
+  const getPosition = Math.round(Math.random() * randPositions.length - 1); //generate random arr index
+  const result = randPositions[getPosition] - 250;
+  if (result !== undefined) {
+    return result;
+  } else {
+    return randPositions[0];
+  }
+};

@@ -1,48 +1,49 @@
-const boardButtons = document.querySelectorAll('.board__btn');
-const backToMenu = () => {
+// import { Render } from './gameRender'
+
+export const boardButtons = document.querySelectorAll(".board__btn");
+export const backToMenu = () => {
   document.location.assign("../index.html");
 };
-const game = () => {
-  let raf = '';
-  let pop = '';
+export const game = () => {
+  let raf = "";
+  let pop = "";
   let id = 0,
-      seconds = 0,
-      minutes = 0;
+    seconds = 0,
+    minutes = 0;
 
-  const board = document.querySelector(".board");
-  const boardDefault = board.innerHTML,
-      clock = document.getElementById("clock");
+  const board = document.querySelector(".board"),
+    clock = document.getElementById("clock");
 
   const playerWidth = 50,
-      playerHeight = 40,
-      obstWidth = 200,
-      obstHeight = 200,
-      treeCorr = 0.5,
-      birdWidth = 40,
-      birdHeight = 40,
-      birdCorr = 0.8,
-      boardStart = 0,
-      boardWidth = 600,
-      boardHeight = 600,
-      startLine = 160,
-      creationLine = 700,
-      speed = 2,
-      speedObst = 1,
-      speedBird = 2,
-      speedBirdZ = 2,
-      childrenArray = [],
-      birdsArray = [],
-      treesArray = [],
-      intervals = [],
-      timeouts = [];
+    playerHeight = 40,
+    obstWidth = 200,
+    obstHeight = 200,
+    treeCorr = 0.5,
+    birdWidth = 40,
+    birdHeight = 40,
+    birdCorr = 0.8,
+    boardStart = 0,
+    boardWidth = 600,
+    boardHeight = 600,
+    startLine = 160,
+    creationLine = 700,
+    speed = 2,
+    speedObst = 1,
+    speedBird = 2,
+    speedBirdZ = 2,
+    childrenArray = [],
+    birdsArray = [],
+    treesArray = [],
+    intervals = [],
+    timeouts = [];
 
   const displayElements = (el, param, override = null) => {
-    let visible = param ? 'inline-block' : 'none';
+    let visible = param ? "inline-block" : "none";
     if (el) {
       if (el.hasOwnProperty(length)) {
-        el.forEach(btn => btn.style.display = override || visible)
+        el.forEach(btn => (btn.style.display = override || visible));
       } else {
-        el.style.display = override || visible
+        el.style.display = override || visible;
       }
     }
   };
@@ -100,12 +101,12 @@ const game = () => {
     removeEventListener("click", boardButtons[1]);
     removeEventListener("click", boardButtons[0]);
     document.addEventListener("keydown", event =>
-        Render.KeySupport(Player, event)
+      Render.KeySupport(Player, event)
     );
 
     const checkPosition = () => {
       const outOfTheBoard = childrenArray.map(
-          item => item.position.x < -obstWidth
+        item => item.position.x < -obstWidth
       );
       const trashItem = outOfTheBoard.indexOf(true);
       if (trashItem > 0) {
@@ -130,24 +131,24 @@ const game = () => {
     };
     const mainLoop = () => {
       const draw = setInterval(Render.changePosition, 10),
-          int1 = setInterval(checkPosition, 10),
-          int2 = setInterval(checkCollision, 1),
-          int3 = setInterval(obstacleLoop, 5000),
-          int4 = setInterval(birdLoop, 2000),
-          int5 = setInterval(birdZLoop, 8000),
-          lev2 = setTimeout(level2, 10000),
-          lev3 = setTimeout(level3, 20000);
+        int1 = setInterval(checkPosition, 10),
+        int2 = setInterval(checkCollision, 1),
+        int3 = setInterval(obstacleLoop, 5000),
+        int4 = setInterval(birdLoop, 2000),
+        int5 = setInterval(birdZLoop, 8000),
+        lev2 = setTimeout(level2, 10000),
+        lev3 = setTimeout(level3, 20000);
       intervals.push(draw, int1, int2, int3, int4, int5);
       timeouts.push(lev2, lev3);
     };
     const level2 = () => {
       const int6 = setInterval(birdLoop, 500),
-          int7 = setInterval(birdZLoop, 2000);
+        int7 = setInterval(birdZLoop, 2000);
       intervals.push(int6, int7);
     };
     const level3 = () => {
       const int8 = setInterval(birdLoop, 500),
-          int9 = setInterval(birdZLoop, 1500);
+        int9 = setInterval(birdZLoop, 1500);
       intervals.push(int8, int9);
     };
     firstLoop();
@@ -158,30 +159,30 @@ const game = () => {
 
   const checkCollision = () => {
     const playArr = childrenArray[0],
-        playX = playArr.position.x,
-        playY = playArr.position.y,
-        playW = playArr.size.w,
-        playH = playArr.size.h;
+      playX = playArr.position.x,
+      playY = playArr.position.y,
+      playW = playArr.size.w,
+      playH = playArr.size.h;
 
     treesArray.forEach(item => {
       const obstX = item.position.x,
-          obstY = item.position.y,
-          obstW = item.size.w,
-          obstH = item.size.h;
+        obstY = item.position.y,
+        obstW = item.size.w,
+        obstH = item.size.h;
 
       if (
-          (playX + playW * treeCorr >= obstX &&
-              playX + playW <= obstX + obstW &&
-              playY + playH * treeCorr >= obstY &&
-              playY + playH <= obstY + obstH) ||
-          (playX + playW * treeCorr >= obstX &&
-              playX <= obstX + obstW * treeCorr &&
-              playY + playH * treeCorr >= obstY &&
-              playY + playH <= obstY + obstH * treeCorr) ||
-          (playX + playW >= obstX &&
-              playX <= obstX + obstW &&
-              playY <= obstY + obstH &&
-              playY >= obstY)
+        (playX + playW * treeCorr >= obstX &&
+          playX + playW <= obstX + obstW &&
+          playY + playH * treeCorr >= obstY &&
+          playY + playH <= obstY + obstH) ||
+        (playX + playW * treeCorr >= obstX &&
+          playX <= obstX + obstW * treeCorr &&
+          playY + playH * treeCorr >= obstY &&
+          playY + playH <= obstY + obstH * treeCorr) ||
+        (playX + playW >= obstX &&
+          playX <= obstX + obstW &&
+          playY <= obstY + obstH &&
+          playY >= obstY)
       ) {
         return gameOver();
       }
@@ -189,27 +190,26 @@ const game = () => {
     });
     birdsArray.forEach(item => {
       const obstX = item.position.x,
-          obstY = item.position.y,
-          obstW = item.size.w,
-          obstH = item.size.h;
+        obstY = item.position.y,
+        obstW = item.size.w,
+        obstH = item.size.h;
       if (
-          (playX + playW * birdCorr >= obstX &&
-              playX + playW * birdCorr <= obstX + obstW * birdCorr &&
-              playY + playH * birdCorr >= obstY &&
-              playY + playH * birdCorr <= obstY + obstH * birdCorr) ||
-          (playX + playW * birdCorr >= obstX &&
-              playX <= obstX + obstW &&
-              playY + playH * birdCorr >= obstY &&
-              playY + playH * birdCorr <= obstY + obstH * birdCorr) ||
-          (playX + playW * birdCorr >= obstX &&
-              playX <= obstX + obstW * birdCorr &&
-              playY <= obstY + obstH * birdCorr &&
-              playY >= obstY)
+        (playX + playW * birdCorr >= obstX &&
+          playX + playW * birdCorr <= obstX + obstW * birdCorr &&
+          playY + playH * birdCorr >= obstY &&
+          playY + playH * birdCorr <= obstY + obstH * birdCorr) ||
+        (playX + playW * birdCorr >= obstX &&
+          playX <= obstX + obstW &&
+          playY + playH * birdCorr >= obstY &&
+          playY + playH * birdCorr <= obstY + obstH * birdCorr) ||
+        (playX + playW * birdCorr >= obstX &&
+          playX <= obstX + obstW * birdCorr &&
+          playY <= obstY + obstH * birdCorr &&
+          playY >= obstY)
       ) {
         return gameOver();
       }
       return false;
-
     });
   };
 
@@ -226,22 +226,22 @@ const game = () => {
   };
 
   const popGameOver = () => {
-    const gameOverModal = document.getElementById('modalGameover');
-    const closeModal = document.getElementById('btn__game--close');
+    const gameOverModal = document.getElementById("modalGameover");
+    const closeModal = document.getElementById("btn__game--close");
     const modalRecord = document.getElementById("highscore");
     const modalScore = document.getElementById("playerScore");
     const getLastScore = () => localStorage.getItem("lastScore");
 
-    const closePopGameOver = (event) => {
-      event.preventDefault()
+    const closePopGameOver = event => {
+      event.preventDefault();
       displayElements(gameOverModal, false);
       refreshBoard();
-      clearTimeout(pop)
+      clearTimeout(pop);
     };
-    displayElements(gameOverModal, true, 'flex');
+    displayElements(gameOverModal, true, "flex");
     modalRecord.innerText = `Najlepszy wynik: ${getHighScore()}`;
     modalScore.innerText = `Twój wynik: ${getLastScore()}`;
-    closeModal.addEventListener('click', closePopGameOver);
+    closeModal.addEventListener("click", closePopGameOver);
   };
 
   const gameOver = () => {
@@ -298,7 +298,7 @@ const game = () => {
     }
 
     static changePosition() {
-      childrenArray.forEach((el) => {
+      childrenArray.forEach(el => {
         let x = el.position.x;
         let y = el.position.y;
 
@@ -317,7 +317,7 @@ const game = () => {
     }
 
     static KeySupport(domEl, event) {
-      childrenArray.forEach((el) => {
+      childrenArray.forEach(el => {
         if (el.type === "player") {
           switch (event.code) {
             case "ArrowLeft":
@@ -359,13 +359,13 @@ const game = () => {
 
   class BoardElement {
     constructor(
-        name,
-        domEl,
-        id,
-        position = {x: "", y: ""},
-        size = {w: "", h: ""},
-        speed,
-        type
+      name,
+      domEl,
+      id,
+      position = { x: "", y: "" },
+      size = { w: "", h: "" },
+      speed,
+      type
     ) {
       this.name = name;
       this.domEl = domEl;
@@ -408,13 +408,13 @@ const game = () => {
 
   class Player extends BoardElement {
     constructor(
-        name,
-        domEl,
-        id,
-        position = {x: "", y: ""},
-        size = {w: "", h: ""},
-        speed,
-        type
+      name,
+      domEl,
+      id,
+      position = { x: "", y: "" },
+      size = { w: "", h: "" },
+      speed,
+      type
     ) {
       super(domEl, position, size);
       this.name = name;
@@ -430,13 +430,13 @@ const game = () => {
 
   class Obstacle extends BoardElement {
     constructor(
-        name,
-        domEl,
-        id,
-        position = {x: "", y: ""},
-        size = {w: "", h: ""},
-        speed,
-        type
+      name,
+      domEl,
+      id,
+      position = { x: "", y: "" },
+      size = { w: "", h: "" },
+      speed,
+      type
     ) {
       super(domEl, id, position, size);
       this.name = name;
@@ -451,46 +451,46 @@ const game = () => {
 
   const createPlayer = () => {
     return new Player(
-        "player",
-        "",
-        id,
-        {x: startLine, y: startLine},
-        {w: playerWidth, h: playerHeight},
-        speed,
-        "player"
+      "player",
+      "",
+      id,
+      { x: startLine, y: startLine },
+      { w: playerWidth, h: playerHeight },
+      speed,
+      "player"
     );
   };
   const createObstacle = () => {
     return new Obstacle(
-        "obstacle",
-        "",
-        "",
-        {x: creationLine, y: boardHeight - obstHeight},
-        {w: obstWidth, h: obstHeight},
-        speedObst,
-        "obstacle"
+      "obstacle",
+      "",
+      "",
+      { x: creationLine, y: boardHeight - obstHeight },
+      { w: obstWidth, h: obstHeight },
+      speedObst,
+      "obstacle"
     );
   };
   const createBird = () => {
     return new Obstacle(
-        "bird",
-        "",
-        "",
-        {x: creationLine, y: generateBirdY()},
-        {w: birdWidth, h: birdHeight},
-        speedBird,
-        "obstacle"
+      "bird",
+      "",
+      "",
+      { x: creationLine, y: generateBirdY() },
+      { w: birdWidth, h: birdHeight },
+      speedBird,
+      "obstacle"
     );
   };
   const createBirdZ = () => {
     return new Obstacle(
-        "birdz",
-        "",
-        "",
-        {x: creationLine, y: generateBirdY()},
-        {w: birdWidth, h: birdHeight},
-        speedBirdZ,
-        "obstacle"
+      "birdz",
+      "",
+      "",
+      { x: creationLine, y: generateBirdY() },
+      { w: birdWidth, h: birdHeight },
+      speedBirdZ,
+      "obstacle"
     );
   };
 
@@ -504,7 +504,7 @@ const game = () => {
       return randPositions[0];
     }
   };
-startGame()
+  startGame();
 };
 boardButtons[1].addEventListener("click", game);
 boardButtons[0].addEventListener("click", backToMenu);
