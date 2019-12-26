@@ -1,6 +1,6 @@
-import {instruction} from './inst-game'
+import {instruction} from './game/inst-game'
 import {scoreboard} from './scoreboard/scoreboardLogic'
-import {gameIndex} from './gameIndex'
+import {gameIndex} from './game/gameIndex'
 instruction()
 scoreboard()
 gameIndex()

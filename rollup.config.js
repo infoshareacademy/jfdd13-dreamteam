@@ -1,5 +1,5 @@
 module.exports = {
-  input: 'game/index.js',
+  input: 'game/js/game/index.js',
   output: {
     file: 'game/bundle.js',
     format: 'umd'

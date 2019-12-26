@@ -1,5 +1,8 @@
+const boardStart = 0,
+    boardWidth = 600;
 export class Render {
   static create(el, parent = board) {
+    let id = 0
     const parentVar = parent;
     const child = document.createElement("div");
 
