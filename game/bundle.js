@@ -122,8 +122,6 @@
     });
   };
 
-  // import { Render } from './gameRender'
-
   const boardButtons = document.querySelectorAll(".board__btn");
   const backToMenu = () => {
     document.location.assign("../index.html");

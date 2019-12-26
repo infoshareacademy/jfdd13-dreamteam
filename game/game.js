@@ -1,5 +1,3 @@
-// import { Render } from './gameRender'
-
 export const boardButtons = document.querySelectorAll(".board__btn");
 export const backToMenu = () => {
   document.location.assign("../index.html");
