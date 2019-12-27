@@ -56,7 +56,7 @@
   let currentPlayerName = '';
 
   const scoreboard = () => {
-    const btnx = document.getElementById("scoreboardBtn");
+    const btnClear = document.getElementById("scoreboardBtn");
     const scoreboard = document.getElementById("scoreboard");
     const saveScoreBtn = document.getElementById("saveScore");
     const resetScore = () => {
@@ -116,9 +116,8 @@
       document.getElementById('modalInputs').style.display = 'none';
     });
 
-    btnx.addEventListener("click", () => {
-      sortScores(getScore);
-      checkScores(getScore);
+    btnClear.addEventListener("click", () => {
+      resetScore();
     });
   };
 
