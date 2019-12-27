@@ -72,7 +72,8 @@
     const addScore = (player, score) => {
       const newScoreData = {
         name: player,
-        score: score
+        score: score,
+        date: new Date()
       };
       scoreData.push(newScoreData);
       return setScore(scoreData);
@@ -98,7 +99,7 @@
           const tenScoresArr = sortScores(arr).slice(0, 10);
           setScore(tenScoresArr);
           debugger
-          return renderScore(scoreData, scoreboard);
+          return renderScore(tenScoresArr, scoreboard);
         }
       }
     };
