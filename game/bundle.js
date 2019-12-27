@@ -63,18 +63,19 @@
       localStorage.setItem("gameScores", JSON.stringify([]));
       return JSON.parse(localStorage.getItem("gameScores"))
     };
-    const getScore =
-      JSON.parse(localStorage.getItem("gameScores")) || resetScore();
+    const getScore = () => JSON.parse(localStorage.getItem("gameScores")) || resetScore();
 
-    const setScore = data =>
+    const scoreData = getScore();
+
+    const setScore = (data=[]) =>
       localStorage.setItem("gameScores", JSON.stringify(data));
     const addScore = (player, score) => {
       const newScoreData = {
         name: player,
         score: score
       };
-      getScore.push(newScoreData);
-      return setScore(getScore);
+      scoreData.push(newScoreData);
+      return setScore(scoreData);
     };
 
     const sortScores = (arr) => {
@@ -96,7 +97,8 @@
         } else {
           const tenScoresArr = sortScores(arr).slice(0, 10);
           setScore(tenScoresArr);
-          return renderScore(getScore, scoreboard);
+          debugger
+          return renderScore(scoreData, scoreboard);
         }
       }
     };
@@ -108,7 +110,7 @@
       addScore(playerName.value, currentScore);
       currentPlayerName = playerName.value;
       playerName.value = '';
-      checkScores(getScore);
+      checkScores(scoreData);
     }}};
 
     saveScoreBtn.addEventListener("click", () => {
