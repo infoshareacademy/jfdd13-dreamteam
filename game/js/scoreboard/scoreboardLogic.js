@@ -5,13 +5,13 @@ export const playerName = document.getElementById("playerName");
 export let currentPlayerName = '';
 
 export const scoreboard = () => {
-  const btnx = document.getElementById("scoreboardBtn");
+  const btnClear = document.getElementById("scoreboardBtn");
   const scoreboard = document.getElementById("scoreboard");
   const saveScoreBtn = document.getElementById("saveScore");
   const resetScore = () => {
     localStorage.setItem("gameScores", JSON.stringify([]));
     return JSON.parse(localStorage.getItem("gameScores"))
-  }
+  };
   const getScore =
     JSON.parse(localStorage.getItem("gameScores")) || resetScore();
 
@@ -65,8 +65,7 @@ export const scoreboard = () => {
     document.getElementById('modalInputs').style.display = 'none';
   });
 
-  btnx.addEventListener("click", () => {
-    sortScores(getScore);
-    checkScores(getScore);
+  btnClear.addEventListener("click", () => {
+    resetScore()
   });
 };

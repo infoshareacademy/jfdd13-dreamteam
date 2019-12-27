@@ -147,7 +147,10 @@
 .btn:hover {
   background: #2196f3;
 }
-
+.btn__container {
+  display: flex;
+  justify-content: space-around;
+}
 .btn__modal {
   margin: 1rem;
 }
