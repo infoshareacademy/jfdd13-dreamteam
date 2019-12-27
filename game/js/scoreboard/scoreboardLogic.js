@@ -49,7 +49,6 @@ export const scoreboard = () => {
       } else {
         const tenScoresArr = sortScores(arr).slice(0, 10);
         setScore(tenScoresArr);
-        debugger
         return renderScore(tenScoresArr, scoreboard);
       }
     }
