@@ -1,5 +1,4 @@
 import { renderScore } from "./scoreboardRender";
-import { generateRandomScore, fillScores } from "./scoreboardHelpers";
 
 export const playerName = document.getElementById("playerName");
 export let currentPlayerName = '';
