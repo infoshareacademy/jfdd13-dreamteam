@@ -121,7 +121,7 @@
       document.getElementById('modalInputs').style.display = 'none';
     });
 
-    btnClear.addEventListener("click", () => {
+    clearScoresBtn.addEventListener("click", () => {
       resetScore();
     });
   };
