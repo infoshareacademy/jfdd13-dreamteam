@@ -81,6 +81,9 @@
 
     const sortScores = (arr) => {
       const sortedScores = arr.sort((a, b) => {
+        if (a.score === b.score) {
+          return new Date(b.date) - new Date(a.date);
+        }
         if (a.score < b.score) {
           return 1
         } else {
