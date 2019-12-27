@@ -39,7 +39,7 @@ export const scoreboard = () => {
 
   const checkScores = arr => {
     if (arr.length) {
-      if (arr.length <= 10) {
+      if (arr.length < 10) {
         const output = sortScores(arr);
         return renderScore(output, scoreboard);
       } else {
