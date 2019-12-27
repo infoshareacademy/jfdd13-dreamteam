@@ -4,7 +4,7 @@ export const playerName = document.getElementById("playerName");
 export let currentPlayerName = '';
 
 export const scoreboard = () => {
-  const btnClear = document.getElementById("scoreboardBtn");
+  const clearScoresBtn = document.getElementById("clearScores");
   const scoreboard = document.getElementById("scoreboard");
   const saveScoreBtn = document.getElementById("saveScore");
   const resetScore = () => {

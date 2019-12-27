@@ -56,7 +56,7 @@
   let currentPlayerName = '';
 
   const scoreboard = () => {
-    const btnClear = document.getElementById("scoreboardBtn");
+    const clearScoresBtn = document.getElementById("clearScores");
     const scoreboard = document.getElementById("scoreboard");
     const saveScoreBtn = document.getElementById("saveScore");
     const resetScore = () => {
@@ -101,7 +101,6 @@
         } else {
           const tenScoresArr = sortScores(arr).slice(0, 10);
           setScore(tenScoresArr);
-          debugger
           return renderScore(tenScoresArr, scoreboard);
         }
       }
