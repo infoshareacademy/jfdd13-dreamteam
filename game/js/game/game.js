@@ -69,7 +69,7 @@ export const game = () => {
     const highScoreDOM = document.getElementById("highscore");
     highScoreDOM.innerText = `Najlepszy wynik: ${Math.round(value)}`;
   };
-  displayHighScore(getHighScore());
+  // displayHighScore(getHighScore());
 
   const highScore = () => {
     const score = () => {

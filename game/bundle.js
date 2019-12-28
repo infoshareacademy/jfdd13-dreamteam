@@ -203,11 +203,7 @@
       intervals.push(timerInt);
     };
     const getHighScore = () => localStorage.getItem("highscore") || localStorage.getItem("lastScore") || 0;
-    const displayHighScore = value => {
-      const highScoreDOM = document.getElementById("highscore");
-      highScoreDOM.innerText = `Najlepszy wynik: ${Math.round(value)}`;
-    };
-    displayHighScore(getHighScore());
+    // displayHighScore(getHighScore());
 
     const highScore = () => {
       const score = () => {
