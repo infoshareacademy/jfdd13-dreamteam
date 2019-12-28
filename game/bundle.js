@@ -363,6 +363,7 @@
       const closeModal = document.getElementById("btn__game--close");
       const modalRecord = document.getElementById("highscore");
       const modalScore = document.getElementById("playerScore");
+      const clearScoresBtn = document.getElementById("clearScores");
       const getLastScore = () => localStorage.getItem("lastScore");
 
       const closePopGameOver = event => {
@@ -372,6 +373,7 @@
         clearTimeout(pop);
       };
       displayElements(gameOverModal, true, "flex");
+      displayElements(clearScoresBtn, false);
       modalRecord.innerText = `Najlepszy wynik: ${getHighScore()}`;
       modalScore.innerText = `Twój wynik: ${getLastScore()}`;
       closeModal.addEventListener("click", closePopGameOver);
