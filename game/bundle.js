@@ -66,17 +66,17 @@
     };
     const getScore = () => JSON.parse(localStorage.getItem("gameScores")) || resetScore();
 
-    const scoreData = getScore();
 
     const setScore = (data=[]) =>
       localStorage.setItem("gameScores", JSON.stringify(data));
-    const addScore = (player, score) => {
-      const newScoreData = {
+    const addScore = (arr, player, score) => {
+      const scoreData = arr;
+      const newScoreEntry = {
         name: player,
         score: score,
         date: new Date()
       };
-      scoreData.push(newScoreData);
+      scoreData.push(newScoreEntry);
       return setScore(scoreData);
     };
 
@@ -108,10 +108,11 @@
     };
 
     const handleScores = () => {
+      const scoreData = getScore();
       if (playerName.value !== '') {
         const currentScore = Number(localStorage.getItem('lastScore')) || 0;
         if (currentScore) {
-      addScore(playerName.value, currentScore);
+      addScore(scoreData, playerName.value, currentScore);
       currentPlayerName = playerName.value;
       playerName.value = '';
       checkScores(scoreData);
