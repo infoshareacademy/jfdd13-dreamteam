@@ -10,6 +10,7 @@ export const scoreboard = () => {
   const saveScoreBtn = document.getElementById("saveScore");
   const resetScore = () => {
     localStorage.setItem("gameScores", JSON.stringify([]));
+    localStorage.setItem("highscore", JSON.stringify(0));
     return JSON.parse(localStorage.getItem("gameScores"))
   };
   const getScore = () => JSON.parse(localStorage.getItem("gameScores")) || resetScore();
