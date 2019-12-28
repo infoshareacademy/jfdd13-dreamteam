@@ -128,7 +128,7 @@
     });
 
     displayScoresBtn.addEventListener("click", () => {
-      renderScore(scoreData, scoreboard);
+      renderScore(getScore(), scoreboard);
       displayScoresBtn.style.display = 'none';
       clearScoresBtn.style.display = 'flex';
     });
@@ -200,7 +200,7 @@
       const timerInt = setInterval(timer, 1000);
       intervals.push(timerInt);
     };
-    const getHighScore = () => localStorage.getItem("highscore") || 0;
+    const getHighScore = () => localStorage.getItem("highscore") || localStorage.getItem("lastScore") || 0;
     const displayHighScore = value => {
       const highScoreDOM = document.getElementById("highscore");
       highScoreDOM.innerText = `Najlepszy wynik: ${Math.round(value)}`;

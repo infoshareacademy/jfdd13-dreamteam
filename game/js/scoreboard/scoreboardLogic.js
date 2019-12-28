@@ -76,7 +76,7 @@ export const scoreboard = () => {
   });
 
   displayScoresBtn.addEventListener("click", () => {
-    renderScore(scoreData, scoreboard);
+    renderScore(getScore(), scoreboard);
     displayScoresBtn.style.display = 'none';
     clearScoresBtn.style.display = 'flex';
   });

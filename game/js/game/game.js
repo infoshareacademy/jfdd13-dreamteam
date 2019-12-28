@@ -64,7 +64,7 @@ export const game = () => {
     const timerInt = setInterval(timer, 1000);
     intervals.push(timerInt);
   };
-  const getHighScore = () => localStorage.getItem("highscore") || 0;
+  const getHighScore = () => localStorage.getItem("highscore") || localStorage.getItem("lastScore") || 0;
   const displayHighScore = value => {
     const highScoreDOM = document.getElementById("highscore");
     highScoreDOM.innerText = `Najlepszy wynik: ${Math.round(value)}`;
