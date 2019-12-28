@@ -226,7 +226,7 @@ export const game = () => {
   const popGameOver = () => {
     const gameOverModal = document.getElementById("modalGameover");
     const closeModal = document.getElementById("btn__game--close");
-    const modalRecord = document.getElementById("highscore");
+    // const modalRecord = document.getElementById("highscore");
     const modalScore = document.getElementById("playerScore");
     const clearScoresBtn = document.getElementById("clearScores");
     const getLastScore = () => localStorage.getItem("lastScore");
@@ -239,7 +239,7 @@ export const game = () => {
     };
     displayElements(gameOverModal, true, "flex");
     displayElements(clearScoresBtn, false);
-    modalRecord.innerText = `Najlepszy wynik: ${getHighScore()}`;
+    // modalRecord.innerText = `Najlepszy wynik: ${getHighScore()}`;
     modalScore.innerText = `Twój wynik: ${getLastScore()}`;
     closeModal.addEventListener("click", closePopGameOver);
   };
