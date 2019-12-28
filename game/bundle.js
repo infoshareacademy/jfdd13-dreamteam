@@ -195,7 +195,7 @@
         minutes++;
         clock.innerText = minutes + ":" + seconds;
       }
-      clock.innerText = seconds + " sek.";
+      clock.innerText = "Czas: " + seconds + " sek.";
     };
     const startTimer = () => {
       const timerInt = setInterval(timer, 1000);
