@@ -129,7 +129,7 @@
     displayScoresBtn.addEventListener("click", () => {
       renderScore(scoreData, scoreboard);
       displayScoresBtn.style.display = 'none';
-      clearScoresBtn.style.display = 'none';
+      clearScoresBtn.style.display = 'flex';
     });
   };
 
