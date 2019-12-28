@@ -131,7 +131,7 @@
     displayScoresBtn.addEventListener("click", () => {
       checkScores(getScore());
       displayScoresBtn.style.display = 'none';
-      clearScoresBtn.style.display = 'flex';
+      clearScoresBtn.style.display = 'inline';
     });
   };
 
