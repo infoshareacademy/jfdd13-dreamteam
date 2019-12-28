@@ -57,6 +57,7 @@
 
   const scoreboard = () => {
     const clearScoresBtn = document.getElementById("clearScores");
+    const displayScoresBtn = document.getElementById("displayScores");
     const scoreboard = document.getElementById("scoreboard");
     const saveScoreBtn = document.getElementById("saveScore");
     const resetScore = () => {
@@ -123,6 +124,10 @@
 
     clearScoresBtn.addEventListener("click", () => {
       resetScore();
+    });
+
+    displayScoresBtn.addEventListener("click", () => {
+      renderScore(scoreData, scoreboard);
     });
   };
 
