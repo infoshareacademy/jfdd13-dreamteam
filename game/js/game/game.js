@@ -229,6 +229,7 @@ export const game = () => {
     // const modalRecord = document.getElementById("highscore");
     const modalScore = document.getElementById("playerScore");
     const clearScoresBtn = document.getElementById("clearScores");
+    const displayScoresBtn = document.getElementById("displayScores");
     const getLastScore = () => localStorage.getItem("lastScore");
     const checkScoreArr = () => JSON.parse(localStorage.getItem("gameScores"));
     
@@ -237,8 +238,10 @@ export const game = () => {
       console.log(arr);
       if (arr[0] == null) {
         console.log('pusty')
+        displayElements(displayScoresBtn, false);
       }else{
         console.log('coś jest')
+        displayElements(displayScoresBtn, true, "inline");
       }
     };
 
