@@ -371,10 +371,8 @@
         const arr = checkScoreArr();
         console.log(arr);
         if (arr[0] == null) {
-          console.log('pusty');
           displayElements(displayScoresBtn, false);
         }else{
-          console.log('coś jest');
           displayElements(displayScoresBtn, true, "inline");
         }
       };
