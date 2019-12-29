@@ -369,7 +369,6 @@
       
       const showTopTenBtn = () => {
         const arr = checkScoreArr();
-        console.log(arr);
         if (arr[0] == null) {
           displayElements(displayScoresBtn, false);
         }else{
