@@ -7,14 +7,15 @@ export const scoreboard = () => {
   const clearScoresBtn = document.getElementById("clearScores");
   const displayScoresBtn = document.getElementById("displayScores");
   const scoreboard = document.getElementById("scoreboard");
+  const scoreboardHeading = document.querySelector(".modal__gameover--h3");
   const saveScoreBtn = document.getElementById("saveScore");
+  
   const resetScore = () => {
     localStorage.setItem("gameScores", JSON.stringify([]));
     localStorage.setItem("highscore", JSON.stringify(0));
     return JSON.parse(localStorage.getItem("gameScores"))
   };
   const getScore = () => JSON.parse(localStorage.getItem("gameScores")) || resetScore();
-
 
   const setScore = (data=[]) =>
     localStorage.setItem("gameScores", JSON.stringify(data));
@@ -64,6 +65,7 @@ export const scoreboard = () => {
     addScore(scoreData, playerName.value, currentScore);
     currentPlayerName = playerName.value;
     playerName.value = '';
+    scoreboardHeading.innerHTML = "Najlepsze wyniki:";
     checkScores(scoreData);
   }}};
 
@@ -80,5 +82,6 @@ export const scoreboard = () => {
     checkScores(getScore());
     displayScoresBtn.style.display = 'none';
     clearScoresBtn.style.display = 'inline';
+    scoreboardHeading.innerHTML = "Najlepsze wyniki:";
   });
 };
