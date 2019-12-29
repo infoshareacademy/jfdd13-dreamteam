@@ -15,7 +15,7 @@ During *Front-end Developer* course at **infoShare Academy** we have collaborate
 
 --------------------
 *Scrum Development Team:*
-- Michał Kuśnierz
-- Martyna Michno 
 - Aleksander Walczuk 
+- Martyna Michno 
+- Michał Kuśnierz
 - Rafał Wensław
