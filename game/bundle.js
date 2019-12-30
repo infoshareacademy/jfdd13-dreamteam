@@ -31,6 +31,7 @@
   };
 
   const renderScore = (data, parentEl) => {
+    parentEl.innerHTML = '';
     const listContainer = document.createElement("ol");
     listContainer.classList.add('scoreboard__container');
     data.map(item => {
@@ -56,26 +57,29 @@
   let currentPlayerName = '';
 
   const scoreboard = () => {
-    const btnClear = document.getElementById("scoreboardBtn");
+    const clearScoresBtn = document.getElementById("clearScores");
+    const displayScoresBtn = document.getElementById("displayScores");
     const scoreboard = document.getElementById("scoreboard");
+    const scoreboardHeading = document.querySelector(".modal__gameover--h3");
     const saveScoreBtn = document.getElementById("saveScore");
+    
     const resetScore = () => {
       localStorage.setItem("gameScores", JSON.stringify([]));
+      localStorage.setItem("highscore", JSON.stringify(0));
       return JSON.parse(localStorage.getItem("gameScores"))
     };
     const getScore = () => JSON.parse(localStorage.getItem("gameScores")) || resetScore();
 
-    const scoreData = getScore();
-
     const setScore = (data=[]) =>
       localStorage.setItem("gameScores", JSON.stringify(data));
-    const addScore = (player, score) => {
-      const newScoreData = {
+    const addScore = (arr, player, score) => {
+      const scoreData = arr;
+      const newScoreEntry = {
         name: player,
         score: score,
         date: new Date()
       };
-      scoreData.push(newScoreData);
+      scoreData.push(newScoreEntry);
       return setScore(scoreData);
     };
 
@@ -101,19 +105,20 @@
         } else {
           const tenScoresArr = sortScores(arr).slice(0, 10);
           setScore(tenScoresArr);
-          debugger
           return renderScore(tenScoresArr, scoreboard);
         }
       }
     };
 
     const handleScores = () => {
+      const scoreData = getScore();
       if (playerName.value !== '') {
         const currentScore = Number(localStorage.getItem('lastScore')) || 0;
         if (currentScore) {
-      addScore(playerName.value, currentScore);
+      addScore(scoreData, playerName.value, currentScore);
       currentPlayerName = playerName.value;
       playerName.value = '';
+      scoreboardHeading.innerHTML = "Najlepsze wyniki:";
       checkScores(scoreData);
     }}};
 
@@ -122,8 +127,15 @@
       document.getElementById('modalInputs').style.display = 'none';
     });
 
-    btnClear.addEventListener("click", () => {
+    clearScoresBtn.addEventListener("click", () => {
       resetScore();
+    });
+
+    displayScoresBtn.addEventListener("click", () => {
+      checkScores(getScore());
+      displayScoresBtn.style.display = 'none';
+      clearScoresBtn.style.display = 'inline';
+      scoreboardHeading.innerHTML = "Najlepsze wyniki:";
     });
   };
 
@@ -187,18 +199,14 @@
         minutes++;
         clock.innerText = minutes + ":" + seconds;
       }
-      clock.innerText = seconds + " sek.";
+      clock.innerText = "Czas: " + seconds + " sek.";
     };
     const startTimer = () => {
       const timerInt = setInterval(timer, 1000);
       intervals.push(timerInt);
     };
-    const getHighScore = () => localStorage.getItem("highscore") || 0;
-    const displayHighScore = value => {
-      const highScoreDOM = document.getElementById("highscore");
-      highScoreDOM.innerText = `Najlepszy wynik: ${Math.round(value)}`;
-    };
-    displayHighScore(getHighScore());
+    const getHighScore = () => localStorage.getItem("highscore") || localStorage.getItem("lastScore") || 0;
+    // displayHighScore(getHighScore());
 
     const highScore = () => {
       const score = () => {
@@ -355,9 +363,21 @@
     const popGameOver = () => {
       const gameOverModal = document.getElementById("modalGameover");
       const closeModal = document.getElementById("btn__game--close");
-      const modalRecord = document.getElementById("highscore");
+      // const modalRecord = document.getElementById("highscore");
       const modalScore = document.getElementById("playerScore");
+      const clearScoresBtn = document.getElementById("clearScores");
+      const displayScoresBtn = document.getElementById("displayScores");
       const getLastScore = () => localStorage.getItem("lastScore");
+      const checkScoreArr = () => JSON.parse(localStorage.getItem("gameScores"));
+      
+      const showTopTenBtn = () => {
+        const arr = checkScoreArr();
+        if (arr[0] == null) {
+          displayElements(displayScoresBtn, false);
+        }else{
+          displayElements(displayScoresBtn, true, "inline");
+        }
+      };
 
       const closePopGameOver = event => {
         event.preventDefault();
@@ -366,7 +386,9 @@
         clearTimeout(pop);
       };
       displayElements(gameOverModal, true, "flex");
-      modalRecord.innerText = `Najlepszy wynik: ${getHighScore()}`;
+      showTopTenBtn();
+      displayElements(clearScoresBtn, false);
+      // modalRecord.innerText = `Najlepszy wynik: ${getHighScore()}`;
       modalScore.innerText = `Twój wynik: ${getLastScore()}`;
       closeModal.addEventListener("click", closePopGameOver);
     };

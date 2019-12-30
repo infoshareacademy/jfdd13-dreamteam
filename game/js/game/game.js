@@ -58,18 +58,18 @@ export const game = () => {
       minutes++;
       clock.innerText = minutes + ":" + seconds;
     }
-    clock.innerText = seconds + " sek.";
+    clock.innerText = "Czas: " + seconds + " sek.";
   };
   const startTimer = () => {
     const timerInt = setInterval(timer, 1000);
     intervals.push(timerInt);
   };
-  const getHighScore = () => localStorage.getItem("highscore") || 0;
+  const getHighScore = () => localStorage.getItem("highscore") || localStorage.getItem("lastScore") || 0;
   const displayHighScore = value => {
     const highScoreDOM = document.getElementById("highscore");
     highScoreDOM.innerText = `Najlepszy wynik: ${Math.round(value)}`;
   };
-  displayHighScore(getHighScore());
+  // displayHighScore(getHighScore());
 
   const highScore = () => {
     const score = () => {
@@ -226,9 +226,21 @@ export const game = () => {
   const popGameOver = () => {
     const gameOverModal = document.getElementById("modalGameover");
     const closeModal = document.getElementById("btn__game--close");
-    const modalRecord = document.getElementById("highscore");
+    // const modalRecord = document.getElementById("highscore");
     const modalScore = document.getElementById("playerScore");
+    const clearScoresBtn = document.getElementById("clearScores");
+    const displayScoresBtn = document.getElementById("displayScores");
     const getLastScore = () => localStorage.getItem("lastScore");
+    const checkScoreArr = () => JSON.parse(localStorage.getItem("gameScores"));
+    
+    const showTopTenBtn = () => {
+      const arr = checkScoreArr();
+      if (arr[0] == null) {
+        displayElements(displayScoresBtn, false);
+      }else{
+        displayElements(displayScoresBtn, true, "inline");
+      }
+    };
 
     const closePopGameOver = event => {
       event.preventDefault();
@@ -237,7 +249,9 @@ export const game = () => {
       clearTimeout(pop);
     };
     displayElements(gameOverModal, true, "flex");
-    modalRecord.innerText = `Najlepszy wynik: ${getHighScore()}`;
+    showTopTenBtn();
+    displayElements(clearScoresBtn, false);
+    // modalRecord.innerText = `Najlepszy wynik: ${getHighScore()}`;
     modalScore.innerText = `Twój wynik: ${getLastScore()}`;
     closeModal.addEventListener("click", closePopGameOver);
   };

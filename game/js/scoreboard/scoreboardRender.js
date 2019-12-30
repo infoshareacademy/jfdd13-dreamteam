@@ -1,6 +1,7 @@
 import {currentPlayerName} from "./scoreboardLogic";
 
 export const renderScore = (data, parentEl) => {
+  parentEl.innerHTML = '';
   const listContainer = document.createElement("ol");
   listContainer.classList.add('scoreboard__container');
   data.map(item => {

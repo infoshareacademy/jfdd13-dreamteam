@@ -4,26 +4,29 @@ export const playerName = document.getElementById("playerName");
 export let currentPlayerName = '';
 
 export const scoreboard = () => {
-  const btnClear = document.getElementById("scoreboardBtn");
+  const clearScoresBtn = document.getElementById("clearScores");
+  const displayScoresBtn = document.getElementById("displayScores");
   const scoreboard = document.getElementById("scoreboard");
+  const scoreboardHeading = document.querySelector(".modal__gameover--h3");
   const saveScoreBtn = document.getElementById("saveScore");
+  
   const resetScore = () => {
     localStorage.setItem("gameScores", JSON.stringify([]));
+    localStorage.setItem("highscore", JSON.stringify(0));
     return JSON.parse(localStorage.getItem("gameScores"))
   };
   const getScore = () => JSON.parse(localStorage.getItem("gameScores")) || resetScore();
 
-  const scoreData = getScore();
-
   const setScore = (data=[]) =>
     localStorage.setItem("gameScores", JSON.stringify(data));
-  const addScore = (player, score) => {
-    const newScoreData = {
+  const addScore = (arr, player, score) => {
+    const scoreData = arr;
+    const newScoreEntry = {
       name: player,
       score: score,
       date: new Date()
     };
-    scoreData.push(newScoreData);
+    scoreData.push(newScoreEntry);
     return setScore(scoreData);
   };
 
@@ -55,12 +58,14 @@ export const scoreboard = () => {
   };
 
   const handleScores = () => {
+    const scoreData = getScore()
     if (playerName.value !== '') {
       const currentScore = Number(localStorage.getItem('lastScore')) || 0;
       if (currentScore) {
-    addScore(playerName.value, currentScore);
+    addScore(scoreData, playerName.value, currentScore);
     currentPlayerName = playerName.value;
     playerName.value = '';
+    scoreboardHeading.innerHTML = "Najlepsze wyniki:";
     checkScores(scoreData);
   }}};
 
@@ -69,7 +74,14 @@ export const scoreboard = () => {
     document.getElementById('modalInputs').style.display = 'none';
   });
 
-  btnClear.addEventListener("click", () => {
+  clearScoresBtn.addEventListener("click", () => {
     resetScore()
+  });
+
+  displayScoresBtn.addEventListener("click", () => {
+    checkScores(getScore());
+    displayScoresBtn.style.display = 'none';
+    clearScoresBtn.style.display = 'inline';
+    scoreboardHeading.innerHTML = "Najlepsze wyniki:";
   });
 };
