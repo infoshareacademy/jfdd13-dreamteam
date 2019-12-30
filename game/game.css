@@ -96,9 +96,10 @@
 }
 #score {
   position: absolute;
-  top: 150px;
-  left: 20px;
+  top: 50px;
+  right: -120px;
   font-weight: 700;
+  z-index: 4;
 }
 .countdown__container {
   right: calc(25% + 150px);
@@ -131,7 +132,7 @@
   width: 140px;
   height: 50px;
   padding: 0.5rem 1rem;
-  margin: 1rem 0;
+  margin: 1rem 0.5rem;
   color: #fff;
   border-radius: 0.5rem;
   font-size: 1.2rem;
@@ -146,7 +147,10 @@
 .btn:hover {
   background: #2196f3;
 }
-
+.btn__container {
+  display: flex;
+  justify-content: space-around;
+}
 .btn__modal {
   margin: 1rem;
 }
@@ -176,4 +180,68 @@
   background-color: #fff;
   border: 1px solid #bdbdbd;
   z-index: 5;
+}
+.scoreboard {
+  position: relative;
+}
+
+.scoreboard__container {
+  /*position: absolute;*/
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  min-height: 300px;
+  margin: 2rem auto;
+  z-index: 3;
+}
+.scoreboard__item {
+  margin: .5rem 1rem;
+}
+.scoreboard__value {
+  display: inline-block;
+  min-width: 180px;
+}
+.scoreboard__value:nth-child(2) {
+  text-align: right;
+}
+
+.modal__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 4;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  position: relative;
+  width: 600px;
+  min-height: 300px;
+  padding: 2rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #bdbdbd;
+}
+.modal__playerName {
+  min-width: 180px;
+  font-size: large;
+  padding: .25rem;
+}
+.modal__inputs {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+.modal__playerScore {
+  margin: 1rem;
+  text-align: center;
 }
