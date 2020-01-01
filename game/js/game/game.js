@@ -520,3 +520,7 @@ export const game = () => {
 };
 boardButtons[1].addEventListener("click", game);
 boardButtons[0].addEventListener("click", backToMenu);
+document.addEventListener("keypress", (event) => {
+  event.key === 'Enter'?
+    game(): ''
+})

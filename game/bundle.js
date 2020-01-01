@@ -62,7 +62,7 @@
     const scoreboard = document.getElementById("scoreboard");
     const scoreboardHeading = document.querySelector(".modal__gameover--h3");
     const saveScoreBtn = document.getElementById("saveScore");
-    
+
     const resetScore = () => {
       localStorage.setItem("gameScores", JSON.stringify([]));
       localStorage.setItem("highscore", JSON.stringify(0));
@@ -657,6 +657,10 @@
   };
   boardButtons[1].addEventListener("click", game);
   boardButtons[0].addEventListener("click", backToMenu);
+  document.addEventListener("keypress", (event) => {
+    event.key === 'Enter'?
+      game(): '';
+  });
 
   const gameIndex = () => {
   boardButtons[1].addEventListener("click", game);
