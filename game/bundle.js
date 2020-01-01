@@ -142,8 +142,7 @@
   const boardButtons = document.querySelectorAll(".board__btn");
   const backToMenu = () => {
     const hrefArr = document.location.href.split("/").map(el => el + "/");
-    const slicedhref = hrefArr.slice(0, hrefArr - 2).join("");
-
+    const slicedhref = hrefArr.slice(0, hrefArr.length - 2).join("") + "index.html";
     document.location.assign(slicedhref);
   };
   const game = () => {
@@ -664,7 +663,7 @@
   document.addEventListener("keydown", event => {
     if (event.key === "Enter") {
       game();
-    } else if (event.code === "Escape") {
+    } else if (event.key === "Escape") {
   backToMenu();
       // backToMenu()
       // window.removeEventListener("keydown", backToMenu)
