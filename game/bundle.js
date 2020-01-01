@@ -657,9 +657,15 @@
   };
   boardButtons[1].addEventListener("click", game);
   boardButtons[0].addEventListener("click", backToMenu);
-  document.addEventListener("keypress", (event) => {
-    event.key === 'Enter'?
-      game(): '';
+  document.addEventListener("keydown", (event) => {
+    if (event.key === 'Enter') {
+      game();
+    } else if (event.code === 'Escape'){
+    document.location.assign("../index.html");
+      
+      // backToMenu()
+      // window.removeEventListener("keydown", backToMenu)
+    }
   });
 
   const gameIndex = () => {
