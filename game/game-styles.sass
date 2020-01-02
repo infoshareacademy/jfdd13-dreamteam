@@ -32,3 +32,45 @@
   padding: 1rem
   &:hover
     cursor: pointer
+.frame
+  position: absolute
+  width: 100px
+  height: 100%
+  background-color: #fff
+  z-index: 2
+  &__top, &__bottom
+    height: 300px
+    width: 100%
+  &__left, &__right
+    width: 300px
+    top: -10vh
+    height: 120vh
+  &__top
+    top: -300px
+  &__bottom
+    bottom: -300px
+  &__left
+    left: -300px
+  &__right
+    right: -300px
+.highscore
+  position: absolute
+  @include flex(normal, center)
+  top: -50px
+  right: -100px
+  width: 300px
+  height: 40px
+  z-index: 3
+#score
+  position: absolute
+  top: 50px
+  right: -120px
+  font-weight: 700
+  z-index: 4
+.countdown__container
+  right: calc(25% + 150px)
+  justify-content: center
+  top: -50px
+.player
+  position: absolute
+  z-index: 2
