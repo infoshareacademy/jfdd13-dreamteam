@@ -9,7 +9,7 @@ export const scoreboard = () => {
   const scoreboard = document.getElementById("scoreboard");
   const scoreboardHeading = document.querySelector(".modal__gameover--h3");
   const saveScoreBtn = document.getElementById("saveScore");
-  
+
   const resetScore = () => {
     localStorage.setItem("gameScores", JSON.stringify([]));
     localStorage.setItem("highscore", JSON.stringify(0));

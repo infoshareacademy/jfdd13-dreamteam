@@ -62,7 +62,7 @@
     const scoreboard = document.getElementById("scoreboard");
     const scoreboardHeading = document.querySelector(".modal__gameover--h3");
     const saveScoreBtn = document.getElementById("saveScore");
-    
+
     const resetScore = () => {
       localStorage.setItem("gameScores", JSON.stringify([]));
       localStorage.setItem("highscore", JSON.stringify(0));
@@ -141,7 +141,9 @@
 
   const boardButtons = document.querySelectorAll(".board__btn");
   const backToMenu = () => {
-    document.location.assign("../index.html");
+    const hrefArr = document.location.href.split("/").map(el => el + "/");
+    const slicedhref = hrefArr.slice(0, hrefArr.length - 2).join("") + "index.html";
+    document.location.assign(slicedhref);
   };
   const game = () => {
     let raf = "";
@@ -205,7 +207,8 @@
       const timerInt = setInterval(timer, 1000);
       intervals.push(timerInt);
     };
-    const getHighScore = () => localStorage.getItem("highscore") || localStorage.getItem("lastScore") || 0;
+    const getHighScore = () =>
+      localStorage.getItem("highscore") || localStorage.getItem("lastScore") || 0;
     // displayHighScore(getHighScore());
 
     const highScore = () => {
@@ -369,12 +372,12 @@
       const displayScoresBtn = document.getElementById("displayScores");
       const getLastScore = () => localStorage.getItem("lastScore");
       const checkScoreArr = () => JSON.parse(localStorage.getItem("gameScores"));
-      
+
       const showTopTenBtn = () => {
         const arr = checkScoreArr();
         if (arr[0] == null) {
           displayElements(displayScoresBtn, false);
-        }else{
+        } else {
           displayElements(displayScoresBtn, true, "inline");
         }
       };
@@ -657,6 +660,16 @@
   };
   boardButtons[1].addEventListener("click", game);
   boardButtons[0].addEventListener("click", backToMenu);
+  document.addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+      game();
+    } else if (event.key === "Escape") {
+      console.log('yolo');
+  backToMenu();
+      // backToMenu()
+      // window.removeEventListener("keydown", backToMenu)
+    }
+  });
 
   const gameIndex = () => {
   boardButtons[1].addEventListener("click", game);
