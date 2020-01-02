@@ -664,6 +664,7 @@
     if (event.key === "Enter") {
       game();
     } else if (event.key === "Escape") {
+      console.log('yolo');
   backToMenu();
       // backToMenu()
       // window.removeEventListener("keydown", backToMenu)
