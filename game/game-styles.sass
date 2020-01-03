@@ -3,8 +3,9 @@
   margin: 0
   padding: 0
 
-@mixin flex($center: normal, $align: normal)
+@mixin flex($center: normal, $align: normal, $direction: row)
   display: flex
+  flex-direction: $direction
   justify-content: $center
   align-items: $align
 
@@ -109,3 +110,11 @@
 .obstacle, .bird, .birdz
   position: absolute
   z-index: 1
+
+.modal
+  &__gameover
+    position: relative
+    @include flex(space-between, center)
+    width: 600px
+    min-height: 300px
+    padding: 2rem
