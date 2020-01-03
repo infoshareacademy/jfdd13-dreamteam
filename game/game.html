@@ -24,11 +24,11 @@
     <div class="buttons">
         <button class="btn board__btn" id="back__btn">Powrót</button>
         <button class="btn board__btn" id="start__btn">Start</button>
-        <button class="btn board__btn" id="inst__btn">Instrukcja</button>
+        <button class="btn board__btn" id="btnInstructionShow">Instrukcja</button>
     </div>
-    <div class="modal__container" id="instBoxM">
+    <div class="modal__container" id="modalInstruction">
         <div class="modal">
-            <span class="modal__close">&times;</span>
+            <span class="modal__close" id="iconInstructionClose">&times;</span>
             <h2 class="titleBox">Instrukcja gry</h2>
             <ul>
                 <li>
@@ -48,12 +48,12 @@
                 </li>
                 <li>Powodzenia :)</li>
             </ul>
-            <button class="btn instBox__btn" id="close__btn">Powrót</button>
+            <button class="btn" id="btnInstructionClose">Powrót</button>
         </div>
     </div>
     <div class="modal__container" id="modalGameover">
         <div class="modal" id="modal__gameover">
-            <h3 class="modal__gameover--h3 heading heading__h3">Koniec gry!</h3>
+            <h3 class="heading heading__h3">Koniec gry!</h3>
             <div class="scoreboard" id="scoreboard"></div>
             <div class="modal__inputs" id="modalInputs">
                 <span class="modal__playerScore" id="playerScore"></span>

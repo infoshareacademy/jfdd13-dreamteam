@@ -1,10 +1,10 @@
 export const instruction = () => {
-  const modal = document.getElementById("instBoxM");
+  const modal = document.getElementById("modalInstruction");
 
-const btn = document.getElementById("inst__btn");
+const btn = document.getElementById("buttonInstructionShow");
 
-const span = document.getElementsByClassName("modal__close")[0];
-const closeBtn = document.getElementById("close__btn");
+const span = document.getElementById("iconInstructionClose");
+const closeBtn = document.getElementById("btnInstructionClose");
 
 btn.onclick = function() {
   modal.style.display = "flex";
