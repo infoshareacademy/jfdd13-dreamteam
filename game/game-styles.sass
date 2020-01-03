@@ -33,6 +33,7 @@
 .btn
   &__container
     @include flex(space-around)
+
   &__modal
     margin: 1rem
   max-width: 240px
@@ -46,8 +47,10 @@
   font-size: 1.2rem
   text-transform: uppercase
   cursor: pointer
+
   &:focus
     outline: none
+
   &:hover
     background: #2196f3
 
@@ -113,8 +116,23 @@
 
 .modal
   &__gameover
+    &--container
+      position: absolute
+      top: 0
+      left: 0
+      display: none
+      justify-content: center
+      align-items: center
+      width: 100vw
+      height: 100vh
+      z-index: 4
+      overflow: hidden
+      background-color: rgba(0, 0, 0, .5)
     position: relative
-    @include flex(space-between, center)
+    @include flex(space-between, center, column)
     width: 600px
     min-height: 300px
     padding: 2rem
+    background-color: #fff
+    border: 1px solid #BDBDBD
+    z-index: 5
