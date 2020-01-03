@@ -209,7 +209,6 @@
     };
     const getHighScore = () =>
       localStorage.getItem("highscore") || localStorage.getItem("lastScore") || 0;
-    // displayHighScore(getHighScore());
 
     const highScore = () => {
       const score = () => {
@@ -366,7 +365,6 @@
     const popGameOver = () => {
       const gameOverModal = document.getElementById("modalGameover");
       const closeModal = document.getElementById("btn__game--close");
-      // const modalRecord = document.getElementById("highscore");
       const modalScore = document.getElementById("playerScore");
       const clearScoresBtn = document.getElementById("clearScores");
       const displayScoresBtn = document.getElementById("displayScores");
@@ -658,17 +656,19 @@
     };
     startGame();
   };
-  boardButtons[1].addEventListener("click", game);
-  boardButtons[0].addEventListener("click", backToMenu);
-  document.addEventListener("keydown", event => {
+  const keySupport =  event => {
     if (event.key === "Enter") {
+      document.removeEventListener("keydown", keySupport);
       game();
     } else if (event.key === "Escape") {
-      console.log('yolo');
+      document.removeEventListener("keydown", keySupport);
       backToMenu();
     }
-    document.onkeydown = null;
-  });
+  };
+
+  document.addEventListener("keydown", keySupport);
+  boardButtons[0].addEventListener("click", backToMenu);
+  boardButtons[1].addEventListener("click", game);
 
   const gameIndex = () => {
   boardButtons[1].addEventListener("click", game);
