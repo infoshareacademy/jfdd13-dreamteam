@@ -7,7 +7,7 @@ export const scoreboard = () => {
   const clearScoresBtn = document.getElementById("clearScores");
   const displayScoresBtn = document.getElementById("displayScores");
   const scoreboard = document.getElementById("scoreboard");
-  const scoreboardHeading = document.querySelector(".modal__gameover--h3");
+  const scoreboardHeading = document.querySelector("#modal__gameover .heading");
   const saveScoreBtn = document.getElementById("saveScore");
 
   const resetScore = () => {
