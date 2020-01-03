@@ -30,12 +30,25 @@
   top: calc(50% - 50px)
 
 .btn
-  width: 180px
-  height: 60px
-  padding: 1rem
-
+  &__container
+    @include flex(space-around)
+  &__modal
+    margin: 1rem
+  max-width: 240px
+  width: 140px
+  height: 50px
+  padding: .5rem 1rem
+  margin: 1rem .5rem
+  background-color: #1976e2
+  border: none
+  border-radius: .5rem
+  font-size: 1.2rem
+  text-transform: uppercase
+  cursor: pointer
+  &:focus
+    outline: none
   &:hover
-    cursor: pointer
+    background: #2196f3;
 
 .frame
   position: absolute
@@ -92,3 +105,7 @@
 
 #player img
   width: 20%
+
+.obstacle, .bird, .birdz
+  position: absolute
+  z-index: 1
