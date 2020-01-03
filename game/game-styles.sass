@@ -136,6 +136,16 @@
     background-color: #fff
     border: 1px solid #BDBDBD
     z-index: 5
+  &__inputs
+    @include flex(space-between, normal, column)
+  &__player
+    &Name
+      min-width: 180px
+      font-size: large
+      padding: .25rem
+    &Score
+      margin: 1rem
+      text-align: center
 
 .scoreboard
   &__container
