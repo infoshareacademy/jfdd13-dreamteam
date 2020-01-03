@@ -2,17 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
     <title>The GAME</title>
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="game.css" type="text/css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"/>
+    <link href="game.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-
 <div class="container">
     <div class="board" id="board">
         <div class="highscore" id="highscore"></div>
@@ -25,13 +21,11 @@
         <div class="frame frame__right"></div>
         <div class="frame frame__bottom"></div>
     </div>
-
     <div class="buttons">
         <button class="btn board__btn" id="back__btn">Powrót</button>
         <button class="btn board__btn" id="start__btn">Start</button>
         <button class="btn board__btn" id="inst__btn">Instrukcja</button>
     </div>
-
     <div class="modal__container" id="instBoxM">
         <div class="modal">
             <span class="modal__close">&times;</span>
@@ -57,7 +51,6 @@
             <button class="btn instBox__btn" id="close__btn">Powrót</button>
         </div>
     </div>
-
     <div class="modal__container" id="modalGameover">
         <div class="modal" id="modal__gameover">
             <h3 class="modal__gameover--h3 heading heading__h3">Koniec gry!</h3>
@@ -66,7 +59,7 @@
                 <span class="modal__playerScore" id="playerScore"></span>
                 <div>
                     <label for="playerName">Twój nick:</label>
-                    <input type="text" name="playerName" class="modal__playerName" id="playerName">
+                    <input class="modal__playerName" id="playerName" name="playerName" type="text">
                 </div>
                 <div class="btn__container">
                     <button class="btn" id="saveScore">Zapisz</button>
