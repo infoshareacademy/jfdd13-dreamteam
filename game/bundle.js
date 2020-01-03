@@ -6,7 +6,7 @@
   const instruction = () => {
     const modal = document.getElementById("modalInstruction");
 
-  const btn = document.getElementById("buttonInstructionShow");
+  const btn = document.getElementById("btnInstructionShow");
 
   const span = document.getElementById("iconInstructionClose");
   const closeBtn = document.getElementById("btnInstructionClose");
