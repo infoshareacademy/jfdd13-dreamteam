@@ -25,19 +25,19 @@
   background-color: #fff
   background-image: url(./img/landscape.png)
 
-.buttons
-  position: absolute
-  @include flex(space-around)
-  min-width: 500px
-  height: 100px
-  top: calc(50% - 50px)
-
 .btn
   &__container
     @include flex(space-around)
 
+    &--initial
+      position: absolute
+      min-width: 500px
+      height: 100px
+      top: calc(50% - 50px)
+
   &__modal
     margin: 1rem
+
 .frame
   position: absolute
   width: 100px
@@ -106,7 +106,8 @@
   padding: 2rem
   @include flex(space-between, center, column)
   background-color: #fff
-  border: 1px solid #bdbdbd
+  border: 1px solid $divider-color
+
   &__container
     position: absolute
     top: 0
@@ -119,27 +120,7 @@
     z-index: 4
     overflow: hidden
     background-color: rgba(0, 0, 0, 0.5)
-  &__gameover
-    position: relative
-    @include flex(space-between, center, column)
-    width: 600px
-    min-height: 300px
-    padding: 2rem
-    background-color: #fff
-    border: 1px solid #BDBDBD
-    z-index: 5
-    &--container
-      position: absolute
-      top: 0
-      left: 0
-      display: none
-      justify-content: center
-      align-items: center
-      width: 100vw
-      height: 100vh
-      z-index: 4
-      overflow: hidden
-      background-color: rgba(0, 0, 0, .5)
+
   &__close
     position: absolute
     top: 0
@@ -148,17 +129,21 @@
     color: grey
     font-size: 1rem
     font-weight: bold
+
     &:hover, &:focus
       color: #000
       text-decoration: none
       cursor: pointer
+
   &__inputs
     @include flex(space-between, normal, column)
+
   &__player
     &Name
       min-width: 180px
       font-size: large
       padding: .25rem
+
     &Score
       margin: 1rem
       text-align: center
@@ -170,8 +155,10 @@
     width: 400px
     margin: 2rem auto
     z-index: 3
+
   &__item
     margin: .5rem 1rem
+
   &__value
     &:nth-child(2)
       text-align: right

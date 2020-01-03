@@ -147,22 +147,17 @@
   background-image: url(./img/landscape.png);
 }
 
-.buttons {
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: normal;
-  min-width: 500px;
-  height: 100px;
-  top: calc(50% - 50px);
-}
-
 .btn__container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: normal;
+}
+.btn__container--initial {
+  position: absolute;
+  min-width: 500px;
+  height: 100px;
+  top: calc(50% - 50px);
 }
 .btn__modal {
   margin: 1rem;
@@ -252,35 +247,9 @@
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  border: 1px solid #bdbdbd;
+  border: 1px solid #BDBDBD;
 }
 .modal__container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  z-index: 4;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.modal__gameover {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 600px;
-  min-height: 300px;
-  padding: 2rem;
-  background-color: #fff;
-  border: 1px solid #BDBDBD;
-  z-index: 5;
-}
-.modal__gameover--container {
   position: absolute;
   top: 0;
   left: 0;
