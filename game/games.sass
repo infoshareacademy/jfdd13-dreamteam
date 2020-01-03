@@ -123,6 +123,8 @@
   min-height: 300px
   padding: 2rem
   @include flex(space-between, center, column)
+  background-color: #fff
+  border: 1px solid #bdbdbd
   &__container
     position: absolute
     top: 0
@@ -157,10 +159,6 @@
       overflow: hidden
       background-color: rgba(0, 0, 0, .5)
   &__close
-    &:hover, &:focus
-      color: #000
-      text-decoration: none
-      cursor: pointer
     position: absolute
     top: 0
     right: 0
@@ -168,6 +166,10 @@
     color: grey
     font-size: 1rem
     font-weight: bold
+    &:hover, &:focus
+      color: #000
+      text-decoration: none
+      cursor: pointer
   &__inputs
     @include flex(space-between, normal, column)
   &__player

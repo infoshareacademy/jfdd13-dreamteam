@@ -148,6 +148,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  background-color: #fff;
+  border: 1px solid #bdbdbd;
 }
 .modal__container {
   position: absolute;
