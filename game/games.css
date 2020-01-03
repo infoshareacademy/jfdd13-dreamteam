@@ -90,6 +90,10 @@
   left: -300px;
 }
 .frame__right {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   right: -300px;
 }
 
@@ -134,6 +138,29 @@
   z-index: 1;
 }
 
+.modal {
+  position: relative;
+  width: 600px;
+  min-height: 300px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 4;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 .modal__gameover {
   position: relative;
   display: flex;
@@ -214,4 +241,4 @@
   text-align: right;
 }
 
-/*# sourceMappingURL=game.css.map */
+/*# sourceMappingURL=games.css.map */
