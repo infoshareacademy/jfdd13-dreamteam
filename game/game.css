@@ -164,32 +164,6 @@
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.modal__gameover {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 600px;
-  min-height: 300px;
-  padding: 2rem;
-  background-color: #fff;
-  border: 1px solid #BDBDBD;
-  z-index: 5;
-}
-.modal__gameover--container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  z-index: 4;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.5);
-}
 .modal__close {
   position: absolute;
   top: 0;
@@ -244,4 +218,4 @@
   text-align: right;
 }
 
-/*# sourceMappingURL=games.css.map */
+/*# sourceMappingURL=game.css.map */
