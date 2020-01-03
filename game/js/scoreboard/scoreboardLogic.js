@@ -1,4 +1,5 @@
 import { renderScore } from "./scoreboardRender";
+import { removeKeySupport } from "../game/game";
 
 export const playerName = document.getElementById("playerName");
 export let currentPlayerName = '';
@@ -58,7 +59,7 @@ export const scoreboard = () => {
   };
 
   const handleScores = () => {
-    const scoreData = getScore()
+    const scoreData = getScore();
     if (playerName.value !== '') {
       const currentScore = Number(localStorage.getItem('lastScore')) || 0;
       if (currentScore) {
@@ -68,10 +69,19 @@ export const scoreboard = () => {
     scoreboardHeading.innerHTML = "Najlepsze wyniki:";
     checkScores(scoreData);
   }}};
-
-  saveScoreBtn.addEventListener("click", () => {
+  const saveScore = () => {
     handleScores();
     document.getElementById('modalInputs').style.display = 'none';
+  };
+  const keySupport = event => {
+    removeKeySupport();
+      if (event.key === 'Enter') {
+        saveScore()
+      }
+  };
+  document.addEventListener("keydown", keySupport);
+  saveScoreBtn.addEventListener("click", () => {
+    saveScore()
   });
 
   clearScoresBtn.addEventListener("click", () => {

@@ -4,6 +4,7 @@ export const backToMenu = () => {
   const slicedhref = hrefArr.slice(0, hrefArr.length - 2).join("") + "index.html";
   document.location.assign(slicedhref);
 };
+export const removeKeySupport = () =>   document.removeEventListener("keydown", keySupport);
 export const game = () => {
   let raf = "";
   let pop = "";
@@ -515,12 +516,12 @@ export const game = () => {
   };
   startGame();
 };
+
 const keySupport =  event => {
+  removeKeySupport();
   if (event.key === "Enter") {
-    document.removeEventListener("keydown", keySupport);
     game();
   } else if (event.key === "Escape") {
-    document.removeEventListener("keydown", keySupport);
     backToMenu()
   }
 };
