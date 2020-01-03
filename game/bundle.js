@@ -652,6 +652,7 @@
       playerName.value = '';
       scoreboardHeading.innerHTML = "Najlepsze wyniki:";
       checkScores(scoreData);
+
     }}};
     const saveScore = () => {
       handleScores();

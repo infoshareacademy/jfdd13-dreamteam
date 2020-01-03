@@ -59,6 +59,12 @@ export const scoreboard = () => {
   };
 
   const handleScores = () => {
+    const keySupport = event => {
+      removeKeySupport();
+      if (event.key === 'Enter') {
+
+      }
+    };
     const scoreData = getScore();
     if (playerName.value !== '') {
       const currentScore = Number(localStorage.getItem('lastScore')) || 0;
@@ -68,6 +74,7 @@ export const scoreboard = () => {
     playerName.value = '';
     scoreboardHeading.innerHTML = "Najlepsze wyniki:";
     checkScores(scoreData);
+
   }}};
   const saveScore = () => {
     handleScores();
