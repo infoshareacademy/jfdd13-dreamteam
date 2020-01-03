@@ -136,3 +136,19 @@
     background-color: #fff
     border: 1px solid #BDBDBD
     z-index: 5
+
+.scoreboard
+  &__container
+    @include flex(normal, normal, column)
+    min-height: 300px
+    width: 400px
+    margin: 2rem auto
+    z-index: 3
+  &__item
+    margin: .5rem 1rem
+  &__value
+    &:nth-child(2)
+      text-align: right
+    display: inline-block
+    min-width: 180px
+  position: relative
