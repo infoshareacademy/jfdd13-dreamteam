@@ -25,6 +25,7 @@
   background-image: url(./img/landscape.png)
 
 .buttons
+  position: absolute
   @include flex(space-around)
   min-width: 500px
   height: 100px
@@ -136,6 +137,18 @@
     background-color: #fff
     border: 1px solid #BDBDBD
     z-index: 5
+  &__close
+    &:hover, &:focus
+      color: #000
+      text-decoration: none
+      cursor: pointer
+    position: absolute
+    top: 0
+    right: 0
+    padding: 1rem
+    color: grey
+    font-size: 1rem
+    font-weight: bold
   &__inputs
     @include flex(space-between, normal, column)
   &__player
