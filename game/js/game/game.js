@@ -1,7 +1,7 @@
 export const boardButtons = document.querySelectorAll(".board__btn");
 export const backToMenu = () => {
   const hrefArr = document.location.href.split("/").map(el => el + "/");
-  const slicedhref = hrefArr.slice(0, hrefArr.length - 2).join("") + "index.html"
+  const slicedhref = hrefArr.slice(0, hrefArr.length - 2).join("") + "index.html";
   document.location.assign(slicedhref);
 };
 export const game = () => {
@@ -68,11 +68,6 @@ export const game = () => {
   };
   const getHighScore = () =>
     localStorage.getItem("highscore") || localStorage.getItem("lastScore") || 0;
-  const displayHighScore = value => {
-    const highScoreDOM = document.getElementById("highscore");
-    highScoreDOM.innerText = `Najlepszy wynik: ${Math.round(value)}`;
-  };
-  // displayHighScore(getHighScore());
 
   const highScore = () => {
     const score = () => {
@@ -229,7 +224,6 @@ export const game = () => {
   const popGameOver = () => {
     const gameOverModal = document.getElementById("modalGameover");
     const closeModal = document.getElementById("btn__game--close");
-    // const modalRecord = document.getElementById("highscore");
     const modalScore = document.getElementById("playerScore");
     const clearScoresBtn = document.getElementById("clearScores");
     const displayScoresBtn = document.getElementById("displayScores");
@@ -521,15 +515,16 @@ export const game = () => {
   };
   startGame();
 };
-boardButtons[1].addEventListener("click", game);
-boardButtons[0].addEventListener("click", backToMenu);
-document.addEventListener("keydown", event => {
+const keySupport =  event => {
   if (event.key === "Enter") {
+    document.removeEventListener("keydown", keySupport);
     game();
   } else if (event.key === "Escape") {
-    console.log('yolo')
-backToMenu()
-    // backToMenu()
-    // window.removeEventListener("keydown", backToMenu)
+    document.removeEventListener("keydown", keySupport);
+    backToMenu()
   }
-});
+};
+
+document.addEventListener("keydown", keySupport);
+boardButtons[0].addEventListener("click", backToMenu);
+boardButtons[1].addEventListener("click", game);
