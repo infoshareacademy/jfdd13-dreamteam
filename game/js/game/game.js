@@ -528,8 +528,7 @@ document.addEventListener("keydown", event => {
     game();
   } else if (event.key === "Escape") {
     console.log('yolo')
-backToMenu()
-    // backToMenu()
-    // window.removeEventListener("keydown", backToMenu)
+    backToMenu()
   }
+  document.onkeydown = null
 });
