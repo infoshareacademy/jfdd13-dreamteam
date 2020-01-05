@@ -44,6 +44,8 @@ class BoardElement {
           break;
         case "down":
           this.position.y -= this.speed;
+          break;
+          default: null
       }
       console.log(this.position);
     }
