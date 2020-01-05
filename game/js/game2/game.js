@@ -31,3 +31,16 @@ class BoardElement {
     this.type = type;
   }
 }
+class Player extends BoardElement {
+  constructor(
+    name,
+    dom,
+    id,
+    position = { x: "", y: "" },
+    size = { w: "", h: "" },
+    speed,
+    type
+  ) {
+    super(name, dom, id, position, size, speed, type);
+  }
+}
