@@ -43,4 +43,16 @@ class Player extends BoardElement {
   ) {
     super(name, dom, id, position, size, speed, type);
   }
+  move(direction) {
+    switch(direction) {
+      case 'Left': this.position.x -= this.speed;
+      break;
+      case 'Right': this.position.x += this.speed;
+      break;
+      case 'Up': this.position.y += this.speed;
+      break;
+      case 'Down': this.position.y -= this.speed
+    }
+    console.log(this.position)
+  }
 }
