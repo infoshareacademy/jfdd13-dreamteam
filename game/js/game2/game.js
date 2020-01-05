@@ -30,6 +30,24 @@ class BoardElement {
     this.speed = speed;
     this.type = type;
   }
+  move(direction) {
+    if (typeof direction === "string") {
+      switch (direction.toLowerCase()) {
+        case "left":
+          this.position.x -= this.speed;
+          break;
+        case "right":
+          this.position.x += this.speed;
+          break;
+        case "up":
+          this.position.y += this.speed;
+          break;
+        case "down":
+          this.position.y -= this.speed;
+      }
+      console.log(this.position);
+    }
+  }
 }
 class Player extends BoardElement {
   constructor(
@@ -43,16 +61,14 @@ class Player extends BoardElement {
   ) {
     super(name, dom, id, position, size, speed, type);
   }
-  move(direction) {
-    switch(direction) {
-      case 'Left': this.position.x -= this.speed;
-      break;
-      case 'Right': this.position.x += this.speed;
-      break;
-      case 'Up': this.position.y += this.speed;
-      break;
-      case 'Down': this.position.y -= this.speed
-    }
-    console.log(this.position)
-  }
 }
+
+const playa = new Player(
+  "playa",
+  "",
+  0,
+  { x: 0, y: 0 },
+  { w: 10, h: 10 },
+  1,
+  "player"
+);
