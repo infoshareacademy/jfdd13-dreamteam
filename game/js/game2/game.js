@@ -63,6 +63,17 @@ class Player extends BoardElement {
   ) {
     super(name, dom, id, position, size, speed, type);
   }
+  keySupport = (e) => {
+    switch(e.key) {
+      case 'ArrowLeft': this.move('left')
+      break;
+      case 'ArrowRight': this.move('right')
+      break;
+      case 'ArrowUp': this.move('up');
+      break;
+      case 'ArrowDown': this.move('down');
+    }
+  }
 }
 
 const playa = new Player(
@@ -74,3 +85,4 @@ const playa = new Player(
   1,
   "player"
 );
+document.addEventListener('keydown', playa.keySupport)
