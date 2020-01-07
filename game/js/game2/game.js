@@ -90,4 +90,23 @@ const playa = new Player(
   1,
   "player"
 );
-document.addEventListener('keydown', playa.keySupport)
+
+class Game {
+  create(creationType) {
+    const creationTypes = ["player", "obstacle"];
+    const createPlayer = () => {
+      return new Player(
+        "player",
+        document.getElementById("player"),
+        0,
+        {
+          x: 700,
+          y: 440
+        },
+        { w: 50, h: 50 }, 1, 'player'
+      );
+    };
+    
+  }
+  render(el) {}
+}
