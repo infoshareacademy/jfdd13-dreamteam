@@ -153,7 +153,7 @@ class Game {
         new BoardElement(
           creationName,
           "",
-          this.board.children[this.board.children.length].id + 1,
+          this.board.children.length,
           creationType === "tree"
             ? {
                 x: 700,
