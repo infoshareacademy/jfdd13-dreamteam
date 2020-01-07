@@ -16,7 +16,8 @@ class BoardElement {
     position = { x: "", y: "" },
     size = { w: "", h: "" },
     speed,
-    type
+    type,
+    destroyed
   ) {
     this.name = name;
     this.dom = dom;
@@ -29,6 +30,7 @@ class BoardElement {
     this.size.h = size.h;
     this.speed = speed;
     this.type = type;
+    this.destroyed = destroyed
   }
   move(direction) {
     if (typeof direction === "string") {
@@ -60,9 +62,10 @@ class Player extends BoardElement {
     position = { x: "", y: "" },
     size = { w: "", h: "" },
     speed,
-    type
+    type,
+    destroyed
   ) {
-    super(name, dom, id, position, size, speed, type);
+    super(name, dom, id, position, size, speed, type, destroyed);
   }
   keySupport = e => {
     switch (e.key) {
