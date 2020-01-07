@@ -93,20 +93,24 @@ const playa = new Player(
 
 class Game {
   create(creationType) {
-    const creationTypes = ["player", "obstacle"];
+    const creationTypes = ["player", "bird", "birdZ", "tree"];
     const createPlayer = () => {
       return new Player(
         "player",
         document.getElementById("player"),
         0,
         {
-          x: 700,
-          y: 440
+          x: 160,
+          y: 160
         },
-        { w: 50, h: 50 }, 1, 'player'
+        { w: 50, h: 50 },
+        1,
+        "player"
       );
     };
-    
+    const createObstacle = () => {
+      return;
+    };
   }
   render(el) {}
 }
