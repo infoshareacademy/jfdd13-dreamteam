@@ -174,7 +174,7 @@ class Game {
         )
       );
     };
-    switch (creationType) {
+    switch (type) {
       case "bird":
         createObstacle("bird");
         break;
