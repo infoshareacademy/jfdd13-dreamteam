@@ -123,7 +123,33 @@ class Game {
       );
     };
     const createObstacle = creationType => {
-      return this.elements.push()
+      //generateBirdY is possible to export
+      const generateBirdY = () => {
+        const randPositions = [250, 300, 350, 400, 450, 480, 550, 600];
+        const getPosition = Math.round(
+          Math.random() * randPositions.length - 1
+        ); //generate random arr index
+        console.log(getPosition);
+        const result = randPositions[getPosition];
+        console.log(result);
+        if (getPosition && getPosition !== -0 && typeof result === "number") {
+          return result;
+        }
+        return randPositions[0];
+      };
+      return this.board.children.push(
+        new BoardElement(
+          creationType,
+          "",
+          this.board.children[this.board.children.length].id + 1,
+          creationType === "tree"
+            ? {
+                x: 700,
+                y: this.board.maxY - 200
+              }
+            : ""
+        )
+      );
     };
     switch (creationType) {
       case "bird":
