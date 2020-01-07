@@ -129,9 +129,7 @@ class Game {
         const getPosition = Math.round(
           Math.random() * randPositions.length - 1
         ); //generate random arr index
-        console.log(getPosition);
         const result = randPositions[Math.abs(getPosition)];
-        console.log(result);
         if (typeof result === "number") {
           return result;
         }
