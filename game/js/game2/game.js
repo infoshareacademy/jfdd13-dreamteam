@@ -130,12 +130,12 @@ class Game {
           Math.random() * randPositions.length - 1
         ); //generate random arr index
         console.log(getPosition);
-        const result = randPositions[getPosition];
+        const result = randPositions[Math.abs(getPosition)];
         console.log(result);
-        if (getPosition && getPosition !== -0 && typeof result === "number") {
+        if (typeof result === "number") {
           return result;
         }
-        return randPositions[0];
+        return generateBirdY();
       };
       return this.board.children.push(
         new BoardElement(
