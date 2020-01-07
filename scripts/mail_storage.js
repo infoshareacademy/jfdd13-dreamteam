@@ -5,15 +5,27 @@ const mailStorage = () => {
         btn = document.querySelector('button'),
         submitMail = document.querySelector("#form__submit"),
         thankYou = document.querySelector("#thankYou"),
-        popGame = () => {document.location.assign('./game/game.html')},
+        popGame = () => {
+            document.location.assign('./game/game.html')
+        },
         popGameModal = () => {
             const btnGame = document.getElementById('btn__game--redirect');
             const btnBack = document.getElementById('btn__game--close');
             const gameModal = document.getElementById('modal__container');
             gameModal.style.top = scrollY + 'px';
             gameModal.style.display = 'flex';
+            const popKeyHandler = (event) => {
+                event.preventDefault();
+                if (event.key === 'Escape') {
+                    gameModal.style.display = 'none';
+                    window.removeEventListener("keydown", popKeyHandler)
+                }
+                event.key === 'Enter' ?
+                    popGame() : '';
+            };
             btnGame.addEventListener('click', popGame);
-            btnBack.addEventListener('click', () => gameModal.style.display = 'none')
+            window.addEventListener('keydown', popKeyHandler);
+            btnBack.addEventListener('click', () => gameModal.style.display = 'none');
         },
         validateMail = () => {
             const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

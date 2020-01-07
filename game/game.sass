@@ -1,0 +1,167 @@
+@mixin flex($center: normal, $align: normal, $direction: row)
+  display: flex
+  flex-direction: $direction
+  justify-content: $center
+  align-items: $align
+@import "../css/sass/variables"
+@import "../css/sass/elements"
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+.container
+  @include flex(center, center)
+  width: 100vw
+  height: 100%
+  min-height: 100vh
+  background-color: #fff
+  overflow: hidden
+
+.board
+  position: relative
+  width: 600px
+  height: 600px
+  background-color: #fff
+  background-image: url(./img/landscape.png)
+
+.btn
+  &__container
+    @include flex(space-around)
+
+    &--initial
+      position: absolute
+      min-width: 500px
+      height: 100px
+      top: calc(50% - 50px)
+
+  &__modal
+    margin: 1rem
+
+.frame
+  position: absolute
+  width: 100px
+  height: 100%
+  background-color: #fff
+  z-index: 2
+
+  &__top, &__bottom
+    height: 300px
+    width: 100%
+
+  &__left, &__right
+    width: 300px
+    top: -10vh
+    height: 120vh
+
+  &__top
+    top: -300px
+
+  &__bottom
+    bottom: -300px
+
+  &__left
+    left: -300px
+
+  &__right
+    @include flex(center, center)
+    right: -300px
+
+.highscore
+  position: absolute
+  @include flex(normal, center)
+  top: -50px
+  right: -100px
+  width: 300px
+  height: 40px
+  z-index: 3
+
+#score
+  position: absolute
+  top: 50px
+  right: -120px
+  font-weight: 700
+  z-index: 4
+
+.countdown__container
+  right: calc(25% + 150px)
+  justify-content: center
+  top: -50px
+
+.player
+  position: absolute
+  z-index: 2
+
+#player img
+  width: 20%
+
+.obstacle, .bird, .birdz
+  position: absolute
+  z-index: 1
+
+.modal
+  position: relative
+  width: 600px
+  min-height: 300px
+  padding: 2rem
+  @include flex(space-between, center, column)
+  background-color: #fff
+  border: 1px solid $divider-color
+
+  &__container
+    position: absolute
+    top: 0
+    left: 0
+    display: none
+    justify-content: center
+    align-items: center
+    width: 100vw
+    height: 100vh
+    z-index: 4
+    overflow: hidden
+    background-color: rgba(0, 0, 0, 0.5)
+
+  &__close
+    position: absolute
+    top: 0
+    right: 0
+    padding: 1rem
+    color: grey
+    font-size: 1rem
+    font-weight: bold
+
+    &:hover, &:focus
+      color: #000
+      text-decoration: none
+      cursor: pointer
+
+  &__inputs
+    @include flex(space-between, normal, column)
+
+  &__player
+    &Name
+      min-width: 180px
+      font-size: large
+      padding: .25rem
+
+    &Score
+      margin: 1rem
+      text-align: center
+
+.scoreboard
+  &__container
+    @include flex(normal, normal, column)
+    min-height: 300px
+    width: 400px
+    margin: 2rem auto
+    z-index: 3
+
+  &__item
+    margin: .5rem 1rem
+
+  &__value
+    &:nth-child(2)
+      text-align: right
+    display: inline-block
+    min-width: 180px
+  position: relative
