@@ -96,7 +96,7 @@ const playa = new Player(
 
 class Game {
   getBoard() {
-    return document.getElementById("board")
+    return document.getElementById("board");
   }
   board = new Board(
     this.getBoard(),
@@ -104,7 +104,7 @@ class Game {
     0,
     this.getBoard().offsetWidth,
     0,
-    this.getBoard().offsetHeight,
+    this.getBoard().offsetHeight
   );
   create(type) {
     const creationType = type;
@@ -148,7 +148,7 @@ class Game {
         tree: 200,
         bird: 40
       };
-      const creationType = creationName === 'birdZ' ? 'bird' : creationName
+      const creationType = creationName === "birdZ" ? "bird" : creationName;
 
       return this.board.children.push(
         new BoardElement(
