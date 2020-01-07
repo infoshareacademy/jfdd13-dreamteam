@@ -137,6 +137,16 @@ class Game {
         }
         return generateBirdY();
       };
+      const BoardElementSpeed = {
+        tree: 2,
+        bird: 3,
+        birdZ: 4
+      };
+      const BoardElementSize = {
+        tree: 200,
+        bird: 40
+      };
+
       return this.board.children.push(
         new BoardElement(
           creationType,
