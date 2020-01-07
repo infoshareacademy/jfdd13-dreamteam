@@ -95,11 +95,18 @@ const playa = new Player(
 );
 
 class Game {
-  elements = []
+  board = new Board(
+    document.getElementById('board'),
+    [],
+    0,
+    () => board.dom.offsetWidth,
+    0,
+    () => board.dom.offsetHeight
+  )
   create(type) {
     const creationType = type;
     const createPlayer = () => {
-      return this.elements.push(new Player(
+      return this.board.children.push(new Player(
         "player",
         document.getElementById("player"),
         0,
