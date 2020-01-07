@@ -204,7 +204,7 @@ class Game {
         break;
       case "player":
         child.style.backgroundImage = "url('img/player_plane.png')";
-        document.addEventListener('keydown', board.children[0].keySupport)
+        document.addEventListener('keydown', this.board.children[0].keySupport)
         break;
         default: throw Error('Unresolved element name in game render')
     }
