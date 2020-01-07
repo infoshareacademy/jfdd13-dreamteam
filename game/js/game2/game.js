@@ -95,10 +95,11 @@ const playa = new Player(
 );
 
 class Game {
-  create(creationType) {
-    const creationTypes = ["player", "bird", "birdZ", "tree"];
+  elements = []
+  create(type) {
+    const creationType = type;
     const createPlayer = () => {
-      return new Player(
+      return this.elements.push(new Player(
         "player",
         document.getElementById("player"),
         0,
@@ -108,12 +109,31 @@ class Game {
         },
         { w: 50, h: 50 },
         1,
-        "player"
-      );
+        "player",
+        false
+      ))
     };
-    const createObstacle = () => {
-      return;
+    const createObstacle = creationType => {
+      return this.elements.push()
     };
+    switch (creationType) {
+      case "bird":
+        createObstacle("bird");
+        break;
+      case "birdZ":
+        createObstacle("birdZ");
+        break;
+      case "tree":
+        createObstacle("tree");
+        break;
+      case "player":
+        createPlayer();
+        break;
+      default:
+        null;
+    }
   }
   render(el) {}
 }
+
+const game = new Game()
