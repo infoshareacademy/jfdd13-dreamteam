@@ -195,11 +195,12 @@ class Game {
     const parent = this.board.dom;
     const child = document.createElement("div");
     child.setAttribute("id", `${el.name}${el.id}`);
+    child.classList.add(`${el.name}`, `${el.type}`);
     child.style.left = el.position.x + "px";
     child.style.top = el.position.y + "px";
 
     parent.appendChild(child);
-    el.dom = document.getElementById(`${el.name}${el.id}`)
+    el.dom = document.getElementById(`${el.name}${el.id}`);
   }
 }
 
