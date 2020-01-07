@@ -122,7 +122,7 @@ class Game {
         )
       );
     };
-    const createObstacle = creationType => {
+    const createObstacle = creationName => {
       //generateBirdY is possible to export
       const generateBirdY = () => {
         const randPositions = [250, 300, 350, 400, 450, 480, 550, 600];
@@ -137,6 +137,7 @@ class Game {
         }
         return generateBirdY();
       };
+
       const BoardElementSpeed = {
         tree: 2,
         bird: 3,
@@ -146,10 +147,11 @@ class Game {
         tree: 200,
         bird: 40
       };
+      const creationType = creationName === 'birdZ' ? 'bird' : creationName
 
       return this.board.children.push(
         new BoardElement(
-          creationType,
+          creationName,
           "",
           this.board.children[this.board.children.length].id + 1,
           creationType === "tree"
@@ -157,7 +159,17 @@ class Game {
                 x: 700,
                 y: this.board.maxY - 200
               }
-            : ""
+            : {
+                x: 700,
+                y: generateBirdY()
+              },
+          {
+            w: BoardElementSize[creationType],
+            h: BoardElementSize[creationType]
+          },
+          BoardElementSpeed[creationType],
+          creationType,
+          false
         )
       );
     };
