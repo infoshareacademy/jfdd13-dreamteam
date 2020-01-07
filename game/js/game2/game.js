@@ -188,7 +188,25 @@ class Game {
     child.classList.add(`${el.name}`, `${el.type}`);
     child.style.left = el.position.x + "px";
     child.style.top = el.position.y + "px";
-
+    child.style.width = el.size.w + "px";
+    child.style.height = el.size.h + "px";
+    child.style.backgroundRepeat = "round";
+    
+    switch (el.name.toLowerCase()) {
+      case "birdz":
+        child.style.backgroundImage = "url('img/bird_eagle.png')";
+        break;
+      case "bird":
+        child.style.backgroundImage = "url('img/bird_gull.png')";
+        break;
+      case "tree":
+        child.style.backgroundImage = "url('img/tree3.png')";
+        break;
+      case "player":
+        child.style.backgroundImage = "url('img/player_plane.png')";
+        break;
+        default: throw Error('Unresolved element name in game render')
+    }
     parent.appendChild(child);
     el.dom = document.getElementById(`${el.name}${el.id}`);
   }
