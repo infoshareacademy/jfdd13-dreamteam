@@ -191,7 +191,16 @@ class Game {
         null;
     }
   }
-  render(el) {}
+  render(el) {
+    const parent = this.board.dom;
+    const child = document.createElement("div");
+    child.setAttribute("id", `${el.name}${el.id}`);
+    child.style.left = el.position.x + "px";
+    child.style.top = el.position.y + "px";
+
+    parent.appendChild(child);
+    el.dom = document.getElementById(`${el.name}${el.id}`)
+  }
 }
 
 const game = new Game();
