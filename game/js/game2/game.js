@@ -30,7 +30,7 @@ class BoardElement {
     this.size.h = size.h;
     this.speed = speed;
     this.type = type;
-    this.destroyed = destroyed
+    this.destroyed = destroyed;
   }
   move(direction) {
     if (typeof direction === "string") {
@@ -96,29 +96,31 @@ const playa = new Player(
 
 class Game {
   board = new Board(
-    document.getElementById('board'),
+    document.getElementById("board"),
     [],
     0,
     () => board.dom.offsetWidth,
     0,
     () => board.dom.offsetHeight
-  )
+  );
   create(type) {
     const creationType = type;
     const createPlayer = () => {
-      return this.board.children.push(new Player(
-        "player",
-        document.getElementById("player"),
-        0,
-        {
-          x: 160,
-          y: 160
-        },
-        { w: 50, h: 50 },
-        1,
-        "player",
-        false
-      ))
+      return this.board.children.push(
+        new Player(
+          "player",
+          document.getElementById("player"),
+          0,
+          {
+            x: 160,
+            y: 160
+          },
+          { w: 50, h: 50 },
+          1,
+          "player",
+          false
+        )
+      );
     };
     const createObstacle = creationType => {
       return this.elements.push()
@@ -143,4 +145,4 @@ class Game {
   render(el) {}
 }
 
-const game = new Game()
+const game = new Game();
