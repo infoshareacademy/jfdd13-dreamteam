@@ -84,16 +84,6 @@ class Player extends BoardElement {
   };
 }
 
-const playa = new Player(
-  "playa",
-  "",
-  0,
-  { x: 0, y: 0 },
-  { w: 10, h: 10 },
-  1,
-  "player"
-);
-
 class Game {
   getBoard() {
     return document.getElementById("board");
