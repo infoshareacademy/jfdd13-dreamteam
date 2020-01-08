@@ -32,20 +32,28 @@ class BoardElement {
     this.type = type;
     this.destroyed = destroyed;
   }
+  changePosition() {
+    this.dom.style.left = `${this.position.x}px`;
+    this.dom.style.top = `${this.position.y}px`;
+  }
   move(direction) {
     if (typeof direction === "string") {
       switch (direction.toLowerCase()) {
         case "left":
           this.position.x -= this.speed;
+          this.changePosition();
           break;
         case "right":
           this.position.x += this.speed;
+          this.changePosition();
           break;
         case "up":
           this.position.y += this.speed;
+          this.changePosition();
           break;
         case "down":
           this.position.y -= this.speed;
+          this.changePosition();
           break;
         default:
           null;
@@ -181,9 +189,7 @@ class Game {
         null;
     }
   }
-  changePosition(el) {
-    console.log(el.id)
-  }
+
   render(el) {
     const parent = this.board.dom;
     const child = document.createElement("div");
