@@ -200,7 +200,7 @@ class Game {
     child.style.width = el.size.w + "px";
     child.style.height = el.size.h + "px";
     child.style.backgroundRepeat = "round";
-    
+
     switch (el.name.toLowerCase()) {
       case "birdz":
         child.style.backgroundImage = "url('img/bird_eagle.png')";
@@ -213,9 +213,10 @@ class Game {
         break;
       case "player":
         child.style.backgroundImage = "url('img/player_plane.png')";
-        document.addEventListener('keydown', this.board.children[0].keySupport)
+        document.addEventListener("keydown", this.board.children[0].keySupport);
         break;
-        default: throw Error('Unresolved element name in game render')
+      default:
+        throw Error("Unresolved element name in game render");
     }
     parent.appendChild(child);
     el.dom = document.getElementById(`${el.name}${el.id}`);
