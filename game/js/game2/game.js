@@ -48,11 +48,11 @@ class BoardElement {
           this.changePosition();
           break;
         case "up":
-          this.position.y += this.speed;
+          this.position.y -= this.speed;
           this.changePosition();
           break;
         case "down":
-          this.position.y -= this.speed;
+          this.position.y += this.speed;
           this.changePosition();
           break;
         default:
