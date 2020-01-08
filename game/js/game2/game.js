@@ -181,6 +181,9 @@ class Game {
         null;
     }
   }
+  changePosition(el) {
+    console.log(el.id)
+  }
   render(el) {
     const parent = this.board.dom;
     const child = document.createElement("div");
