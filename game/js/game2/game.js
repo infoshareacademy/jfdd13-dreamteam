@@ -220,13 +220,8 @@ class Game {
     parent.appendChild(child);
     el.dom = document.getElementById(`${el.name}${el.id}`);
   }
-  start() {
-    this.create("player");
-    this.render(this.board.children[0]);
-    document.addEventListener("keydown", this.board.children[0].keySupport);
-  }
+
   handleCollision() {
-    
     const boardElements = this.board.children;
     const player = this.board.children[0];
     if (
@@ -238,7 +233,6 @@ class Game {
       console.log('player can move')
     }
     boardElements.forEach(element => {
-      
       if (
         element.type !== "player" &&
         element.position.x === player.position.x &&
@@ -248,6 +242,14 @@ class Game {
         console.log('collision in da house')
       }
     });
+  }
+  start() {
+    this.create("player");
+    this.render(this.board.children[0]);
+    document.addEventListener(
+      "keydown",
+      this.board.children.filter(el => el.type === "player")[0].keySupport
+    );
   }
 }
 
