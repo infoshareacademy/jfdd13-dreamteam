@@ -78,16 +78,16 @@ class Player extends BoardElement {
   keySupport = e => {
     switch (e.key) {
       case "ArrowLeft":
-        this.move("left");
+        this.position.x >= 1 ? this.move("left") : null;
         break;
       case "ArrowRight":
-        this.move("right");
+        this.position.x <= 599 - this.size.w ? this.move("right") : null;
         break;
       case "ArrowUp":
-        this.move("up");
+        this.position.y >= 1 ? this.move("up") : null;
         break;
       case "ArrowDown":
-        this.move("down");
+        this.position.y <= 599 - this.size.h? this.move("down") : null;
     }
   };
 }
@@ -224,22 +224,13 @@ class Game {
   handleCollision() {
     const boardElements = this.board.children;
     const player = this.board.children[0];
-    if (
-      player.position.x <= this.board.maxX &&
-      player.position.x >= this.board.minX &&
-      player.position.y >= this.board.maxY &&
-      player.position.y >= this.board.minY
-      ) {
-      console.log('player can move')
-    }
     boardElements.forEach(element => {
       if (
         element.type !== "player" &&
         element.position.x === player.position.x &&
         element.position.y === player.position.y
       ) {
-        
-        console.log('collision in da house')
+        console.log("collision in da house");
       }
     });
   }
