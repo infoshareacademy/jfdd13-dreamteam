@@ -213,7 +213,6 @@ class Game {
         break;
       case "player":
         child.style.backgroundImage = "url('img/player_plane.png')";
-        document.addEventListener("keydown", this.board.children[0].keySupport);
         break;
       default:
         throw Error("Unresolved element name in game render");
@@ -222,11 +221,35 @@ class Game {
     el.dom = document.getElementById(`${el.name}${el.id}`);
   }
   start() {
-    this.create('player')
-    this.render(this.board.children[0])
+    this.create("player");
+    this.render(this.board.children[0]);
+    document.addEventListener("keydown", this.board.children[0].keySupport);
+  }
+  handleCollision() {
     
+    const boardElements = this.board.children;
+    const player = this.board.children[0];
+    if (
+      player.position.x <= this.board.maxX &&
+      player.position.x >= this.board.minX &&
+      player.position.y >= this.board.maxY &&
+      player.position.y >= this.board.minY
+      ) {
+      console.log('player can move')
+    }
+    boardElements.forEach(element => {
+      
+      if (
+        element.type !== "player" &&
+        element.position.x === player.position.x &&
+        element.position.y === player.position.y
+      ) {
+        
+        console.log('collision in da house')
+      }
+    });
   }
 }
 
 const game = new Game();
-game.start()
+game.start();
