@@ -221,6 +221,12 @@ class Game {
     parent.appendChild(child);
     el.dom = document.getElementById(`${el.name}${el.id}`);
   }
+  start() {
+    this.create('player')
+    this.render(this.board.children[0])
+    
+  }
 }
 
 const game = new Game();
+game.start()
