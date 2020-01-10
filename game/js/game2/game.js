@@ -261,10 +261,10 @@ class Game {
       }, 4000);
       const collision = setInterval(() => {
         this.handleCollision()
-      }, 400);
+      }, 100);
       this.gameIntervals.push(creation, collision)
     };
-    testLoop()
+    requestAnimationFrame(testLoop)
   }
   stop() {
     const clearIntervals = arr => {
