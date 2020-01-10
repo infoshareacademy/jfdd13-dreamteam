@@ -224,15 +224,15 @@ class Game {
   handleCollision() {
     const boardElements = this.board.children;
     const player = this.board.children[0];
-    boardElements.forEach(element => {
-      if (
-        element.type !== "player" &&
-        element.position.x === player.position.x &&
-        element.position.y === player.position.y
-      ) {
-        console.log("collision in da house");
+    for(let i = 1; i < boardElements.length; i++) {
+      if (boardElements[i].position.x === player.position.x) {
+        console.log('boom')
+        return this.stop()
+      } else {
+        console.log('move!', player.position.x)
+        boardElements[i].move('left')
       }
-    });
+    }
   }
   destroy(el) {
     const destroy = el => {
