@@ -249,6 +249,17 @@ class Game {
       "keydown",
       this.board.children.filter(el => el.type === "player")[0].keySupport
     );
+    const testLoop = () => {
+      const creation = setInterval(() => {
+        game.create("bird");
+        game.render(this.board.children[this.board.children.length - 1]);
+      }, 4000);
+      const collision = setInterval(() => {
+        this.handleCollision()
+      }, 400);
+      this.gameIntervals.push(creation, collision)
+    };
+    testLoop()
   }
   stop() {
     const clearIntervals = arr => {
@@ -261,7 +272,8 @@ class Game {
     const clearBoard = () => {
       this.board.children = [];
     };
-    clearBoard();
+    clearIntervals(this.gameIntervals);
+    // clearBoard();
   }
 }
 
