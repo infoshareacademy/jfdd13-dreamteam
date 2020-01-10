@@ -253,12 +253,16 @@ class Game {
   }
   stop() {
     const clearIntervals = arr => {
-      arr.hasOwnProperty('length')
+      arr.hasOwnProperty("length")
         ? arr.forEach(el => {
             clearInterval(el);
           })
         : clearInterval(arr);
     };
+    const clearBoard = () => {
+      this.board.children = [];
+    };
+    clearBoard();
   }
 }
 
