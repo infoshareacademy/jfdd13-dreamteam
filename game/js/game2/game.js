@@ -127,7 +127,7 @@ class Game {
     const createObstacle = creationName => {
       //generateBirdY is possible to export
       const generateBirdY = () => {
-        const randPositions = [250, 300, 350, 400, 450, 480, 550, 600];
+        const randPositions = [0, 50, 150, 200, 250, 280, 350, 600];
         const getPosition = Math.round(
           Math.random() * randPositions.length - 1
         ); //generate random arr index
