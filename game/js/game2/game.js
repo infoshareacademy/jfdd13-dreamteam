@@ -87,7 +87,7 @@ class Player extends BoardElement {
         this.position.y >= 1 ? this.move("up") : null;
         break;
       case "ArrowDown":
-        this.position.y <= 599 - this.size.h? this.move("down") : null;
+        this.position.y <= 599 - this.size.h ? this.move("down") : null;
     }
   };
 }
