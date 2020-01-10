@@ -104,6 +104,7 @@ class Game {
     0,
     this.getBoard().offsetHeight
   );
+  gameIntervals = [];
   create(type) {
     const creationType = type;
     const createPlayer = () => {
@@ -241,6 +242,15 @@ class Game {
       "keydown",
       this.board.children.filter(el => el.type === "player")[0].keySupport
     );
+  }
+  stop() {
+    const clearIntervals = arr => {
+      arr.hasOwnProperty('length')
+        ? arr.forEach(el => {
+            clearInterval(el);
+          })
+        : clearInterval(arr);
+    };
   }
 }
 
