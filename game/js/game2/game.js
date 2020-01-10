@@ -58,7 +58,6 @@ class BoardElement {
         default:
           null;
       }
-      console.log(this.position);
     }
   }
 }
