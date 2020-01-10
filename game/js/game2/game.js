@@ -37,7 +37,7 @@ class BoardElement {
     this.dom.style.top = `${this.position.y}px`;
   }
   move(direction) {
-    if (typeof direction === "string") {
+    if (typeof direction === "string" && this.destroyed === false) {
       switch (direction.toLowerCase()) {
         case "left":
           this.position.x -= this.speed;
@@ -234,6 +234,14 @@ class Game {
         console.log("collision in da house");
       }
     });
+  }
+  destroy(el) {
+    const destroy = el => {
+      el.destroyed = true;
+    };
+    el.hasOwnProperty("length")
+      ? el.forEach(element => destroy(element))
+      : destroy(el);
   }
   start() {
     this.create("player");
