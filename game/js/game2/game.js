@@ -75,7 +75,7 @@ class Player extends BoardElement {
   ) {
     super(name, dom, id, position, size, speed, type, destroyed);
   }
-  keySupport = e => {
+  keySupport = (e) => {
     switch (e.key) {
       case "ArrowLeft":
         this.position.x >= 1 ? this.move("left") : null;
@@ -269,11 +269,20 @@ class Game {
         game.render(this.board.children[this.board.children.length - 1]);
       }, 4000);
       const collision = setInterval(() => {
-        this.handleCollision()
-      }, 100);
-      this.gameIntervals.push(creation, collision)
+        this.handleCollision();
+      }, 1);
+      const elementsMove = setInterval(() => {
+        const boardElements = this.board.children;
+        for (let i = 1; i < boardElements.length; i++) {
+          boardElements[i].move("left");
+        }
+      }, 10);
+      const destroy = setInterval(() => {
+        this.handleDestroy();
+      }, 2000);
+      this.gameIntervals.push(creation, elementsMove, collision, destroy);
     };
-    requestAnimationFrame(testLoop)
+    requestAnimationFrame(testLoop);
   }
   stop() {
     const clearIntervals = arr => {
@@ -288,6 +297,7 @@ class Game {
     };
     clearIntervals(this.gameIntervals);
     // clearBoard();
+    Object.freeze(this.board.children[0]);
   }
 }
 
