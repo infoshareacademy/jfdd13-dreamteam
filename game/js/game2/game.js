@@ -237,11 +237,24 @@ class Game {
   }
   destroy(el) {
     const destroy = el => {
+      if (el.destroyed) {
+        return;
+      }
+
       el.destroyed = true;
+      Object.freeze(el);
     };
     el.hasOwnProperty("length")
       ? el.forEach(element => destroy(element))
       : destroy(el);
+  }
+  handleDestroy() {
+    const boardElements = this.board.children;
+    for (let i = 1; i < boardElements.length; i++) {
+      if (boardElements[i].position.x < 0 - boardElements[i].size.w) {
+        this.destroy(boardElements[i]);
+      }
+    }
   }
   start() {
     this.create("player");
