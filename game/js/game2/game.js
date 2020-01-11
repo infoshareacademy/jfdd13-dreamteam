@@ -230,7 +230,17 @@ class Game {
     const boardElements = this.board.children;
     const player = this.board.children[0];
     for (let i = 1; i < boardElements.length; i++) {
-      if (boardElements[i].position.x === player.position.x) {
+      const currentX = boardElements[i].position.x
+      const currentY = boardElements[i].position.y
+      const currentSize = boardElements[i].size.w
+      if (
+        currentX >=
+        player.position.x - currentSize / 2 &&
+        currentX <= player.position.x + currentSize &&
+        currentY >=
+        player.position.y - currentSize / 2 &&
+        currentY <= player.position.y + currentSize
+      ) {
         return this.stop();
       }
     }
