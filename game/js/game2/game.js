@@ -229,13 +229,9 @@ class Game {
   handleCollision() {
     const boardElements = this.board.children;
     const player = this.board.children[0];
-    for(let i = 1; i < boardElements.length; i++) {
+    for (let i = 1; i < boardElements.length; i++) {
       if (boardElements[i].position.x === player.position.x) {
-        console.log('boom')
-        return this.stop()
-      } else {
-        console.log('move!', player.position.x)
-        boardElements[i].move('left')
+        return this.stop();
       }
     }
   }
