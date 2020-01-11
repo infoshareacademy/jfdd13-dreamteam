@@ -265,6 +265,11 @@ class Game {
       }
     }
   }
+  boardBtns() {
+    const [backBtn, startBtn, helpBtn] = this.board.btns
+    console.log(helpBtn)
+    document.addEventListener('click')
+  }
   start() {
 
     const testLoop = () => {
@@ -314,4 +319,3 @@ class Game {
 }
 
 const game = new Game();
-game.start();
