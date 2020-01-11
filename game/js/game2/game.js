@@ -108,7 +108,8 @@ class Game {
     0,
     this.getBoard().offsetHeight
   );
-  gameIntervals = [];
+  activeIntervals = [];
+  activeListeners = []
   create(type) {
     const creationType = type;
     const createPlayer = () => {
@@ -283,7 +284,7 @@ class Game {
       const destroy = setInterval(() => {
         this.handleDestroy();
       }, 2000);
-      this.gameIntervals.push(creation, elementsMove, collision, destroy);
+      this.activeIntervals.push(creation, elementsMove, collision, destroy);
     };
 
     this.create("player");
@@ -306,7 +307,7 @@ class Game {
     const clearBoard = () => {
       this.board.children = [];
     };
-    clearIntervals(this.gameIntervals);
+    clearIntervals(this.activeIntervals);
     // clearBoard();
     Object.freeze(this.board.children[0]);
   }
