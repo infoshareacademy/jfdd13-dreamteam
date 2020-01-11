@@ -233,13 +233,11 @@ class Game {
       const currentX = boardElements[i].position.x
       const currentY = boardElements[i].position.y
       const currentSize = boardElements[i].size.w
+      const dx = player.position.x - currentX
+      const dy = player.position.y - currentY
+      const distance = Math.sqrt(dx * dx + dy * dy);
       if (
-        currentX >=
-        player.position.x - currentSize / 2 &&
-        currentX <= player.position.x + currentSize &&
-        currentY >=
-        player.position.y - currentSize / 2 &&
-        currentY <= player.position.y + currentSize
+        distance < player.size.w / 2 + currentSize / 2
       ) {
         return this.stop();
       }
