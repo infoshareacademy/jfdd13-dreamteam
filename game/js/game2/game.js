@@ -266,9 +266,29 @@ class Game {
     }
   }
   boardBtns() {
+    const hideBtns = () => {
+      this.board.btns.forEach(e => e.style.display = 'none')
+    }
+    const removeListeners = () => {
+      this.activeListeners.forEach (e => console.log(e))
+      return this.activeListeners = []
+    }
+    const handleBtnClick = (func) => {
+      // hideBtns()
+      func
+      removeListeners()
+    }
     const [backBtn, startBtn, helpBtn] = this.board.btns
-    console.log(helpBtn)
-    document.addEventListener('click')
+    backBtn.addEventListener('click', () => {
+      handleBtnClick(console.log('back'))
+    })
+    startBtn.addEventListener('click', () => {
+      handleBtnClick(this.start())
+    })
+    helpBtn.addEventListener('click', () => {
+      handleBtnClick(console.log('help'))
+    })
+    this.activeListeners.push(backBtn, startBtn, helpBtn)
   }
   start() {
 
@@ -319,3 +339,4 @@ class Game {
 }
 
 const game = new Game();
+game.boardBtns()
