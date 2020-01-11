@@ -2,7 +2,7 @@ class Board {
   constructor(dom, children, btns, minX, maxX, minY, maxY) {
     this.dom = dom;
     this.children = children;
-    this.btns = btns
+    this.btns = btns;
     this.minX = minX;
     this.maxX = maxX;
     this.minY = minY;
@@ -97,7 +97,7 @@ class Game {
     return document.getElementById("board");
   }
   getBtns() {
-    return Array.from(document.querySelectorAll('.board__btn'))
+    return Array.from(document.querySelectorAll(".board__btn"));
   }
   board = new Board(
     this.getBoard(),
