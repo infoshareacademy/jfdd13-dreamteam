@@ -265,12 +265,7 @@ class Game {
     }
   }
   start() {
-    this.create("player");
-    this.render(this.board.children[0]);
-    document.addEventListener(
-      "keydown",
-      this.board.children.filter(el => el.type === "player")[0].keySupport
-    );
+
     const testLoop = () => {
       const creation = setInterval(() => {
         game.create("bird");
@@ -290,6 +285,14 @@ class Game {
       }, 2000);
       this.gameIntervals.push(creation, elementsMove, collision, destroy);
     };
+
+    this.create("player");
+    this.render(this.board.children[0]);
+    document.addEventListener(
+      "keydown",
+      this.board.children.filter(el => el.type === "player")[0].keySupport
+    );
+
     requestAnimationFrame(testLoop);
   }
   stop() {
