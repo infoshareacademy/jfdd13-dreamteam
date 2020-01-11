@@ -122,7 +122,7 @@ class Game {
             y: 160
           },
           { w: 50, h: 50 },
-          1,
+          2,
           "player",
           false
         )
