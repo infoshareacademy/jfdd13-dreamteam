@@ -288,6 +288,8 @@ class Game {
     helpBtn.addEventListener('click', () => {
       handleBtnClick(console.log('help'))
     })
+    //TODO
+    //removeListeners on click
     this.activeListeners.push(backBtn, startBtn, helpBtn)
   }
   start() {
