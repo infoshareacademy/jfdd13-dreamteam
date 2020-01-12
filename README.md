@@ -1,7 +1,14 @@
 # dreamTeam Landing page
 -------------------
 
-During *Front-end Developer* course at **infoShare Academy** we have collaborated with Scrum project:
+##In progress
+- game OOP refabrication
+
+##Todo
+- high res layout styling on chrome
+
+
+During *Front-end Developer* course at **infoShare Academy** I have collaborated with Scrum project:
 
 #### **Landing page with mini game**
 - HTML5
