@@ -269,29 +269,31 @@ class Game {
     const hideBtns = () => {
       this.board.btns.forEach(e => e.style.display = 'none')
     }
-    const removeListeners = () => {
-      this.activeListeners.forEach (e => {e.removeEventListener('click')})
-      return this.activeListeners = []
-    }
-    const handleBtnClick = (func) => {
-      // hideBtns()
-      func
-      removeListeners()
-    }
     const [backBtn, startBtn, helpBtn] = this.board.btns
-    const funfunfunction = () => {
-      console.log('BOOM')
-      backBtn.removeEventListener('click', funfunfunction)
+    const removeEventListeners = () => {
+      backBtn.removeEventListener('click', previousPage)
+      startBtn.removeEventListener('click', startGame)
+      helpBtn.removeEventListener('click', popHelpModal)
     }
-    backBtn.addEventListener('click', funfunfunction)
-    startBtn.addEventListener('click', () => {
-      handleBtnClick(this.start())
-    })
-    helpBtn.addEventListener('click', () => {
-      handleBtnClick(console.log('help'))
-    })
-    //TODO
-    //removeListeners on click
+    const previousPage = () => {
+      console.log('prevPage')
+      removeEventListeners()
+    }
+    const startGame = () => {
+      backBtn.removeEventListener('click', startGame)
+      this.start()
+      removeEventListeners()
+    }
+    const popHelpModal = () => {
+      console.log('pophelpmodal')
+      removeEventListeners()
+    }
+    const setEventListeners = () => {
+    backBtn.addEventListener('click', previousPage)
+    startBtn.addEventListener('click', startGame)
+    helpBtn.addEventListener('click', popHelpModal)
+  }
+  setEventListeners()
     this.activeListeners.push(backBtn, startBtn, helpBtn)
   }
   start() {
