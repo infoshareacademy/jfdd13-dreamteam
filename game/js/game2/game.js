@@ -249,13 +249,12 @@ class Game {
       if (el.destroyed) {
         return;
       }
-
       el.destroyed = true;
-      Object.freeze(el);
     };
     el.hasOwnProperty("length")
-      ? el.forEach(element => destroy(element))
-      : destroy(el);
+    ? el.forEach(element => destroy(element))
+    : destroy(el);
+    Object.freeze(el);
   }
   handleDestroy() {
     const boardElements = this.board.children;
