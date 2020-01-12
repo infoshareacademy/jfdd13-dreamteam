@@ -277,15 +277,18 @@ class Game {
     }
     const previousPage = () => {
       console.log('prevPage')
+      hideBtns()
       removeEventListeners()
     }
     const startGame = () => {
       backBtn.removeEventListener('click', startGame)
       this.start()
+      hideBtns()
       removeEventListeners()
     }
     const popHelpModal = () => {
       console.log('pophelpmodal')
+      hideBtns()
       removeEventListeners()
     }
     const setEventListeners = () => {
