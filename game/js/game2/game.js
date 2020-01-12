@@ -75,7 +75,7 @@ class Player extends BoardElement {
   ) {
     super(name, dom, id, position, size, speed, type, destroyed);
   }
-  keySupport = (e) => {
+  keySupport = e => {
     switch (e.key) {
       case "ArrowLeft":
         this.position.x >= 1 ? this.move("left") : null;
@@ -109,7 +109,7 @@ class Game {
     this.getBoard().offsetHeight
   );
   activeIntervals = [];
-  activeListeners = []
+  activeListeners = [];
   create(type) {
     const creationType = type;
     const createPlayer = () => {
@@ -231,15 +231,13 @@ class Game {
     const boardElements = this.board.children;
     const player = this.board.children[0];
     for (let i = 1; i < boardElements.length; i++) {
-      const currentX = boardElements[i].position.x
-      const currentY = boardElements[i].position.y
-      const currentSize = boardElements[i].size.w
-      const dx = player.position.x - currentX
-      const dy = player.position.y - currentY
+      const currentX = boardElements[i].position.x;
+      const currentY = boardElements[i].position.y;
+      const currentSize = boardElements[i].size.w;
+      const dx = player.position.x - currentX;
+      const dy = player.position.y - currentY;
       const distance = Math.sqrt(dx * dx + dy * dy);
-      if (
-        distance < player.size.w / 2 + currentSize / 2
-      ) {
+      if (distance < player.size.w / 2 + currentSize / 2) {
         return this.stop();
       }
     }
@@ -252,8 +250,8 @@ class Game {
       el.destroyed = true;
     };
     el.hasOwnProperty("length")
-    ? el.forEach(element => destroy(element))
-    : destroy(el);
+      ? el.forEach(element => destroy(element))
+      : destroy(el);
     Object.freeze(el);
   }
   handleDestroy() {
@@ -266,40 +264,39 @@ class Game {
   }
   boardBtns() {
     const hideBtns = () => {
-      this.board.btns.forEach(e => e.style.display = 'none')
-    }
-    const [backBtn, startBtn, helpBtn] = this.board.btns
+      this.board.btns.forEach(e => (e.style.display = "none"));
+    };
+    const [backBtn, startBtn, helpBtn] = this.board.btns;
     const removeEventListeners = () => {
-      backBtn.removeEventListener('click', previousPage)
-      startBtn.removeEventListener('click', startGame)
-      helpBtn.removeEventListener('click', popHelpModal)
-    }
+      backBtn.removeEventListener("click", previousPage);
+      startBtn.removeEventListener("click", startGame);
+      helpBtn.removeEventListener("click", popHelpModal);
+    };
     const previousPage = () => {
-      console.log('prevPage')
-      hideBtns()
-      removeEventListeners()
-    }
+      console.log("prevPage");
+      hideBtns();
+      removeEventListeners();
+    };
     const startGame = () => {
-      backBtn.removeEventListener('click', startGame)
-      this.start()
-      hideBtns()
-      removeEventListeners()
-    }
+      backBtn.removeEventListener("click", startGame);
+      this.start();
+      hideBtns();
+      removeEventListeners();
+    };
     const popHelpModal = () => {
-      console.log('pophelpmodal')
-      hideBtns()
-      removeEventListeners()
-    }
+      console.log("pophelpmodal");
+      hideBtns();
+      removeEventListeners();
+    };
     const setEventListeners = () => {
-    backBtn.addEventListener('click', previousPage)
-    startBtn.addEventListener('click', startGame)
-    helpBtn.addEventListener('click', popHelpModal)
-  }
-  setEventListeners()
-    this.activeListeners.push(backBtn, startBtn, helpBtn)
+      backBtn.addEventListener("click", previousPage);
+      startBtn.addEventListener("click", startGame);
+      helpBtn.addEventListener("click", popHelpModal);
+    };
+    setEventListeners();
+    this.activeListeners.push(backBtn, startBtn, helpBtn);
   }
   start() {
-
     const testLoop = () => {
       const creation = setInterval(() => {
         game.create("bird");
@@ -347,4 +344,4 @@ class Game {
 }
 
 const game = new Game();
-game.boardBtns()
+game.boardBtns();
