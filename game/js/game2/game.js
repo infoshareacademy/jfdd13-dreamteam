@@ -270,7 +270,7 @@ class Game {
       this.board.btns.forEach(e => e.style.display = 'none')
     }
     const removeListeners = () => {
-      this.activeListeners.forEach (e => console.log(e))
+      this.activeListeners.forEach (e => {e.removeEventListener('click')})
       return this.activeListeners = []
     }
     const handleBtnClick = (func) => {
@@ -279,9 +279,11 @@ class Game {
       removeListeners()
     }
     const [backBtn, startBtn, helpBtn] = this.board.btns
-    backBtn.addEventListener('click', () => {
-      handleBtnClick(console.log('back'))
-    })
+    const funfunfunction = () => {
+      console.log('BOOM')
+      backBtn.removeEventListener('click', funfunfunction)
+    }
+    backBtn.addEventListener('click', funfunfunction)
     startBtn.addEventListener('click', () => {
       handleBtnClick(this.start())
     })
