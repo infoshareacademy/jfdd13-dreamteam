@@ -299,7 +299,7 @@ class Game {
     }
     start() {
         const testLoop = () => {
-            const creation = setInterval(() => {
+            const boardElementsCreation = setInterval(() => {
                 game.create("bird")
                 game.render(this.board.children[this.board.children.length - 1])
             }, 4000)
@@ -312,14 +312,14 @@ class Game {
                     boardElements[i].move("left")
                 }
             }, 10)
-            const destroy = setInterval(() => {
+            const boardElementsDestroy = setInterval(() => {
                 this.handleDestroy()
             }, 2000)
             this.activeIntervals.push(
-                creation,
+                boardElementsCreation,
                 elementsMove,
                 collision,
-                destroy
+                boardElementsDestroy
             )
         }
 
