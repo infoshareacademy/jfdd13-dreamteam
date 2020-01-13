@@ -1,28 +1,46 @@
 {
-  "name": "jfdd13-dreamteam",
-  "version": "0.1.0",
-  "description": "Landing page made by Dreamteam",
-  "main": "index.html",
-  "dependencies": {
-    "sass": "^1.23.3"
-  },
-  "devDependencies": {
-    "eslint": "^6.8.0",
-    "node-sass": "^4.13.0",
-    "rollup": "^1.27.14"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "jsBundlerWatch": "npx rollup -w --config"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/infoshareacademy/jfdd13-dreamteam.git"
-  },
-  "author": "Alexander Walczuk, Martyna Michno, Michal Kusnierz, Rafal Wenslaw",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/infoshareacademy/jfdd13-dreamteam/issues"
-  },
-  "homepage": "https://github.com/infoshareacademy/jfdd13-dreamteam#readme"
+    "name": "jfdd13-dreamteam",
+    "version": "0.1.0",
+    "description": "Landing page made by Dreamteam",
+    "main": "index.html",
+    "dependencies": {
+        "sass": "^1.23.3"
+    },
+    "devDependencies": {
+        "eslint": "^6.8.0",
+        "husky": "^4.0.7",
+        "lint-staged": "^9.5.0",
+        "node-sass": "^4.13.0",
+        "prettier": "1.19.1",
+        "rollup": "^1.27.14"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "jsBundlerWatch": "npx rollup -w --config"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/infoshareacademy/jfdd13-dreamteam.git"
+    },
+    "author": "Alexander Walczuk, Martyna Michno, Michal Kusnierz, Rafal Wenslaw",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/infoshareacademy/jfdd13-dreamteam/issues"
+    },
+    "homepage": "https://github.com/infoshareacademy/jfdd13-dreamteam#readme",
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,css,json,md}": [
+            "prettier --write",
+            "git add"
+        ],
+        "*.js": [
+            "eslint --fix",
+            "git add"
+        ]
+    }
 }
