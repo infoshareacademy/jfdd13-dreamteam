@@ -93,6 +93,10 @@ class Player extends BoardElement {
 }
 
 class Game {
+  constructor() {
+    this.activeIntervals = []
+    this.activeListeners = []
+  }
   getBoard() {
     return document.getElementById("board");
   }
@@ -108,8 +112,6 @@ class Game {
     0,
     this.getBoard().offsetHeight
   );
-  activeIntervals = [];
-  activeListeners = [];
   create(type) {
     const creationType = type;
     const createPlayer = () => {
