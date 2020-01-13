@@ -38,30 +38,31 @@ class BoardElement {
     this.dom.style.top = `${this.position.y}px`;
   }
   move(direction) {
-    if (typeof direction === "string" && this.destroyed === false) {
-      switch (direction.toLowerCase()) {
-        case "left":
-          this.position.x -= this.speed;
-          this.changePosition();
+    if (typeof direction !== "string" || this.destroyed === true) {
+      return
+    }
+    switch (direction.toLowerCase()) {
+      case "left":
+        this.position.x -= this.speed;
+        this.changePosition();
 
-          break;
-        case "right":
-          this.position.x += this.speed;
-          this.changePosition();
+        break;
+      case "right":
+        this.position.x += this.speed;
+        this.changePosition();
 
-          break;
-        case "up":
-          this.position.y -= this.speed;
-          this.changePosition();
+        break;
+      case "up":
+        this.position.y -= this.speed;
+        this.changePosition();
 
-          break;
-        case "down":
-          this.position.y += this.speed;
-          this.changePosition();
-          break;
-        default:
-          null;
-      }
+        break;
+      case "down":
+        this.position.y += this.speed;
+        this.changePosition();
+        break;
+      default:
+        null;
     }
   }
 }
@@ -202,6 +203,14 @@ class Game {
   }
 
   render(el) {
+    
+const assets = {
+  birdz: 'bird_eagle',
+  bird: 'bird_gull',
+  tree: 'tree3',
+  player: 'player_plane'
+}
+
     const parent = this.board.dom;
     const child = document.createElement("div");
     child.setAttribute("id", `${el.name}${el.id}`);
@@ -211,23 +220,7 @@ class Game {
     child.style.width = el.size.w + "px";
     child.style.height = el.size.h + "px";
     child.style.backgroundRepeat = "round";
-
-    switch (el.name.toLowerCase()) {
-      case "birdz":
-        child.style.backgroundImage = "url('img/bird_eagle.png')";
-        break;
-      case "bird":
-        child.style.backgroundImage = "url('img/bird_gull.png')";
-        break;
-      case "tree":
-        child.style.backgroundImage = "url('img/tree3.png')";
-        break;
-      case "player":
-        child.style.backgroundImage = "url('img/player_plane.png')";
-        break;
-      default:
-        throw Error("Unresolved element name in game render");
-    }
+    child.style.backgroundImage = `url('img/${assets[el.name.toLowerCase()]}.png')`;
     parent.appendChild(child);
     el.dom = document.getElementById(`${el.name}${el.id}`);
   }
