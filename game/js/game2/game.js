@@ -97,8 +97,8 @@ class Player extends BoardElement {
 
 class Game {
   constructor() {
-    this.activeIntervals = []
-    this.activeListeners = []
+    this.activeIntervals = [];
+    this.activeListeners = [];
   }
   getBoard() {
     return document.getElementById("board");
@@ -280,19 +280,19 @@ class Game {
     const boardCleanUp = () => {
       hideBtns();
       removeEventListeners();
-    }
+    };
     const previousPage = () => {
       console.log("prevPage");
-      boardCleanUp()
+      boardCleanUp();
     };
     const startGame = () => {
       backBtn.removeEventListener("click", startGame);
       this.start();
-      boardCleanUp()
+      boardCleanUp();
     };
     const popHelpModal = () => {
       console.log("pophelpmodal");
-      boardCleanUp()
+      boardCleanUp();
     };
     const setEventListeners = () => {
       backBtn.addEventListener("click", previousPage);
@@ -327,18 +327,19 @@ class Game {
     this.render(this.board.children[0]);
     document.addEventListener(
       "keydown",
-      this.board.children.find(el => el.type === "player")[0].keySupport
+      this.board.children.find(el => el.type === "player").keySupport
     );
 
     requestAnimationFrame(testLoop);
   }
   stop() {
     const clearIntervals = arr => {
-      arr.hasOwnProperty("length")
+      Array.isArray(arr)
         ? arr.forEach(el => {
             clearInterval(el);
           })
         : clearInterval(arr);
+      this.activeIntervals = [];
     };
     const clearBoard = () => {
       this.board.children = [];
