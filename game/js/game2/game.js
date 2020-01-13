@@ -271,21 +271,22 @@ class Game {
       startBtn.removeEventListener("click", startGame);
       helpBtn.removeEventListener("click", popHelpModal);
     };
-    const previousPage = () => {
-      console.log("prevPage");
+    const boardCleanUp = () => {
       hideBtns();
       removeEventListeners();
+    }
+    const previousPage = () => {
+      console.log("prevPage");
+      boardCleanUp()
     };
     const startGame = () => {
       backBtn.removeEventListener("click", startGame);
       this.start();
-      hideBtns();
-      removeEventListeners();
+      boardCleanUp()
     };
     const popHelpModal = () => {
       console.log("pophelpmodal");
-      hideBtns();
-      removeEventListeners();
+      boardCleanUp()
     };
     const setEventListeners = () => {
       backBtn.addEventListener("click", previousPage);
