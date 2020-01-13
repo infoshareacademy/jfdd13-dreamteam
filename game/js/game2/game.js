@@ -42,23 +42,20 @@ class BoardElement {
       switch (direction.toLowerCase()) {
         case "left":
           this.position.x -= this.speed;
-          this.changePosition();
           break;
         case "right":
           this.position.x += this.speed;
-          this.changePosition();
           break;
         case "up":
           this.position.y -= this.speed;
-          this.changePosition();
           break;
         case "down":
           this.position.y += this.speed;
-          this.changePosition();
           break;
         default:
           null;
       }
+      this.changePosition();
     }
   }
 }
