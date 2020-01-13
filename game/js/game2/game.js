@@ -117,7 +117,6 @@ class Game {
         this.getBoard().offsetHeight
     )
     create(type) {
-        const creationType = type
         const createPlayer = () => {
             return this.board.children.push(
                 new Player(
@@ -249,9 +248,11 @@ class Game {
             }
             el.destroyed = true
         }
-        el.hasOwnProperty("length")
-            ? el.forEach(element => destroy(element))
-            : destroy(el)
+        if (Object.is(el)) {
+            return el.forEach(element => destroy(element))
+        } else {
+            destroy(el)
+        }
         Object.freeze(el)
     }
     handleDestroy() {
@@ -299,10 +300,17 @@ class Game {
     }
     start() {
         const testLoop = () => {
+            const difficulty = num => {
+                const refreshRates = [2000, 3000, 4000]
+                if (Number(num)) {
+                    return refreshRates[num]
+                }
+                //TODO: setTimeout changing refreshRate
+            }
             const boardElementsCreation = setInterval(() => {
                 game.create("bird")
                 game.render(this.board.children[this.board.children.length - 1])
-            }, 4000)
+            }, difficulty(2))
             const collision = setInterval(() => {
                 this.handleCollision()
             }, 1)
@@ -334,7 +342,7 @@ class Game {
     }
     stop() {
         const clearIntervals = arr => {
-            Array.isArray(arr)
+            Object.is(arr)
                 ? arr.forEach(el => {
                       clearInterval(el)
                   })
@@ -345,7 +353,7 @@ class Game {
             this.board.children = []
         }
         clearIntervals(this.activeIntervals)
-        // clearBoard();
+        clearBoard()
         Object.freeze(this.board.children[0])
     }
 }
