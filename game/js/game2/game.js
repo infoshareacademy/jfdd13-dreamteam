@@ -321,7 +321,7 @@ class Game {
     this.render(this.board.children[0]);
     document.addEventListener(
       "keydown",
-      this.board.children.filter(el => el.type === "player")[0].keySupport
+      this.board.children.find(el => el.type === "player")[0].keySupport
     );
 
     requestAnimationFrame(testLoop);
