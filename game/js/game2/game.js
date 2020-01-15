@@ -300,17 +300,20 @@ class Game {
     }
     start() {
         const testLoop = () => {
-            const difficulty = num => {
+            const increaseDifficulty = () => {
                 const refreshRates = [2000, 3000, 4000]
-                if (Number(num)) {
-                    return refreshRates[num]
+                for (let i = refreshRates.length; i >= 1; i--) {
+                    setTimeout(() => {
+                        console.log(i)
+                    }, i + "1000")
                 }
-                //TODO: setTimeout changing refreshRate
             }
+            //TODO: setTimeout changing refreshRate
+            //TODO: decrease timeout i in for loop
             const boardElementsCreation = setInterval(() => {
                 game.create("bird")
                 game.render(this.board.children[this.board.children.length - 1])
-            }, difficulty(2))
+            }, increaseDifficulty())
             const collision = setInterval(() => {
                 this.handleCollision()
             }, 1)
