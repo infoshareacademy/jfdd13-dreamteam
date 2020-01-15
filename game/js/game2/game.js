@@ -305,7 +305,7 @@ class Game {
                 for (let i = refreshRates.length - 1; i >= 0; i--) {
                     console.log(i)
                     setTimeout(
-                        i => {
+                        () => {
                             console.log(i)
                         },
                         refreshRates[i],
