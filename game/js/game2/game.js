@@ -301,14 +301,22 @@ class Game {
     start() {
         const testLoop = () => {
             const increaseDifficulty = () => {
-                const refreshRates = [2000, 3000, 4000]
-                for (let i = refreshRates.length - 1; i >= 0; i--) {
-                    console.log(i)
+                const difficultyRates = [
+                    { timeoutValue: 0, refreshRate: 4000 },
+                    { timeoutValue: 4000, refreshRate: 3000 },
+                    { timeoutValue: 8000, refreshRate: 2000 },
+                    { timeoutValue: 1200, refreshRate: 1200 },
+                ]
+                for (let i = difficultyRates.length - 1; i >= 0; i--) {
                     setTimeout(
                         () => {
-                            console.log(i)
+                            console.log(
+                                "timeout",
+                                difficultyRates[i].timeoutValue
+                            )
+                            return difficultyRates[i].refreshRate
                         },
-                        refreshRates[i],
+                        difficultyRates[i].timeoutValue,
                         i
                     )
                 }
