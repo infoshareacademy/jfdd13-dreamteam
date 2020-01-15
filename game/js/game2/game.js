@@ -302,10 +302,15 @@ class Game {
         const testLoop = () => {
             const increaseDifficulty = () => {
                 const refreshRates = [2000, 3000, 4000]
-                for (let i = refreshRates.length; i >= 1; i--) {
-                    setTimeout(() => {
-                        console.log(i)
-                    }, i + "1000")
+                for (let i = refreshRates.length - 1; i >= 0; i--) {
+                    console.log(i)
+                    setTimeout(
+                        i => {
+                            console.log(i)
+                        },
+                        refreshRates[i],
+                        i
+                    )
                 }
             }
             //TODO: setTimeout changing refreshRate
