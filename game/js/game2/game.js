@@ -299,52 +299,10 @@ class Game {
         this.activeListeners.push(backBtn, startBtn, helpBtn)
     }
     start() {
-        const testLoop = () => {
-            const increaseDifficulty = () => {
-                const difficultyRates = [
-                    { timeoutValue: 0, refreshRate: 4000 },
-                    { timeoutValue: 4000, refreshRate: 3000 },
-                    { timeoutValue: 8000, refreshRate: 2000 },
-                    { timeoutValue: 1200, refreshRate: 1200 },
-                ]
-                for (let i = difficultyRates.length - 1; i >= 0; i--) {
-                    setTimeout(
-                        () => {
-                            console.log(
-                                "timeout",
-                                difficultyRates[i].timeoutValue
-                            )
-                            return difficultyRates[i].refreshRate
-                        },
-                        difficultyRates[i].timeoutValue,
-                        i
-                    )
-                }
-            }
-            //TODO: setTimeout changing refreshRate
-            //TODO: decrease timeout i in for loop
-            const boardElementsCreation = setInterval(() => {
-                game.create("bird")
-                game.render(this.board.children[this.board.children.length - 1])
-            }, increaseDifficulty())
-            const collision = setInterval(() => {
-                this.handleCollision()
-            }, 1)
-            const elementsMove = setInterval(() => {
-                const boardElements = this.board.children
-                for (let i = 1; i < boardElements.length; i++) {
-                    boardElements[i].move("left")
-                }
-            }, 10)
-            const boardElementsDestroy = setInterval(() => {
-                this.handleDestroy()
-            }, 2000)
-            this.activeIntervals.push(
-                boardElementsCreation,
-                elementsMove,
-                collision,
-                boardElementsDestroy
-            )
+        const testLoop = () => {}
+        const boardElementsCreation = () => {
+            game.create("bird")
+            game.render(this.board.children[this.board.children.length - 1])
         }
 
         this.create("player")
@@ -368,7 +326,6 @@ class Game {
         const clearBoard = () => {
             this.board.children = []
         }
-        clearIntervals(this.activeIntervals)
         clearBoard()
         Object.freeze(this.board.children[0])
     }
