@@ -299,12 +299,6 @@ class Game {
         this.activeListeners.push(backBtn, startBtn, helpBtn)
     }
     start() {
-        const testLoop = () => {}
-        const boardElementsCreation = () => {
-            game.create("bird")
-            game.render(this.board.children[this.board.children.length - 1])
-        }
-
         this.create("player")
         this.render(this.board.children[0])
         document.addEventListener(
@@ -312,7 +306,33 @@ class Game {
             this.board.children.find(el => el.type === "player").keySupport
         )
 
-        requestAnimationFrame(testLoop)
+        let prevUpdateTime = Date.now()
+        const update = () => {
+            const currentTime = Date.now()
+            const timeDiff = currentTime - prevUpdateTime
+            const boardElementsCreation = () => {
+                game.create("bird")
+                game.render(this.board.children[this.board.children.length - 1])
+            }
+            const elementsMove = () => {
+                const boardElements = this.board.children
+                for (let i = 1; i < boardElements.length; i++) {
+                    boardElements[i].move("left")
+                }
+            }
+            const player = this.board.children[0]
+            if (player) {
+                if (timeDiff > 400) {
+                    boardElementsCreation()
+                    prevUpdateTime = currentTime
+                }
+                this.handleCollision()
+                elementsMove()
+                this.handleDestroy()
+                requestAnimationFrame(update)
+            }
+        }
+        update()
     }
     stop() {
         const clearIntervals = arr => {
