@@ -334,8 +334,7 @@ class Game {
                     return difficultyRates[0]
                 }
             }
-            if (timeDiff > difficulty()) {
-                //TODO: optimize if statements
+            if (this.board.children.length !== 0 && timeDiff > difficulty()) {
                 boardElementsCreation()
                 prevUpdateTime = currentTime
             }
