@@ -158,7 +158,7 @@ class Game {
                 bird: 40,
             }
             const creationType =
-                creationName === "birdZ" ? "bird" : creationName
+                creationName === "birdz" ? "bird" : creationName
 
             return this.board.children.push(
                 new BoardElement(
@@ -188,7 +188,7 @@ class Game {
             case "bird":
                 createObstacle("bird")
                 break
-            case "birdZ":
+            case "birdz":
                 createObstacle("birdz")
                 break
             case "tree":
@@ -319,7 +319,7 @@ class Game {
                         this.board.children[this.board.children.length - 1]
                     )
                 } else if (boardElementsNumber % 13 === 0) {
-                    game.create("birdZ")
+                    game.create("birdz")
                     game.render(
                         this.board.children[this.board.children.length - 1]
                     )
