@@ -236,7 +236,12 @@ class Game {
             const dx = player.position.x - currentX
             const dy = player.position.y - currentY
             const distance = Math.sqrt(dx * dx + dy * dy)
-            if (distance < player.size.w / 2 + currentSize / 2) {
+            if (
+                boardElements[i].type !== "tree" &&
+                distance < player.size.w / 2 + currentSize / 2
+            ) {
+                return this.stop()
+            } else if (distance < player.size.w / 2) {
                 return this.stop()
             }
         }
