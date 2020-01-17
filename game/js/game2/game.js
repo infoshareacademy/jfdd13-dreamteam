@@ -184,12 +184,12 @@ class Game {
                 )
             )
         }
-        switch (type) {
+        switch (type.toLowerCase()) {
             case "bird":
                 createObstacle("bird")
                 break
             case "birdZ":
-                createObstacle("birdZ")
+                createObstacle("birdz")
                 break
             case "tree":
                 createObstacle("tree")
