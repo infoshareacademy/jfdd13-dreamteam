@@ -313,8 +313,22 @@ class Game {
             const timeDiff = currentTime - prevUpdateTime
             const boardElementsNumber = this.board.children.length
             const boardElementsCreation = () => {
-                game.create("bird")
-                game.render(this.board.children[this.board.children.length - 1])
+                if (boardElementsNumber % 7 === 0) {
+                    game.create("tree")
+                    game.render(
+                        this.board.children[this.board.children.length - 1]
+                    )
+                } else if (boardElementsNumber % 13 === 0) {
+                    game.create("birdZ")
+                    game.render(
+                        this.board.children[this.board.children.length - 1]
+                    )
+                } else {
+                    game.create("bird")
+                    game.render(
+                        this.board.children[this.board.children.length - 1]
+                    )
+                }
             }
             const elementsMove = () => {
                 const boardElements = this.board.children
