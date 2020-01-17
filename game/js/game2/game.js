@@ -272,6 +272,9 @@ class Game {
             backBtn.removeEventListener("click", previousPage)
             startBtn.removeEventListener("click", startGame)
             helpBtn.removeEventListener("click", popHelpModal)
+            this.activeListeners = this.activeListeners.filter(
+                el => !this.board.btns.includes(el)
+            )
         }
         const boardCleanUp = () => {
             hideBtns()
