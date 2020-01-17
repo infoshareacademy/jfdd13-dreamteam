@@ -308,6 +308,7 @@ class Game {
         const update = () => {
             const currentTime = Date.now()
             const timeDiff = currentTime - prevUpdateTime
+            const boardElementsNumber = this.board.children.length
             const boardElementsCreation = () => {
                 game.create("bird")
                 game.render(this.board.children[this.board.children.length - 1])
@@ -320,7 +321,6 @@ class Game {
             }
             const difficulty = () => {
                 const difficultyRates = [600, 400, 300, 200]
-                const boardElementsNumber = this.board.children.length
                 if (boardElementsNumber > 50) {
                     return difficultyRates[3]
                 }
@@ -334,7 +334,7 @@ class Game {
                     return difficultyRates[0]
                 }
             }
-            if (this.board.children.length !== 0 && timeDiff > difficulty()) {
+            if (boardElementsNumber !== 0 && timeDiff > difficulty()) {
                 boardElementsCreation()
                 prevUpdateTime = currentTime
             }
