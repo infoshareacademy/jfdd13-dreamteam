@@ -300,11 +300,9 @@ class Game {
     }
     start() {
         this.create("player")
-        this.render(this.board.children[0])
-        document.addEventListener(
-            "keydown",
-            this.board.children.find(el => el.type === "player").keySupport
-        )
+        const [player] = this.board.children
+        this.render(player)
+        document.addEventListener("keydown", player.keySupport)
 
         let prevUpdateTime = Date.now()
         const update = () => {
@@ -323,7 +321,6 @@ class Game {
             const difficulty = () => {
                 const difficultyRates = [600, 400, 300, 200]
                 const boardElementsNumber = this.board.children.length
-                console.log("IMP", this.board.children.length)
                 if (boardElementsNumber > 50) {
                     return difficultyRates[3]
                 }
@@ -337,18 +334,15 @@ class Game {
                     return difficultyRates[0]
                 }
             }
-            const player = this.board.children[0]
-            if (player) {
-                if (timeDiff > difficulty()) {
-                    //TODO: optimize if statements
-                    boardElementsCreation()
-                    prevUpdateTime = currentTime
-                }
-                this.handleCollision()
-                elementsMove()
-                this.handleDestroy()
-                requestAnimationFrame(update)
+            if (timeDiff > difficulty()) {
+                //TODO: optimize if statements
+                boardElementsCreation()
+                prevUpdateTime = currentTime
             }
+            this.handleCollision()
+            elementsMove()
+            this.handleDestroy()
+            requestAnimationFrame(update)
         }
         update()
     }
