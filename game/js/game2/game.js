@@ -324,24 +324,18 @@ class Game {
                 const difficultyRates = [600, 400, 300, 200]
                 const boardElementsNumber = this.board.children.length
                 console.log("IMP", this.board.children.length)
-                let result = 1000
-                switch (boardElementsNumber) {
-                    case boardElementsNumber < 10:
-                        result = difficultyRates[0]
-                        break
-                    case boardElementsNumber < 15:
-                        result = difficultyRates[1]
-                        break
-                    case boardElementsNumber < 20:
-                        result = difficultyRates[2]
-                        break
-                    case boardElementsNumber < 30:
-                        result = difficultyRates[3]
-                        break
-                    default:
-                        difficultyRates[3]
+                if (boardElementsNumber > 25) {
+                    return difficultyRates[3]
                 }
-                return result
+                if (boardElementsNumber > 20) {
+                    return difficultyRates[2]
+                }
+                if (boardElementsNumber > 15) {
+                    return difficultyRates[1]
+                }
+                if (boardElementsNumber <= 15) {
+                    return difficultyRates[0]
+                }
             }
             const testOutput = difficulty()
             console.log(testOutput)
