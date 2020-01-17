@@ -324,10 +324,10 @@ class Game {
                 const difficultyRates = [600, 400, 300, 200]
                 const boardElementsNumber = this.board.children.length
                 console.log("IMP", this.board.children.length)
-                if (boardElementsNumber > 25) {
+                if (boardElementsNumber > 50) {
                     return difficultyRates[3]
                 }
-                if (boardElementsNumber > 20) {
+                if (boardElementsNumber > 30) {
                     return difficultyRates[2]
                 }
                 if (boardElementsNumber > 15) {
@@ -337,12 +337,10 @@ class Game {
                     return difficultyRates[0]
                 }
             }
-            const testOutput = difficulty()
-            console.log(testOutput)
             const player = this.board.children[0]
             if (player) {
                 if (timeDiff > difficulty()) {
-                    //TODO: fix difficulty()
+                    //TODO: optimize if statements
                     boardElementsCreation()
                     prevUpdateTime = currentTime
                 }
