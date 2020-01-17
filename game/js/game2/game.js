@@ -320,9 +320,35 @@ class Game {
                     boardElements[i].move("left")
                 }
             }
+            const difficulty = () => {
+                const difficultyRates = [600, 400, 300, 200]
+                const boardElementsNumber = this.board.children.length
+                console.log("IMP", this.board.children.length)
+                let result = 1000
+                switch (boardElementsNumber) {
+                    case boardElementsNumber < 10:
+                        result = difficultyRates[0]
+                        break
+                    case boardElementsNumber < 15:
+                        result = difficultyRates[1]
+                        break
+                    case boardElementsNumber < 20:
+                        result = difficultyRates[2]
+                        break
+                    case boardElementsNumber < 30:
+                        result = difficultyRates[3]
+                        break
+                    default:
+                        difficultyRates[3]
+                }
+                return result
+            }
+            const testOutput = difficulty()
+            console.log(testOutput)
             const player = this.board.children[0]
             if (player) {
-                if (timeDiff > 400) {
+                if (timeDiff > difficulty()) {
+                    //TODO: fix difficulty()
                     boardElementsCreation()
                     prevUpdateTime = currentTime
                 }
@@ -335,14 +361,6 @@ class Game {
         update()
     }
     stop() {
-        const clearIntervals = arr => {
-            Object.is(arr)
-                ? arr.forEach(el => {
-                      clearInterval(el)
-                  })
-                : clearInterval(arr)
-            this.activeIntervals = []
-        }
         const clearBoard = () => {
             this.board.children = []
         }
