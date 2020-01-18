@@ -295,7 +295,7 @@ class Game {
             boardCleanUp()
         }
         const popHelpModal = () => {
-            console.log("pophelpmodal")
+            this.popModal()
             boardCleanUp()
         }
         const setEventListeners = () => {
@@ -369,12 +369,42 @@ class Game {
         }
         update()
     }
+    popModal(type) {
+        //TODO: use cases:
+        //show instruction
+        //show gameOver
+        //show highscores
+
+        const modalTypes = {
+            instruction: {
+                id: "modalInstruction",
+                btns: [],
+            },
+            gameOver: {
+                id: "modalGameover",
+                btns: [],
+            },
+            highScore: {
+                id: "modalHighscore",
+                btns: [],
+            },
+        }
+        const activeModal = document.getElementById(modalTypes[type].id)
+        const activeBtns = btnsArr => {
+            btnsArr.forEach(el => {
+                el.addEventListener("click", console.log("clicked", el))
+            })
+        }
+        activeModal.style.display = "block"
+        activeBtns()
+    }
     stop() {
         const clearBoard = () => {
             this.board.children = []
         }
         clearBoard()
         Object.freeze(this.board.children[0])
+        this.popModal("gameover")
     }
 }
 
