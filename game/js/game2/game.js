@@ -98,8 +98,8 @@ class Player extends BoardElement {
 
 class Game {
     constructor() {
-        this.activeIntervals = []
         this.activeListeners = []
+        this.score = 0
     }
     getBoard() {
         return document.getElementById("board")
