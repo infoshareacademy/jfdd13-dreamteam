@@ -99,7 +99,7 @@ class Player extends BoardElement {
 class Game {
     constructor() {
         this.activeListeners = []
-        this.score = 0
+        this._score = 0
     }
     getBoard() {
         return document.getElementById("board")
@@ -311,7 +311,6 @@ class Game {
         const [player] = this.board.children
         this.render(player)
         document.addEventListener("keydown", player.keySupport)
-
         let prevUpdateTime = Date.now()
         const update = () => {
             const currentTime = Date.now()
@@ -323,16 +322,19 @@ class Game {
                     game.render(
                         this.board.children[this.board.children.length - 1]
                     )
+                    this._score += 7
                 } else if (boardElementsNumber % 13 === 0) {
                     game.create("birdz")
                     game.render(
                         this.board.children[this.board.children.length - 1]
                     )
+                    this._score += 9
                 } else {
                     game.create("bird")
                     game.render(
                         this.board.children[this.board.children.length - 1]
                     )
+                    this._score += 4
                 }
             }
             const elementsMove = () => {
