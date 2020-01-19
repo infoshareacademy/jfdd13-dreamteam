@@ -397,15 +397,15 @@ class Game {
                 btns: [
                     {
                         type: "saveScore",
-                        dom: "btnsaveScore",
+                        dom: "btnSaveScore",
                     },
                     {
                         type: "clearScores",
-                        dom: "btnclearScores",
+                        dom: "btnClearScores",
                     },
                     {
                         type: "displayScores",
-                        dom: "btndisplayScores",
+                        dom: "btnDisplayScores",
                     },
                     {
                         type: "close",
@@ -419,26 +419,33 @@ class Game {
             },
         }
         const activeModal = document.getElementById(modals[type].id)
+        const activeBtnsCleanup = btnsArr => {
+            btnsArr.forEach(el => removeEventListener("click", closeModal))
+        }
+
         function closeModal() {
             activeModal.style.display = "none"
             activeModal.removeEventListener("click", closeModal)
+            activeBtnsCleanup(game.activeListeners)
+            game.activeListeners = []
             game.boardBtns()
         }
+
         const activeBtns = btnsArr => {
             btnsArr.forEach(el => {
+                const currentElementDom = document.getElementById(el.dom)
                 switch (el.type) {
                     case "close":
-                        document
-                            .getElementById(el.dom)
-                            .addEventListener("click", closeModal)
+                        currentElementDom.addEventListener("click", closeModal)
                         break
                 }
-                this.activeListeners.push(el)
+                this.activeListeners.push(currentElementDom)
             })
         }
         activeModal.style.display = "flex"
         activeBtns(modals[type].btns)
     }
+
     stop() {
         const clearBoard = () => {
             this.board.children = []
