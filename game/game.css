@@ -310,11 +310,22 @@
     cursor: pointer;
 }
 
-.modal__inputs {
+.modal__form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: normal;
+}
+
+.modal__formInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__formLabel {
+    margin: 0 0.5rem;
 }
 
 .modal__playerName {

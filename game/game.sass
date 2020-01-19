@@ -135,8 +135,12 @@
       text-decoration: none
       cursor: pointer
 
-  &__inputs
+  &__form
     @include flex(space-between, normal, column)
+    &Input
+      @include flex(center, center)
+    &Label
+      margin: 0 .5rem
 
   &__player
     &Name
