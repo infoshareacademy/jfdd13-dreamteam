@@ -383,11 +383,11 @@ class Game {
                 id: "modalHelp",
                 btns: [
                     {
-                        dom: document.getElementById("iconHelpClose"),
+                        dom: "iconHelpClose",
                         type: "close",
                     },
                     {
-                        dom: document.getElementById("btnHelpClose"),
+                        dom: "btnHelpClose",
                         type: "close",
                     },
                 ],
@@ -397,15 +397,19 @@ class Game {
                 btns: [
                     {
                         type: "saveScore",
-                        dom: document.getElementById("saveScore"),
+                        dom: "btnsaveScore",
                     },
                     {
                         type: "clearScores",
-                        dom: document.getElementById("clearScores"),
+                        dom: "btnclearScores",
                     },
                     {
                         type: "displayScores",
-                        dom: document.getElementById("displayScores"),
+                        dom: "btndisplayScores",
+                    },
+                    {
+                        type: "close",
+                        dom: "btnGameoverClose",
                     },
                 ],
             },
@@ -424,7 +428,9 @@ class Game {
             btnsArr.forEach(el => {
                 switch (el.type) {
                     case "close":
-                        el.dom.addEventListener("click", closeModal)
+                        document
+                            .getElementById(el.dom)
+                            .addEventListener("click", closeModal)
                         break
                 }
                 this.activeListeners.push(el)
