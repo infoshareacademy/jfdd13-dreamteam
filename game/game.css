@@ -2,27 +2,22 @@
     font-family: Be Vietnam, sans-serif;
     text-align: center;
 }
-
 .heading__h1 {
     font-size: 2.5rem;
     text-transform: none;
     margin: 0.67rem 0;
 }
-
 .heading__h2 {
     margin: 1rem 0 1.5rem;
 }
-
 .heading__h3 {
     font-family: Roboto, sans-serif;
     text-align: left;
     margin: 0.5rem 0;
 }
-
 .heading__h3--calculator {
     margin-top: 20px;
 }
-
 .heading__h4 {
     font-size: 1.1rem;
 }
@@ -35,43 +30,46 @@
     margin: 1rem 0;
     color: #fff;
     border-radius: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-transform: uppercase;
     background: #1976d2;
     border: none;
     cursor: pointer;
 }
-
 .btn:focus {
     outline: none;
 }
-
 .btn:hover {
     background: #2196f3;
 }
-
-.btn__modal {
-    margin: 1rem;
-}
-
 .btn__container {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0 0;
 }
-
+.btn__container--initial {
+    margin: 0;
+}
+.btn__container--initial .btn {
+    margin: 0 0.5rem;
+}
+.btn__container--gameover {
+    padding: 0 3rem;
+}
+.btn__container--gameover .btn {
+    margin: 0.5rem;
+}
 .btn__container-hero {
     order: -1;
     margin: 2rem;
 }
-
 .btn-hero {
     background-color: #1976d2;
 }
-
 .btn-hero:hover {
     background-color: #2196f3;
 }
-
 .btn__cookies {
     max-width: 110px;
     max-height: 30px;
@@ -83,7 +81,6 @@
 .icon__container {
     font-size: 1.1rem;
 }
-
 .icon__container > i {
     display: inline-block;
     text-align: center;
@@ -92,7 +89,6 @@
 .paragraph--underline {
     text-decoration: underline;
 }
-
 .paragraph--centered {
     text-align: center;
 }
@@ -112,11 +108,9 @@
     border: 1px solid #bdbdbd;
     z-index: 4;
 }
-
 .modal__game--instruction {
     margin-left: 2rem;
 }
-
 .modal__paragraph {
     margin: 1rem 0;
 }
@@ -130,6 +124,7 @@
     .modal__game > div:last-child {
         display: flex;
     }
+
     .btn__modal {
         margin: 0;
     }
@@ -137,7 +132,6 @@
         margin: 0 0 0 0.5rem;
     }
 }
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -164,22 +158,11 @@
     background-image: url(./img/landscape.png);
 }
 
-.btn__container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: normal;
-}
-
 .btn__container--initial {
     position: absolute;
     min-width: 500px;
     height: 100px;
     top: calc(50% - 50px);
-}
-
-.btn__modal {
-    margin: 1rem;
 }
 
 .frame {
@@ -189,32 +172,26 @@
     background-color: #fff;
     z-index: 2;
 }
-
 .frame__top,
 .frame__bottom {
     height: 300px;
     width: 100%;
 }
-
 .frame__left,
 .frame__right {
     width: 300px;
     top: -10vh;
     height: 120vh;
 }
-
 .frame__top {
     top: -300px;
 }
-
 .frame__bottom {
     bottom: -300px;
 }
-
 .frame__left {
     left: -300px;
 }
-
 .frame__right {
     display: flex;
     flex-direction: row;
@@ -255,10 +232,6 @@
     z-index: 2;
 }
 
-#player img {
-    width: 20%;
-}
-
 .tree,
 .bird,
 .birdz {
@@ -278,7 +251,6 @@
     background-color: #fff;
     border: 1px solid #bdbdbd;
 }
-
 .modal__container {
     position: absolute;
     top: 0;
@@ -292,7 +264,6 @@
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.5);
 }
-
 .modal__close {
     position: absolute;
     top: 0;
@@ -302,38 +273,32 @@
     font-size: 1rem;
     font-weight: bold;
 }
-
 .modal__close:hover,
 .modal__close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
-
 .modal__form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: normal;
 }
-
 .modal__formInput {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
-
 .modal__formLabel {
     margin: 0 0.5rem;
 }
-
 .modal__playerName {
     min-width: 180px;
     font-size: large;
     padding: 0.25rem;
 }
-
 .modal__playerScore {
     margin: 1rem;
     text-align: center;
@@ -342,7 +307,6 @@
 .scoreboard {
     position: relative;
 }
-
 .scoreboard__container {
     display: flex;
     flex-direction: column;
@@ -353,16 +317,15 @@
     margin: 2rem auto;
     z-index: 3;
 }
-
 .scoreboard__item {
     margin: 0.5rem 1rem;
 }
-
 .scoreboard__value {
     display: inline-block;
     min-width: 180px;
 }
-
 .scoreboard__value:nth-child(2) {
     text-align: right;
 }
+
+/*# sourceMappingURL=game.css.map */
