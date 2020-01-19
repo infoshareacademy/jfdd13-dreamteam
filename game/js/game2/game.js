@@ -374,7 +374,6 @@ class Game {
         //show instruction
         //show gameOver
         //show highscores
-
         const modals = {
             instruction: {
                 id: "modalInstruction",
@@ -412,12 +411,22 @@ class Game {
             },
         }
         const activeModal = document.getElementById(modals[type].id)
+        function closeModal() {
+            activeModal.style.display = "none"
+            activeModal.removeEventListener("click", closeModal)
+            this.boardBtns
+        }
         const activeBtns = btnsArr => {
             btnsArr.forEach(el => {
-                el.dom.addEventListener("click", el.action)
+                switch (el.type) {
+                    case "close":
+                        el.dom.addEventListener("click", closeModal)
+                        break
+                }
+                this.activeListeners.push(el)
             })
         }
-        activeModal.style.display = "block"
+        activeModal.style.display = "flex"
         activeBtns(modals[type].btns)
     }
     stop() {
