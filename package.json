@@ -17,7 +17,8 @@
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "jsBundlerWatch": "npx rollup -w --config"
+        "jsBundlerWatch": "npx rollup -w --config",
+        "gameSassCompile": "npx node-sass --watch game/ -o game/"
     },
     "repository": {
         "type": "git",
