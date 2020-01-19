@@ -12,3 +12,9 @@ $divider-color:        #BDBDBD
 //$color-secondary: #FFC107
 $font-primary: Roboto, sans-serif
 $font-secondary: Be Vietnam, sans-serif
+
+@mixin flex($center: normal, $align: normal, $direction: row)
+  display: flex
+  flex-direction: $direction
+  justify-content: $center
+  align-items: $align
