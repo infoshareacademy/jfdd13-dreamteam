@@ -105,7 +105,7 @@ class Game {
         return document.getElementById("board")
     }
     getBtns() {
-        return Array.from(document.querySelectorAll(".board__btn"))
+        return Array.from(document.querySelectorAll(".js-board__btn"))
     }
     board = new Board(
         this.getBoard(),
