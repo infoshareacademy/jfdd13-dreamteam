@@ -376,7 +376,7 @@ class Game {
         //show highscores
         const modals = {
             instruction: {
-                id: "modalInstruction",
+                id: "modalHelp",
                 btns: [
                     {
                         dom: document.getElementById("iconHelpClose"),
