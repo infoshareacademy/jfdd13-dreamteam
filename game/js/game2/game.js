@@ -380,8 +380,6 @@ class Game {
     }
     popModal(type) {
         //TODO: use cases:
-        //show instruction
-        //show gameOver
         //show highscores
         const modals = {
             instruction: {
@@ -413,7 +411,7 @@ class Game {
                         dom: "btnDisplayScores",
                     },
                     {
-                        type: "close",
+                        type: "reset",
                         dom: "btnGameoverClose",
                     },
                 ],
@@ -433,7 +431,10 @@ class Game {
             activeModal.removeEventListener("click", closeModal)
             activeBtnsCleanup(game.activeListeners)
             game.activeListeners = []
-            game.boardBtns()
+        }
+        const resetGame = () => {
+            closeModal()
+            this.reset()
         }
 
         const activeBtns = btnsArr => {
@@ -443,6 +444,8 @@ class Game {
                     case "close":
                         currentElementDom.addEventListener("click", closeModal)
                         break
+                    case "reset":
+                        currentElementDom.addEventListener("click", resetGame)
                 }
                 this.activeListeners.push(currentElementDom)
             })
