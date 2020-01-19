@@ -295,7 +295,7 @@ class Game {
             boardCleanUp()
         }
         const popHelpModal = () => {
-            this.popModal()
+            this.popModal("instruction")
             boardCleanUp()
         }
         const setEventListeners = () => {
@@ -375,28 +375,50 @@ class Game {
         //show gameOver
         //show highscores
 
-        const modalTypes = {
+        const modals = {
             instruction: {
                 id: "modalInstruction",
-                btns: [],
+                btns: [
+                    {
+                        dom: document.getElementById("iconHelpClose"),
+                        type: "close",
+                    },
+                    {
+                        dom: document.getElementById("btnHelpClose"),
+                        type: "close",
+                    },
+                ],
             },
             gameOver: {
                 id: "modalGameover",
-                btns: [],
+                btns: [
+                    {
+                        type: "saveScore",
+                        dom: document.getElementById("saveScore"),
+                    },
+                    {
+                        type: "clearScores",
+                        dom: document.getElementById("clearScores"),
+                    },
+                    {
+                        type: "displayScores",
+                        dom: document.getElementById("displayScores"),
+                    },
+                ],
             },
             highScore: {
                 id: "modalHighscore",
                 btns: [],
             },
         }
-        const activeModal = document.getElementById(modalTypes[type].id)
+        const activeModal = document.getElementById(modals[type].id)
         const activeBtns = btnsArr => {
             btnsArr.forEach(el => {
-                el.addEventListener("click", console.log("clicked", el))
+                el.dom.addEventListener("click", el.action)
             })
         }
         activeModal.style.display = "block"
-        activeBtns()
+        activeBtns(modals[type].btns)
     }
     stop() {
         const clearBoard = () => {
@@ -404,7 +426,7 @@ class Game {
         }
         clearBoard()
         Object.freeze(this.board.children[0])
-        this.popModal("gameover")
+        this.popModal("gameOver")
     }
 }
 
