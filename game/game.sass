@@ -1,8 +1,3 @@
-@mixin flex($center: normal, $align: normal, $direction: row)
-  display: flex
-  flex-direction: $direction
-  justify-content: $center
-  align-items: $align
 @import "../css/sass/variables"
 @import "../css/sass/elements"
 *
@@ -27,16 +22,12 @@
 
 .btn
   &__container
-    @include flex(space-around)
 
     &--initial
       position: absolute
       min-width: 500px
       height: 100px
       top: calc(50% - 50px)
-
-  &__modal
-    margin: 1rem
 
 .frame
   position: absolute
@@ -92,9 +83,6 @@
   position: absolute
   z-index: 2
 
-#player img
-  width: 20%
-
 .tree, .bird, .birdz
   position: absolute
   z-index: 1
@@ -137,8 +125,10 @@
 
   &__form
     @include flex(space-between, normal, column)
+
     &Input
       @include flex(center, center)
+
     &Label
       margin: 0 .5rem
 
