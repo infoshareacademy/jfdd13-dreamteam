@@ -272,6 +272,9 @@ class Game {
         const hideBtns = () => {
             this.board.btns.forEach(e => (e.style.display = "none"))
         }
+        const showBtns = () => {
+            this.board.btns.forEach(e => (e.style.display = "block"))
+        }
         const [backBtn, startBtn, helpBtn] = this.board.btns
         const removeEventListeners = () => {
             backBtn.removeEventListener("click", previousPage)
@@ -303,6 +306,7 @@ class Game {
             startBtn.addEventListener("click", startGame)
             helpBtn.addEventListener("click", popHelpModal)
         }
+        showBtns()
         setEventListeners()
         this.activeListeners.push(backBtn, startBtn, helpBtn)
     }
@@ -414,7 +418,7 @@ class Game {
         function closeModal() {
             activeModal.style.display = "none"
             activeModal.removeEventListener("click", closeModal)
-            this.boardBtns
+            game.boardBtns()
         }
         const activeBtns = btnsArr => {
             btnsArr.forEach(el => {
