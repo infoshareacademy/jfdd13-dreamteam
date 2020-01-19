@@ -310,6 +310,11 @@ class Game {
         setEventListeners()
         this.activeListeners.push(backBtn, startBtn, helpBtn)
     }
+    reset() {
+        document.getElementById("elements").innerHTML = ""
+        this._score = 0
+        this.boardBtns()
+    }
     start() {
         this.create("player")
         const [player] = this.board.children
