@@ -253,7 +253,7 @@ class Game {
             }
             el.destroyed = true
         }
-        if (typeof el === "object") {
+        if (el.length) {
             return el.forEach(element => destroy(element))
         } else {
             destroy(el)
