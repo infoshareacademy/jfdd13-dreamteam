@@ -253,7 +253,7 @@ class Game {
             }
             el.destroyed = true
         }
-        if (Object.is(el)) {
+        if (typeof el === "object") {
             return el.forEach(element => destroy(element))
         } else {
             destroy(el)
@@ -420,7 +420,7 @@ class Game {
         }
         const activeModal = document.getElementById(modals[type].id)
         const activeBtnsCleanup = btnsArr => {
-            btnsArr.forEach(el => removeEventListener("click", closeModal))
+            btnsArr.forEach(() => removeEventListener("click", closeModal))
         }
 
         function closeModal() {
