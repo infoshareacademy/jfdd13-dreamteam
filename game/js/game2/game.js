@@ -210,7 +210,7 @@ class Game {
             player: "player_plane",
         }
 
-        const parent = this.board.dom
+        const parent = document.getElementById("elements")
         const child = document.createElement("div")
         child.setAttribute("id", `${el.name}${el.id}`)
         child.classList.add(`${el.name}`, `${el.type}`)
