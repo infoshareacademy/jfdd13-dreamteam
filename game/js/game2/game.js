@@ -331,19 +331,19 @@ class Game {
                     game.render(
                         this.board.children[this.board.children.length - 1]
                     )
-                    this._score += 7
+                    game._score += 7
                 } else if (boardElementsNumber % 13 === 0) {
                     game.create("birdz")
                     game.render(
                         this.board.children[this.board.children.length - 1]
                     )
-                    this._score += 9
+                    game._score += 9
                 } else {
                     game.create("bird")
                     game.render(
                         this.board.children[this.board.children.length - 1]
                     )
-                    this._score += 4
+                    game._score += 4
                 }
             }
             const elementsMove = () => {
