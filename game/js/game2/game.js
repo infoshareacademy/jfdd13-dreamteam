@@ -422,14 +422,18 @@ class Game {
         }
         const activeModal = document.getElementById(modals[type].id)
         const activeBtnsCleanup = btnsArr => {
-            btnsArr.forEach(() => removeEventListener("click", closeModal))
+            btnsArr.forEach(() => removeEventListener("click", closeHelpModal))
         }
 
-        function closeModal() {
+        const closeModal = () => {
             activeModal.style.display = "none"
             activeModal.removeEventListener("click", closeModal)
             activeBtnsCleanup(game.activeListeners)
             game.activeListeners = []
+        }
+        const closeHelpModal = () => {
+            closeModal()
+            this.boardBtns()
         }
         const resetGame = () => {
             closeModal()
@@ -441,7 +445,10 @@ class Game {
                 const currentElementDom = document.getElementById(el.dom)
                 switch (el.type) {
                     case "close":
-                        currentElementDom.addEventListener("click", closeModal)
+                        currentElementDom.addEventListener(
+                            "click",
+                            closeHelpModal
+                        )
                         break
                     case "reset":
                         currentElementDom.addEventListener("click", resetGame)
