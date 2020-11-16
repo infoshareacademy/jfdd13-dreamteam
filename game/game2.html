@@ -20,15 +20,16 @@
         <div class="frame frame__left"></div>
         <div class="frame frame__right"></div>
         <div class="frame frame__bottom"></div>
+        <div id="elements"></div>
     </div>
-    <div class="btn__container btn__container--initial">
-        <button class="btn board__btn" id="back__btn">Powrót</button>
-        <button class="btn board__btn" id="start__btn">Start</button>
-        <button class="btn board__btn" id="btnInstructionShow">Instrukcja</button>
-    </div>
-    <div class="modal__container" id="modalInstruction">
+    <form action="../index.html" class="btn__container btn__container--initial">
+        <button type="submit" class="btn js-board__btn" id="back__btn">Powrót</button>
+        <button type="button" class="btn js-board__btn" id="start__btn">Start</button>
+        <button type="button" class="btn js-board__btn" id="help__btn">Pomoc</button>
+    </form>
+    <div class="modal__container" id="modalHelp">
         <div class="modal">
-            <span class="modal__close" id="iconInstructionClose">&times;</span>
+            <span class="modal__close" id="iconHelpClose">&times;</span>
             <h2 class="heading heading__h2">Instrukcja gry</h2>
             <ul>
                 <li>
@@ -48,27 +49,25 @@
                 </li>
                 <li>Powodzenia :)</li>
             </ul>
-            <button class="btn" id="btnInstructionClose">Powrót</button>
+            <button class="btn" id="btnHelpClose">Powrót</button>
         </div>
     </div>
     <div class="modal__container" id="modalGameover">
         <div class="modal" id="modal__gameover">
             <h3 class="heading heading__h3">Koniec gry!</h3>
             <div class="scoreboard" id="scoreboard"></div>
-            <div class="modal__inputs" id="modalInputs">
+            <div class="modal__form" id="modalInput">
                 <span class="modal__playerScore" id="playerScore"></span>
-                <div>
-                    <label for="playerName">Twój nick:</label>
+                <div class="modal__formInput">
+                    <label for="playerName" class="modal__formLabel">Twój nick:</label>
                     <input class="modal__playerName" id="playerName" name="playerName" type="text">
                 </div>
-                <div class="btn__container">
-                    <button class="btn" id="saveScore">Zapisz</button>
-                    <button class="btn" id="clearScores">Wyczyść</button>
-                    <button class="btn" id="displayScores">Top 10</button>
+                <div class="btn__container btn__container--gameover">
+                    <button class="btn btn__modal" id="btnSaveScore">Zapisz</button>
+                    <button class="btn btn__modal" id="btnDisplayScores">Top 10</button>
+                    <button class="btn btn__modal" id="btnClearScores">Wyczyść</button>
+                    <button class="btn btn__modal" id="btnGameoverClose">Zamknij</button>
                 </div>
-            </div>
-            <div>
-                <button class="btn btn__modal" id="btn__game--close">Zamknij</button>
             </div>
         </div>
     </div>

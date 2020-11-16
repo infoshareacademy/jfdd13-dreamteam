@@ -1,3 +1,4 @@
+@import "./variables"
 .heading
   font-family: Be Vietnam, sans-serif
   text-align: center
@@ -24,7 +25,7 @@
   margin: 1rem 0
   color: #fff
   border-radius: 0.5rem
-  font-size: 1.2rem
+  font-size: 1rem
   text-transform: uppercase
   background: #1976D2
   border: none
@@ -33,12 +34,21 @@
     outline: none
   &:hover
     background: $primary-color
-  &__modal
-    margin: 1rem
 
   &__container
     display: flex
     justify-content: center
+    flex-wrap: wrap
+    margin: 2rem 0 0
+    &--initial
+      margin: 0
+      & .btn
+        margin: 0 .5rem
+    &--gameover
+      padding: 0 3rem
+      & .btn
+        margin: .5rem
+
     &-hero
       order: -1
       margin: 2rem
